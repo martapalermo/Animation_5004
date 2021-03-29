@@ -7,3 +7,7 @@ HW6 Questions:
 - What ways should we be checking for equality?
 - How many constructors?
 - Coordinate boundaries (for the shapes)- model or view (separation of concerns)?
+
+
+NOTES: 
+- we're gonna need a removeShape method that we can call at disappear time
