@@ -26,40 +26,53 @@ public interface ShapesList {
 
   /**
    * Move the given shape to the new position.
-   * @param shape the {@link Shape} to be moved
+   * @param name the name of the {@link Shape} to be moved, a String
    * @param x new x coordinate, a double
    * @param y new y coordinate, a double
    * @param start move start time, an int
-   * @param stop move stop time, a double
-   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
-   * appear/disappear window, or if the shape is already moving, or if the shape is null
+   * @param stop move stop time, an int
+   * @throws IllegalArgumentException if no shape in the list has the given name
    */
-  // Accounting for timing may be better suited for controller?
-  void move(Shape shape, double x, double y, int start, int stop) throws IllegalArgumentException;
+  void move(String name, double x, double y, int start, int stop) throws IllegalArgumentException;
 
+  // NEED TO THROW RED, BLUE, GREEN EXCEPTIONS HERE AS WELL AS SHAPE CLASS???
   /**
    * Change the color of the given shape.
-   * @param shape the {@link Shape} to change color
+   * @param name the name of the {@link Shape} to change color, a String
    * @param red new red value, a double
    * @param blue new blue value, a double
    * @param green new green value, a double
+   * @param start color change start time, an int
+   * @param stop color stop time, an int
    * @throws IllegalArgumentException if the red, blue, or green values are out of range (0-255),
-   * or if the shape is null
+   * or if no shape in the list has the given name
    */
-  void changeColor(Shape shape, double red, double blue, double green) throws IllegalArgumentException;
+  void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException;
 
   /**
-   * Scale the given shape by the scalar.
-   * @param shape the {@link Shape} to be scaled
-   * @param scalar factor to scale by, a double
-   * @throws IllegalArgumentException illegal scalar (unsure what), or if the shape is null
+   * Change the shape's width.
+   * @param name the name of the {@link Shape} to be scaled, a String
+   * @param width new width, a double
+   * @param start scale start time, an int
+   * @param stop scale stop time, an int
+   * @throws IllegalArgumentException if width <= 0, or if no shape in the list has the given name
    */
-  void scale(Shape shape, double scalar) throws IllegalArgumentException;
+  void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException;
+
+  /**
+   * Change the shape's height
+   * @param name the name of the {@link Shape} to be scaled, a String
+   * @param height new height, a double
+   * @param start scale start time, an int
+   * @param stop scale stop time, an int
+   * @throws IllegalArgumentException if scalar <= 0, or if no shape in the list has the given name
+   */
+  void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;
 
   /**
    * Returns a list of {@link Shape}s that appear on screen at the given tick.
    * @param tick current frame, an int
    * @return List of {@link Shape}s on screen
    */
-  List<Shape> getCurrentShapes(int tick);
+  ShapesList getCurrentShapes(int tick);
 }

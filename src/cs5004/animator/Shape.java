@@ -63,25 +63,14 @@ public interface Shape {
   void setHeight(double height) throws IllegalArgumentException;
 
   /**
-   * Set the red pigment of the shape.
+   * Set the color of the shape with the given pigments
    * @param red red pigment, a double
-   * @throws IllegalArgumentException if red < 0 || red > 255
+   * @param blue blue pigment, a double
+   * @param green green pigment, a double
+   * @throws IllegalArgumentException if red < 0 || red > 255 || blue < 0 || blue > 255
+   * || green < 0 || green > 255
    */
-  void setRed(double red) throws IllegalArgumentException;
-
-  /**
-   * Set the blue pigment of the shape.
-   * @param blue red pigment, a double
-   * @throws IllegalArgumentException if blue < 0 || blue > 255
-   */
-  void setBlue(double blue) throws IllegalArgumentException;
-
-  /**
-   * Set the green pigment of the shape.
-   * @param green red pigment, a double
-   * @throws IllegalArgumentException if green < 0 || green > 255
-   */
-  void setGreen(double green) throws IllegalArgumentException;
+  void setColor(double red, double blue, double green) throws IllegalArgumentException;
 
   /**
    * Get the value of the shape's red pigment.
