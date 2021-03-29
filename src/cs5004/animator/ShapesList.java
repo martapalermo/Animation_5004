@@ -33,7 +33,7 @@ public interface ShapesList {
    * @param red new red value, a double
    * @param blue new blue value, a double
    * @param green new green value, a double
-   * @throws IllegalArgumentException if the red, blue, or green values are out of range (0-250),
+   * @throws IllegalArgumentException if the red, blue, or green values are out of range (0-255),
    * or if the shape is null
    */
   void changeColor(Shape shape, double red, double blue, double green) throws IllegalArgumentException;

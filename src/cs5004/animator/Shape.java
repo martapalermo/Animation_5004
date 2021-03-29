@@ -65,21 +65,21 @@ public interface Shape {
   /**
    * Set the red pigment of the shape.
    * @param red red pigment, a double
-   * @throws IllegalArgumentException if red < 0 || red > 250
+   * @throws IllegalArgumentException if red < 0 || red > 255
    */
   void setRed(double red) throws IllegalArgumentException;
 
   /**
    * Set the blue pigment of the shape.
    * @param blue red pigment, a double
-   * @throws IllegalArgumentException if blue < 0 || blue > 250
+   * @throws IllegalArgumentException if blue < 0 || blue > 255
    */
   void setBlue(double blue) throws IllegalArgumentException;
 
   /**
    * Set the green pigment of the shape.
    * @param green red pigment, a double
-   * @throws IllegalArgumentException if green < 0 || green > 250
+   * @throws IllegalArgumentException if green < 0 || green > 255
    */
   void setGreen(double green) throws IllegalArgumentException;
 
@@ -106,4 +106,11 @@ public interface Shape {
    * @return name, a String
    */
   String getName();
+
+  /**
+   * Set the shape's name.
+   * @param name, a String
+   * @throws IllegalArgumentException if name is null or empty
+   */
+  void setName(String name) throws IllegalArgumentException;
 }
