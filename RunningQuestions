@@ -1,8 +1,9 @@
 HW6 Questions:
 - Events log/string in ShapesList?
   - Should ShapesList keep track of events or should the Shape itself keep track?
+- Check if shape is already moving- model or controller?
 - Need to make Square/Circle classes now?
- - Not for part 1.
+  - Not for part 1.
 - What ways should we be checking for equality?
 - How many constructors?
 - Coordinate boundaries (for the shapes)- model or view (separation of concerns)?
