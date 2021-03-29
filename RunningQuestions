@@ -1,1 +1,6 @@
-
+HW6 Questions:
+- Events log/string in ShapesList?
+- Need to make Square/Circle classes now?
+- What ways should we be checking for equality?
+- How many constructors?
+- Coordinate boundaries (for the shapes)- model or view (separation of concerns)?
