@@ -1,8 +1,16 @@
 package cs5004.animator;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 public class ShapesListImpl implements ShapesList {
   @Override
   public void addShape(Shape shape, String identifier) throws IllegalArgumentException {
+
+  }
+
+  @Override
+  public void removeShape(String name) throws NoSuchElementException {
 
   }
 
@@ -19,5 +27,10 @@ public class ShapesListImpl implements ShapesList {
   @Override
   public void scale(Shape shape, double scalar) throws IllegalArgumentException {
 
+  }
+
+  @Override
+  public List<Shape> getCurrentShapes(int tick) {
+    return null;
   }
 }

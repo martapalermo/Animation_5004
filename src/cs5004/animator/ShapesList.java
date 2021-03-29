@@ -1,5 +1,8 @@
 package cs5004.animator;
 
+import java.util.List;
+import java.util.NoSuchElementException;
+
 /**
  * Represents a collection of {@link Shape}s.
  */
@@ -13,6 +16,13 @@ public interface ShapesList {
    * shape in the list, or if the shape is null
    */
   void addShape(Shape shape, String identifier) throws IllegalArgumentException;
+
+  /**
+   * Remove a shape from the list.
+   * @param name name of the shape to be removed
+   * @throws NoSuchElementException if there is no shape with the given name
+   */
+  void removeShape(String name) throws NoSuchElementException;
 
   /**
    * Move the given shape to the new position.
@@ -45,4 +55,11 @@ public interface ShapesList {
    * @throws IllegalArgumentException illegal scalar (unsure what), or if the shape is null
    */
   void scale(Shape shape, double scalar) throws IllegalArgumentException;
+
+  /**
+   * Returns a list of {@link Shape}s that appear on screen at the given tick.
+   * @param tick current frame, an int
+   * @return List of {@link Shape}s on screen
+   */
+  List<Shape> getCurrentShapes(int tick);
 }
