@@ -1,18 +1,17 @@
 package cs5004.animator;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 
 public class ShapesListImpl implements ShapesList {
   private List<Shape> shapes;
-
-  // Should this be a String or should the events be stored in a different way?
-  private List<String> events;
+  private HashMap<String, List<Event>> events;
 
   public ShapesListImpl() {
     this.shapes = new ArrayList<>();
-    this.events = new ArrayList<>();
+    this.events = new HashMap<>();
   }
 
   @Override
@@ -48,17 +47,40 @@ public class ShapesListImpl implements ShapesList {
 
   @Override
   public void move(String name, double x, double y, int start, int stop) throws IllegalArgumentException {
+//    for (Shape shape : this.shapes) {
+//      if (shape.getName().equalsIgnoreCase(name)) {
+//        double oldX = shape.getX();
+//        double oldY = shape.getY();
+//
+//        shape.setPos(x, y);
+//        this.events.add(String.format("Shape %s moves from (%f,%f) to (%f,%f) from t=%d to t=%d",
+//                name, oldX, oldY, x, y, start, stop));
+//      }
+//    }
+//    throw new IllegalArgumentException("No shape in this list has this name.");
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        double oldX = shape.getX();
-        double oldY = shape.getY();
+        if (stop <= start) {
+          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+        }
 
-        shape.setPos(x, y);
-        this.events.add(String.format("Shape %s moves from (%f,%f) to (%f,%f) from t=%d to t=%d",
-                name, oldX, oldY, x, y, start, stop));
+        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+        }
+
+        // Check to see if shape is already moving in this window
+        if (this.events.containsKey("move") && this.isTransforming(name, "move", start, stop)) {
+          throw new IllegalArgumentException("This shape is already moving.");
+        }
+
+        Event move = new Move(shape, name, start, stop, x, y);
+
+        if (!this.events.containsKey("move")) {
+          this.events.put("move", new ArrayList<>());
+        }
+        this.events.get("move").add(move);
       }
     }
-    throw new IllegalArgumentException("No shape in this list has this name.");
   }
 
   @Override
@@ -114,5 +136,17 @@ public class ShapesListImpl implements ShapesList {
     ShapesList currentShapes = new ShapesListImpl();
     this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));
     return currentShapes;
+  }
+
+  private boolean isTransforming(String shapeName, String key, int start, int stop) {
+    List<Event> transformations = this.events.get(key);
+
+    // Test timing
+    for (Event transformation : transformations) {
+      if (transformation.getShapeName().equalsIgnoreCase(shapeName) && (transformation.getStart() < start || transformation.getStop() > stop)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

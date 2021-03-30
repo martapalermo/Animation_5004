@@ -19,7 +19,7 @@ public abstract class AbstractShape implements Shape {
     // Need to figure out coordinate boundaries
     this.reference = new Point(x, y);
 
-    if (appearTime < 0) {
+    if (appearTime < 1) {
       throw new IllegalArgumentException("The appearance time must be at or after 0.");
     }
     this.appearTime = appearTime;
@@ -108,23 +108,17 @@ public abstract class AbstractShape implements Shape {
   }
 
   @Override
-  public void setRed(double red) throws IllegalArgumentException {
+  public void setColor(double red, double blue, double green) throws IllegalArgumentException {
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");
     }
     this.red = red;
-  }
 
-  @Override
-  public void setBlue(double blue) throws IllegalArgumentException {
     if (blue < 0 || blue > 255) {
       throw new IllegalArgumentException("Invalid value for blue: must be between 0 and 255");
     }
     this.blue = blue;
-  }
 
-  @Override
-  public void setGreen(double green) throws IllegalArgumentException {
     if (green < 0 || green > 255) {
       throw new IllegalArgumentException("Invalid value for green: must be between 0 and 255");
     }
