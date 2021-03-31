@@ -93,9 +93,9 @@ public class ShapesListImpl implements ShapesList {
         double oldGreen = shape.getGreen();
 
         shape.setColor(red, blue, green);
-        this.events.add(String.format("Shape %s changes color from (%f,%f,%f) to (%f,%f,%f) "
+        /*this.events.add(String.format("Shape %s changes color from (%f,%f,%f) to (%f,%f,%f) "
                 + "from t=%d to t=%d", name, oldRed, oldBlue, oldGreen, red, blue, green,
-                start, stop));
+                start, stop)); */
       }
     }
     throw new IllegalArgumentException("No shape in this list has this name.");
@@ -116,9 +116,9 @@ public class ShapesListImpl implements ShapesList {
         shape.setWidth(width);
         // Need to add in handling to determine what type of Shape it is (Rectangle has width/height
         // and Oval has x radius/y radius)
-        this.events.add(String.format("Shape %s changes scales from Width: %f, Height: %f to "
+        /*this.events.add(String.format("Shape %s changes scales from Width: %f, Height: %f to "
                 + "Width: %f, Height: %f from t=%d to t=%d", shape, oldWidth, shape.getHeight(),
-                width, shape.getHeight(), start, stop));
+                width, shape.getHeight(), start, stop)); */
       }
     }
     throw new IllegalArgumentException("No shape in this list has this name.");
