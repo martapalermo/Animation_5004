@@ -5,11 +5,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-public class ShapesListImpl implements ShapesList {
+public class AnimatorModel implements Animator {
   private List<Shape> shapes;
   private HashMap<String, List<Event>> events;
 
-  public ShapesListImpl() {
+  public AnimatorModel() {
     this.shapes = new ArrayList<>();
     this.events = new HashMap<>();
   }
@@ -130,11 +130,11 @@ public class ShapesListImpl implements ShapesList {
   }
 
   @Override
-  public ShapesList getCurrentShapes(int tick) {
+  public Animator getCurrentShapes(int tick) {
     // Make new list so current one doesn't get mutated
 
     // Add copy method to Shape class??
-    ShapesList currentShapes = new ShapesListImpl();
+    Animator currentShapes = new AnimatorModel();
     this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));
     return currentShapes;
   }

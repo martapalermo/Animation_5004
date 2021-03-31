@@ -1,12 +1,11 @@
 package cs5004.animator;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 
 /**
- * Represents a collection of {@link Shape}s.
+ * Represents a collection of {@link Shape}s and their transformations.
  */
-public interface ShapesList {
+public interface Animator extends ReadonlyAnimator {
 
   /**
    * Add a shape to the list.
@@ -78,10 +77,4 @@ public interface ShapesList {
    */
   void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;
 
-  /**
-   * Returns a list of {@link Shape}s that appear on screen at the given tick.
-   * @param tick current frame, an int
-   * @return List of {@link Shape}s on screen
-   */
-  ShapesList getCurrentShapes(int tick);
 }
