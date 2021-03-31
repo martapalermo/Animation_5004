@@ -12,4 +12,10 @@ class Move extends AbstractEvent {
     this.y = y;
     this.shape.setPos(x,y);
   }
+
+  @Override
+  public String toString() {
+    return "Shape " + this.getShapeName() + "moves from (" + originalX + "," + originalY + "to ("
+        + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop() + "\n";
+  }
 }

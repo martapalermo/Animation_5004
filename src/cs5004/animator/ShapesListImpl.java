@@ -84,7 +84,8 @@ public class ShapesListImpl implements ShapesList {
   }
 
   @Override
-  public void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException {
+  public void changeColor(String name, double red, double blue, double green, int start, int stop)
+      throws IllegalArgumentException {
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
         double oldRed = shape.getRed();
