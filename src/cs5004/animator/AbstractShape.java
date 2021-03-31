@@ -15,7 +15,9 @@ public abstract class AbstractShape implements Shape {
   protected double blue;
   protected double green;
 
-  public AbstractShape(double x, double y, int appearTime, int disappearTime, double width, double height, double red, double blue, double green) throws IllegalArgumentException {
+  public AbstractShape(double x, double y, int appearTime, int disappearTime, double width,
+                       double height, double red, double blue, double green)
+      throws IllegalArgumentException {
     // Need to figure out coordinate boundaries
     this.reference = new Point(x, y);
 
@@ -25,7 +27,8 @@ public abstract class AbstractShape implements Shape {
     this.appearTime = appearTime;
 
     if (disappearTime <= appearTime) {
-      throw new IllegalArgumentException("The disappearance time must be after the appearance time.");
+      throw new IllegalArgumentException("The disappearance time must be "
+          + "after the appearance time.");
     }
     this.disappearTime = disappearTime;
 
