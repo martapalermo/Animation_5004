@@ -10,7 +10,7 @@ public class Rectangle extends AbstractShape {
   // Format like in the spec
   @Override
   public String toString() {
-    return "Name: " + this.getName()
+    return "Name: " + this.getName() + "\n"
         + "Type: rectangle\n" + "Min corner: (" + this.getX() + ","
         + this.getY() + "), " + "Width: " + getWidth() + ", " + "Height: " + getHeight() + ", "
         + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\n"

@@ -12,7 +12,7 @@ public class Oval extends AbstractShape {
   public String toString() {
     double xRadius = this.getWidth() / 2;
     double yRadius = this.getHeight() / 2;
-    return "Name: " + this.getName()
+    return "Name: " + this.getName() + "\n"
         + "Type: oval\n" + "Center: (" + this.getX() + ","
         + this.getY() + "), " + "X radius: " + xRadius + ", " + "Y radius: " + yRadius + ", "
         + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\n"
