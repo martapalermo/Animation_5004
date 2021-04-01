@@ -41,6 +41,13 @@ public interface ReadonlyShape {
    */
   double getHeight();
 
+  //TODO: Added getColor but we can take this out!
+
+  /**
+   * Get the whole RGB values of the color being used on the shape.
+   * @return String of doubles: red, green, blue
+   */
+  String getColor();
 
   /**
    * Get the value of the shape's red pigment.

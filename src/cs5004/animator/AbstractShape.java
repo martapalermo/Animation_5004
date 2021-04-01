@@ -128,6 +128,14 @@ public abstract class AbstractShape implements Shape {
     this.green = green;
   }
 
+  // TODO: should we add a getColor instead of individual getRed/getGreen/getBlue?
+
+  @Override
+  public String getColor() {
+    return "(" + this.red + ", " + this.green + ", " + this.blue + ")";
+  }
+
+
   @Override
   public double getRed() {
     return this.red;
