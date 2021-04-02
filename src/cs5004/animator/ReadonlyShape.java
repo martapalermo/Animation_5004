@@ -72,4 +72,10 @@ public interface ReadonlyShape {
    * @return name, a String
    */
   String getName();
+
+  /**
+   * Copies the shape.
+   * @return copy of the shape
+   */
+  Shape copy();
 }

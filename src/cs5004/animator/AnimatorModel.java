@@ -36,6 +36,7 @@ public class AnimatorModel implements Animator {
 
     shape.setName(identifier);
     this.shapes.add(shape);
+    this.events.put(identifier, new ArrayList<>());
   }
 
   @Override
@@ -69,16 +70,13 @@ public class AnimatorModel implements Animator {
         }
 
         // Check to see if shape is already moving in this window
-        if (this.events.containsKey("move") && this.isTransforming(name, "move", start, stop)) {
+        if (this.events.containsKey(name) && this.isTransforming(name, "move", start, stop)) {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
-        Event move = new Move(shape, name, start, stop, x, y);
+        Event move = new Move(name, start, stop, x, y, shape.getX(), shape.getY());
 
-        if (!this.events.containsKey("move")) {
-          this.events.put("move", new ArrayList<>());
-        }
-        this.events.get("move").add(move);
+        this.events.get(name).add(move);
       }
     }
   }
@@ -130,24 +128,49 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public Animator getCurrentShapes(int tick) {
+  public List<Shape> getCurrentShapes(int tick) {
     // Make new list so current one doesn't get mutated
 
     // Add copy method to Shape class??
-    Animator currentShapes = new AnimatorModel();
-    this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));
+//    Animator currentShapes = new AnimatorModel();
+//    this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));
+//    return currentShapes;
+
+    List<Shape> currentShapes = new ArrayList<>();
+    for (Shape shape : this.shapes) {
+      if (shape.getAppearTime() >= tick && shape.getDisappearTime() < tick) {
+        Shape copy = shape.copy();
+        if (this.events.containsKey(shape.getName())) {
+          transformShape(copy, tick);
+        }
+        currentShapes.add(copy);
+      }
+    }
     return currentShapes;
   }
 
-  private boolean isTransforming(String shapeName, String key, int start, int stop) {
-    List<Event> transformations = this.events.get(key);
+  @Override
+  public String getAnimation() {
+    return null;
+  }
+
+  private boolean isTransforming(String shapeName, String event, int start, int stop) {
+    List<Event> transformations = this.events.get(shapeName);
 
     // Test timing
     for (Event transformation : transformations) {
-      if (transformation.getShapeName().equalsIgnoreCase(shapeName) && (transformation.getStart() < start || transformation.getStop() > stop)) {
+      if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start || transformation.getStop() > stop)) {
         return true;
       }
     }
     return false;
+  }
+
+  private void transformShape(Shape shape, int tick) {
+    for (Event event : this.events.get(shape.getName())) {
+      if (event.getStart() >= tick && event.getStop() < tick) {
+        event.setValues(shape);
+      }
+    }
   }
 }

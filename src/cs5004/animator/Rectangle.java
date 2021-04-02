@@ -17,4 +17,10 @@ public class Rectangle extends AbstractShape {
         + "Appears at t=" + getAppearTime() + "\n"
         + "Disappears at t=" + getDisappearTime() + "\n";
   }
+
+  @Override
+  public Shape copy() {
+    return new Rectangle(this.getX(), this.getY(), this.appearTime, this.disappearTime, this.width,
+            this.height, this.red, this.blue, this.green);
+  }
 }

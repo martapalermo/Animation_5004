@@ -19,4 +19,10 @@ public class Oval extends AbstractShape {
         + "Appears at t=" + getAppearTime() + "\n"
         + "Disappears at t=" + getDisappearTime() + "\n";
   }
+
+  @Override
+  public Shape copy() {
+    return new Oval(this.getX(), this.getY(), this.appearTime, this.disappearTime, this.width,
+            this.height, this.red, this.blue, this.green);
+  }
 }

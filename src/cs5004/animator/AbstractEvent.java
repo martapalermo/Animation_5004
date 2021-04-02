@@ -1,13 +1,11 @@
 package cs5004.animator;
 
 abstract class AbstractEvent implements Event {
-  protected Shape shape;
   protected String shapeName;
   protected int start;
   protected int stop;
 
-  public AbstractEvent(Shape shape, String shapeName, int start, int stop) {
-    this.shape = shape;
+  public AbstractEvent(String shapeName, int start, int stop) {
     this.shapeName = shapeName;
     this.start = start;
     this.stop = stop;
