@@ -1,6 +1,7 @@
 package cs5004.animator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -36,6 +37,7 @@ public class AnimatorModel implements Animator {
 
     shape.setName(identifier);
     this.shapes.add(shape);
+    this.shapes.sort(Comparator.comparingInt(ReadonlyShape::getAppearTime));
     this.events.put(identifier, new ArrayList<>());
   }
 
@@ -77,6 +79,7 @@ public class AnimatorModel implements Animator {
         Event move = new Move(name, start, stop, x, y, shape.getX(), shape.getY());
 
         this.events.get(name).add(move);
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
       }
     }
   }
@@ -151,7 +154,7 @@ public class AnimatorModel implements Animator {
 
   @Override
   public String getAnimation() {
-    return null;
+    return "Shapes:\n" + this.shapeInformation() + this.eventInformation();
   }
 
   private boolean isTransforming(String shapeName, String event, int start, int stop) {
@@ -172,5 +175,31 @@ public class AnimatorModel implements Animator {
         event.setValues(shape);
       }
     }
+  }
+
+  private String shapeInformation() {
+    String information = "";
+
+    for (Shape shape : this.shapes) {
+      information += shape.toString();
+    }
+    return information;
+  }
+
+  private String eventInformation() {
+    String information = "";
+    List<Event> transformations = new ArrayList<>();
+
+    // Create one list of all events from lists of individual shape events
+    for (List<Event> shapeEvents : this.events.values()) {
+      transformations.addAll(shapeEvents);
+    }
+    transformations.sort(Comparator.comparingInt(Event::getStart));
+
+    // Create String representation of the events
+    for (Event event : transformations) {
+      information += event.toString();
+    }
+    return information;
   }
 }
