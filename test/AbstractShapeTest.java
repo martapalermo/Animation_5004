@@ -12,7 +12,9 @@ import static org.junit.Assert.assertEquals;
 public class AbstractShapeTest {
 
   private Shape oval;
+  private Shape o;
   private Shape rectangle;
+  private Shape r;
 
   private final double EPSILON = 0.01;
 
@@ -20,8 +22,15 @@ public class AbstractShapeTest {
   public void setUp() {
     this.oval = new Oval(0,0,5,10,4,
         8, 0, 0,128); // navy blue oval
+    this.o = new Oval(0,0,5,10,4,
+        8, 0, 0,128);
+    o.setName("oval Larry");
+
     this.rectangle = new Rectangle(4,3,1,25,5,5,
         255,99,71); // tomato red rectangle
+    this.r = new Rectangle(4,3,1,25,5,5,
+        255,99,71);
+    r.setName("rectangle Frank");
   }
 
   @Test
@@ -32,7 +41,14 @@ public class AbstractShapeTest {
   }
 
   @Test
-  public void testToStringRectangleWithName() {
+  public void testToStringRectangleWithGivenName() {
+    assertEquals("Name: rectangle Frank" + "\n" + "Type: rectangle\n"
+        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
+        + "Appears at t=1\n" + "Disappears at t=25\n", r.toString());
+  }
+
+  @Test
+  public void testToStringRectangleWithNewName() {
     rectangle.setName("Tomato red rectangle");
     assertEquals("Name: Tomato red rectangle" + "\n" + "Type: rectangle\n"
         + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
@@ -47,7 +63,14 @@ public class AbstractShapeTest {
   }
 
   @Test
-  public void testToStringOvalWithName() {
+  public void testToStringOvalWithGivenName() {
+    assertEquals("Name: oval Larry" + "\n" + "Type: oval\n" + "Center: (0.0,0.0), "
+        + "X radius: 2.0, Y radius: 4.0, Color: (0.0,0.0,128.0)\n" + "Appears at t=5\n"
+        + "Disappears at t=10\n", o.toString());
+  }
+
+  @Test
+  public void testToStringOvalWithNewName() {
     oval.setName("Navy oval");
     assertEquals("Name: Navy oval" + "\n" + "Type: oval\n" + "Center: (0.0,0.0), "
         + "X radius: 2.0, Y radius: 4.0, Color: (0.0,0.0,128.0)\n" + "Appears at t=5\n"
