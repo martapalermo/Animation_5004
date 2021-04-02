@@ -10,7 +10,7 @@ class ChangeColor extends AbstractEvent {
 
   public ChangeColor(Shape shape, String shapeName, int start, int stop, double red,
                      double blue, double green) {
-    super(shape, shapeName, start, stop);
+    super(shapeName, start, stop);
     this.red = red;
     this.blue = blue;
     this.green = green;
@@ -21,5 +21,25 @@ class ChangeColor extends AbstractEvent {
     return "Shape " + this.getShapeName() + " changes color from (" + originalRed + ","
         + originalBlue + "," + originalGreen + ") to (" + this.red + "," + this.blue + ","
         + this.green + ") from t=" + this.getStart() + "to t=" + this.getStop();
+  }
+
+  /**
+   * Get the event type.
+   *
+   * @return event name, a String
+   */
+  @Override
+  public String getEvent() {
+    return null;
+  }
+
+  /**
+   * Sets the given shape's new values based on the event that occurred.
+   *
+   * @param shape shape to be transformed
+   */
+  @Override
+  public void setValues(Shape shape) {
+
   }
 }

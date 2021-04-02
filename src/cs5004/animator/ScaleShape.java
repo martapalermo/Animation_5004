@@ -20,4 +20,24 @@ public class ScaleShape extends AbstractEvent {
         + originalHeight + "to Width: " + this.width + ", Height: " + this.height + "from t="
         + this.getStart() + "to t=" + this.getStop();
   }
+
+  /**
+   * Get the event type.
+   *
+   * @return event name, a String
+   */
+  @Override
+  public String getEvent() {
+    return null;
+  }
+
+  /**
+   * Sets the given shape's new values based on the event that occurred.
+   *
+   * @param shape shape to be transformed
+   */
+  @Override
+  public void setValues(Shape shape) {
+
+  }
 }

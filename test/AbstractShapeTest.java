@@ -19,9 +19,16 @@ public class AbstractShapeTest {
   @Before
   public void setUp() {
     this.oval = new Oval(0,0,5,10,4,
-        8, 0, 128,0); // navy blue oval
+        8, 0, 0,128); // navy blue oval
     this.rectangle = new Rectangle(4,3,1,25,5,5,
-        255,71,99); // tomato red rectangle
+        255,99,71); // tomato red rectangle
+  }
+
+  @Test
+  public void testToStringRectangle() {
+    assertEquals("Name: " + "\n" + "Type: rectangle\n"
+        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
+        + "Appears at t=1\n" + "Disappears at t=25\n", rectangle.toString());
   }
 
   @Test
@@ -126,6 +133,116 @@ public class AbstractShapeTest {
   @Test(expected = IllegalArgumentException.class)
   public void testSetNullName() throws IllegalArgumentException {
     oval.setName(null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorGreaterThanBlue() throws IllegalArgumentException {
+    rectangle.setColor(47, 92, 670);
+    oval.setColor(56, 0, 278);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorNegativeBlue() throws IllegalArgumentException {
+    rectangle.setColor(198, 200, -255);
+    oval.setColor(9, 17, -150);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorGreaterThanGreen() throws IllegalArgumentException {
+    rectangle.setColor(0, 258, 110);
+    oval.setColor(220, 500, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorNegativeGreen() throws IllegalArgumentException {
+    rectangle.setColor(190, -50, 255);
+    oval.setColor(55, -255, 0);
+  }
+
+  // value greater than 255
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorGreaterThanRed() throws IllegalArgumentException {
+    rectangle.setColor(300, 158, 117);
+    oval.setColor(256, 0, 0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetColorNegativeRed() throws IllegalArgumentException {
+    rectangle.setColor(-153, 0, 255);
+    oval.setColor(-25, 120, 89);
+  }
+
+  @Test
+  public void testSetColor() {
+    assertEquals("(255.0, 99.0, 71.0)", rectangle.getColor());
+    assertEquals("(0.0, 0.0, 128.0)", oval.getColor());
+
+    rectangle.setColor(255,255,0); // yellow
+    oval.setColor(255,140,105); // salmon
+    assertEquals("(255.0, 255.0, 0.0)", rectangle.getColor());
+    assertEquals("(255.0, 140.0, 105.0)", oval.getColor());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetZeroHeight() throws IllegalArgumentException {
+    rectangle.setHeight(0);
+    oval.setHeight(0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetNegativeHeight() throws IllegalArgumentException {
+    rectangle.setHeight(-15);
+    oval.setHeight(-6);
+  }
+
+  @Test
+  public void testSetHeight() {
+    assertEquals(5, rectangle.getHeight(), EPSILON);
+    assertEquals(8, oval.getHeight(), EPSILON);
+    rectangle.setHeight(9);
+    oval.setHeight(22);
+    assertEquals(9, rectangle.getHeight(), EPSILON);
+    assertEquals(22, oval.getHeight(), EPSILON);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetZeroWidth() throws IllegalArgumentException {
+    rectangle.setWidth(0);
+    oval.setWidth(0);
+  }
+
+  @Test(expected = IllegalArgumentException.class) 
+  public void testSetNegativeWidth() throws IllegalArgumentException {
+    rectangle.setWidth(-1);
+    oval.setWidth(-10);
+  }
+
+  @Test
+  public void testSetWidth() {
+    assertEquals(5, rectangle.getWidth(), EPSILON);
+    assertEquals(4, oval.getWidth(), EPSILON);
+    rectangle.setWidth(7);
+    oval.setWidth(5);
+    assertEquals(7, rectangle.getWidth(), EPSILON);
+    assertEquals(5, oval.getWidth(), EPSILON);
+  }
+
+  @Test
+  public void testSetPositionRectangle() {
+    assertEquals(4, rectangle.getX(), EPSILON);
+    assertEquals(3, rectangle.getY(), EPSILON);
+    rectangle.setPos(1,6);
+    assertEquals(1, rectangle.getX(), EPSILON);
+    assertEquals(6, rectangle.getY(), EPSILON);
+  }
+
+  @Test
+  public void testSetPositionOval() {
+    assertEquals(0, oval.getX(), EPSILON);
+    assertEquals(0, oval.getY(), EPSILON);
+    oval.setPos(7,10);
+    assertEquals(7, oval.getX(), EPSILON);
+    assertEquals(10, oval.getY(), EPSILON);
   }
 
 }

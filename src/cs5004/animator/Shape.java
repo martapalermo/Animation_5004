@@ -9,6 +9,7 @@ public interface Shape extends ReadonlyShape {
    * Set the shape's position.
    * @param x x coordinate, a double
    * @param y y coordinate, a double
+   *          potentially throwIllegalArgument if pos is outside of the screen?
    */
   void setPos(double x, double y);
 
@@ -34,7 +35,7 @@ public interface Shape extends ReadonlyShape {
    * @throws IllegalArgumentException if red < 0 || red > 255 || blue < 0 || blue > 255
    * || green < 0 || green > 255
    */
-  void setColor(double red, double blue, double green) throws IllegalArgumentException;
+  void setColor(double red, double green, double blue) throws IllegalArgumentException;
 
   /**
    * Set the shape's name.
