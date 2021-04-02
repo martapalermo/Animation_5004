@@ -16,7 +16,7 @@ class Move extends AbstractEvent {
 
   @Override
   public String toString() {
-    return "Shape " + this.getShapeName() + "moves from (" + originalX + "," + originalY + "to ("
+    return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY + "to ("
         + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop() + "\n";
   }
 

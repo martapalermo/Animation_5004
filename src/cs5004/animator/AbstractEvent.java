@@ -11,14 +11,17 @@ abstract class AbstractEvent implements Event {
     this.stop = stop;
   }
 
+  @Override
   public int getStart() {
     return this.start;
   }
 
+  @Override
   public int getStop() {
     return this.stop;
   }
 
+  @Override
   public String getShapeName() {
     return this.shapeName;
   }

@@ -10,11 +10,11 @@ public interface Animator extends ReadonlyAnimator {
   /**
    * Add a shape to the list.
    * @param shape the {@link Shape} to be added to the list
-   * @param identifier a unique, non-empty, non-null name for the shape within the list, a String
-   * @throws IllegalArgumentException if the identifier is empty, null, or already exists for a
+   * @param name a unique, non-empty, non-null name for the shape within the list, a String
+   * @throws IllegalArgumentException if the name is empty, null, or already exists for a
    * shape in the list, or if the shape is null
    */
-  void addShape(Shape shape, String identifier) throws IllegalArgumentException;
+  void addShape(Shape shape, String name) throws IllegalArgumentException;
 
   /**
    * Remove a shape from the list.
@@ -28,13 +28,15 @@ public interface Animator extends ReadonlyAnimator {
    * @param name the name of the {@link Shape} to be moved, a String
    * @param x new x coordinate, a double
    * @param y new y coordinate, a double
+   * @param originalX old x coordinate, a double
+   * @param originalY old y coordiante, a double
    * @param start move start time, an int
    * @param stop move stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    * appear/disappear window, if the stop time is less than or equal to the start time, or if the
    * shape is already moving in this window, or if no shape if the list has the given name
    */
-  void move(String name, double x, double y, int start, int stop) throws IllegalArgumentException;
+  void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException;
 
   // NEED TO THROW RED, BLUE, GREEN EXCEPTIONS HERE AS WELL AS SHAPE CLASS???
   // try/catch blocks for these errors

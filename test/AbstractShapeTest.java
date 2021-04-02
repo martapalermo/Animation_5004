@@ -113,11 +113,11 @@ public class AbstractShapeTest {
     assertEquals(3, rectangle.getY(), EPSILON);
   }
 
-  @Test
-  public void testGetColor() {
-    assertEquals("(0.0, 0.0, 128.0)", oval.getColor());
-    assertEquals("(255.0, 99.0, 71.0)", rectangle.getColor());
-  }
+//  @Test
+//  public void testGetColor() {
+//    assertEquals("(0.0, 0.0, 128.0)", oval.getColor());
+//    assertEquals("(255.0, 99.0, 71.0)", rectangle.getColor());
+//  }
 
   @Test
   public void testGetRed() {
@@ -195,16 +195,16 @@ public class AbstractShapeTest {
     oval.setColor(-25, 120, 89);
   }
 
-  @Test
-  public void testSetColor() {
-    assertEquals("(255.0, 99.0, 71.0)", rectangle.getColor());
-    assertEquals("(0.0, 0.0, 128.0)", oval.getColor());
-
-    rectangle.setColor(255,255,0); // yellow
-    oval.setColor(255,140,105); // salmon
-    assertEquals("(255.0, 255.0, 0.0)", rectangle.getColor());
-    assertEquals("(255.0, 140.0, 105.0)", oval.getColor());
-  }
+//  @Test
+//  public void testSetColor() {
+//    assertEquals("(255.0, 99.0, 71.0)", rectangle.getColor());
+//    assertEquals("(0.0, 0.0, 128.0)", oval.getColor());
+//
+//    rectangle.setColor(255,255,0); // yellow
+//    oval.setColor(255,140,105); // salmon
+//    assertEquals("(255.0, 255.0, 0.0)", rectangle.getColor());
+//    assertEquals("(255.0, 140.0, 105.0)", oval.getColor());
+//  }
 
   @Test(expected = IllegalArgumentException.class)
   public void testSetZeroHeight() throws IllegalArgumentException {

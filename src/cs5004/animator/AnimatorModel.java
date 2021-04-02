@@ -16,13 +16,13 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public void addShape(Shape shape, String identifier) throws IllegalArgumentException {
-    if (identifier == null) {
-      throw new IllegalArgumentException("Identifier cannot be null.");
+  public void addShape(Shape shape, String name) throws IllegalArgumentException {
+    if (name == null) {
+      throw new IllegalArgumentException("Name cannot be null.");
     }
 
-    if (identifier.isEmpty()) {
-      throw new IllegalArgumentException("Identifier cannot be empty.");
+    if (name.isEmpty()) {
+      throw new IllegalArgumentException("Name cannot be empty.");
     }
 
     if (shape == null) {
@@ -30,15 +30,15 @@ public class AnimatorModel implements Animator {
     }
 
     for (Shape s : this.shapes) {
-      if (s.getName().equalsIgnoreCase(identifier)) {
+      if (s.getName().equalsIgnoreCase(name)) {
         throw new IllegalArgumentException("A shape in this list already has that name.");
       }
     }
 
-    shape.setName(identifier);
+    shape.setName(name);
     this.shapes.add(shape);
     this.shapes.sort(Comparator.comparingInt(ReadonlyShape::getAppearTime));
-    this.events.put(identifier, new ArrayList<>());
+    this.events.put(name, new ArrayList<>());
   }
 
   @Override
@@ -49,7 +49,7 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public void move(String name, double x, double y, int start, int stop) throws IllegalArgumentException {
+  public void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException {
 //    for (Shape shape : this.shapes) {
 //      if (shape.getName().equalsIgnoreCase(name)) {
 //        double oldX = shape.getX();
@@ -76,30 +76,46 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
-        Event move = new Move(name, start, stop, x, y, shape.getX(), shape.getY());
+        Event move = new Move(name, start, stop, x, y, originalX, originalY);
 
         this.events.get(name).add(move);
-        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
+        return;
       }
     }
+    throw new IllegalArgumentException("No shape has this name.");
   }
 
   @Override
   public void changeColor(String name, double red, double blue, double green, int start, int stop)
       throws IllegalArgumentException {
+    if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {
+      throw new IllegalArgumentException("Invalid color.");
+    }
+
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        double oldRed = shape.getRed();
-        double oldBlue = shape.getBlue();
-        double oldGreen = shape.getGreen();
+        if (stop <= start) {
+          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+        }
 
-        shape.setColor(red, blue, green);
-        /*this.events.add(String.format("Shape %s changes color from (%f,%f,%f) to (%f,%f,%f) "
-                + "from t=%d to t=%d", name, oldRed, oldBlue, oldGreen, red, blue, green,
-                start, stop)); */
+        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+        }
+
+        // Check to see if shape is already moving in this window
+        if (this.events.containsKey(name) && this.isTransforming(name, "change color",
+                start, stop)) {
+          throw new IllegalArgumentException("This shape is already changing color.");
+        }
+
+        Event changeColor = new ChangeColor(name, start, stop, red, blue, green, shape.getRed(),
+                shape.getBlue(), shape.getGreen());
+
+        this.events.get(name).add(changeColor);
+        return;
       }
     }
-    throw new IllegalArgumentException("No shape in this list has this name.");
+    throw new IllegalArgumentException("No shape has this name.");
   }
 
   // Scale will probably end up being one method but slightly confused how it's going to be called
@@ -112,17 +128,26 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        double oldWidth = shape.getWidth();
+        if (stop <= start) {
+          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+        }
 
-        shape.setWidth(width);
-        // Need to add in handling to determine what type of Shape it is (Rectangle has width/height
-        // and Oval has x radius/y radius)
-        /*this.events.add(String.format("Shape %s changes scales from Width: %f, Height: %f to "
-                + "Width: %f, Height: %f from t=%d to t=%d", shape, oldWidth, shape.getHeight(),
-                width, shape.getHeight(), start, stop)); */
+        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+        }
+
+        // Check to see if shape is already moving in this window
+        if (this.events.containsKey(name) && this.isTransforming(name, "scale", start, stop)) {
+          throw new IllegalArgumentException("This shape is already scaling.");
+        }
+
+        Event scale = new ScaleWidth(name, start, stop, width, shape.getWidth(), shape.getHeight());
+
+        this.events.get(name).add(scale);
+        return;
       }
     }
-    throw new IllegalArgumentException("No shape in this list has this name.");
+    throw new IllegalArgumentException("No shape has this name.");
   }
 
   @Override
@@ -144,7 +169,7 @@ public class AnimatorModel implements Animator {
       if (shape.getAppearTime() >= tick && shape.getDisappearTime() < tick) {
         Shape copy = shape.copy();
         if (this.events.containsKey(shape.getName())) {
-          transformShape(copy, tick);
+          this.transformShape(copy, tick);
         }
         currentShapes.add(copy);
       }
@@ -157,8 +182,8 @@ public class AnimatorModel implements Animator {
     return "Shapes:\n" + this.shapeInformation() + this.eventInformation();
   }
 
-  private boolean isTransforming(String shapeName, String event, int start, int stop) {
-    List<Event> transformations = this.events.get(shapeName);
+  private boolean isTransforming(String name, String event, int start, int stop) {
+    List<Event> transformations = this.events.get(name);
 
     // Test timing
     for (Event transformation : transformations) {
@@ -174,6 +199,12 @@ public class AnimatorModel implements Animator {
       if (event.getStart() >= tick && event.getStop() < tick) {
         event.setValues(shape);
       }
+
+      // Tick is outside start/stop time of the event but no other event of the same kind has
+      // happened
+      else if (tick > event.getStop()) {
+        event.setValues(shape);
+      }
     }
   }
 
@@ -181,7 +212,7 @@ public class AnimatorModel implements Animator {
     String information = "";
 
     for (Shape shape : this.shapes) {
-      information += shape.toString();
+      information += shape.toString() + "\n";
     }
     return information;
   }

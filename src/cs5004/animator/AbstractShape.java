@@ -11,9 +11,8 @@ public abstract class AbstractShape implements Shape {
   protected int disappearTime;
   protected double width;
   protected double height;
-  protected double red;
-  protected double blue;
-  protected double green;
+  protected Color colorValues;
+
 
   public AbstractShape(double x, double y, int appearTime, int disappearTime, double width,
                        double height, double red, double blue, double green)
@@ -45,17 +44,13 @@ public abstract class AbstractShape implements Shape {
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");
     }
-    this.red = red;
-
     if (blue < 0 || blue > 255) {
       throw new IllegalArgumentException("Invalid value for blue: must be between 0 and 255");
     }
-    this.blue = blue;
-
     if (green < 0 || green > 255) {
       throw new IllegalArgumentException("Invalid value for green: must be between 0 and 255");
     }
-    this.green = green;
+    this.colorValues = new Color(red,blue,green);
   }
 
   @Override
@@ -66,12 +61,12 @@ public abstract class AbstractShape implements Shape {
 
   @Override
   public double getX() {
-    return this.reference.getX();
+    return this.reference.x;
   }
 
   @Override
   public double getY() {
-    return this.reference.getY();
+    return this.reference.y;
   }
 
   @Override
@@ -115,40 +110,40 @@ public abstract class AbstractShape implements Shape {
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");
     }
-    this.red = red;
+    this.colorValues.setRed(red);
 
     if (blue < 0 || blue > 255) {
       throw new IllegalArgumentException("Invalid value for blue: must be between 0 and 255");
     }
-    this.blue = blue;
+    this.colorValues.setBlue(blue);
 
     if (green < 0 || green > 255) {
       throw new IllegalArgumentException("Invalid value for green: must be between 0 and 255");
     }
-    this.green = green;
+    this.colorValues.setGreen(green);
   }
 
   // TODO: should we add a getColor instead of individual getRed/getGreen/getBlue?
 
-  @Override
-  public String getColor() {
-    return "(" + this.red + ", " + this.green + ", " + this.blue + ")";
-  }
+//  @Override
+//  public String getColor() {
+//    return "(" + this.red + ", " + this.green + ", " + this.blue + ")";
+//  }
 
 
   @Override
   public double getRed() {
-    return this.red;
+    return this.colorValues.red;
   }
 
   @Override
   public double getBlue() {
-    return this.blue;
+    return this.colorValues.blue;
   }
 
   @Override
   public double getGreen() {
-    return this.green;
+    return this.colorValues.green;
   }
 
   @Override

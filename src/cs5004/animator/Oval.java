@@ -23,6 +23,6 @@ public class Oval extends AbstractShape {
   @Override
   public Shape copy() {
     return new Oval(this.getX(), this.getY(), this.appearTime, this.disappearTime, this.width,
-            this.height, this.red, this.blue, this.green);
+            this.height, this.getRed(), this.getBlue(), this.getGreen());
   }
 }
