@@ -37,7 +37,7 @@ public class AnimatorModel implements Animator {
 
     shape.setName(name);
     this.shapes.add(shape);
-    this.shapes.sort(Comparator.comparingInt(ReadonlyShape::getAppearTime));
+    this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
     this.events.put(name, new ArrayList<>());
   }
 
