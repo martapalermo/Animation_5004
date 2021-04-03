@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>cs5004.animator.model</OriginalElement>
+  <nodes>
+    <node x="1141.302679573513" y="0.0">cs5004.animator.model.Shape</node>
+    <node x="180.0" y="65.5">cs5004.animator.model.Color</node>
+    <node x="748.4631383277217" y="98.5">cs5004.animator.model.Time</node>
+    <node x="1535.5852974186305" y="983.0">cs5004.animator.model.AbstractEvent</node>
+    <node x="1304.802679573513" y="1208.0">cs5004.animator.model.ChangeColor</node>
+    <node x="337.6992494388328" y="1027.5">cs5004.animator.model.Oval</node>
+    <node x="1513.802679573513" y="1230.0">cs5004.animator.model.Move</node>
+    <node x="389.0" y="98.5">cs5004.animator.model.Dimension</node>
+    <node x="0.0" y="98.5">cs5004.animator.model.Point</node>
+    <node x="507.6992494388328" y="1027.5">cs5004.animator.model.Rectangle</node>
+    <node x="1722.802679573513" y="1230.0">cs5004.animator.model.Scale</node>
+    <node x="913.2386363636364" y="659.5">cs5004.animator.model.ReadonlyAnimator</node>
+    <node x="710.413790684624" y="994.5">cs5004.animator.model.Animator</node>
+    <node x="1872.5767746913582" y="626.5">cs5004.animator.model.Event</node>
+    <node x="291.77974186307506" y="472.0">cs5004.animator.model.AbstractShape</node>
+    <node x="1206.4886363636363" y="1509.0">cs5004.animator.model.AnimatorModel</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="cs5004.animator.model.ChangeColor" target="cs5004.animator.model.Shape">
+      <point x="-63.0" y="-115.5" />
+      <point x="1336.302679573513" y="1188.0" />
+      <point x="1359.6226851851852" y="1188.0" />
+      <point x="1359.6226851851852" y="452.0" />
+      <point x="1334.9390432098767" y="452.0" />
+      <point x="51.63636363636374" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.Move" target="cs5004.animator.model.Shape">
+      <point x="-63.0" y="-93.5" />
+      <point x="1545.302679573513" y="1168.0" />
+      <point x="1525.0852974186305" y="1168.0" />
+      <point x="1525.0852974186305" y="442.0" />
+      <point x="1360.7572250280584" y="442.0" />
+      <point x="77.4545454545455" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.Oval" target="cs5004.animator.model.Shape">
+      <point x="50.0" y="-38.0" />
+      <point x="462.6992494388328" y="953.0" />
+      <point x="733.2797418630751" y="953.0" />
+      <point x="733.2797418630751" y="422.0" />
+      <point x="1180.0299523007857" y="422.0" />
+      <point x="-103.27272727272725" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractShape" target="cs5004.animator.model.Shape">
+      <point x="126.22222222222229" y="-225.5" />
+      <point x="560.0019640852973" y="412.0" />
+      <point x="1154.211770482604" y="412.0" />
+      <point x="-129.090909090909" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractEvent" target="cs5004.animator.model.Event">
+      <point x="0.0" y="-82.5" />
+      <point x="1633.5852974186305" y="963.0" />
+      <point x="1905.243441358025" y="963.0" />
+      <point x="-65.33333333333326" y="71.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractShape" target="cs5004.animator.model.Point">
+      <point x="-126.22222222222217" y="-225.5" />
+      <point x="307.5575196408529" y="452.0" />
+      <point x="40.0" y="452.0" />
+      <point x="-40.0" y="82.5" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.ChangeColor">
+      <point x="-34.375" y="-159.5" />
+      <point x="1447.1136363636363" y="1489.0" />
+      <point x="1399.302679573513" y="1489.0" />
+      <point x="0.0" y="115.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Scale" target="cs5004.animator.model.Shape">
+      <point x="63.0" y="-93.5" />
+      <point x="1880.302679573513" y="1168.0" />
+      <point x="1801.0852974186305" y="1168.0" />
+      <point x="1801.0852974186305" y="432.0" />
+      <point x="1386.5754068462402" y="432.0" />
+      <point x="103.27272727272725" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.Rectangle" target="cs5004.animator.model.AbstractShape">
+      <point x="0.0" y="-38.0" />
+      <point x="582.6992494388328" y="943.0" />
+      <point x="540.2797418630751" y="943.0" />
+      <point x="106.5" y="225.5" />
+    </edge>
+    <edge source="cs5004.animator.model.ChangeColor" target="cs5004.animator.model.AbstractEvent">
+      <point x="63.0" y="-115.5" />
+      <point x="1462.302679573513" y="1188.0" />
+      <point x="1584.5852974186305" y="1188.0" />
+      <point x="-49.0" y="82.5" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.Shape">
+      <point x="-103.125" y="-159.5" />
+      <point x="1378.3636363636363" y="1479.0" />
+      <point x="1294.302679573513" y="1479.0" />
+      <point x="1294.302679573513" y="452.0" />
+      <point x="1309.1208613916947" y="452.0" />
+      <point x="25.818181818181756" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.Oval" target="cs5004.animator.model.AbstractShape">
+      <point x="0.0" y="-38.0" />
+      <point x="412.6992494388328" y="963.0" />
+      <point x="398.27974186307506" y="963.0" />
+      <point x="-35.5" y="225.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Rectangle" target="cs5004.animator.model.Shape">
+      <point x="50.0" y="-38.0" />
+      <point x="632.6992494388328" y="963.0" />
+      <point x="790.9645412457911" y="963.0" />
+      <point x="790.9645412457911" y="432.0" />
+      <point x="1205.8481341189674" y="432.0" />
+      <point x="-77.4545454545455" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.ReadonlyAnimator" target="cs5004.animator.model.Shape">
+      <point x="0.0" y="-38.0" />
+      <point x="1048.2386363636365" y="452.0" />
+      <point x="1257.4844977553312" y="452.0" />
+      <point x="-25.818181818181756" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.Event">
+      <point x="240.62500000000003" y="-159.5" />
+      <point x="1722.1136363636365" y="1489.0" />
+      <point x="1981.5767746913582" y="1489.0" />
+      <point x="1981.5767746913582" y="963.0" />
+      <point x="2035.9101080246915" y="963.0" />
+      <point x="65.33333333333326" y="71.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.Animator">
+      <point x="-240.625" y="-159.5" />
+      <point x="1240.8636363636363" y="1489.0" />
+      <point x="985.413790684624" y="1489.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="cs5004.animator.model.Scale" target="cs5004.animator.model.AbstractEvent">
+      <point x="0.0" y="-93.5" />
+      <point x="1817.302679573513" y="1178.0" />
+      <point x="1715.2519640852975" y="1178.0" />
+      <point x="81.66666666666674" y="82.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Animator" target="cs5004.animator.model.ReadonlyAnimator">
+      <point x="137.5" y="-71.0" />
+      <point x="1122.913790684624" y="963.0" />
+      <point x="1048.2386363636365" y="963.0" />
+      <point x="0.0" y="38.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractShape" target="cs5004.animator.model.Dimension">
+      <point x="0.0" y="-225.5" />
+      <point x="433.77974186307506" y="452.0" />
+      <point x="437.25" y="452.0" />
+      <point x="-48.25" y="82.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Event" target="cs5004.animator.model.Shape">
+      <point x="-2.2737367544323206E-13" y="-71.0" />
+      <point x="1970.576774691358" y="422.0" />
+      <point x="1412.393588664422" y="422.0" />
+      <point x="129.090909090909" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.Scale">
+      <point x="103.125" y="-159.5" />
+      <point x="1584.6136363636365" y="1469.0" />
+      <point x="1817.302679573513" y="1469.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractShape" target="cs5004.animator.model.Color">
+      <point x="-63.111111111111086" y="-225.5" />
+      <point x="370.668630751964" y="432.0" />
+      <point x="227.25" y="432.0" />
+      <point x="-47.25" y="115.5" />
+    </edge>
+    <edge source="cs5004.animator.model.AnimatorModel" target="cs5004.animator.model.Move">
+      <point x="34.375" y="-159.5" />
+      <point x="1515.8636363636365" y="1459.0" />
+      <point x="1608.302679573513" y="1459.0" />
+      <point x="0.0" y="93.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Animator" target="cs5004.animator.model.Shape">
+      <point x="-137.5" y="-71.0" />
+      <point x="847.913790684624" y="963.0" />
+      <point x="902.7386363636364" y="963.0" />
+      <point x="902.7386363636364" y="442.0" />
+      <point x="1231.6663159371494" y="442.0" />
+      <point x="-51.63636363636351" y="181.0" />
+    </edge>
+    <edge source="cs5004.animator.model.AbstractShape" target="cs5004.animator.model.Time">
+      <point x="63.111111111111086" y="-225.5" />
+      <point x="496.89085297418615" y="392.0" />
+      <point x="802.7131383277217" y="392.0" />
+      <point x="-54.25" y="82.5" />
+    </edge>
+    <edge source="cs5004.animator.model.Move" target="cs5004.animator.model.AbstractEvent">
+      <point x="0.0" y="-93.5" />
+      <point x="1608.302679573513" y="1188.0" />
+      <point x="1617.2519640852975" y="1188.0" />
+      <point x="-16.333333333333258" y="82.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="1177.0" y="1271.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
