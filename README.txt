@@ -3,7 +3,8 @@ Animator Model README
 CS5004, Spring 2021
 
 - Interfaces
-   - Animator: Methods such as adding/removing shapes and transforming shapes.
+   - ReadonlyAnimator: Getter methods for the model
+      - Animator: Extends ReadonlyAnimator; Methods such as adding/removing shapes and transforming shapes.
    - Shape: Methods to create shapes and get/set the data.
    - Event: Methods to create different events, such as Move, Change Color, and Scale, and store the data of these events.
 
