@@ -1,5 +1,8 @@
 package cs5004.animator;
 
+/**
+ * Represents an event or transformation for a shape.
+ */
 public interface Event {
 
 
