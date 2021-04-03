@@ -56,16 +56,16 @@ public interface ReadonlyShape {
   double getRed();
 
   /**
-   * Get the value of the shape's blue pigment.
-   * @return blue pigment, a double
-   */
-  double getBlue();
-
-  /**
    * Get the value of the shape's green pigment.
    * @return green pigment, a double
    */
   double getGreen();
+
+  /**
+   * Get the value of the shape's blue pigment.
+   * @return blue pigment, a double
+   */
+  double getBlue();
 
   /**
    * Get the shape's name.
