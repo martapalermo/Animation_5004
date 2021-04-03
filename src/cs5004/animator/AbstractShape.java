@@ -30,9 +30,9 @@ public abstract class AbstractShape implements Shape {
           + "after the appearance time.");
     }
     this.appearance = new Time(appearTime, disappearTime);
-    // MARTA NOTE: I probably should've combined the code? pls check!
-    //this.disappearTime = disappearTime;
+    // this.disappearTime = disappearTime;
 
+    // could these two be refactored? <if width <=0 || height <= 0 { throw argument....
     if (width <= 0) {
       throw new IllegalArgumentException("Width must be greater than 0.");
     }

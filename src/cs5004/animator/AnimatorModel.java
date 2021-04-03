@@ -151,6 +151,7 @@ public class AnimatorModel implements Animator {
     throw new IllegalArgumentException("No shape has this name.");
   }
 
+  // have it part of the move ?
   @Override
   public List<Shape> getCurrentShapes(int tick) {
 
@@ -185,6 +186,7 @@ public class AnimatorModel implements Animator {
     return false;
   }
 
+  // in between method with time elapsed
   private void transformShape(Shape shape, int tick) {
     for (Event event : this.events.get(shape.getName())) {
       if (event.getStart() >= tick && event.getStop() < tick) {
