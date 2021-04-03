@@ -206,6 +206,7 @@ public class AbstractShapeTest {
 //    assertEquals("(255.0, 140.0, 105.0)", oval.getColor());
 //  }
 
+
   @Test(expected = IllegalArgumentException.class)
   public void testSetDimensionZeroHeight() throws IllegalArgumentException {
     rectangle.setDimension(4,0);
