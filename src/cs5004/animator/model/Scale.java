@@ -1,4 +1,4 @@
-package cs5004.animator;
+package cs5004.animator.model;
 
 /**
  * This is the Scale class. It represents the scaling event/transformation that a shape can undergo.

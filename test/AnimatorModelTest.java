@@ -1,11 +1,11 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import cs5004.animator.Animator;
-import cs5004.animator.AnimatorModel;
-import cs5004.animator.Oval;
-import cs5004.animator.Rectangle;
-import cs5004.animator.Shape;
+import cs5004.animator.model.Animator;
+import cs5004.animator.model.AnimatorModel;
+import cs5004.animator.model.Oval;
+import cs5004.animator.model.Rectangle;
+import cs5004.animator.model.Shape;
 
 import static org.junit.Assert.assertEquals;
 

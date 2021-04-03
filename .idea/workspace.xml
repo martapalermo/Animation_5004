@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="Updates">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AnimatorModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Scale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/ScaleWidth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Shape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Animator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" afterDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="Deleted ReadonlyShape">
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/AbstractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/AbstractShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Animator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/ChangeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Dimension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Oval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ReadonlyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/ReadonlyAnimator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ReadonlyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/ReadonlyShape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Scale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AbstractShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AbstractShapeTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,6 +33,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/new_branchMP" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -251,7 +257,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617471997899</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Deleted ReadonlyShape">
+      <created>1617480004543</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1617480004543</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Deleted ReadonlyShape">
+      <created>1617480019366</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1617480019366</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,6 +300,7 @@
     <MESSAGE value="refactored Time and Dimension" />
     <MESSAGE value="format edits" />
     <MESSAGE value="edits to abstractshapetest" />
-    <option name="LAST_COMMIT_MESSAGE" value="edits to abstractshapetest" />
+    <MESSAGE value="Deleted ReadonlyShape" />
+    <option name="LAST_COMMIT_MESSAGE" value="Deleted ReadonlyShape" />
   </component>
 </project>

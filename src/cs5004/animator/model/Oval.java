@@ -1,4 +1,4 @@
-package cs5004.animator;
+package cs5004.animator.model;
 
 /**
  * This is the Oval class. It represents an oval shape. This class extends AbstractShape.

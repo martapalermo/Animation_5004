@@ -1,4 +1,4 @@
-package cs5004.animator;
+package cs5004.animator.model;
 
 /**
  * This class represents the colors of the shapes in the animation.

@@ -1,4 +1,4 @@
-package cs5004.animator;
+package cs5004.animator.model;
 
 /**
  * This is the point class. It represents a space on a plan where the shapes are located.

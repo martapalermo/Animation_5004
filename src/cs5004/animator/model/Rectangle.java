@@ -1,4 +1,4 @@
-package cs5004.animator;
+package cs5004.animator.model;
 
 /**
  * This is the Rectangle class. It represents an rectangle shape. The fields and attributes are

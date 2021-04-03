@@ -1,6 +1,6 @@
-import cs5004.animator.Oval;
-import cs5004.animator.Rectangle;
-import cs5004.animator.Shape;
+import cs5004.animator.model.Oval;
+import cs5004.animator.model.Rectangle;
+import cs5004.animator.model.Shape;
 import org.junit.Before;
 import org.junit.Test;
 
