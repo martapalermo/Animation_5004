@@ -46,7 +46,7 @@ class ChangeColor extends AbstractEvent {
   public String toString() {
     return "Shape " + this.getShapeName() + " changes color from (" + originalRed + ","
         + originalBlue + "," + originalGreen + ") to (" + this.red + "," + this.blue + ","
-        + this.green + ") from t=" + this.getStart() + "to t=" + this.getStop();
+        + this.green + ") from t=" + this.getStart() + " to t=" + this.getStop();
   }
 
   /**
