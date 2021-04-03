@@ -3,7 +3,7 @@ package cs5004.animator.model;
 /**
  * Represents a Shape object.
  */
-public interface Shape extends ReadonlyShape {
+public interface Shape {
 
   /**
    * Set the shape's position.
