@@ -57,8 +57,8 @@ public interface Animator extends ReadonlyAnimator {
    * shape is already changing colors in this window, or if the red, blue, or green values are out
    * of range (0-255), or if no shape in the list has the given name
    */
-  void changeColor(String name, double red, double blue, double green, double originalRed, double
-          originalBlue, double originalGreen, int start, int stop) throws IllegalArgumentException;
+  void changeColor(String name, double red, double green, double blue, double originalRed, double
+          originalGreen, double originalBlue, int start, int stop) throws IllegalArgumentException;
 
   /**
    * Change the shape's scale.

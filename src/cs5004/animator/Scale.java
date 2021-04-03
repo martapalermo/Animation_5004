@@ -30,7 +30,7 @@ public class Scale extends AbstractEvent {
    */
   @Override
   public String getEvent() {
-    return null;
+    return "scale";
   }
 
   /**
@@ -40,6 +40,6 @@ public class Scale extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape) {
-
+    shape.setDimension(this.width, this.height);
   }
 }

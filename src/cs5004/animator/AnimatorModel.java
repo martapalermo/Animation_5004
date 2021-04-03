@@ -80,8 +80,8 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public void changeColor(String name, double red, double blue, double green, double originalRed,
-                          double originalBlue, double originalGreen, int start, int stop)
+  public void changeColor(String name, double red, double green, double blue, double originalRed,
+                          double originalGreen, double originalBlue, int start, int stop)
                           throws IllegalArgumentException {
 
     if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {
@@ -176,10 +176,9 @@ public class AnimatorModel implements Animator {
   private boolean isTransforming(String name, String event, int start, int stop) {
     List<Event> transformations = this.events.get(name);
 
-    // Test timing
     for (Event transformation : transformations) {
       if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start
-              || transformation.getStop() > stop)) {
+              && transformation.getStop() > stop)) {
         return true;
       }
     }
@@ -211,7 +210,6 @@ public class AnimatorModel implements Animator {
   }
 
   private String eventInformation() {
-    String information = "";
     List<Event> transformations = new ArrayList<>();
 
     // Create one list of all events from lists of individual shape events
@@ -220,10 +218,11 @@ public class AnimatorModel implements Animator {
     }
     transformations.sort(Comparator.comparingInt(Event::getStart));
 
-    // Create String representation of the events
-    for (Event event : transformations) {
-      information += event.toString();
+    //Create String representation of the events
+    String[] information = new String[transformations.size()];
+    for (int i = 0; i < information.length; i++) {
+      information[i] = transformations.get(i).toString();
     }
-    return information;
+    return String.join("\n", information);
   }
 }
