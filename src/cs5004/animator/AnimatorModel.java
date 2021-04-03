@@ -121,9 +121,10 @@ public class AnimatorModel implements Animator {
   // Scale will probably end up being one method but slightly confused how it's going to be called
   // (i.e., always passing in a width/height even if only one is changing?)
   @Override
-  public void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException {
-    if (width <= 0) {
-      throw new IllegalArgumentException("Width must be a non-zero positive number.");
+  public void scaleShape(String name, double width, double height, int start, int stop)
+      throws IllegalArgumentException {
+    if (width <= 0 || height <= 0) {
+      throw new IllegalArgumentException("Width/Height must be a non-zero positive number.");
     }
 
     for (Shape shape : this.shapes) {
@@ -133,15 +134,18 @@ public class AnimatorModel implements Animator {
         }
 
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+          throw new IllegalArgumentException("Start/stop time is out of the shape's "
+              + "appear window.");
         }
 
         // Check to see if shape is already moving in this window
-        if (this.events.containsKey(name) && this.isTransforming(name, "scale", start, stop)) {
+        if (this.events.containsKey(name)
+            && this.isTransforming(name, "scale", start, stop)) {
           throw new IllegalArgumentException("This shape is already scaling.");
         }
 
-        Event scale = new ScaleWidth(name, start, stop, width, shape.getWidth(), shape.getHeight());
+        Event scale = new Scale(name, start, stop, width, shape.getWidth(),
+            height, shape.getHeight());
 
         this.events.get(name).add(scale);
         return;
@@ -150,10 +154,11 @@ public class AnimatorModel implements Animator {
     throw new IllegalArgumentException("No shape has this name.");
   }
 
-  @Override
-  public void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException {
-    // Same as above but too lazy to implement rn lol
-  }
+  /*@Override
+  public void scaleHeight(String name, double height, int start, int stop)
+      throws IllegalArgumentException {
+
+  }*/
 
   @Override
   public List<Shape> getCurrentShapes(int tick) {

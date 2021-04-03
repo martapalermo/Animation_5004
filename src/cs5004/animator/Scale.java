@@ -1,16 +1,19 @@
 package cs5004.animator;
 
-public class ScaleWidth extends AbstractEvent {
+public class Scale extends AbstractEvent {
   private final double originalWidth;
+  private final double originalHeight;
   private final double height;
   private final double width;
 
 
-  public ScaleWidth(String shapeName, int start, int stop, double width, double originalWidth, double height) {
+  public Scale(String shapeName, int start, int stop, double width,
+               double originalWidth, double height, double originalHeight) {
     super(shapeName, start, stop);
     this.width = width;
     this.height = height;
     this.originalWidth = originalWidth;
+    this.originalHeight = originalHeight;
   }
 
   @Override

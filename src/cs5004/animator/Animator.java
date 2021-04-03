@@ -29,7 +29,7 @@ public interface Animator extends ReadonlyAnimator {
    * @param x new x coordinate, a double
    * @param y new y coordinate, a double
    * @param originalX old x coordinate, a double
-   * @param originalY old y coordiante, a double
+   * @param originalY old y coordinate, a double
    * @param start move start time, an int
    * @param stop move stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -55,7 +55,7 @@ public interface Animator extends ReadonlyAnimator {
    */
   void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException;
 
-  /**
+  /*/**
    * Change the shape's width.
    * @param name the name of the {@link Shape} to be scaled, a String
    * @param width new width, a double
@@ -65,9 +65,10 @@ public interface Animator extends ReadonlyAnimator {
    * appear/disappear window, or if the shape's width is already scaling in this window, or if
    * width <= 0, or if no shape in the list has the given name
    */
-  void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException;
+  /*
+  void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException;*/
 
-  /**
+  /*/**
    * Change the shape's height
    * @param name the name of the {@link Shape} to be scaled, a String
    * @param height new height, a double
@@ -77,6 +78,21 @@ public interface Animator extends ReadonlyAnimator {
    * appear/disappear window, or if the shape's height is already scaling in this window, or if
    * height <= 0, or if no shape in the list has the given name
    */
-  void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;
+  /*
+  void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;*/
 
+  /**
+   * Change the shape's scale.
+   *
+   * @param name name of the {@Link Shape} to be scaled, a String
+   * @param width new width, a double
+   * @param height new height, a double
+   * @param start scaling start time, an int
+   * @param stop scaling stop time, an int
+   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
+   * appear/disappear window, or if the shape's width and/or height is already scaling
+   * in this window, or if width and/or height <= 0, or if no shape in the list has the given name
+   */
+  void scaleShape(String name, double width, double height, int start, int stop)
+      throws IllegalArgumentException;
 }
