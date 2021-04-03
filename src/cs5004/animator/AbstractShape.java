@@ -8,11 +8,7 @@ public abstract class AbstractShape implements Shape {
   protected Point reference;
   protected String name = "";
   protected Time appearance;
-  // protected int appearTime;
-  // protected int disappearTime;
   protected Dimension dimension;
-  // protected double width;
-  // protected double height;
   protected Color colorValues;
 
 
@@ -34,7 +30,7 @@ public abstract class AbstractShape implements Shape {
           + "after the appearance time.");
     }
     this.appearance = new Time(appearTime, disappearTime);
-    // MARTA NOTE: I probably should've combined the code
+    // MARTA NOTE: I probably should've combined the code? pls check!
     //this.disappearTime = disappearTime;
 
     if (width <= 0) {
