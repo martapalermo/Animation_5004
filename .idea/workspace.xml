@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="meeting with roger comments included (not many)">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="adding java doc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/AbstractEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/AbstractShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ReadonlyShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/ReadonlyShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/ChangeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +122,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617154790338</updated>
       <workItem from="1617154794553" duration="4822000" />
-      <workItem from="1617217402480" duration="28637000" />
+      <workItem from="1617217402480" duration="29648000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -247,7 +243,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617473844653</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="adding java doc">
+      <created>1617477557816</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1617477557816</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,6 +280,7 @@
     <MESSAGE value="format edits" />
     <MESSAGE value="edits to abstractshapetest" />
     <MESSAGE value="meeting with roger comments included (not many)" />
-    <option name="LAST_COMMIT_MESSAGE" value="meeting with roger comments included (not many)" />
+    <MESSAGE value="adding java doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding java doc" />
   </component>
 </project>

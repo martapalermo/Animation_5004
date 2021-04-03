@@ -16,10 +16,10 @@ class Move extends AbstractEvent {
    * @param shapeName name of the shape, String
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
-   * @param x
-   * @param y
-   * @param originalX
-   * @param originalY
+   * @param x x value for destination coordinate, double
+   * @param y y value for destination coordinate, double
+   * @param originalX starting x value for shape, double
+   * @param originalY starting y value for shape, double
    */
   public Move(String shapeName, int start, int stop, double x, double y,
               double originalX, double originalY) {
@@ -30,17 +30,30 @@ class Move extends AbstractEvent {
     this.originalY = originalY;
   }
 
+  /**
+   * toString method outlining the move event.
+   * @return toString with original coordinates, new coordinates and the start and stop ticks for
+   *        the movement time
+   */
   @Override
   public String toString() {
     return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY + "to ("
         + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop() + "\n";
   }
 
+  /**
+   * Get the event type.
+   * @return event name, a String
+   */
   @Override
   public String getEvent() {
     return "move";
   }
 
+  /**
+   * Sets the given shape's new values based on the event that occurred.
+   * @param shape shape to be transformed
+   */
   @Override
   public void setValues(Shape shape) {
     shape.setPos(this.x, this.y);
