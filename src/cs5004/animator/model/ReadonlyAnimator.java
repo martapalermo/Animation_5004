@@ -3,6 +3,7 @@ package cs5004.animator.model;
 import java.util.List;
 
 public interface ReadonlyAnimator {
+
   /**
    * Returns a list of {@link Shape}s that appear on screen at the given tick.
    * @param tick current frame, an int
