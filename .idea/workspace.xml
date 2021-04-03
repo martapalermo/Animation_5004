@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="adding java doc">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="Updates">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/ChangeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AbstractShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Animator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/AnimatorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Scale.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/ScaleWidth.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Animator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/AnimatorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Scale.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +53,19 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.AbstractShapeTest">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.AnimatorModelTest">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -68,16 +84,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
       <option name="METHOD_NAME" value="testGetBlue" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AbstractShapeTest.testGetGreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="METHOD_NAME" value="testGetGreen" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -103,13 +109,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="JUnit.AbstractShapeTest" />
         <item itemvalue="JUnit.AbstractShapeTest.testToStringRectangle" />
         <item itemvalue="JUnit.AbstractShapeTest.testSetDimensionValidInput" />
         <item itemvalue="JUnit.AbstractShapeTest.testGetBlue" />
-        <item itemvalue="JUnit.AbstractShapeTest.testGetGreen" />
       </list>
     </recent_temporary>
   </component>
@@ -122,7 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617154790338</updated>
       <workItem from="1617154794553" duration="4822000" />
-      <workItem from="1617217402480" duration="29648000" />
+      <workItem from="1617217402480" duration="25761000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -236,21 +251,7 @@
       <option name="project" value="LOCAL" />
       <updated>1617471997899</updated>
     </task>
-    <task id="LOCAL-00017" summary="meeting with roger comments included (not many)">
-      <created>1617473844653</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1617473844653</updated>
-    </task>
-    <task id="LOCAL-00018" summary="adding java doc">
-      <created>1617477557816</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1617477557816</updated>
-    </task>
-    <option name="localTasksCounter" value="19" />
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -279,8 +280,6 @@
     <MESSAGE value="refactored Time and Dimension" />
     <MESSAGE value="format edits" />
     <MESSAGE value="edits to abstractshapetest" />
-    <MESSAGE value="meeting with roger comments included (not many)" />
-    <MESSAGE value="adding java doc" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding java doc" />
+    <option name="LAST_COMMIT_MESSAGE" value="edits to abstractshapetest" />
   </component>
 </project>
