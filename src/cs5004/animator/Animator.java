@@ -36,7 +36,8 @@ public interface Animator extends ReadonlyAnimator {
    * appear/disappear window, if the stop time is less than or equal to the start time, or if the
    * shape is already moving in this window, or if no shape if the list has the given name
    */
-  void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException;
+  void move(String name, double x, double y, int originalX, int originalY, int start, int stop)
+          throws IllegalArgumentException;
 
   // NEED TO THROW RED, BLUE, GREEN EXCEPTIONS HERE AS WELL AS SHAPE CLASS???
   // try/catch blocks for these errors
@@ -46,6 +47,9 @@ public interface Animator extends ReadonlyAnimator {
    * @param red new red value, a double
    * @param blue new blue value, a double
    * @param green new green value, a double
+   * @param originalRed original red value, a double
+   * @param originalBlue original blue value, a double
+   * @param originalGreen original green value, a double
    * @param start color change start time, an int
    * @param stop color stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -53,46 +57,23 @@ public interface Animator extends ReadonlyAnimator {
    * shape is already changing colors in this window, or if the red, blue, or green values are out
    * of range (0-255), or if no shape in the list has the given name
    */
-  void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException;
-
-  /*/**
-   * Change the shape's width.
-   * @param name the name of the {@link Shape} to be scaled, a String
-   * @param width new width, a double
-   * @param start scale start time, an int
-   * @param stop scale stop time, an int
-   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
-   * appear/disappear window, or if the shape's width is already scaling in this window, or if
-   * width <= 0, or if no shape in the list has the given name
-   */
-  /*
-  void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException;*/
-
-  /*/**
-   * Change the shape's height
-   * @param name the name of the {@link Shape} to be scaled, a String
-   * @param height new height, a double
-   * @param start scale start time, an int
-   * @param stop scale stop time, an int
-   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
-   * appear/disappear window, or if the shape's height is already scaling in this window, or if
-   * height <= 0, or if no shape in the list has the given name
-   */
-  /*
-  void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;*/
+  void changeColor(String name, double red, double blue, double green, double originalRed, double
+          originalBlue, double originalGreen, int start, int stop) throws IllegalArgumentException;
 
   /**
    * Change the shape's scale.
    *
-   * @param name name of the {@Link Shape} to be scaled, a String
+   * @param name name of the {@link Shape} to be scaled, a String
    * @param width new width, a double
    * @param height new height, a double
+   * @param originalHeight original height, a double
+   * @param originalWidth original width, a double
    * @param start scaling start time, an int
    * @param stop scaling stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    * appear/disappear window, or if the shape's width and/or height is already scaling
    * in this window, or if width and/or height <= 0, or if no shape in the list has the given name
    */
-  void scaleShape(String name, double width, double height, int start, int stop)
-      throws IllegalArgumentException;
+  void scaleShape(String name, double width, double height, double originalHeight, double
+          originalWidth, int start, int stop) throws IllegalArgumentException;
 }

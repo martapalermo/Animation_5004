@@ -49,18 +49,9 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException {
-//    for (Shape shape : this.shapes) {
-//      if (shape.getName().equalsIgnoreCase(name)) {
-//        double oldX = shape.getX();
-//        double oldY = shape.getY();
-//
-//        shape.setPos(x, y);
-//        this.events.add(String.format("Shape %s moves from (%f,%f) to (%f,%f) from t=%d to t=%d",
-//                name, oldX, oldY, x, y, start, stop));
-//      }
-//    }
-//    throw new IllegalArgumentException("No shape in this list has this name.");
+  public void move(String name, double x, double y, int originalX, int originalY, int start,
+                   int stop) throws IllegalArgumentException {
+
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
         if (stop <= start) {
@@ -68,17 +59,20 @@ public class AnimatorModel implements Animator {
         }
 
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+          throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
+                  + "window.");
         }
 
         // Check to see if shape is already moving in this window
-        if (this.events.containsKey(name) && this.isTransforming(name, "move", start, stop)) {
+        if (this.events.containsKey(name) && this.isTransforming(name, "move",
+                start, stop)) {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
         Event move = new Move(name, start, stop, x, y, originalX, originalY);
 
         this.events.get(name).add(move);
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
         return;
       }
     }
@@ -86,8 +80,10 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public void changeColor(String name, double red, double blue, double green, int start, int stop)
-      throws IllegalArgumentException {
+  public void changeColor(String name, double red, double blue, double green, double originalRed,
+                          double originalBlue, double originalGreen, int start, int stop)
+                          throws IllegalArgumentException {
+
     if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {
       throw new IllegalArgumentException("Invalid color.");
     }
@@ -99,10 +95,11 @@ public class AnimatorModel implements Animator {
         }
 
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+          throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
+                  + "window.");
         }
 
-        // Check to see if shape is already moving in this window
+        // Check to see if shape is already changing color in this window
         if (this.events.containsKey(name) && this.isTransforming(name, "change color",
                 start, stop)) {
           throw new IllegalArgumentException("This shape is already changing color.");
@@ -112,17 +109,17 @@ public class AnimatorModel implements Animator {
                 shape.getBlue(), shape.getGreen());
 
         this.events.get(name).add(changeColor);
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
         return;
       }
     }
     throw new IllegalArgumentException("No shape has this name.");
   }
 
-  // Scale will probably end up being one method but slightly confused how it's going to be called
-  // (i.e., always passing in a width/height even if only one is changing?)
   @Override
-  public void scaleShape(String name, double width, double height, int start, int stop)
-      throws IllegalArgumentException {
+  public void scaleShape(String name, double width, double height, double originalHeight, double
+          originalWidth, int start, int stop) throws IllegalArgumentException {
+
     if (width <= 0 || height <= 0) {
       throw new IllegalArgumentException("Width/Height must be a non-zero positive number.");
     }
@@ -138,36 +135,24 @@ public class AnimatorModel implements Animator {
               + "appear window.");
         }
 
-        // Check to see if shape is already moving in this window
+        // Check to see if shape is already scaling in this window
         if (this.events.containsKey(name)
             && this.isTransforming(name, "scale", start, stop)) {
           throw new IllegalArgumentException("This shape is already scaling.");
         }
 
-        Event scale = new Scale(name, start, stop, width, shape.getWidth(),
-            height, shape.getHeight());
+        Event scale = new Scale(name, start, stop, width, originalWidth, height, originalHeight);
 
         this.events.get(name).add(scale);
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
         return;
       }
     }
     throw new IllegalArgumentException("No shape has this name.");
   }
 
-  /*@Override
-  public void scaleHeight(String name, double height, int start, int stop)
-      throws IllegalArgumentException {
-
-  }*/
-
   @Override
   public List<Shape> getCurrentShapes(int tick) {
-    // Make new list so current one doesn't get mutated
-
-    // Add copy method to Shape class??
-//    Animator currentShapes = new AnimatorModel();
-//    this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));
-//    return currentShapes;
 
     List<Shape> currentShapes = new ArrayList<>();
     for (Shape shape : this.shapes) {
@@ -192,7 +177,8 @@ public class AnimatorModel implements Animator {
 
     // Test timing
     for (Event transformation : transformations) {
-      if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start || transformation.getStop() > stop)) {
+      if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start
+              || transformation.getStop() > stop)) {
         return true;
       }
     }
