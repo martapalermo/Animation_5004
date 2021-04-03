@@ -22,5 +22,4 @@ CS5004, Spring 2021
        - Scale: Extends AbstractEvent; Event to scale a shape's dimensions
       
 - Notes:
-  - AnimatorModel contains a List<Shape> to keep track of the shape's in the animation and a Hashmap<String, Event> to keep
-  track of all the events that happen to each individual shape.
+  - AnimatorModel contains a List<Shape> to keep track of the shape's in the animation and a Hashmap<String, Event> to keep track of all the events that happen to each individual shape.
