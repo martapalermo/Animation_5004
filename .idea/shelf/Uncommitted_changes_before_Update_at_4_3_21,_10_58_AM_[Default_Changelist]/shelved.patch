@@ -1,0 +1,254 @@
+Index: src/cs5004/animator/ScaleWidth.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cs5004.animator;\n\npublic class ScaleWidth extends AbstractEvent {\n  private final double originalWidth;\n  private final double height;\n  private final double width;\n\n\n  public ScaleWidth(String shapeName, int start, int stop, double width, double originalWidth, double height) {\n    super(shapeName, start, stop);\n    this.width = width;\n    this.height = height;\n    this.originalWidth = originalWidth;\n  }\n\n  @Override\n  public String toString() {\n    return \"Shape \" + this.getShapeName() + \" scales from Width: \" + originalWidth + \", Height: \"\n        + height + \"to Width: \" + this.width + \", Height: \" + this.height + \"from t=\"\n        + this.getStart() + \"to t=\" + this.getStop();\n  }\n\n  /**\n   * Get the event type.\n   *\n   * @return event name, a String\n   */\n  @Override\n  public String getEvent() {\n    return null;\n  }\n\n  /**\n   * Sets the given shape's new values based on the event that occurred.\n   *\n   * @param shape shape to be transformed\n   */\n  @Override\n  public void setValues(Shape shape) {\n\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cs5004/animator/ScaleWidth.java b/src/cs5004/animator/ScaleWidth.java
+--- a/src/cs5004/animator/ScaleWidth.java	(revision bf585c84816d161a81582ee75c5690d962fa155c)
++++ b/src/cs5004/animator/ScaleWidth.java	(date 1617459378775)
+@@ -20,21 +20,11 @@
+         + this.getStart() + "to t=" + this.getStop();
+   }
+ 
+-  /**
+-   * Get the event type.
+-   *
+-   * @return event name, a String
+-   */
+   @Override
+   public String getEvent() {
+     return null;
+   }
+ 
+-  /**
+-   * Sets the given shape's new values based on the event that occurred.
+-   *
+-   * @param shape shape to be transformed
+-   */
+   @Override
+   public void setValues(Shape shape) {
+ 
+Index: src/cs5004/animator/AbstractEvent.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cs5004.animator;\n\nabstract class AbstractEvent implements Event {\n  protected String shapeName;\n  protected int start;\n  protected int stop;\n\n  public AbstractEvent(String shapeName, int start, int stop) {\n    this.shapeName = shapeName;\n    this.start = start;\n    this.stop = stop;\n  }\n\n  @Override\n  public int getStart() {\n    return this.start;\n  }\n\n  @Override\n  public int getStop() {\n    return this.stop;\n  }\n\n  @Override\n  public String getShapeName() {\n    return this.shapeName;\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cs5004/animator/AbstractEvent.java b/src/cs5004/animator/AbstractEvent.java
+--- a/src/cs5004/animator/AbstractEvent.java	(revision bf585c84816d161a81582ee75c5690d962fa155c)
++++ b/src/cs5004/animator/AbstractEvent.java	(date 1617457533188)
+@@ -7,6 +7,12 @@
+ 
+   public AbstractEvent(String shapeName, int start, int stop) {
+     this.shapeName = shapeName;
++
++    if (stop <= start) {
++      throw new IllegalArgumentException("Stop time cannot be less than the start time.");
++    }
++
++    if (start < 0 || st)
+     this.start = start;
+     this.stop = stop;
+   }
+Index: src/cs5004/animator/ScaleHeight.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cs5004/animator/ScaleHeight.java b/src/cs5004/animator/ScaleHeight.java
+new file mode 100644
+--- /dev/null	(date 1617459378782)
++++ b/src/cs5004/animator/ScaleHeight.java	(date 1617459378782)
+@@ -0,0 +1,31 @@
++package cs5004.animator;
++
++public class ScaleHeight extends AbstractEvent {
++  private final double originalHeight;
++  private final double height;
++  private final double width;
++
++  public ScaleHeight(String shapeName, double originalHeight, double height, double width, int start, int stop) {
++    super(shapeName, start, stop);
++    this.originalHeight = originalHeight;
++    this.height = height;
++    this.width = width;
++  }
++
++  @Override
++  public String getEvent() {
++    return "scale height";
++  }
++
++  @Override
++  public void setValues(Shape shape) {
++
++  }
++
++  @Override
++  public String toString() {
++    return "Shape " + this.getShapeName() + " scales from Width: " + this.width + ", Height: "
++            + height + "to Width: " + this.width + ", Height: " + this.originalHeight + "from t="
++            + this.getStart() + "to t=" + this.getStop();
++  }
++}
+Index: src/cs5004/animator/AnimatorModel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cs5004.animator;\n\nimport java.util.ArrayList;\nimport java.util.Comparator;\nimport java.util.HashMap;\nimport java.util.List;\nimport java.util.NoSuchElementException;\n\npublic class AnimatorModel implements Animator {\n  private List<Shape> shapes;\n  private HashMap<String, List<Event>> events;\n\n  public AnimatorModel() {\n    this.shapes = new ArrayList<>();\n    this.events = new HashMap<>();\n  }\n\n  @Override\n  public void addShape(Shape shape, String name) throws IllegalArgumentException {\n    if (name == null) {\n      throw new IllegalArgumentException(\"Name cannot be null.\");\n    }\n\n    if (name.isEmpty()) {\n      throw new IllegalArgumentException(\"Name cannot be empty.\");\n    }\n\n    if (shape == null) {\n      throw new IllegalArgumentException(\"Shape cannot be null.\");\n    }\n\n    for (Shape s : this.shapes) {\n      if (s.getName().equalsIgnoreCase(name)) {\n        throw new IllegalArgumentException(\"A shape in this list already has that name.\");\n      }\n    }\n\n    shape.setName(name);\n    this.shapes.add(shape);\n    this.shapes.sort(Comparator.comparingInt(ReadonlyShape::getAppearTime));\n    this.events.put(name, new ArrayList<>());\n  }\n\n  @Override\n  public void removeShape(String name) throws NoSuchElementException {\n    if (!(this.shapes.removeIf(s -> s.getName().equalsIgnoreCase(name)))) {\n      throw new NoSuchElementException(\"No shape in this list has that name.\");\n    }\n  }\n\n  @Override\n  public void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException {\n//    for (Shape shape : this.shapes) {\n//      if (shape.getName().equalsIgnoreCase(name)) {\n//        double oldX = shape.getX();\n//        double oldY = shape.getY();\n//\n//        shape.setPos(x, y);\n//        this.events.add(String.format(\"Shape %s moves from (%f,%f) to (%f,%f) from t=%d to t=%d\",\n//                name, oldX, oldY, x, y, start, stop));\n//      }\n//    }\n//    throw new IllegalArgumentException(\"No shape in this list has this name.\");\n    for (Shape shape : this.shapes) {\n      if (shape.getName().equalsIgnoreCase(name)) {\n        if (stop <= start) {\n          throw new IllegalArgumentException(\"Stop time cannot be less than the start time.\");\n        }\n\n        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {\n          throw new IllegalArgumentException(\"Start/stop time is out of the shape's appear window.\");\n        }\n\n        // Check to see if shape is already moving in this window\n        if (this.events.containsKey(name) && this.isTransforming(name, \"move\", start, stop)) {\n          throw new IllegalArgumentException(\"This shape is already moving.\");\n        }\n\n        Event move = new Move(name, start, stop, x, y, originalX, originalY);\n\n        this.events.get(name).add(move);\n        return;\n      }\n    }\n    throw new IllegalArgumentException(\"No shape has this name.\");\n  }\n\n  @Override\n  public void changeColor(String name, double red, double blue, double green, int start, int stop)\n      throws IllegalArgumentException {\n    if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {\n      throw new IllegalArgumentException(\"Invalid color.\");\n    }\n\n    for (Shape shape : this.shapes) {\n      if (shape.getName().equalsIgnoreCase(name)) {\n        if (stop <= start) {\n          throw new IllegalArgumentException(\"Stop time cannot be less than the start time.\");\n        }\n\n        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {\n          throw new IllegalArgumentException(\"Start/stop time is out of the shape's appear window.\");\n        }\n\n        // Check to see if shape is already moving in this window\n        if (this.events.containsKey(name) && this.isTransforming(name, \"change color\",\n                start, stop)) {\n          throw new IllegalArgumentException(\"This shape is already changing color.\");\n        }\n\n        Event changeColor = new ChangeColor(name, start, stop, red, blue, green, shape.getRed(),\n                shape.getBlue(), shape.getGreen());\n\n        this.events.get(name).add(changeColor);\n        return;\n      }\n    }\n    throw new IllegalArgumentException(\"No shape has this name.\");\n  }\n\n  // Scale will probably end up being one method but slightly confused how it's going to be called\n  // (i.e., always passing in a width/height even if only one is changing?)\n  @Override\n  public void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException {\n    if (width <= 0) {\n      throw new IllegalArgumentException(\"Width must be a non-zero positive number.\");\n    }\n\n    for (Shape shape : this.shapes) {\n      if (shape.getName().equalsIgnoreCase(name)) {\n        if (stop <= start) {\n          throw new IllegalArgumentException(\"Stop time cannot be less than the start time.\");\n        }\n\n        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {\n          throw new IllegalArgumentException(\"Start/stop time is out of the shape's appear window.\");\n        }\n\n        // Check to see if shape is already moving in this window\n        if (this.events.containsKey(name) && this.isTransforming(name, \"scale\", start, stop)) {\n          throw new IllegalArgumentException(\"This shape is already scaling.\");\n        }\n\n        Event scale = new ScaleWidth(name, start, stop, width, shape.getWidth(), shape.getHeight());\n\n        this.events.get(name).add(scale);\n        return;\n      }\n    }\n    throw new IllegalArgumentException(\"No shape has this name.\");\n  }\n\n  @Override\n  public void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException {\n    // Same as above but too lazy to implement rn lol\n  }\n\n  @Override\n  public List<Shape> getCurrentShapes(int tick) {\n    // Make new list so current one doesn't get mutated\n\n    // Add copy method to Shape class??\n//    Animator currentShapes = new AnimatorModel();\n//    this.shapes.stream().filter(s -> s.getAppearTime() >= tick && s.getDisappearTime() < tick).forEach(s -> currentShapes.addShape(s, s.getName()));\n//    return currentShapes;\n\n    List<Shape> currentShapes = new ArrayList<>();\n    for (Shape shape : this.shapes) {\n      if (shape.getAppearTime() >= tick && shape.getDisappearTime() < tick) {\n        Shape copy = shape.copy();\n        if (this.events.containsKey(shape.getName())) {\n          this.transformShape(copy, tick);\n        }\n        currentShapes.add(copy);\n      }\n    }\n    return currentShapes;\n  }\n\n  @Override\n  public String getAnimation() {\n    return \"Shapes:\\n\" + this.shapeInformation() + this.eventInformation();\n  }\n\n  private boolean isTransforming(String name, String event, int start, int stop) {\n    List<Event> transformations = this.events.get(name);\n\n    // Test timing\n    for (Event transformation : transformations) {\n      if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start || transformation.getStop() > stop)) {\n        return true;\n      }\n    }\n    return false;\n  }\n\n  private void transformShape(Shape shape, int tick) {\n    for (Event event : this.events.get(shape.getName())) {\n      if (event.getStart() >= tick && event.getStop() < tick) {\n        event.setValues(shape);\n      }\n\n      // Tick is outside start/stop time of the event but no other event of the same kind has\n      // happened\n      else if (tick > event.getStop()) {\n        event.setValues(shape);\n      }\n    }\n  }\n\n  private String shapeInformation() {\n    String information = \"\";\n\n    for (Shape shape : this.shapes) {\n      information += shape.toString() + \"\\n\";\n    }\n    return information;\n  }\n\n  private String eventInformation() {\n    String information = \"\";\n    List<Event> transformations = new ArrayList<>();\n\n    // Create one list of all events from lists of individual shape events\n    for (List<Event> shapeEvents : this.events.values()) {\n      transformations.addAll(shapeEvents);\n    }\n    transformations.sort(Comparator.comparingInt(Event::getStart));\n\n    // Create String representation of the events\n    for (Event event : transformations) {\n      information += event.toString();\n    }\n    return information;\n  }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cs5004/animator/AnimatorModel.java b/src/cs5004/animator/AnimatorModel.java
+--- a/src/cs5004/animator/AnimatorModel.java	(revision bf585c84816d161a81582ee75c5690d962fa155c)
++++ b/src/cs5004/animator/AnimatorModel.java	(date 1617460531774)
+@@ -50,23 +50,8 @@
+ 
+   @Override
+   public void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException {
+-//    for (Shape shape : this.shapes) {
+-//      if (shape.getName().equalsIgnoreCase(name)) {
+-//        double oldX = shape.getX();
+-//        double oldY = shape.getY();
+-//
+-//        shape.setPos(x, y);
+-//        this.events.add(String.format("Shape %s moves from (%f,%f) to (%f,%f) from t=%d to t=%d",
+-//                name, oldX, oldY, x, y, start, stop));
+-//      }
+-//    }
+-//    throw new IllegalArgumentException("No shape in this list has this name.");
+     for (Shape shape : this.shapes) {
+       if (shape.getName().equalsIgnoreCase(name)) {
+-        if (stop <= start) {
+-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+-        }
+-
+         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+           throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+         }
+@@ -86,7 +71,7 @@
+   }
+ 
+   @Override
+-  public void changeColor(String name, double red, double blue, double green, int start, int stop)
++  public void changeColor(String name, double red, double blue, double green, double originalRed, double originalBlue, double originalGreen, int start, int stop)
+       throws IllegalArgumentException {
+     if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {
+       throw new IllegalArgumentException("Invalid color.");
+@@ -94,10 +79,6 @@
+ 
+     for (Shape shape : this.shapes) {
+       if (shape.getName().equalsIgnoreCase(name)) {
+-        if (stop <= start) {
+-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+-        }
+-
+         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+           throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+         }
+@@ -118,8 +99,6 @@
+     throw new IllegalArgumentException("No shape has this name.");
+   }
+ 
+-  // Scale will probably end up being one method but slightly confused how it's going to be called
+-  // (i.e., always passing in a width/height even if only one is changing?)
+   @Override
+   public void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException {
+     if (width <= 0) {
+@@ -128,15 +107,11 @@
+ 
+     for (Shape shape : this.shapes) {
+       if (shape.getName().equalsIgnoreCase(name)) {
+-        if (stop <= start) {
+-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+-        }
+-
+         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+           throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
+         }
+ 
+-        // Check to see if shape is already moving in this window
++        // Check to see if shape is already scaling in this window
+         if (this.events.containsKey(name) && this.isTransforming(name, "scale", start, stop)) {
+           throw new IllegalArgumentException("This shape is already scaling.");
+         }
+@@ -152,7 +127,28 @@
+ 
+   @Override
+   public void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException {
+-    // Same as above but too lazy to implement rn lol
++    if (height <= 0) {
++      throw new IllegalArgumentException("Width must be a non-zero positive number.");
++    }
++
++    for (Shape shape : this.shapes) {
++      if (shape.getName().equalsIgnoreCase(name)) {
++        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
++          throw new IllegalArgumentException("Start/stop time is out of the shape's appear window.");
++        }
++
++        // Check to see if shape is already scaling in this window
++        if (this.events.containsKey(name) && this.isTransforming(name, "scale", start, stop)) {
++          throw new IllegalArgumentException("This shape is already scaling.");
++        }
++
++        Event scale = new ScaleWidth(name, start, stop, height, shape.getWidth(), shape.getHeight());
++
++        this.events.get(name).add(scale);
++        return;
++      }
++    }
++    throw new IllegalArgumentException("No shape has this name.");
+   }
+ 
+   @Override
+Index: src/cs5004/animator/Animator.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package cs5004.animator;\n\nimport java.util.NoSuchElementException;\n\n/**\n * Represents a collection of {@link Shape}s and their transformations.\n */\npublic interface Animator extends ReadonlyAnimator {\n\n  /**\n   * Add a shape to the list.\n   * @param shape the {@link Shape} to be added to the list\n   * @param name a unique, non-empty, non-null name for the shape within the list, a String\n   * @throws IllegalArgumentException if the name is empty, null, or already exists for a\n   * shape in the list, or if the shape is null\n   */\n  void addShape(Shape shape, String name) throws IllegalArgumentException;\n\n  /**\n   * Remove a shape from the list.\n   * @param name name of the shape to be removed\n   * @throws NoSuchElementException if there is no shape with the given name\n   */\n  void removeShape(String name) throws NoSuchElementException;\n\n  /**\n   * Move the given shape to the new position.\n   * @param name the name of the {@link Shape} to be moved, a String\n   * @param x new x coordinate, a double\n   * @param y new y coordinate, a double\n   * @param originalX old x coordinate, a double\n   * @param originalY old y coordiante, a double\n   * @param start move start time, an int\n   * @param stop move stop time, an int\n   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's\n   * appear/disappear window, if the stop time is less than or equal to the start time, or if the\n   * shape is already moving in this window, or if no shape if the list has the given name\n   */\n  void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException;\n\n  // NEED TO THROW RED, BLUE, GREEN EXCEPTIONS HERE AS WELL AS SHAPE CLASS???\n  // try/catch blocks for these errors\n  /**\n   * Change the color of the given shape.\n   * @param name the name of the {@link Shape} to change color, a String\n   * @param red new red value, a double\n   * @param blue new blue value, a double\n   * @param green new green value, a double\n   * @param start color change start time, an int\n   * @param stop color stop time, an int\n   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's\n   * appear/disappear window, if the stop time is less than or equal to the start time or if the\n   * shape is already changing colors in this window, or if the red, blue, or green values are out\n   * of range (0-255), or if no shape in the list has the given name\n   */\n  void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException;\n\n  /**\n   * Change the shape's width.\n   * @param name the name of the {@link Shape} to be scaled, a String\n   * @param width new width, a double\n   * @param start scale start time, an int\n   * @param stop scale stop time, an int\n   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's\n   * appear/disappear window, or if the shape's width is already scaling in this window, or if\n   * width <= 0, or if no shape in the list has the given name\n   */\n  void scaleWidth(String name, double width, int start, int stop) throws IllegalArgumentException;\n\n  /**\n   * Change the shape's height\n   * @param name the name of the {@link Shape} to be scaled, a String\n   * @param height new height, a double\n   * @param start scale start time, an int\n   * @param stop scale stop time, an int\n   * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's\n   * appear/disappear window, or if the shape's height is already scaling in this window, or if\n   * height <= 0, or if no shape in the list has the given name\n   */\n  void scaleHeight(String name, double height, int start, int stop) throws IllegalArgumentException;\n\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/cs5004/animator/Animator.java b/src/cs5004/animator/Animator.java
+--- a/src/cs5004/animator/Animator.java	(revision bf585c84816d161a81582ee75c5690d962fa155c)
++++ b/src/cs5004/animator/Animator.java	(date 1617461278119)
+@@ -29,14 +29,15 @@
+    * @param x new x coordinate, a double
+    * @param y new y coordinate, a double
+    * @param originalX old x coordinate, a double
+-   * @param originalY old y coordiante, a double
++   * @param originalY old y coordinate, a double
+    * @param start move start time, an int
+    * @param stop move stop time, an int
+    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
+    * appear/disappear window, if the stop time is less than or equal to the start time, or if the
+    * shape is already moving in this window, or if no shape if the list has the given name
+    */
+-  void move(String name, double x, double y, int originalX, int originalY, int start, int stop) throws IllegalArgumentException;
++  void move(String name, double x, double y, int originalX, int originalY, int start, int stop)
++          throws IllegalArgumentException;
+ 
+   // NEED TO THROW RED, BLUE, GREEN EXCEPTIONS HERE AS WELL AS SHAPE CLASS???
+   // try/catch blocks for these errors
+@@ -46,6 +47,9 @@
+    * @param red new red value, a double
+    * @param blue new blue value, a double
+    * @param green new green value, a double
++   * @param originalRed original red value, a double
++   * @param originalBlue original blue value, a double
++   * @param originalGreen original green value, a double
+    * @param start color change start time, an int
+    * @param stop color stop time, an int
+    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
+@@ -53,7 +57,8 @@
+    * shape is already changing colors in this window, or if the red, blue, or green values are out
+    * of range (0-255), or if no shape in the list has the given name
+    */
+-  void changeColor(String name, double red, double blue, double green, int start, int stop) throws IllegalArgumentException;
++  void changeColor(String name, double red, double blue, double green, double originalRed, double
++          originalBlue, double originalGreen, int start, int stop) throws IllegalArgumentException;
+ 
+   /**
+    * Change the shape's width.
