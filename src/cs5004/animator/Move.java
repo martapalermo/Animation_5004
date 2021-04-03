@@ -6,7 +6,8 @@ class Move extends AbstractEvent {
   private final double x;
   private final double y;
 
-  public Move(String shapeName, int start, int stop, double x, double y, double originalX, double originalY) {
+  public Move(String shapeName, int start, int stop, double x, double y,
+              double originalX, double originalY) {
     super(shapeName, start, stop);
     this.x = x;
     this.y = y;
