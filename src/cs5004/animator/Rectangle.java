@@ -20,7 +20,7 @@ public class Rectangle extends AbstractShape {
 
   @Override
   public Shape copy() {
-    return new Rectangle(this.getX(), this.getY(), this.appearTime, this.disappearTime, this.width,
-            this.height, this.getRed(), this.getBlue(), this.getGreen());
+    return new Rectangle(this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
+        this.getWidth(), this.getHeight(), this.getRed(), this.getBlue(), this.getGreen());
   }
 }

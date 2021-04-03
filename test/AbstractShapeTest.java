@@ -207,45 +207,74 @@ public class AbstractShapeTest {
 //  }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testSetZeroHeight() throws IllegalArgumentException {
-    rectangle.setHeight(0);
-    oval.setHeight(0);
+  public void testSetDimensionZeroHeight() throws IllegalArgumentException {
+    rectangle.setDimension(4,0);
+    oval.setDimension(9,0);
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testSetNegativeHeight() throws IllegalArgumentException {
-    rectangle.setHeight(-15);
-    oval.setHeight(-6);
+  public void testSetDimensionNegativeHeight() throws IllegalArgumentException {
+    rectangle.setDimension(10,-15);
+    oval.setDimension(2,-6);
   }
 
   @Test
-  public void testSetHeight() {
+  public void testSetDimensionHeight() {
     assertEquals(5, rectangle.getHeight(), EPSILON);
     assertEquals(8, oval.getHeight(), EPSILON);
-    rectangle.setHeight(9);
-    oval.setHeight(22);
+    rectangle.setDimension(5,9);
+    oval.setDimension(4,22);
     assertEquals(9, rectangle.getHeight(), EPSILON);
     assertEquals(22, oval.getHeight(), EPSILON);
   }
 
   @Test(expected = IllegalArgumentException.class)
-  public void testSetZeroWidth() throws IllegalArgumentException {
-    rectangle.setWidth(0);
-    oval.setWidth(0);
+  public void testSetDimensionZeroWidth() throws IllegalArgumentException {
+    rectangle.setDimension(0, 25);
+    oval.setDimension(0,2);
   }
 
-  @Test(expected = IllegalArgumentException.class) 
-  public void testSetNegativeWidth() throws IllegalArgumentException {
-    rectangle.setWidth(-1);
-    oval.setWidth(-10);
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetDimensionAllZero() throws IllegalArgumentException {
+    rectangle.setDimension(0,0);
+    oval.setDimension(0,0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSetDimensionAllNegative() throws IllegalArgumentException {
+    rectangle.setDimension(-2, -10);
+    oval.setDimension(-15, -20);
   }
 
   @Test
-  public void testSetWidth() {
+  public void testSetDimensionValidInput() {
+    assertEquals(5, rectangle.getHeight(), EPSILON);
+    assertEquals(5, rectangle.getWidth(), EPSILON);
+
+    assertEquals(8, oval.getHeight(), EPSILON);
+    assertEquals(4, oval.getHeight(), EPSILON);
+    rectangle.setDimension(10,15);
+
+    oval.setDimension(22,22);
+    assertEquals(15, rectangle.getHeight(), EPSILON);
+    assertEquals(10, rectangle.getWidth(), EPSILON);
+
+    assertEquals(22, oval.getHeight(), EPSILON);
+    assertEquals(22, oval.getWidth(), EPSILON);
+  }
+
+  @Test(expected = IllegalArgumentException.class) 
+  public void testSetDimensionNegativeWidth() throws IllegalArgumentException {
+    rectangle.setDimension(-1, 5);
+    oval.setDimension(-10, 22);
+  }
+
+  @Test
+  public void testSetDimensionWidth() {
     assertEquals(5, rectangle.getWidth(), EPSILON);
     assertEquals(4, oval.getWidth(), EPSILON);
-    rectangle.setWidth(7);
-    oval.setWidth(5);
+    rectangle.setDimension(7, 5);
+    oval.setDimension(5,8);
     assertEquals(7, rectangle.getWidth(), EPSILON);
     assertEquals(5, oval.getWidth(), EPSILON);
   }

@@ -13,19 +13,27 @@ public interface Shape extends ReadonlyShape {
    */
   void setPos(double x, double y);
 
-  /**
+  /*/**
    * Set the shape's width.
    * @param width shape's width, a double
    * @throws IllegalArgumentException if the width <= 0
    */
-  void setWidth(double width) throws IllegalArgumentException;
+  /* void setWidth(double width) throws IllegalArgumentException;
 
   /**
    * Set the shape's height.
    * @param height shape's height, a double
    * @throws IllegalArgumentException if the height <= 0
    */
-  void setHeight(double height) throws IllegalArgumentException;
+  /*void setHeight(double height) throws IllegalArgumentException; */
+
+  /**
+   * Set the shape's width and height.
+   * @param width shape's width, a double
+   * @param height shape's height, a double
+   * @throws IllegalArgumentException if width and/or height <= 0
+   */
+  void setDimension(double width, double height) throws IllegalArgumentException;
 
   /**
    * Set the color of the shape with the given pigments
