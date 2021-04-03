@@ -7,8 +7,8 @@ public class Scale extends AbstractEvent {
   private final double width;
 
 
-  public Scale(String shapeName, int start, int stop, double width,
-               double originalWidth, double height, double originalHeight) {
+  public Scale(String shapeName, int start, int stop, double width, double originalWidth, double
+          height, double originalHeight) {
     super(shapeName, start, stop);
     this.width = width;
     this.height = height;

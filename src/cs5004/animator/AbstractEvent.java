@@ -7,6 +7,11 @@ abstract class AbstractEvent implements Event {
 
   public AbstractEvent(String shapeName, int start, int stop) {
     this.shapeName = shapeName;
+
+    if (stop <= start) {
+      throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+    }
+
     this.start = start;
     this.stop = stop;
   }
