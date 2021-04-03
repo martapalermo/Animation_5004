@@ -15,8 +15,10 @@ public class AnimatorModelTest {
 
   @Before
   public void setUp() {
-    this.r = new Rectangle(200, 200, 1, 100, 50, 100, 1,0,0);
-    this.c = new Oval(500,100, 6, 100, 60, 30, 0,0,1);
+    this.r = new Rectangle(200, 200, 1, 100, 50, 100,
+        1,0,0);
+    this.c = new Oval(500,100, 6, 100, 60, 30, 0,
+        0,1);
     this.model = new AnimatorModel();
     this.model.addShape(this.r, "r");
     this.model.addShape(this.c, "c");
