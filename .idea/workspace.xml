@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="refactored Time and Dimension">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="format edits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Oval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Oval.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Oval.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AbstractShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AbstractShapeTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +47,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.AbstractShapeTest.testGetDisappearTime">
+  <component name="RunManager" selected="JUnit.AbstractShapeTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -63,21 +68,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AbstractShapeTest.testGetDisappearTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractShapeTest.testGetBlue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="METHOD_NAME" value="testGetDisappearTime" />
+      <option name="METHOD_NAME" value="testGetBlue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AbstractShapeTest.testSetWidth" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractShapeTest.testGetGreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="METHOD_NAME" value="testSetWidth" />
+      <option name="METHOD_NAME" value="testGetGreen" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AbstractShapeTest.testSetDimensionValidInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
+      <option name="METHOD_NAME" value="testSetDimensionValidInput" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,22 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AbstractShapeTest.testGetDisappearTime" />
-        <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="JUnit.AbstractShapeTest" />
         <item itemvalue="JUnit.AbstractShapeTest.testToStringRectangle" />
-        <item itemvalue="JUnit.AbstractShapeTest.testSetWidth" />
+        <item itemvalue="JUnit.AbstractShapeTest.testSetDimensionValidInput" />
+        <item itemvalue="JUnit.AbstractShapeTest.testGetBlue" />
+        <item itemvalue="JUnit.AbstractShapeTest.testGetGreen" />
       </list>
     </recent_temporary>
   </component>
@@ -121,7 +127,7 @@
       <option name="presentableId" value="Default" />
       <updated>1617154790338</updated>
       <workItem from="1617154794553" duration="4822000" />
-      <workItem from="1617217402480" duration="23201000" />
+      <workItem from="1617217402480" duration="23881000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -214,7 +220,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617466098735</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="refactored Time and Dimension">
+      <created>1617471172333</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1617471172333</updated>
+    </task>
+    <task id="LOCAL-00015" summary="format edits">
+      <created>1617471195111</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1617471195111</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +261,7 @@
     <MESSAGE value="added the rest of the setter tests for AbstractShapeTest should be done!" />
     <MESSAGE value="refactored scaleHeight/Width into single scaleShape" />
     <MESSAGE value="refactored Time and Dimension" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactored Time and Dimension" />
+    <MESSAGE value="format edits" />
+    <option name="LAST_COMMIT_MESSAGE" value="format edits" />
   </component>
 </project>
