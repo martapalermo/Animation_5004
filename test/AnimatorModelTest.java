@@ -1,16 +1,19 @@
 import org.junit.Before;
 import org.junit.Test;
 
-import cs5004.animator.model.Animator;
-import cs5004.animator.model.AnimatorModel;
-import cs5004.animator.model.Oval;
-import cs5004.animator.model.Rectangle;
-import cs5004.animator.model.Shape;
-
 import java.util.NoSuchElementException;
+
+import cs5004.animator.model.animation.Animator;
+import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.shape.Oval;
+import cs5004.animator.model.shape.Rectangle;
+import cs5004.animator.model.shape.Shape;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class contains the unit tests for the AnimatorModel class.
+ */
 public class AnimatorModelTest {
   private Shape r;
   private Shape c;
@@ -21,9 +24,9 @@ public class AnimatorModelTest {
   public void setUp() {
     this.model = new AnimatorModel();
 
-    this.r = new Rectangle(200, 200, 1, 99, 50, 100,
+    this.r = new Rectangle(200, 200, 1, 100, 50, 100,
         1,0,0);
-    this.c = new Oval(500,100, 6, 100, 60, 30, 0,
+    this.c = new Oval(500,100, 6, 101, 60, 30, 0,
         0,1);
 
     this.m = new AnimatorModel();
@@ -38,12 +41,12 @@ public class AnimatorModelTest {
         + "Type: rectangle\n"
         + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
         + "Appears at t=1\n"
-        + "Disappears at t=99\n\n"
+        + "Disappears at t=100\n\n"
         + "Name: c\n"
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n", this.m.getAnimation());
+        + "Disappears at t=101\n\n", this.m.getAnimation());
   }
 
   @Test
@@ -53,17 +56,36 @@ public class AnimatorModelTest {
 
   @Test // should return only Rectangle r
   public void testGetCurrentShapesRectangleVisible() {
-    assertEquals("", this.m.getCurrentShapes(2));
+    assertEquals("[Name: r\n"
+            + "Type: rectangle\n"
+            + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+            + "Appears at t=1\n"
+            + "Disappears at t=100\n]", this.m.getCurrentShapes(2).toString());
   }
 
   @Test // should return only Oval c
   public void testGetCurrentShapesOvalVisible() {
-    assertEquals("", this.m.getCurrentShapes(100).toString());
+    assertEquals("[Name: c\n"
+            + "Type: oval\n"
+            + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=101\n"
+            + "]", this.m.getCurrentShapes(100).toString());
   }
 
   @Test // should return both Oval c and Rectangle r
   public void testGetCurrentShapesBothVisible() {
-    assertEquals("", this.m.getCurrentShapes(25).toString());
+    assertEquals("[Name: r\n"
+            + "Type: rectangle\n"
+            + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+            + "Appears at t=1\n"
+            + "Disappears at t=100\n"
+            + ", Name: c\n"
+            + "Type: oval\n"
+            + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=101\n"
+            + "]", this.m.getCurrentShapes(25).toString());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -166,7 +188,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n"
+        + "Disappears at t=101\n\n"
         + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 60.0, Height: 8.0 from t=40"
         + " to t=60", m.getAnimation());
   }
@@ -185,7 +207,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n"
+        + "Disappears at t=101\n\n"
         + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 70.0, Height: 30.0 from t=40"
         + " to t=60", m.getAnimation());
   }
@@ -204,7 +226,7 @@ public class AnimatorModelTest {
             + "Type: oval\n"
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
-            + "Disappears at t=100\n\n"
+            + "Disappears at t=101\n\n"
             + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 10.0, Height: 15.0 from t=40"
             + " to t=60", m.getAnimation());
   }
@@ -335,7 +357,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n"
+        + "Disappears at t=101\n\n"
         + "Shape c changes color from (0.0,0.0,1.0) to (255.0,0.0,0.0) from t=15 to t=100",
         m.getAnimation());
   }
@@ -401,7 +423,7 @@ public class AnimatorModelTest {
             + "Type: oval\n"
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
-            + "Disappears at t=100\n\n"
+            + "Disappears at t=101\n\n"
             + "Shape c moves from (500.0,100.0) to (165.0,150.0) from t=7 to t=30\n"
             + "Shape r moves from (200.0,200.0) to (155.0,120.0) from t=20 to t=34",
         this.m.getAnimation());
@@ -421,7 +443,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n"
+        + "Disappears at t=101\n\n"
         + "Shape r moves from (200.0,200.0) to (155.0,120.0) from t=20 to t=34\n"
         + "Shape c moves from (500.0,100.0) to (165.0,150.0) from t=20 to t=34",
         this.m.getAnimation());
@@ -441,7 +463,7 @@ public class AnimatorModelTest {
             + "Type: oval\n"
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
-            + "Disappears at t=100\n\n"
+            + "Disappears at t=101\n\n"
             + "Shape r moves from (150.0,170.0) to (155.0,120.0) from t=20 to t=34\n"
             + "Shape r moves from (200.0,200.0) to (150.0,170.0) from t=35 to t=45",
         this.m.getAnimation());
@@ -461,7 +483,7 @@ public class AnimatorModelTest {
             + "Type: oval\n"
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
-            + "Disappears at t=100\n\n"
+            + "Disappears at t=101\n\n"
             + "Shape r moves from (200.0,200.0) to (150.0,170.0) from t=35 to t=45\n"
             + "Shape r moves from (150.0,170.0) to (155.0,120.0) from t=45 to t=55",
         this.m.getAnimation());
@@ -480,7 +502,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n"
+        + "Disappears at t=101\n\n"
         + "Shape r moves from (200.0,200.0) to (150.0,170.0) from t=35 to t=45",
         this.m.getAnimation());
   }
@@ -503,7 +525,7 @@ public class AnimatorModelTest {
         + "Type: oval\n"
         + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
         + "Appears at t=6\n"
-        + "Disappears at t=100\n\n", this.m.getAnimation());
+        + "Disappears at t=101\n\n", this.m.getAnimation());
   }
 
   @Test
@@ -637,7 +659,7 @@ public class AnimatorModelTest {
             + "Type: oval\n"
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
-            + "Disappears at t=100\n\n"
+            + "Disappears at t=101\n\n"
             + "Shape r moves from (200.0,200.0) to (300.0,300.0) from t=10 to t=50\n"
             + "Shape c moves from (500.0,100.0) to (500.0,400.0) from t=20 to t=70\n"
             + "Shape c changes color from (0.0,0.0,1.0) to (0.0,1.0,0.0) from t=50 to t=80\n"
@@ -646,5 +668,4 @@ public class AnimatorModelTest {
             + "Shape r moves from (300.0,300.0) to (200.0,200.0) from t=70 to t=100",
             this.model.getAnimation());
   }
-
 }
