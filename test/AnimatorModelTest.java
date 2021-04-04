@@ -11,7 +11,6 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertEquals;
 
-
 public class AnimatorModelTest {
   private Shape r;
   private Shape c;
@@ -22,7 +21,7 @@ public class AnimatorModelTest {
   public void setUp() {
     this.model = new AnimatorModel();
 
-    this.r = new Rectangle(200, 200, 1, 100, 50, 100,
+    this.r = new Rectangle(200, 200, 1, 99, 50, 100,
         1,0,0);
     this.c = new Oval(500,100, 6, 100, 60, 30, 0,
         0,1);
@@ -32,6 +31,164 @@ public class AnimatorModelTest {
     this.m.addShape(this.c, "c");
   }
 
+  @Test
+  public void testGetAnimation1() {
+    assertEquals("Shapes:\n"
+        + "Name: r\n"
+        + "Type: rectangle\n"
+        + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+        + "Appears at t=1\n"
+        + "Disappears at t=99\n\n"
+        + "Name: c\n"
+        + "Type: oval\n"
+        + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+        + "Appears at t=6\n"
+        + "Disappears at t=100\n\n", this.m.getAnimation());
+  }
+
+  @Test
+  public void testGetCurrentShapesNoneOnScreen() {
+    assertEquals("[]", this.m.getCurrentShapes(200).toString());
+  }
+
+  @Test // should return only Rectangle r
+  public void testGetCurrentShapesRectangleVisible() {
+    assertEquals("", this.m.getCurrentShapes(2));
+  }
+
+  @Test // should return only Oval c
+  public void testGetCurrentShapesOvalVisible() {
+    assertEquals("", this.m.getCurrentShapes(100).toString());
+  }
+
+  @Test // should return both Oval c and Rectangle r
+  public void testGetCurrentShapesBothVisible() {
+    assertEquals("", this.m.getCurrentShapes(25).toString());
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeNullName() throws IllegalArgumentException {
+    this.m.scaleShape(null, 60, 8, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeEmptyName() throws IllegalArgumentException {
+    this.m.scaleShape("", 60, 8, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeInvalidName() throws IllegalArgumentException {
+    this.m.scaleShape("h", 60, 8, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeSimultaneousScale() throws IllegalArgumentException {
+    this.m.scaleShape("c", 60, 8, 30,60,
+        40, 60);
+    this.m.scaleShape("c", 60, 8, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeStopOutOfAppearWindow1() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, 10, 30,60,
+        60, 1);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeStopOutOfAppearWindow() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, 10, 30,60,
+        50, 103);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeStartOutOfAppearWindow1() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, 10, 30,60,
+        102, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeStartOutOfAppearWindow() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, 10, 30,60,
+        5, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeHeightNegative() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, -10, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeWidthNegative() throws IllegalArgumentException {
+    this.m.scaleShape("c", -43, 65, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeBothNegative() throws IllegalArgumentException {
+    this.m.scaleShape("c", -13, -50, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeHeightZero() throws IllegalArgumentException {
+    this.m.scaleShape("c", 12, 0, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeWidthZero() throws IllegalArgumentException {
+    this.m.scaleShape("c", 0, 65, 30,60,
+        40, 60);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testScaleShapeBothZero() throws IllegalArgumentException {
+    this.m.scaleShape("c", 0, 0, 30,60,
+        40, 60);
+  }
+
+  @Test
+  public void testScaleShapeHeight() {
+    this.m.scaleShape("c", 60, 8, 30,60,
+        40, 60);
+    assertEquals("Shapes:\n"
+        + "Name: r\n"
+        + "Type: rectangle\n"
+        + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+        + "Appears at t=1\n"
+        + "Disappears at t=100\n\n"
+        + "Name: c\n"
+        + "Type: oval\n"
+        + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+        + "Appears at t=6\n"
+        + "Disappears at t=100\n\n"
+        + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 60.0, Height: 8.0 from t=40"
+        + " to t=60", m.getAnimation());
+  }
+
+  @Test
+  public void testScaleShapeWidth() {
+    this.m.scaleShape("c", 70, 30, 30,60,
+        40, 60);
+    assertEquals("Shapes:\n"
+        + "Name: r\n"
+        + "Type: rectangle\n"
+        + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+        + "Appears at t=1\n"
+        + "Disappears at t=100\n\n"
+        + "Name: c\n"
+        + "Type: oval\n"
+        + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+        + "Appears at t=6\n"
+        + "Disappears at t=100\n\n"
+        + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 70.0, Height: 30.0 from t=40"
+        + " to t=60", m.getAnimation());
+  }
 
   @Test
   public void testScaleAllShape() {
@@ -45,12 +202,11 @@ public class AnimatorModelTest {
             + "Disappears at t=100\n\n"
             + "Name: c\n"
             + "Type: oval\n"
-            + "Center: (500.0,100.0), X radius: 30.0, Y radius: 60.0, Color: (0.0,0.0,1.0)\n"
+            + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
             + "Appears at t=6\n"
             + "Disappears at t=100\n\n"
             + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 10.0, Height: 15.0 from t=40"
             + " to t=60", m.getAnimation());
-
   }
 
   @Test(expected = IllegalArgumentException.class)

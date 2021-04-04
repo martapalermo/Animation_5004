@@ -194,7 +194,7 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("Stop time cannot be less than the start time.");
         }
 
-        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+        if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
           throw new IllegalArgumentException("Start/stop time is out of the shape's "
               + "appear window.");
         }
@@ -221,7 +221,7 @@ public class AnimatorModel implements Animator {
    * @param tick current frame, an int
    * @return List of {@link Shape}s on screen
    */
-  @Override
+  @Override // THIS DOESN'T TEST - THE LIST BEING RETURNED IS EMPTY!! OR MAYBE IM NOT TESTING CORRECTLY?
   public List<Shape> getCurrentShapes(int tick) {
 
     List<Shape> currentShapes = new ArrayList<>();
