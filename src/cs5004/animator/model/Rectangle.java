@@ -49,7 +49,9 @@ public class Rectangle extends AbstractShape {
    */
   @Override
   public Shape copy() {
-    return new Rectangle(this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
-        this.getWidth(), this.getHeight(), this.getRed(), this.getGreen(), this.getBlue());
+    Shape copy = new Rectangle(this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
+            this.getWidth(), this.getHeight(), this.getRed(), this.getGreen(), this.getBlue());
+    copy.setName(this.name);
+    return copy;
   }
 }

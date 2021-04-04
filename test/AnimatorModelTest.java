@@ -54,4 +54,9 @@ public class AnimatorModelTest {
             "Shape r moves from (300.0,300.0to (200.0,200.0) from t=70 to t=100",
             this.model.getAnimation());
   }
+
+  @Test
+  public void testCurrentShapes() {
+    System.out.println(this.model.getCurrentShapes(40));
+  }
 }

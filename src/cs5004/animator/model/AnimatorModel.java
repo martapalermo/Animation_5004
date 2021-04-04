@@ -148,9 +148,10 @@ public class AnimatorModel implements Animator {
 
     List<Shape> currentShapes = new ArrayList<>();
     for (Shape shape : this.shapes) {
-      if (shape.getAppearTime() >= tick && shape.getDisappearTime() < tick) {
+      if (shape.getAppearTime() <= tick && shape.getDisappearTime() > tick) {
+
         Shape copy = shape.copy();
-        if (this.events.containsKey(shape.getName())) {
+        if (this.events.get(shape.getName()).size() > 0) {
           this.transformShape(copy, tick);
         }
         currentShapes.add(copy);
