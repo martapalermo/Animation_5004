@@ -27,7 +27,7 @@ public class Scale extends AbstractEvent {
     this.width = width;
     this.height = height;
     this.originalWidth = originalWidth;
-    this.originalHeight = originalHeight;
+    this.originalHeight = originalHeight ;
   }
 
   /**
@@ -38,8 +38,8 @@ public class Scale extends AbstractEvent {
   @Override
   public String toString() {
     return "Shape " + this.getShapeName() + " scales from Width: " + originalWidth + ", Height: "
-        + originalHeight + "to Width: " + this.width + ", Height: " + this.height + "from t="
-        + this.getStart() + "to t=" + this.getStop();
+        + originalHeight+ " to Width: " + this.width + ", Height: " + this.height + " from t="
+        + this.getStart() + " to t=" + this.getStop();
   }
 
   /**

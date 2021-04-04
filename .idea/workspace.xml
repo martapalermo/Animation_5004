@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="UML">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added more Animator Model Tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/Scale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +24,6 @@
     <option name="BRANCH" value="origin/new_branchMP" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="main" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitSEFilterConfiguration">
@@ -51,13 +45,10 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest">
+  <component name="RunManager" selected="JUnit.AnimatorModelTest.testGetAnimation1">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -69,49 +60,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AbstractShapeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testGetAnimation1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AbstractShapeTest.testSetDimensionValidInput" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="METHOD_NAME" value="testSetDimensionValidInput" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="METHOD_NAME" value="testGetAnimation1" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AbstractShapeTest.testToStringRectangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testGetCurrentShapesBothVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
-      <option name="METHOD_NAME" value="testToStringRectangle" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="METHOD_NAME" value="testGetCurrentShapesBothVisible" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testGetCurrentShapesNoneOnScreen" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testGetCurrentShapesNoneOnScreen" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testGetAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testGetCurrentShapesOvalVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testGetAnimation" />
+      <option name="METHOD_NAME" value="testGetCurrentShapesOvalVisible" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimatorModelTest.testGetCurrentShapesRectangleVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="METHOD_NAME" value="testGetCurrentShapesRectangleVisible" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -119,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AnimatorModelTest" />
-        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
-        <item itemvalue="JUnit.AbstractShapeTest" />
-        <item itemvalue="JUnit.AbstractShapeTest.testToStringRectangle" />
-        <item itemvalue="JUnit.AbstractShapeTest.testSetDimensionValidInput" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation1" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapesOvalVisible" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapesRectangleVisible" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapesNoneOnScreen" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapesBothVisible" />
       </list>
     </recent_temporary>
   </component>
@@ -137,7 +130,7 @@
       <updated>1617154790338</updated>
       <workItem from="1617154794553" duration="4822000" />
       <workItem from="1617217402480" duration="25761000" />
-      <workItem from="1617500627938" duration="4048000" />
+      <workItem from="1617487830924" duration="15399000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -279,28 +272,35 @@
       <option name="project" value="LOCAL" />
       <updated>1617480253175</updated>
     </task>
-    <task id="LOCAL-00021" summary="UML">
-      <created>1617486238708</created>
+    <task id="LOCAL-00021" summary="finished all java doc in non-test classes">
+      <created>1617490230578</created>
       <option name="number" value="00021" />
       <option name="presentableId" value="LOCAL-00021" />
       <option name="project" value="LOCAL" />
-      <updated>1617486238708</updated>
+      <updated>1617490230578</updated>
     </task>
-    <task id="LOCAL-00022" summary="UML">
-      <created>1617486403087</created>
+    <task id="LOCAL-00022" summary="edited AnimationModel first test">
+      <created>1617490837816</created>
       <option name="number" value="00022" />
       <option name="presentableId" value="LOCAL-00022" />
       <option name="project" value="LOCAL" />
-      <updated>1617486403087</updated>
+      <updated>1617490837816</updated>
     </task>
-    <task id="LOCAL-00023" summary="UML">
-      <created>1617501902027</created>
+    <task id="LOCAL-00023" summary="added Animator Model Tests">
+      <created>1617500247828</created>
       <option name="number" value="00023" />
       <option name="presentableId" value="LOCAL-00023" />
       <option name="project" value="LOCAL" />
-      <updated>1617501902027</updated>
+      <updated>1617500247828</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="added more Animator Model Tests">
+      <created>1617502202927</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1617502202927</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -331,7 +331,116 @@
     <MESSAGE value="edits to abstractshapetest" />
     <MESSAGE value="Deleted ReadonlyShape" />
     <MESSAGE value="Changed package to cs5004.animator.model" />
-    <MESSAGE value="UML" />
-    <option name="LAST_COMMIT_MESSAGE" value="UML" />
+    <MESSAGE value="finished all java doc in non-test classes" />
+    <MESSAGE value="edited AnimationModel first test" />
+    <MESSAGE value="added Animator Model Tests" />
+    <MESSAGE value="added more Animator Model Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added more Animator Model Tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>357</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>360</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>361</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>358</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>362</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java</url>
+          <line>223</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java</url>
+          <line>226</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java</url>
+          <line>236</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java</url>
+          <line>233</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>359</line>
+          <properties class="AnimatorModelTest" method="testMoveSameShape">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java</url>
+          <line>224</line>
+          <properties class="cs5004.animator.model.AnimatorModel" method="getCurrentShapes">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>59</line>
+          <properties class="AnimatorModelTest" method="testGetCurrentShapesOvalVisible">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>54</line>
+          <properties class="AnimatorModelTest" method="testGetCurrentShapesRectangleVisible">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
+          <line>64</line>
+          <properties class="AnimatorModelTest" method="testGetCurrentShapesBothVisible">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
