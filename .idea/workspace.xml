@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="edited AnimationModel first test">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added Animator Model Tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" afterDir="false" />
@@ -47,7 +47,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest.testChangeColor">
+  <component name="RunManager" selected="JUnit.AbstractShapeTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -59,50 +59,50 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AbstractShapeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="MAIN_CLASS_NAME" value="AbstractShapeTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testChangeColor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testChangeColorEmptyName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testChangeColor" />
+      <option name="METHOD_NAME" value="testChangeColorEmptyName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testMoveEmptyName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testChangeColorNullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMoveEmptyName" />
+      <option name="METHOD_NAME" value="testChangeColorNullName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testMoveNullName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testChangeColorWrongName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMoveNullName" />
+      <option name="METHOD_NAME" value="testChangeColorWrongName" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testMoveWrongName" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.testScaleAllShape" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMoveWrongName" />
+      <option name="METHOD_NAME" value="testScaleAllShape" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AnimatorModelTest.testChangeColor" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMoveEmptyName" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMoveNullName" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMoveWrongName" />
-        <item itemvalue="JUnit.AnimatorModelTest" />
+        <item itemvalue="JUnit.AbstractShapeTest" />
+        <item itemvalue="JUnit.AnimatorModelTest.testScaleAllShape" />
+        <item itemvalue="JUnit.AnimatorModelTest.testChangeColorNullName" />
+        <item itemvalue="JUnit.AnimatorModelTest.testChangeColorEmptyName" />
+        <item itemvalue="JUnit.AnimatorModelTest.testChangeColorWrongName" />
       </list>
     </recent_temporary>
   </component>
@@ -128,7 +128,7 @@
       <updated>1617154790338</updated>
       <workItem from="1617154794553" duration="4822000" />
       <workItem from="1617217402480" duration="25761000" />
-      <workItem from="1617487830924" duration="10450000" />
+      <workItem from="1617487830924" duration="12374000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -284,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617490837816</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="added Animator Model Tests">
+      <created>1617500247828</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1617500247828</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -317,39 +324,40 @@
     <MESSAGE value="Changed package to cs5004.animator.model" />
     <MESSAGE value="finished all java doc in non-test classes" />
     <MESSAGE value="edited AnimationModel first test" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited AnimationModel first test" />
+    <MESSAGE value="added Animator Model Tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="added Animator Model Tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>56</line>
+          <line>201</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>59</line>
+          <line>204</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>60</line>
+          <line>205</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>57</line>
+          <line>202</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>61</line>
+          <line>206</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/test/AnimatorModelTest.java</url>
-          <line>58</line>
+          <line>203</line>
           <properties class="AnimatorModelTest" method="testMoveSameShape">
             <option name="EMULATED" value="true" />
           </properties>

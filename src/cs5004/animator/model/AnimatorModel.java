@@ -144,7 +144,7 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("Stop time cannot be less than the start time.");
         }
 
-        if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
+        if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
           throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
                   + "window.");
         }

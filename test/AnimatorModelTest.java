@@ -32,12 +32,156 @@ public class AnimatorModelTest {
     this.m.addShape(this.c, "c");
   }
 
+
+  @Test
+  public void testScaleAllShape() {
+    this.m.scaleShape("c", 10, 15, 30,60,
+        40, 60);
+    assertEquals("Shapes:\n"
+            + "Name: r\n"
+            + "Type: rectangle\n"
+            + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+            + "Appears at t=1\n"
+            + "Disappears at t=100\n\n"
+            + "Name: c\n"
+            + "Type: oval\n"
+            + "Center: (500.0,100.0), X radius: 30.0, Y radius: 60.0, Color: (0.0,0.0,1.0)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=100\n\n"
+            + "Shape c scales from Width: 60.0, Height: 30.0 to Width: 10.0, Height: 15.0 from t=40"
+            + " to t=60", m.getAnimation());
+
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorNullName() throws IllegalArgumentException {
+    this.m.changeColor(null, 175, 0,0,0,0,1,
+        15, 80);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorEmptyName() throws IllegalArgumentException {
+    this.m.changeColor("", 175, 0,0,0,0,1,
+        15, 80);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorWrongName() throws IllegalArgumentException {
+    this.m.changeColor("s", 175, 0,0,0,0,1,
+        15, 80);
+  }
+
+  @Test(expected = IllegalArgumentException.class) //NOT PASSING?
+  // java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
+  public void testChangeColorSimultaneously() throws IllegalArgumentException {
+    this.m.changeColor("c", 175, 0,0,0,0,1,
+        15, 80);
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        15, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorStopOutOfDisappearWindow() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        56, 200);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorStopOutOfDisappearWindow1() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        56, 2);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorStartOutOfAppearWindow1() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        123, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorStartOutOfAppearWindow() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        4, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorStopLessThanStart() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        89, 10);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorSameStartStopTime() throws IllegalArgumentException {
+    this.m.changeColor("c", 255, 0,0,0,0,1,
+        15, 15);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorAllOutOfRGBRange() throws IllegalArgumentException {
+    this.m.changeColor("r", 256, 300, 650, 0,0,
+        1, 40, 89);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorAllNegative() throws IllegalArgumentException {
+    this.m.changeColor("r", -210, -20, -200, 0,0,
+        1, 56, 99);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorNegativeBlue() throws IllegalArgumentException {
+    this.m.changeColor("c", 210, 20, -255, 0,0,
+        1, 56, 99);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorOutOfRGBRangeBlue() throws IllegalArgumentException {
+    this.m.changeColor("r", 230, 178, 500, 0,0,
+        1, 56, 99);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorNegativeGreen() throws IllegalArgumentException {
+    this.m.changeColor("c", 230, -20, 0, 0,0,
+        1, 56, 99);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorOutOfRGBRangeGreen() throws IllegalArgumentException {
+    this.m.changeColor("c", 230, 300, 0, 0,0,
+        1, 56, 99);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorNegativeRed() throws IllegalArgumentException {
+    this.m.changeColor("r", -150, 0,0,1, 0,0,
+        15, 100);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testChangeColorOutOfRGBRangeRed() throws IllegalArgumentException {
+    this.m.changeColor("r", 270, 0,0,1, 0,0,
+        15, 100);
+  }
+
   @Test
   public void testChangeColor() {
     this.m.changeColor("c", 255, 0,0,0,0,1,
         15, 100);
 
-
+    assertEquals("Shapes:\n"
+        + "Name: r\n"
+        + "Type: rectangle\n"
+        + "Min corner: (200.0,200.0), Width: 50.0, Height: 100.0, Color: (1.0,0.0,0.0)\n"
+        + "Appears at t=1\n"
+        + "Disappears at t=100\n\n"
+        + "Name: c\n"
+        + "Type: oval\n"
+        + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0.0,0.0,1.0)\n"
+        + "Appears at t=6\n"
+        + "Disappears at t=100\n\n"
+        + "Shape c changes color from (0.0,0.0,1.0) to (255.0,0.0,0.0) from t=15 to t=100",
+        m.getAnimation());
   }
 
   @Test(expected = IllegalArgumentException.class)
