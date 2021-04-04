@@ -54,10 +54,6 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
-        }
-
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
           throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
                   + "window.");
@@ -73,6 +69,7 @@ public class AnimatorModel implements Animator {
 
         this.events.get(name).add(move);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
+
         return;
       }
     }
@@ -90,9 +87,6 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
-        }
 
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
           throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
@@ -126,9 +120,6 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
-        }
 
         if (start < shape.getAppearTime() && stop > shape.getDisappearTime()) {
           throw new IllegalArgumentException("Start/stop time is out of the shape's "
@@ -177,8 +168,9 @@ public class AnimatorModel implements Animator {
     List<Event> transformations = this.events.get(name);
 
     for (Event transformation : transformations) {
-      if (transformation.getEvent().equalsIgnoreCase(event) && (transformation.getStart() < start
-              && transformation.getStop() > stop)) {
+      //System.out.println(transformation.toString());
+      if ((transformation.getStart() > start || transformation.getStop() > stop) && transformation.getEvent().equalsIgnoreCase(event)) {
+
         return true;
       }
     }
