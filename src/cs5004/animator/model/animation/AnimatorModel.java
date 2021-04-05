@@ -286,6 +286,7 @@ public class AnimatorModel implements Animator {
       // happened
       else if (tick > event.getStop()) {
         event.setValues(shape);
+        return;
       }
     }
   }

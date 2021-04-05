@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added more Animator Model Tests">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Event.java" afterDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="debugging/cleaning up for java style">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/AbstractEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/AbstractShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/AnimatorModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/ChangeColor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Event.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Move.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Oval.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/ReadonlyAnimator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AbstractShapeTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Animator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Event.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/ReadonlyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ReadonlyAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AbstractShapeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AbstractShapeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,7 +48,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.AbstractShapeTest">
+  <component name="RunManager" selected="JUnit.AnimatorModelTest">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -108,11 +78,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testGetAnimation1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorModelTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testGetAnimation1" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimatorModelTest.testGetAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
+      <option name="METHOD_NAME" value="testGetAnimation" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -128,23 +108,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testGetCurrentShapesOvalVisible" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testGetCurrentShapesOvalVisible" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AbstractShapeTest" />
         <item itemvalue="JUnit.AnimatorModelTest" />
+        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
+        <item itemvalue="JUnit.AnimatorModelTest.test" />
+        <item itemvalue="JUnit.AbstractShapeTest" />
         <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapes" />
-        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation1" />
-        <item itemvalue="JUnit.AnimatorModelTest.testGetCurrentShapesOvalVisible" />
       </list>
     </recent_temporary>
   </component>
@@ -328,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617502202927</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="debugging/cleaning up for java style">
+      <created>1617570495647</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1617570495647</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -363,6 +340,7 @@
     <MESSAGE value="edited AnimationModel first test" />
     <MESSAGE value="added Animator Model Tests" />
     <MESSAGE value="added more Animator Model Tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="added more Animator Model Tests" />
+    <MESSAGE value="debugging/cleaning up for java style" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugging/cleaning up for java style" />
   </component>
 </project>
