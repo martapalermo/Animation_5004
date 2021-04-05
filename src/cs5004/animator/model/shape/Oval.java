@@ -17,16 +17,16 @@ public class Oval extends AbstractShape {
    * @param disappearTime disappearingTime of the oval for Time appearance, int
    * @param width width of the oval for Dimension size, double
    * @param height height of the oval for Dimension size, double
-   * @param red red pigment, double
-   * @param green green pigment, double
-   * @param blue blue pigment, double
+   * @param red red pigment, int
+   * @param green green pigment, int
+   * @param blue blue pigment, int
    * @throws IllegalArgumentException thrown if appearance time is before 0, if appearance time is
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
   public Oval(
       double x, double y, int appearTime, int disappearTime, double width, double height,
-      double red, double green, double blue) throws IllegalArgumentException {
+      int red, int green, int blue) throws IllegalArgumentException {
     super(x, y, appearTime, disappearTime, width, height, red, green, blue);
 
     this.xRadius = this.getWidth() / 2;

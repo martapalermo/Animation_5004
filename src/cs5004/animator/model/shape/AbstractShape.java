@@ -19,15 +19,15 @@ public abstract class AbstractShape implements Shape {
    * @param disappearTime disappearingTime of the shape for Time appearance, int
    * @param width width of the shape for Dimension size, double
    * @param height height of the shape for Dimension size, double
-   * @param red red pigment, double
-   * @param green green pigment, double
-   * @param blue blue pigment, double
+   * @param red red pigment, int
+   * @param green green pigment, int
+   * @param blue blue pigment, int
    * @throws IllegalArgumentException thrown if appearance time is before 0, if appearance time is
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
   public AbstractShape(double x, double y, int appearTime, int disappearTime, double width,
-                       double height, double red, double green, double blue)
+                       double height, int red, int green, int blue)
       throws IllegalArgumentException {
     // Need to figure out coordinate boundaries
     this.reference = new Point(x, y);
@@ -151,14 +151,14 @@ public abstract class AbstractShape implements Shape {
 
   /**
    * Set the color of the shape with the given pigments.
-   * @param red red pigment, a double
-   * @param blue blue pigment, a double
-   * @param green green pigment, a double
+   * @param red red pigment, int
+   * @param blue blue pigment, int
+   * @param green green pigment, int
    * @throws IllegalArgumentException if red < 0 || red > 255 || blue < 0 || blue > 255
    *      || green < 0 || green > 255
    */
   @Override
-  public void setColor(double red, double blue, double green) throws IllegalArgumentException {
+  public void setColor(int red, int blue, int green) throws IllegalArgumentException {
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");
     }
@@ -177,28 +177,28 @@ public abstract class AbstractShape implements Shape {
 
   /**
    * Get the value of the shape's red pigment.
-   * @return red pigment, a double
+   * @return red pigment, int
    */
   @Override
-  public double getRed() {
+  public int getRed() {
     return this.colorValues.red;
   }
 
   /**
    * Get the value of the shape's green pigment.
-   * @return green pigment, a double
+   * @return green pigment, int
    */
   @Override
-  public double getGreen() {
+  public int getGreen() {
     return this.colorValues.green;
   }
 
   /**
    * Get the value of the shape's blue pigment.
-   * @return blue pigment, a double
+   * @return blue pigment, int
    */
   @Override
-  public double getBlue() {
+  public int getBlue() {
     return this.colorValues.blue;
   }
 

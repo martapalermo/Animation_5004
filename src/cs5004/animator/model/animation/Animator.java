@@ -44,12 +44,12 @@ public interface Animator extends ReadonlyAnimator {
   /**
    * Change the color of the given shape.
    * @param name the name of the {@link Shape} to change color, a String
-   * @param red new red value, a double
-   * @param blue new blue value, a double
-   * @param green new green value, a double
-   * @param originalRed original red value, a double
-   * @param originalBlue original blue value, a double
-   * @param originalGreen original green value, a double
+   * @param red new red value, int
+   * @param blue new blue value, int
+   * @param green new green value, int
+   * @param originalRed original red value, int
+   * @param originalBlue original blue value, int
+   * @param originalGreen original green value, int
    * @param start color change start time, an int
    * @param stop color stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -57,8 +57,8 @@ public interface Animator extends ReadonlyAnimator {
    *      the shape is already changing colors in this window, or if the red, blue, or green values
    *      are out of range (0-255), or if no shape in the list has the given name
    */
-  void changeColor(String name, double red, double green, double blue, double originalRed, double
-          originalGreen, double originalBlue, int start, int stop) throws IllegalArgumentException;
+  void changeColor(String name, int red, int green, int blue, int originalRed, int
+          originalGreen, int originalBlue, int start, int stop) throws IllegalArgumentException;
 
   /**
    * Change the shape's scale.

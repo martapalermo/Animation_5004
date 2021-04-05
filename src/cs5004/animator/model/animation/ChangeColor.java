@@ -8,12 +8,12 @@ import cs5004.animator.model.shape.Shape;
  * This class extends AbstractEvent.
  */
 class ChangeColor extends AbstractEvent {
-  private final double originalRed;
-  private final double originalBlue;
-  private final double originalGreen;
-  private final double red;
-  private final double blue;
-  private final double green;
+  private final int originalRed;
+  private final int originalBlue;
+  private final int originalGreen;
+  private final int red;
+  private final int blue;
+  private final int green;
 
   /**
    * ChangeColor event/transformation constructor.
@@ -21,15 +21,15 @@ class ChangeColor extends AbstractEvent {
    * @param shapeName name of the shape, String
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
-   * @param red new red pigment, double
-   * @param green new green pigment, double
-   * @param blue new blue pigment, double
-   * @param originalRed original red pigment, double
-   * @param originalGreen original green pigment, double
-   * @param originalBlue original blue pigment, double
+   * @param red new red pigment, int
+   * @param green new green pigment, int
+   * @param blue new blue pigment, int
+   * @param originalRed original red pigment, int
+   * @param originalGreen original green pigment, int
+   * @param originalBlue original blue pigment, int
    */
-  public ChangeColor(String shapeName, int start, int stop, double red, double green, double blue,
-                     double originalRed, double originalGreen, double originalBlue) {
+  public ChangeColor(String shapeName, int start, int stop, int red, int green, int blue,
+                     int originalRed, int originalGreen, int originalBlue) {
     super(shapeName, start, stop);
     this.red = red;
     this.blue = blue;
