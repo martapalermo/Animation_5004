@@ -23,13 +23,13 @@ public interface Shape {
 
   /**
    * Set the color of the shape with the given pigments.
-   * @param red red pigment, a double
-   * @param blue blue pigment, a double
-   * @param green green pigment, a double
+   * @param red red pigment, int
+   * @param blue blue pigment, int
+   * @param green green pigment, int
    * @throws IllegalArgumentException if red < 0 || red > 255 || blue < 0 || blue > 255
    *      || green < 0 || green > 255
    */
-  void setColor(double red, double green, double blue) throws IllegalArgumentException;
+  void setColor(int red, int green, int blue) throws IllegalArgumentException;
 
   /**
    * Set the shape's name.
@@ -76,21 +76,21 @@ public interface Shape {
 
   /**
    * Get the value of the shape's red pigment.
-   * @return red pigment, a double
+   * @return red pigment, int
    */
-  double getRed();
+  int getRed();
 
   /**
    * Get the value of the shape's green pigment.
-   * @return green pigment, a double
+   * @return green pigment, int
    */
-  double getGreen();
+  int getGreen();
 
   /**
    * Get the value of the shape's blue pigment.
-   * @return blue pigment, a double
+   * @return blue pigment, int
    */
-  double getBlue();
+  int getBlue();
 
   /**
    * Get the shape's name.

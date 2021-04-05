@@ -118,12 +118,12 @@ public class AnimatorModel implements Animator {
   /**
    * Change the color of the given shape.
    * @param name the name of the {@link Shape} to change color, a String
-   * @param red new red value, a double
-   * @param blue new blue value, a double
-   * @param green new green value, a double
-   * @param originalRed original red value, a double
-   * @param originalBlue original blue value, a double
-   * @param originalGreen original green value, a double
+   * @param red new red value, int
+   * @param blue new blue value, int
+   * @param green new green value, int
+   * @param originalRed original red value, int
+   * @param originalBlue original blue value, int
+   * @param originalGreen original green value, int
    * @param start color change start time, an int
    * @param stop color stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -132,8 +132,8 @@ public class AnimatorModel implements Animator {
    *      are out of range (0-255), or if no shape in the list has the given name
    */
   @Override
-  public void changeColor(String name, double red, double green, double blue, double originalRed,
-                          double originalGreen, double originalBlue, int start, int stop)
+  public void changeColor(String name, int red, int green, int blue, int originalRed,
+                          int originalGreen, int originalBlue, int start, int stop)
                           throws IllegalArgumentException {
 
     if (red < 0 || red > 255 || blue < 0 || blue > 255 || green < 0 || green > 255) {
@@ -158,7 +158,7 @@ public class AnimatorModel implements Animator {
         }
 
         Event changeColor = new ChangeColor(name, start, stop, red, blue, green, shape.getRed(),
-                shape.getBlue(), shape.getGreen());
+                shape.getGreen(), shape.getBlue());
 
         this.events.get(name).add(changeColor);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
