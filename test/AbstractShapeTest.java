@@ -37,14 +37,14 @@ public class AbstractShapeTest {
   @Test
   public void testToStringRectangle() {
     assertEquals("Name: " + "\n" + "Type: rectangle\n"
-        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
+        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255,99,71)\n"
         + "Appears at t=1\n" + "Disappears at t=25\n", rectangle.toString());
   }
 
   @Test
   public void testToStringRectangleWithGivenName() {
     assertEquals("Name: rectangle Frank" + "\n" + "Type: rectangle\n"
-        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
+        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255,99,71)\n"
         + "Appears at t=1\n" + "Disappears at t=25\n", r.toString());
   }
 
@@ -52,21 +52,21 @@ public class AbstractShapeTest {
   public void testToStringRectangleWithNewName() {
     rectangle.setName("Tomato red rectangle");
     assertEquals("Name: Tomato red rectangle" + "\n" + "Type: rectangle\n"
-        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255.0,99.0,71.0)\n"
+        + "Min corner: (4.0,3.0), Width: 5.0, Height: 5.0, Color: (255,99,71)\n"
         + "Appears at t=1\n" + "Disappears at t=25\n", rectangle.toString());
   }
 
   @Test
   public void testToStringOval() {
     assertEquals("Name: " + "\n" + "Type: oval\n" + "Center: (0.0,0.0), "
-        + "X radius: 2.0, Y radius: 4.0, Color: (0.0,0.0,128.0)\n" + "Appears at t=5\n"
+        + "X radius: 2.0, Y radius: 4.0, Color: (0,0,128)\n" + "Appears at t=5\n"
         + "Disappears at t=10\n", oval.toString());
   }
 
   @Test
   public void testToStringOvalWithGivenName() {
     assertEquals("Name: oval Larry" + "\n" + "Type: oval\n" + "Center: (0.0,0.0), "
-        + "X radius: 2.0, Y radius: 4.0, Color: (0.0,0.0,128.0)\n" + "Appears at t=5\n"
+        + "X radius: 2.0, Y radius: 4.0, Color: (0,0,128)\n" + "Appears at t=5\n"
         + "Disappears at t=10\n", o.toString());
   }
 
@@ -74,7 +74,7 @@ public class AbstractShapeTest {
   public void testToStringOvalWithNewName() {
     oval.setName("Navy oval");
     assertEquals("Name: Navy oval" + "\n" + "Type: oval\n" + "Center: (0.0,0.0), "
-        + "X radius: 2.0, Y radius: 4.0, Color: (0.0,0.0,128.0)\n" + "Appears at t=5\n"
+        + "X radius: 2.0, Y radius: 4.0, Color: (0,0,128)\n" + "Appears at t=5\n"
         + "Disappears at t=10\n", oval.toString());
   }
 
