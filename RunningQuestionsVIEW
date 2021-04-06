@@ -1,0 +1,14 @@
+Running Question for the View: 
+
+- In 1.3 - "if objects overlap during animation" does it refer to physical overlapping or is it timed events happening at the same time? 
+- Do we need to make these animation run in a loop? or is this going to be timer-based? 
+
+- Animation Building: is this our appendable?   
+
+Where does this go??
+- Implement a factory of views, with a single static method that takes in a String name 
+for a view—“text”, “svg”, or “visual”— and constructs an instance of the appropriate concrete view.
+
+- Is zero speed just static (not moving) ?
+
+JAR?? 
