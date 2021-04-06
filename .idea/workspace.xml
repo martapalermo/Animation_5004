@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="minor debugging">
-      <change beforePath="$PROJECT_DIR$/RunningQuestions" beforeDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="made res folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Archive.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -346,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617673452594</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="made res folder">
+      <created>1617673804210</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1617673804210</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +397,7 @@
     <MESSAGE value="switched RGB double to int" />
     <MESSAGE value="added error checking for original values of events" />
     <MESSAGE value="minor debugging" />
-    <option name="LAST_COMMIT_MESSAGE" value="minor debugging" />
+    <MESSAGE value="made res folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="made res folder" />
   </component>
 </project>

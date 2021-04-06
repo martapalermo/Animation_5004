@@ -1,7 +1,5 @@
 package cs5004.animator.model.animation;
 
-import java.util.List;
-
 import cs5004.animator.model.shape.Shape;
 
 /**

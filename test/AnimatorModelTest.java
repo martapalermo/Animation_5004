@@ -377,8 +377,7 @@ public class AnimatorModelTest {
     this.m.move("t", 200, 200, 1, 100, 50, 100);
   }
 
-  @Test(expected = IllegalArgumentException.class) // NOT PASSING??
-  // java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
+  @Test(expected = IllegalArgumentException.class)
   public void testMoveSameShape() throws IllegalArgumentException {
     this.m.move("r", 155, 120, 200, 200, 20, 34);
     this.m.move("r", 180, 140, 155, 120, 20, 34);
