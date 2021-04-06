@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="made res folder">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="small edit">
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Archive.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AbstractEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AbstractEvent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,8 +47,34 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/cs5004/animator/model" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest">
+  <component name="RunManager" selected="Application.EasyAnimator">
+    <configuration name="EasyAnimator" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
+      <module name="Animation_5004" />
+      <option name="PROGRAM_PARAMETERS" value="-view svg -out out.svg -in buildings.txt -speed 2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -98,6 +124,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.EasyAnimator" />
+      <item itemvalue="JUnit.AnimatorModelTest" />
+      <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AnimatorModelTest" />
@@ -345,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617673804210</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="small edit">
+      <created>1617721484688</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1617721484689</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,6 +428,7 @@
     <MESSAGE value="added error checking for original values of events" />
     <MESSAGE value="minor debugging" />
     <MESSAGE value="made res folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="made res folder" />
+    <MESSAGE value="small edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="small edit" />
   </component>
 </project>
