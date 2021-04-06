@@ -85,7 +85,7 @@ public class AnimatorModel implements Animator {
    *      the shape is already moving in this window, or if no shape if the list has the given name
    */
   @Override
-  public void move(String name, double x, double y, int originalX, int originalY, int start,
+  public void move(String name, double x, double y, double originalX, double originalY, int start,
                    int stop) throws IllegalArgumentException {
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
@@ -170,8 +170,8 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already changing color.");
         }
 
-        Event changeColor = new ChangeColor(shape, start, stop, red, blue, green, shape.getRed(),
-                shape.getGreen(), shape.getBlue());
+        Event changeColor = new ChangeColor(shape, start, stop, red, blue, green, originalRed,
+                originalBlue, originalGreen);
 
         this.events.get(name).add(changeColor);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));

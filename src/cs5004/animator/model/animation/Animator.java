@@ -38,8 +38,8 @@ public interface Animator extends ReadonlyAnimator {
    *      appear/disappear window, if the stop time is less than or equal to the start time, or if
    *      the shape is already moving in this window, or if no shape if the list has the given name
    */
-  void move(String name, double x, double y, int originalX, int originalY, int start, int stop)
-          throws IllegalArgumentException;
+  void move(String name, double x, double y, double originalX, double originalY, int start, int
+          stop) throws IllegalArgumentException;
 
   /**
    * Change the color of the given shape.
