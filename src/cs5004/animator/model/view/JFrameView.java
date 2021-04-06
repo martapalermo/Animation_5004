@@ -1,8 +1,10 @@
 package cs5004.animator.model.view;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class JFrameView extends JFrame implements IView {
+  private JLabel display;
   private JScrollBar scrollBar;
 
   public JFrameView() {
@@ -11,6 +13,24 @@ public class JFrameView extends JFrame implements IView {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
+  }
+
+  /**
+   * Set the listener for any actions.
+   *
+   * @param listener listener, ActionListener
+   */
+  @Override
+  public void setListener(ActionListener listener) {
+
+  }
+
+  /**
+   * Display this view.
+   */
+  @Override
+  public void display() {
+    setVisible(true);
   }
 
 }

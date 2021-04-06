@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="got rid of comments">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/model/view/IView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/model/view/JFrameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added IView + JFrameView and will populate later today">
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/view/JFrameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/view/JFrameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -372,7 +371,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617721819459</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="added IView + JFrameView and will populate later today">
+      <created>1617731756441</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617731756441</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -415,6 +421,7 @@
     <MESSAGE value="minor debugging" />
     <MESSAGE value="made res folder" />
     <MESSAGE value="got rid of comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="got rid of comments" />
+    <MESSAGE value="added IView + JFrameView and will populate later today" />
+    <option name="LAST_COMMIT_MESSAGE" value="added IView + JFrameView and will populate later today" />
   </component>
 </project>
