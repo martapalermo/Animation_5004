@@ -98,6 +98,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JUnit.AnimatorModelTest" />
+      <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
+      <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AnimatorModelTest" />
