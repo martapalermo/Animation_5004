@@ -15,7 +15,7 @@ public class Scale extends AbstractEvent {
   /**
    * Scale event/transformation constructor.
    *
-   * @param shapeName name of the shape, String
+   * @param shape shape being transformed, a {@link Shape}
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
    * @param width new width of shape, double
@@ -23,9 +23,9 @@ public class Scale extends AbstractEvent {
    * @param height new height of shape, double
    * @param originalHeight original height of the shape before transformation, double
    */
-  public Scale(String shapeName, int start, int stop, double width, double originalWidth, double
+  public Scale(Shape shape, int start, int stop, double width, double originalWidth, double
           height, double originalHeight) {
-    super(shapeName, start, stop);
+    super(shape, start, stop);
     this.width = width;
     this.height = height;
     this.originalWidth = originalWidth;

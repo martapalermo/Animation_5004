@@ -450,9 +450,9 @@ public class AnimatorModelTest {
   }
 
   @Test
-  public void testMultipleMoveSameShapeUnordered() {
+  public void testMultipleTransformSameShapeUnordered() {
     this.m.move("r",150, 170, 200,200,35,45);
-    this.m.move("r", 155, 120, 150, 170, 20, 34);
+    this.m.changeColor("r", 0, 0, 1, 1,0,0, 20, 34);
     assertEquals("Shapes:\n"
             + "Name: r\n"
             + "Type: rectangle\n"
@@ -464,7 +464,7 @@ public class AnimatorModelTest {
             + "Center: (500.0,100.0), X radius: 30.0, Y radius: 15.0, Color: (0,0,1)\n"
             + "Appears at t=6\n"
             + "Disappears at t=101\n\n"
-            + "Shape r moves from (150.0,170.0) to (155.0,120.0) from t=20 to t=34\n"
+            + "Shape r changes color from (1,0,0) to (0,1,0) from t=20 to t=34\n"
             + "Shape r moves from (200.0,200.0) to (150.0,170.0) from t=35 to t=45",
         this.m.getAnimation());
   }
@@ -473,6 +473,7 @@ public class AnimatorModelTest {
   public void testMultipleMoveSameShape() {
     this.m.move("r",150, 170, 200,200,35,45);
     this.m.move("r", 155, 120, 150, 170, 45, 55);
+    System.out.println(this.m.getCurrentShapes(44));
     assertEquals("Shapes:\n"
             + "Name: r\n"
             + "Type: rectangle\n"

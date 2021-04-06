@@ -18,7 +18,7 @@ class ChangeColor extends AbstractEvent {
   /**
    * ChangeColor event/transformation constructor.
    *
-   * @param shapeName name of the shape, String
+   * @param shape shape being transformed, a {@link Shape}
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
    * @param red new red pigment, int
@@ -28,9 +28,9 @@ class ChangeColor extends AbstractEvent {
    * @param originalGreen original green pigment, int
    * @param originalBlue original blue pigment, int
    */
-  public ChangeColor(String shapeName, int start, int stop, int red, int green, int blue,
+  public ChangeColor(Shape shape, int start, int stop, int red, int green, int blue,
                      int originalRed, int originalGreen, int originalBlue) {
-    super(shapeName, start, stop);
+    super(shape, start, stop);
     this.red = red;
     this.blue = blue;
     this.green = green;

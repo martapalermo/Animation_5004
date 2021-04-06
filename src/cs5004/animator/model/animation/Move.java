@@ -15,7 +15,7 @@ class Move extends AbstractEvent {
   /**
    * Move event/transformation constructor.
    *
-   * @param shapeName name of the shape, String
+   * @param shape shape to be transformed, {@link Shape}
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
    * @param x x value for destination coordinate, double
@@ -23,9 +23,9 @@ class Move extends AbstractEvent {
    * @param originalX starting x value for shape, double
    * @param originalY starting y value for shape, double
    */
-  public Move(String shapeName, int start, int stop, double x, double y,
+  public Move(Shape shape, int start, int stop, double x, double y,
               double originalX, double originalY) {
-    super(shapeName, start, stop);
+    super(shape, start, stop);
     this.x = x;
     this.y = y;
     this.originalX = originalX;

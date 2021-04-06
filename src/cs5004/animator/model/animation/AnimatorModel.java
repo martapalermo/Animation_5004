@@ -12,8 +12,8 @@ import cs5004.animator.model.shape.Shape;
  * This is the Animator Model class. It implements the Animator interface.
  */
 public class AnimatorModel implements Animator {
-  private List<Shape> shapes;
-  private HashMap<String, List<Event>> events;
+  private final List<Shape> shapes;
+  private final HashMap<String, List<Event>> events;
 
   /**
    * Animator Model constructor.
@@ -87,16 +87,21 @@ public class AnimatorModel implements Animator {
   @Override
   public void move(String name, double x, double y, int originalX, int originalY, int start,
                    int stop) throws IllegalArgumentException {
-
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+
+        // Current characteristics of the shape about to be transformed
+        Shape currentShape = this.getShape(name, start - 1);
+
+        // Shape being transformed hasn't appeared yet
+        if (currentShape == null) {
+          if (shape.getX() != originalX || shape.getY() != originalY) {
+            throw new IllegalArgumentException("Shape's original values are invalid.");
+          }
         }
 
-        if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
-                  + "window.");
+        else if (currentShape.getX() != originalX || currentShape.getY() != originalY) {
+          throw new IllegalArgumentException("Shape's original values are invalid.");
         }
 
         // Check to see if shape is already moving in this window
@@ -105,7 +110,7 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
-        Event move = new Move(name, start, stop, x, y, originalX, originalY);
+        Event move = new Move(shape, start, stop, x, y, originalX, originalY);
 
         this.events.get(name).add(move);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -142,13 +147,21 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+
+        // Current characteristics of the shape about to be transformed
+        Shape currentShape = this.getShape(name, start - 1);
+
+        // Shape being transformed hasn't appeared yet
+        if (currentShape == null) {
+          if (shape.getRed() != originalRed || shape.getGreen() != originalGreen || shape.getBlue()
+                  != originalBlue) {
+            throw new IllegalArgumentException("Shape's original values are invalid.");
+          }
         }
 
-        if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
-                  + "window.");
+        else if (currentShape.getRed() != originalRed || currentShape.getGreen() != originalGreen
+                || shape.getBlue() != originalBlue) {
+          throw new IllegalArgumentException("Shape's original values are invalid.");
         }
 
         // Check to see if shape is already changing color in this window
@@ -157,7 +170,7 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already changing color.");
         }
 
-        Event changeColor = new ChangeColor(name, start, stop, red, blue, green, shape.getRed(),
+        Event changeColor = new ChangeColor(shape, start, stop, red, blue, green, shape.getRed(),
                 shape.getGreen(), shape.getBlue());
 
         this.events.get(name).add(changeColor);
@@ -192,13 +205,20 @@ public class AnimatorModel implements Animator {
 
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
-        if (stop <= start) {
-          throw new IllegalArgumentException("Stop time cannot be less than the start time.");
+
+        // Current characteristics of the shape about to be transformed
+        Shape currentShape = this.getShape(name, start - 1);
+
+        // Shape being transformed hasn't appeared yet
+        if (currentShape == null) {
+          if (shape.getWidth() != originalWidth || shape.getHeight() != originalHeight) {
+            throw new IllegalArgumentException("Shape's original values are invalid.");
+          }
         }
 
-        if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
-          throw new IllegalArgumentException("Start/stop time is out of the shape's "
-              + "appear window.");
+        else if (currentShape.getWidth() != originalWidth || currentShape.getHeight()
+                != originalHeight) {
+          throw new IllegalArgumentException("Shape's original values are invalid.");
         }
 
         // Check to see if shape is already scaling in this window
@@ -207,7 +227,7 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already scaling.");
         }
 
-        Event scale = new Scale(name, start, stop, width, originalWidth, height, originalHeight);
+        Event scale = new Scale(shape, start, stop, width, originalWidth, height, originalHeight);
 
         this.events.get(name).add(scale);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -278,13 +298,13 @@ public class AnimatorModel implements Animator {
    */
   private void transformShape(Shape shape, int tick) {
     for (Event event : this.events.get(shape.getName())) {
-      if (event.getStart() >= tick && event.getStop() < tick) {
+      if (event.getStart() <= tick && event.getStop() > tick) {
         event.setValues(shape);
       }
 
       // Tick is outside start/stop time of the event but no other event of the same kind has
       // happened
-      else if (tick > event.getStop()) {
+      else if (tick >= event.getStop()) {
         event.setValues(shape);
         return;
       }
@@ -324,5 +344,23 @@ public class AnimatorModel implements Animator {
       information[i] = transformations.get(i).toString();
     }
     return String.join("\n", information);
+  }
+
+  /**
+   * Helper method for events to determine if the incoming original values are valid.
+   * @param name shape name that is transforming, a String
+   * @param tick the tick one unit before the start of the transformation
+   * @return shape that is being transformed with current attributes, null if the shape hasn't
+   *      appeared yet
+   */
+  private Shape getShape(String name, int tick) {
+    List<Shape> currentShapes = this.getCurrentShapes(tick);
+
+    for (Shape shape : currentShapes) {
+      if (shape.getName().equalsIgnoreCase(name)) {
+        return shape;
+      }
+    }
+    return null;
   }
 }
