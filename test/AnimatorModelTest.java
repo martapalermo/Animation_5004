@@ -63,7 +63,7 @@ public class AnimatorModelTest {
             + "Disappears at t=100\n]", this.m.getCurrentShapes(2).toString());
   }
 
-  @Test // should return only Oval c
+  @Test
   public void testGetCurrentShapesOvalVisible() {
     assertEquals("[Name: c\n"
             + "Type: oval\n"
@@ -73,7 +73,7 @@ public class AnimatorModelTest {
             + "]", this.m.getCurrentShapes(100).toString());
   }
 
-  @Test // should return both Oval c and Rectangle r
+  @Test
   public void testGetCurrentShapesBothVisible() {
     assertEquals("[Name: r\n"
             + "Type: rectangle\n"
@@ -249,8 +249,7 @@ public class AnimatorModelTest {
         15, 80);
   }
 
-  @Test(expected = IllegalArgumentException.class) //NOT PASSING?
-  // java.lang.AssertionError: Expected exception: java.lang.IllegalArgumentException
+  @Test(expected = IllegalArgumentException.class)
   public void testChangeColorSimultaneously() throws IllegalArgumentException {
     this.m.changeColor("c", 175, 0,0,0,0,1,
         15, 80);
@@ -529,8 +528,7 @@ public class AnimatorModelTest {
 
   @Test
   public void testRemoveShape() {
-    assertEquals("Shapes:\n", model.getAnimation()); // empty model
-    // add three rectangles to make a 3 tier cake
+    assertEquals("Shapes:\n", model.getAnimation());
     this.model.addShape(new Rectangle(0,0, 2, 20, 5, 1,
         255,0,0), "bottom");
     this.model.addShape(new Rectangle(1,1, 4, 20, 3,
@@ -608,8 +606,7 @@ public class AnimatorModelTest {
 
   @Test()
   public void testAddShape() {
-    assertEquals("Shapes:\n", model.getAnimation()); // empty model
-    // add three rectangles to make a 3 tier cake
+    assertEquals("Shapes:\n", model.getAnimation());
     this.model.addShape(new Rectangle(0,0, 2, 20, 5, 1,
         255,0,0), "bottom");
     this.model.addShape(new Rectangle(1,1, 4, 20, 3,
