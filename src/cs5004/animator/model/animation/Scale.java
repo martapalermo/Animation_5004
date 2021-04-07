@@ -7,10 +7,10 @@ import cs5004.animator.model.shape.Shape;
  * This class extends AbstractEvent.
  */
 public class Scale extends AbstractEvent {
-  private final double originalWidth;
-  private final double originalHeight;
-  private final double height;
-  private final double width;
+  private final int originalWidth;
+  private final int originalHeight;
+  private final int height;
+  private final int width;
 
   /**
    * Scale event/transformation constructor.
@@ -18,13 +18,13 @@ public class Scale extends AbstractEvent {
    * @param shape shape being transformed, a {@link Shape}
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
-   * @param width new width of shape, double
-   * @param originalWidth original width of the shape before transformation, double
-   * @param height new height of shape, double
-   * @param originalHeight original height of the shape before transformation, double
+   * @param width new width of shape, int
+   * @param originalWidth original width of the shape before transformation, int
+   * @param height new height of shape, int
+   * @param originalHeight original height of the shape before transformation, int
    */
-  public Scale(Shape shape, int start, int stop, double width, double originalWidth, double
-          height, double originalHeight) {
+  public Scale(Shape shape, int start, int stop, int width, int originalWidth, int
+          height, int originalHeight) {
     super(shape, start, stop);
     this.width = width;
     this.height = height;
