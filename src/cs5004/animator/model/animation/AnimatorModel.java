@@ -26,6 +26,11 @@ public class AnimatorModel implements Animator {
     this.events = new HashMap<>();
   }
 
+  private AnimatorModel(AnimatorModelBuilder builder) {
+    this.shapes = builder.shapesList;
+    this.events = builder.eventsList;
+  }
+
   /**
    * Add a shape to the list.
    * @param shape the {@link Shape} to be added to the list

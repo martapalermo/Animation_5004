@@ -30,7 +30,7 @@ public final class EasyAnimator {
         String command = scan.next();
         if (token.equalsIgnoreCase("-in")) {
 
-          // Exception if the file doesn't exist?
+          // Try/catch for invalid file
           if (!command.endsWith(".txt")) {
             JOptionPane.showMessageDialog(null, "Invalid input file.",
                     "Error", JOptionPane.ERROR_MESSAGE);
