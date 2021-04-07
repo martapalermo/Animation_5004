@@ -74,10 +74,10 @@ public class AnimatorModel implements Animator {
   /**
    * Move the given shape to the new position.
    * @param name the name of the {@link Shape} to be moved, a String
-   * @param x new x coordinate, a double
-   * @param y new y coordinate, a double
-   * @param originalX old x coordinate, a double
-   * @param originalY old y coordinate, a double
+   * @param x new x coordinate, int
+   * @param y new y coordinate, int
+   * @param originalX old x coordinate, int
+   * @param originalY old y coordinate, int
    * @param start move start time, an int
    * @param stop move stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -85,7 +85,7 @@ public class AnimatorModel implements Animator {
    *      the shape is already moving in this window, or if no shape if the list has the given name
    */
   @Override
-  public void move(String name, double x, double y, double originalX, double originalY, int start,
+  public void move(String name, int x, int y, int originalX, int originalY, int start,
                    int stop) throws IllegalArgumentException {
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
@@ -185,10 +185,10 @@ public class AnimatorModel implements Animator {
    * Change the shape's scale.
    *
    * @param name name of the {@link Shape} to be scaled, a String
-   * @param width new width, a double
-   * @param height new height, a double
-   * @param originalHeight original height, a double
-   * @param originalWidth original width, a double
+   * @param width new width, int
+   * @param height new height, int
+   * @param originalHeight original height, int
+   * @param originalWidth original width, int
    * @param start scaling start time, an int
    * @param stop scaling stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
@@ -196,7 +196,7 @@ public class AnimatorModel implements Animator {
    *      window, or if width and/or height <= 0, or if no shape in the list has the given name
    */
   @Override
-  public void scaleShape(String name, double width, double height, double originalHeight, double
+  public void scaleShape(String name, int width, int height, int originalHeight, int
           originalWidth, int start, int stop) throws IllegalArgumentException {
 
     if (width <= 0 || height <= 0) {

@@ -7,10 +7,10 @@ import cs5004.animator.model.shape.Shape;
  * This class extends AbstractEvent.
  */
 class Move extends AbstractEvent {
-  private final double originalX;
-  private final double originalY;
-  private final double x;
-  private final double y;
+  private final int originalX;
+  private final int originalY;
+  private final int x;
+  private final int y;
 
   /**
    * Move event/transformation constructor.
@@ -18,13 +18,13 @@ class Move extends AbstractEvent {
    * @param shape shape to be transformed, {@link Shape}
    * @param start start tick, start of the event, int
    * @param stop stop tick, end of the event, int
-   * @param x x value for destination coordinate, double
-   * @param y y value for destination coordinate, double
-   * @param originalX starting x value for shape, double
-   * @param originalY starting y value for shape, double
+   * @param x x value for destination coordinate, int
+   * @param y y value for destination coordinate, int
+   * @param originalX starting x value for shape, int
+   * @param originalY starting y value for shape, int
    */
-  public Move(Shape shape, int start, int stop, double x, double y,
-              double originalX, double originalY) {
+  public Move(Shape shape, int start, int stop, int x, int y,
+              int originalX, int originalY) {
     super(shape, start, stop);
     this.x = x;
     this.y = y;
