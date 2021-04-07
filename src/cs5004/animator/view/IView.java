@@ -1,6 +1,11 @@
 package cs5004.animator.view;
 
+import cs5004.animator.model.shape.Shape;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.List;
 
 /**
  * The interface for our view class.
@@ -8,13 +13,7 @@ import java.awt.event.ActionListener;
 public interface IView {
 
   /**
-   * Set the listener for any actions.
-   * @param listener listener, ActionListener
-   */
-  void setListener(ActionListener listener);
-
-  /**
    * Display this view.
    */
-  void display();
+  void getCurrentDisplay(List<Shape> shapesList);
 }

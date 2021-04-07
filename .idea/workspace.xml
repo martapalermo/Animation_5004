@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="main method">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added elements to iview - NOT SURE - NEED EDITS">
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Animator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/JFrameView.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +54,20 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest">
+  <component name="RunManager" selected="Application.PracticeView">
+    <configuration name="PracticeView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.PracticeView" />
+      <module name="Animation_5004" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -76,16 +98,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testMultipleMoveSameShape" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMultipleMoveSameShape" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AnimatorModelTest.testMultipleMoveSameShapeUnordered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -109,17 +121,17 @@
     <list>
       <item itemvalue="JUnit.AnimatorModelTest" />
       <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
-      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
       <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
       <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
+      <item itemvalue="Application.PracticeView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PracticeView" />
         <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
         <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
         <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +147,7 @@
       <workItem from="1617217402480" duration="25761000" />
       <workItem from="1617487830924" duration="15399000" />
       <workItem from="1617641055435" duration="631000" />
+      <workItem from="1617806384846" duration="10907000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -360,21 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617673804210</updated>
     </task>
-    <task id="LOCAL-00033" summary="main method">
-      <created>1617744310058</created>
+    <task id="LOCAL-00033" summary="added elements to iview - NOT SURE - NEED EDITS">
+      <created>1617808516695</created>
       <option name="number" value="00033" />
       <option name="presentableId" value="LOCAL-00033" />
       <option name="project" value="LOCAL" />
-      <updated>1617744310058</updated>
+      <updated>1617808516695</updated>
     </task>
-    <task id="LOCAL-00034" summary="main method">
-      <created>1617744774892</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1617744774892</updated>
-    </task>
-    <option name="localTasksCounter" value="35" />
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -416,7 +422,7 @@
     <MESSAGE value="added error checking for original values of events" />
     <MESSAGE value="minor debugging" />
     <MESSAGE value="made res folder" />
-    <MESSAGE value="main method" />
-    <option name="LAST_COMMIT_MESSAGE" value="main method" />
+    <MESSAGE value="added elements to iview - NOT SURE - NEED EDITS" />
+    <option name="LAST_COMMIT_MESSAGE" value="added elements to iview - NOT SURE - NEED EDITS" />
   </component>
 </project>
