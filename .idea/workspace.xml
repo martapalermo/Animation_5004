@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="made changes to IView, added frame and panel">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/ShapeType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +46,7 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/cs5004/animator/model" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -68,19 +63,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -155,6 +137,7 @@
       <workItem from="1617641055435" duration="631000" />
       <workItem from="1617806384846" duration="14677000" />
       <workItem from="1617846660727" duration="2246000" />
+      <workItem from="1617902444396" duration="418000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -413,7 +396,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added oval toString" />
     <MESSAGE value="added rectangle toString" />
     <MESSAGE value="added Event classes (changeColor and scaleShape) and added all event toString in those classes" />
     <MESSAGE value="started adding tests - also added a new method in ReadonlyShape -&gt; getColor (returns a string of all the color coordinates) still work in progress!" />
@@ -438,6 +420,7 @@
     <MESSAGE value="made res folder" />
     <MESSAGE value="added elements to iview - NOT SURE - NEED EDITS" />
     <MESSAGE value="made changes to IView, added frame and panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="made changes to IView, added frame and panel" />
+    <MESSAGE value="in the process of refactoring addShape/Events" />
+    <option name="LAST_COMMIT_MESSAGE" value="in the process of refactoring addShape/Events" />
   </component>
 </project>
