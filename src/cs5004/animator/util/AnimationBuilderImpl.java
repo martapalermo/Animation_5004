@@ -12,7 +12,7 @@ public class AnimationBuilderImpl implements AnimationBuilder {
     return null;
   }
 
-  /**
+  /** // this will take the input from txt file: parse at canvas
    * Specify the bounding box to be used for the animation.
    *
    * @param x      The leftmost x value
