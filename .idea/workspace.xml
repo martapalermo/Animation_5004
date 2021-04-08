@@ -106,19 +106,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -130,10 +117,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.PracticeView" />
-      <item itemvalue="JUnit.AnimatorModelTest" />
       <item itemvalue="Application.EasyAnimator" />
       <item itemvalue="Application.FileData" />
       <item itemvalue="Application.WriteTextView" />
+      <item itemvalue="JUnit.AnimatorModelTest" />
     </list>
     <recent_temporary>
       <list>
