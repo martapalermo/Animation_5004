@@ -22,12 +22,11 @@ public class GraphicsView extends JFrame implements IView {
   }
 
   /**
-   * Display this view.
+   * Display's this view.
    */
   @Override
   public void getCurrentDisplay(List<Shape> model) {
     this.panel.updateModel(model);
     this.repaint();
   }
-
 }
