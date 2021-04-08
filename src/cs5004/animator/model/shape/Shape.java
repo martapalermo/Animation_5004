@@ -39,6 +39,20 @@ public interface Shape {
   void setName(String name) throws IllegalArgumentException;
 
   /**
+   * Set the disappearance time for the shape.
+   * @param time disappearance time, an int
+   * @throws IllegalArgumentException if the time is <=0
+   */
+  void setDisappearTime(int time) throws IllegalArgumentException;
+
+  /**
+   * Set the appearance time for the shape.
+   * @param time appearance time, an int
+   * @throws IllegalArgumentException if the time is <= 0
+   */
+  void setAppearTime(int time) throws IllegalArgumentException;
+
+  /**
    * Get the shape's x coordinate.
    * @return x coordinate, int
    */

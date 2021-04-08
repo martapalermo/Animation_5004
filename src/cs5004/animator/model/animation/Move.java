@@ -53,7 +53,8 @@ class Move extends AbstractEvent {
   }
 
   /**
-   * Sets the given shape's new values based on the event that occurred.
+   * Sets the given shape's new values based on the event that occurred; calculate the in between
+   * factor to multiply values by.
    * @param shape shape to be transformed
    */
   @Override

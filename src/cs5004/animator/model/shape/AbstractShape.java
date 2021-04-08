@@ -187,6 +187,26 @@ public abstract class AbstractShape implements Shape {
   }
 
   /**
+   * Set the disappearance time for the shape.
+   * @param time disappearance time, an int
+   * @throws IllegalArgumentException if the time is <=0
+   */
+  @Override
+  public void setDisappearTime(int time) throws IllegalArgumentException {
+    this.appearance.setDisappearTime(time);
+  }
+
+  /**
+   * Set the appearance time for the shape.
+   * @param time appearance time, an int
+   * @throws IllegalArgumentException if the time is <= 0
+   */
+  @Override
+  public void setAppearTime(int time) throws IllegalArgumentException {
+    this.appearance.setDisappearTime(time);
+  }
+
+  /**
    * Get the value of the shape's red pigment.
    * @return red pigment, int
    */

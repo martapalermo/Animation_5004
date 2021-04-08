@@ -82,15 +82,27 @@ public class AnimatorModel implements Animator {
                         int red2, int green2, int blue2) {
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
+        // Move this into helper function?
         if (!shape.isInitialized()) {
-          // Make initialization method in Shape that takes in starting values
-
-          // Check if stop time > disappearTime (set disappearTime to new stop time if need be)
-
-          // Check to see what transformation(s) are occurring
-            // Make Static event
-            // Incorporate tween formula
+          shape.setAppearTime(start);
+          shape.setDisappearTime(stop);
+          shape.setPos(x1,y1);
+          shape.setDimension(width1, height1);
+          shape.setColor(red1, green1, blue1);
+          shape.setInitialized();
         }
+
+        if (stop > shape.getDisappearTime()) {
+          shape.setDisappearTime(stop);
+        }
+
+        // Check to see what transformation(s) are occurring
+
+        if (x1 != x2 || y1 != y2) {
+
+        }
+        // Make Static event
+        // Incorporate tween formula
       }
     }
 
