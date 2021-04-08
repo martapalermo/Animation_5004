@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="made changes to IView, added frame and panel">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="tweaked ShapeType enum class">
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/ReadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +14,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -46,14 +47,39 @@
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/cs5004/animator/model" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/cs5004/animator/util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PracticeView">
+  <component name="RunManager" selected="Application.WriteTextView">
+    <configuration name="EasyAnimator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
+      <module name="Animation_5004" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FileData" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.FileData" />
+      <module name="Animation_5004" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PracticeView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.PracticeView" />
       <module name="Animation_5004" />
@@ -67,6 +93,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WriteTextView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.WriteTextView" />
+      <module name="Animation_5004" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.view.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnimatorModelTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -76,50 +128,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testGetAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testGetAnimation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimatorModelTest.testMultipleMoveSameShapeUnordered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMultipleMoveSameShapeUnordered" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimatorModelTest.testMultipleTransformSameShapeUnordered" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMultipleTransformSameShapeUnordered" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.PracticeView" />
       <item itemvalue="JUnit.AnimatorModelTest" />
-      <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
-      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
-      <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
+      <item itemvalue="Application.EasyAnimator" />
+      <item itemvalue="Application.FileData" />
+      <item itemvalue="Application.WriteTextView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WriteTextView" />
+        <item itemvalue="Application.FileData" />
+        <item itemvalue="Application.EasyAnimator" />
         <item itemvalue="Application.PracticeView" />
         <item itemvalue="JUnit.AnimatorModelTest" />
-        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMultipleTransformSameShapeUnordered" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShapeUnordered" />
       </list>
     </recent_temporary>
   </component>
@@ -136,8 +158,7 @@
       <workItem from="1617487830924" duration="15399000" />
       <workItem from="1617641055435" duration="631000" />
       <workItem from="1617806384846" duration="14677000" />
-      <workItem from="1617846660727" duration="2246000" />
-      <workItem from="1617902444396" duration="418000" />
+      <workItem from="1617846660727" duration="10991000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -377,7 +398,35 @@
       <option name="project" value="LOCAL" />
       <updated>1617824922753</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="finished doubles/int + added shapetype enum">
+      <created>1617854727835</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1617854727835</updated>
+    </task>
+    <task id="LOCAL-00036" summary="finished doubles/int + added shapetype enum">
+      <created>1617888820092</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1617888820093</updated>
+    </task>
+    <task id="LOCAL-00037" summary="added AnimationBuilderImpl class!">
+      <created>1617889721737</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1617889721737</updated>
+    </task>
+    <task id="LOCAL-00038" summary="tweaked ShapeType enum class">
+      <created>1617890686132</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1617890686132</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,8 +445,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added rectangle toString" />
-    <MESSAGE value="added Event classes (changeColor and scaleShape) and added all event toString in those classes" />
     <MESSAGE value="started adding tests - also added a new method in ReadonlyShape -&gt; getColor (returns a string of all the color coordinates) still work in progress!" />
     <MESSAGE value="added some more tests - still working on these" />
     <MESSAGE value="added the rest of the setter tests for AbstractShapeTest should be done!" />
@@ -420,7 +467,9 @@
     <MESSAGE value="made res folder" />
     <MESSAGE value="added elements to iview - NOT SURE - NEED EDITS" />
     <MESSAGE value="made changes to IView, added frame and panel" />
-    <MESSAGE value="in the process of refactoring addShape/Events" />
-    <option name="LAST_COMMIT_MESSAGE" value="in the process of refactoring addShape/Events" />
+    <MESSAGE value="finished doubles/int + added shapetype enum" />
+    <MESSAGE value="added AnimationBuilderImpl class!" />
+    <MESSAGE value="tweaked ShapeType enum class" />
+    <option name="LAST_COMMIT_MESSAGE" value="tweaked ShapeType enum class" />
   </component>
 </project>

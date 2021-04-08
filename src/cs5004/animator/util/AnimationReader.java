@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
  * A helper to read animation data and construct an animation from it.
  */
 public class AnimationReader {
+
   /**
    * A factory for producing new animations, given a source of shapes and a
    * builder for constructing animations.
