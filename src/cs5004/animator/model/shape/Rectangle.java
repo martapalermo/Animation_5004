@@ -9,12 +9,12 @@ public class Rectangle extends AbstractShape {
   /**
    * Rectangle shape constructor for when initial values are known.
    *
-   * @param x x-value of the rectangle for Point reference, double
-   * @param y y-value of the rectangle for Point reference, double
+   * @param x x-value of the rectangle for Point reference, int
+   * @param y y-value of the rectangle for Point reference, int
    * @param appearTime appearTime of the rectangle for Time appearance, int
    * @param disappearTime disappearingTime of the rectangle for Time appearance, int
-   * @param width width of the rectangle for Dimension size, double
-   * @param height height of the rectangle for Dimension size, double
+   * @param width width of the rectangle for Dimension size, int
+   * @param height height of the rectangle for Dimension size, int
    * @param red red pigment, int
    * @param green green pigment, int
    * @param blue blue pigment, int
@@ -22,8 +22,8 @@ public class Rectangle extends AbstractShape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public Rectangle(double x, double y, int appearTime, int disappearTime, double width,
-                   double height, int red, int green, int blue)
+  public Rectangle(int x, int y, int appearTime, int disappearTime, int width,
+                   int height, int red, int green, int blue)
       throws IllegalArgumentException {
     super(x, y, appearTime, disappearTime, width, height, red, green, blue);
   }

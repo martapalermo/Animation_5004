@@ -5,18 +5,18 @@ package cs5004.animator.model.shape;
  */
 // for the oval, there are 2 radii: long axis will be height/2 and short axis will be width/2
 public class Oval extends AbstractShape {
-  private double xRadius;
-  private double yRadius;
+  private int xRadius;
+  private int yRadius;
 
   /**
    * Oval shape constructor for when initial values are known.
    *
-   * @param x x-value of the oval for Point reference, double
-   * @param y y-value of the oval for Point reference, double
+   * @param x x-value of the oval for Point reference, int
+   * @param y y-value of the oval for Point reference, int
    * @param appearTime appearTime of the oval for Time appearance, int
    * @param disappearTime disappearingTime of the oval for Time appearance, int
-   * @param width width of the oval for Dimension size, double
-   * @param height height of the oval for Dimension size, double
+   * @param width width of the oval for Dimension size, int
+   * @param height height of the oval for Dimension size, int
    * @param red red pigment, int
    * @param green green pigment, int
    * @param blue blue pigment, int
@@ -25,7 +25,7 @@ public class Oval extends AbstractShape {
    *      are greater than 255 or less than 0.
    */
   public Oval(
-      double x, double y, int appearTime, int disappearTime, double width, double height,
+      int x, int y, int appearTime, int disappearTime, int width, int height,
       int red, int green, int blue) throws IllegalArgumentException {
     super(x, y, appearTime, disappearTime, width, height, red, green, blue);
 

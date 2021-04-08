@@ -14,12 +14,12 @@ public abstract class AbstractShape implements Shape {
 
   /**
    * AbstractShape Constructor for when initial values are known.
-   * @param x x-value of the shape for Point reference, double
-   * @param y y-value of the shape for Point reference, double
+   * @param x x-value of the shape for Point reference, int
+   * @param y y-value of the shape for Point reference, int
    * @param appearTime appearTime of the shape for Time appearance, int
    * @param disappearTime disappearingTime of the shape for Time appearance, int
-   * @param width width of the shape for Dimension size, double
-   * @param height height of the shape for Dimension size, double
+   * @param width width of the shape for Dimension size, int
+   * @param height height of the shape for Dimension size, int
    * @param red red pigment, int
    * @param green green pigment, int
    * @param blue blue pigment, int
@@ -27,8 +27,8 @@ public abstract class AbstractShape implements Shape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public AbstractShape(double x, double y, int appearTime, int disappearTime, double width,
-                       double height, int red, int green, int blue)
+  public AbstractShape(int x, int y, int appearTime, int disappearTime, int width,
+                       int height, int red, int green, int blue)
       throws IllegalArgumentException {
     // Need to figure out coordinate boundaries
     this.reference = new Point(x, y);
@@ -81,31 +81,31 @@ public abstract class AbstractShape implements Shape {
 
   /**
    * Set the shape's position.
-   * @param x x coordinate, a double
-   * @param y y coordinate, a double
+   * @param x x coordinate, int
+   * @param y y coordinate, int
    *          potentially throwIllegalArgument if pos is outside of the screen?
    */
   @Override
-  public void setPos(double x, double y) {
+  public void setPos(int x, int y) {
     this.reference.setX(x);
     this.reference.setY(y);
   }
 
   /**
    * Get the shape's x coordinate.
-   * @return x coordinate, a double
+   * @return x coordinate, int
    */
   @Override
-  public double getX() {
+  public int getX() {
     return this.reference.x;
   }
 
   /**
    * Get the shape's y coordinate.
-   * @return y coordinate, a double
+   * @return y coordinate, int
    */
   @Override
-  public double getY() {
+  public int getY() {
     return this.reference.y;
   }
 
@@ -129,30 +129,30 @@ public abstract class AbstractShape implements Shape {
 
   /**
    * Get the shape's width.
-   * @return width, a double
+   * @return width, int
    */
   @Override
-  public double getWidth() {
+  public int getWidth() {
     return this.dimension.width;
   }
 
   /**
    * Get the shape's height.
-   * @return height, a double
+   * @return height, int
    */
   @Override
-  public double getHeight() {
+  public int getHeight() {
     return this.dimension.height;
   }
 
   /**
    * Set the shape's width and height.
-   * @param width shape's width, a double
-   * @param height shape's height, a double
+   * @param width shape's width, int
+   * @param height shape's height, int
    * @throws IllegalArgumentException if width and/or height <= 0
    */
   @Override
-  public void setDimension(double width, double height) throws IllegalArgumentException {
+  public void setDimension(int width, int height) throws IllegalArgumentException {
     if (width <= 0 || height <= 0) {
       throw new IllegalArgumentException("Width/Height both must be greater than 0.");
     }

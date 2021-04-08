@@ -7,19 +7,19 @@ public interface Shape {
 
   /**
    * Set the shape's position.
-   * @param x x coordinate, a double
-   * @param y y coordinate, a double
+   * @param x x coordinate, int
+   * @param y y coordinate, int
    *          potentially throwIllegalArgument if pos is outside of the screen?
    */
-  void setPos(double x, double y);
+  void setPos(int x, int y);
 
   /**
    * Set the shape's width and height.
-   * @param width shape's width, a double
-   * @param height shape's height, a double
+   * @param width shape's width, int
+   * @param height shape's height, int
    * @throws IllegalArgumentException if width and/or height <= 0
    */
-  void setDimension(double width, double height) throws IllegalArgumentException;
+  void setDimension(int width, int height) throws IllegalArgumentException;
 
   /**
    * Set the color of the shape with the given pigments.
@@ -40,15 +40,15 @@ public interface Shape {
 
   /**
    * Get the shape's x coordinate.
-   * @return x coordinate, a double
+   * @return x coordinate, int
    */
-  double getX();
+  int getX();
 
   /**
    * Get the shape's y coordinate.
-   * @return y coordinate, a double
+   * @return y coordinate, int
    */
-  double getY();
+  int getY();
 
   /**
    * Get the shape's appear time.
@@ -64,15 +64,15 @@ public interface Shape {
 
   /**
    * Get the shape's width.
-   * @return width, a double
+   * @return width, int
    */
-  double getWidth();
+  int getWidth();
 
   /**
    * Get the shape's height.
-   * @return height, a double
+   * @return height, int
    */
-  double getHeight();
+  int getHeight();
 
   /**
    * Get the value of the shape's red pigment.

@@ -4,48 +4,48 @@ package cs5004.animator.model.shape;
  * This is the point class. It represents a space on a plane where the shapes are located.
  */
 class Point {
-  protected double x;
-  protected double y;
+  protected int x;
+  protected int y;
 
   /**
    * Point constructor takes two doubles for x and y coordinates.
-   * @param x x-value coordinate, double
-   * @param y y-value coordinate, double
+   * @param x x-value coordinate, int
+   * @param y y-value coordinate, int
    */
-  public Point(double x, double y) {
+  public Point(int x, int y) {
     this.x = x;
     this.y = y;
   }
 
   /**
    * Getter method for x value of coordinate.
-   * @return returns the x value, double
+   * @return returns the x value, int
    */
-  public double getX() {
+  public int getX() {
     return this.x;
   }
 
   /**
    * Getter method for y value of coordinate.
-   * @return returns the y value, double
+   * @return returns the y value, int
    */
-  public double getY() {
+  public int getY() {
     return this.y;
   }
 
   /**
    * Setter method for x value of coordinate.
-   * @param x an new x value that will be set, double
+   * @param x an new x value that will be set, int
    */
-  public void setX(double x) {
+  public void setX(int x) {
     this.x = x;
   }
 
   /**
    * Setter method for y value of coordinate.
-   * @param y an new y value that will be set, double
+   * @param y an new y value that will be set, int
    */
-  public void setY(double y) {
+  public void setY(int y) {
     this.y = y;
   }
 }
