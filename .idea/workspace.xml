@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="tweaked ShapeType enum class">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" afterDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added a fileWriter">
+      <change afterPath="$PROJECT_DIR$/testing1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +158,7 @@
       <workItem from="1617487830924" duration="15399000" />
       <workItem from="1617641055435" duration="631000" />
       <workItem from="1617806384846" duration="14677000" />
-      <workItem from="1617846660727" duration="10991000" />
+      <workItem from="1617846660727" duration="14129000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -426,7 +426,14 @@
       <option name="project" value="LOCAL" />
       <updated>1617890686132</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="added a fileWriter">
+      <created>1617900382052</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1617900382053</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -445,7 +452,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started adding tests - also added a new method in ReadonlyShape -&gt; getColor (returns a string of all the color coordinates) still work in progress!" />
     <MESSAGE value="added some more tests - still working on these" />
     <MESSAGE value="added the rest of the setter tests for AbstractShapeTest should be done!" />
     <MESSAGE value="refactored scaleHeight/Width into single scaleShape" />
@@ -470,6 +476,7 @@
     <MESSAGE value="finished doubles/int + added shapetype enum" />
     <MESSAGE value="added AnimationBuilderImpl class!" />
     <MESSAGE value="tweaked ShapeType enum class" />
-    <option name="LAST_COMMIT_MESSAGE" value="tweaked ShapeType enum class" />
+    <MESSAGE value="added a fileWriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a fileWriter" />
   </component>
 </project>
