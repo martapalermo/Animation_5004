@@ -36,6 +36,7 @@ public class WriteTextView {
   /**
    * Method that writes string to text file.
    * @param textLine text that we want to write to file, String
+   *                 textLine -- will probably be the model string (model.toString())
    * @param fileName file Name where we want to write to // create new file, String
    * @throws IOException
    */
@@ -54,6 +55,7 @@ public class WriteTextView {
 
   public static void main(String[] args) throws IOException {
     writeToFile("Hello", "testing1.txt"); // WORKS!!
+    writeToFile("this is the second line, testing", "testing1.txt");
   }
 
 }

@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="updating AnimatorModel">
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Static.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
-    </list>
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added a fileWriter" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,16 +41,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/cs5004/animator/model" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="cs5004.animator.model.animation" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/cs5004/animator/util" />
     </key>
@@ -154,7 +141,7 @@
       <workItem from="1617487830924" duration="15399000" />
       <workItem from="1617641055435" duration="631000" />
       <workItem from="1617806384846" duration="14677000" />
-      <workItem from="1617846660727" duration="10991000" />
+      <workItem from="1617846660727" duration="14949000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -422,14 +409,21 @@
       <option name="project" value="LOCAL" />
       <updated>1617890686132</updated>
     </task>
-    <task id="LOCAL-00039" summary="updating AnimatorModel">
-      <created>1617902999550</created>
+    <task id="LOCAL-00039" summary="added a fileWriter">
+      <created>1617900382052</created>
       <option name="number" value="00039" />
       <option name="presentableId" value="LOCAL-00039" />
       <option name="project" value="LOCAL" />
-      <updated>1617902999550</updated>
+      <updated>1617900382053</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="added a fileWriter">
+      <created>1617906074393</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1617906074393</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -472,7 +466,7 @@
     <MESSAGE value="finished doubles/int + added shapetype enum" />
     <MESSAGE value="added AnimationBuilderImpl class!" />
     <MESSAGE value="tweaked ShapeType enum class" />
-    <MESSAGE value="updating AnimatorModel" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating AnimatorModel" />
+    <MESSAGE value="added a fileWriter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a fileWriter" />
   </component>
 </project>
