@@ -59,6 +59,9 @@ class Move extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape) {
+    int currentX, currentY;
+
+    currentX = this.originalX + ()
     shape.setPos(this.x, this.y);
   }
 }

@@ -62,13 +62,4 @@ abstract class AbstractEvent implements Event {
   public String getShapeName() {
     return this.shapeName;
   }
-
-  /**
-   * Calculate the in between factor to multiply values by, if necessary.
-   * @param shape shape to be transformed
-   */
-  @Override
-  public void setValues(Shape shape) {
-    int factor =
-  }
 }

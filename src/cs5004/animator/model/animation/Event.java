@@ -34,6 +34,7 @@ public interface Event {
   /**
    * Sets the given shape's new values based on the event that occurred.
    * @param shape shape to be transformed
+   * @param tick current time, an int
    */
-  void setValues(Shape shape);
+  void setValues(Shape shape, int tick);
 }

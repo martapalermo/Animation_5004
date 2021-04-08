@@ -336,13 +336,13 @@ public class AnimatorModel implements Animator {
   private void transformShape(Shape shape, int tick) {
     for (Event event : this.events.get(shape.getName())) {
       if (event.getStart() <= tick && event.getStop() > tick) {
-        event.setValues(shape);
+        event.setValues(shape, tick);
       }
 
       // Tick is outside start/stop time of the event but no other event of the same kind has
       // happened
       else if (tick >= event.getStop()) {
-        event.setValues(shape);
+        event.setValues(shape, tick);
         return;
       }
     }

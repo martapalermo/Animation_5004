@@ -1,5 +1,6 @@
 package cs5004.animator;
 
+import java.io.FileReader;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -37,6 +38,7 @@ public final class EasyAnimator {
             System.exit(1);
           }
           input[0] = command;
+          FileReader
         }
 
         else if (token.equalsIgnoreCase("-view")) {
