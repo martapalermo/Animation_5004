@@ -58,7 +58,7 @@ public class AnimatorModel implements Animator {
       }
     }
 
-    shape.setName(name);
+    //shape.setName(name);
     this.shapes.add(shape);
     //this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
     //this.events.put(name, new ArrayList<>());
@@ -80,6 +80,19 @@ public class AnimatorModel implements Animator {
   public void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
                         int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
                         int red2, int green2, int blue2) {
+    for (Shape shape : this.shapes) {
+      if (shape.getName().equalsIgnoreCase(name)) {
+        if (!shape.isInitialized()) {
+          // Make initialization method in Shape that takes in starting values
+
+          // Check if stop time > disappearTime (set disappearTime to new stop time if need be)
+
+          // Check to see what transformation(s) are occurring
+            // Make Static event
+            // Incorporate tween formula
+        }
+      }
+    }
 
   }
 
