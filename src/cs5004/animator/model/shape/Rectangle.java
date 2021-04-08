@@ -7,7 +7,7 @@ package cs5004.animator.model.shape;
 public class Rectangle extends AbstractShape {
 
   /**
-   * Rectangle shape constructor.
+   * Rectangle shape constructor for when initial values are known.
    *
    * @param x x-value of the rectangle for Point reference, double
    * @param y y-value of the rectangle for Point reference, double
@@ -28,7 +28,14 @@ public class Rectangle extends AbstractShape {
     super(x, y, appearTime, disappearTime, width, height, red, green, blue);
   }
 
-  // Format like in the spec
+  /**
+   * Rectangle constructor for when only the name is known.
+   * @param name shape name, a String
+   */
+  public Rectangle(String name) {
+    super(name);
+  }
+
   /**
    * toString method with all features of the rectangle shape.
    * @return toString for rectangle shape

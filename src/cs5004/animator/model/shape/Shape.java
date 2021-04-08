@@ -103,4 +103,15 @@ public interface Shape {
    * @return copy of the shape
    */
   Shape copy();
+
+  /**
+   * Get initialization status of the shape.
+   * @return true if the shape is initialized, false otherwise
+   */
+  boolean isInitialized();
+
+  /**
+   * Set the shape's initialization status.
+   */
+  void setInitialized();
 }

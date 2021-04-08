@@ -9,7 +9,7 @@ public class Oval extends AbstractShape {
   private double yRadius;
 
   /**
-   * Oval shape constructor.
+   * Oval shape constructor for when initial values are known.
    *
    * @param x x-value of the oval for Point reference, double
    * @param y y-value of the oval for Point reference, double
@@ -31,6 +31,14 @@ public class Oval extends AbstractShape {
 
     this.xRadius = this.getWidth() / 2;
     this.yRadius = this.getHeight() / 2;
+  }
+
+  /**
+   * Oval constructor for when only the name is known.
+   * @param name
+   */
+  public Oval(String name) {
+    super(name);
   }
 
   /**

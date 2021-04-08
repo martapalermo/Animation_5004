@@ -3,6 +3,7 @@ package cs5004.animator.model.animation;
 import java.util.NoSuchElementException;
 
 import cs5004.animator.model.shape.Shape;
+import cs5004.animator.util.AnimationBuilder;
 
 /**
  * Represents a collection of {@link Shape}s and their transformations.
@@ -76,4 +77,28 @@ public interface Animator extends ReadonlyAnimator {
    */
   void scaleShape(String name, int width, int height, int originalHeight, int
           originalWidth, int start, int stop) throws IllegalArgumentException;
+
+  /**
+   * Transforms the shape with the given name.
+   * @param name The name of the shape
+   * @param start The start time of this transformation
+   * @param x1 The initial x-position of the shape
+   * @param y1 The initial y-position of the shape
+   * @param width1 The initial width of the shape
+   * @param height1 The initial height of the shape
+   * @param red1 The initial red color-value of the shape
+   * @param green1 The initial green color-value of the shape
+   * @param blue1 The initial blue color-value of the shape
+   * @param stop The end time of this transformation
+   * @param x2 The final x-position of the shape
+   * @param y2 The final y-position of the shape
+   * @param width2 The final width of the shape
+   * @param height2 The final height of the shape
+   * @param red2 The final red color-value of the shape
+   * @param green2 The final green color-value of the shape
+   * @param blue2 The final blue color-value of the shape
+   */
+  public void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
+                        int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
+                        int red2, int green2, int blue2);
 }

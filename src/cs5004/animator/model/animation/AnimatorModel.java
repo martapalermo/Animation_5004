@@ -26,10 +26,10 @@ public class AnimatorModel implements Animator {
     this.events = new HashMap<>();
   }
 
-  private AnimatorModel(AnimatorModelBuilder builder) {
-    this.shapes = builder.shapesList;
-    this.events = builder.eventsList;
-  }
+//  private AnimatorModel(AnimatorModelBuilder builder) {
+//    this.shapes = builder.shapesList;
+//    this.events = builder.eventsList;
+//  }
 
   /**
    * Add a shape to the list.
@@ -60,8 +60,8 @@ public class AnimatorModel implements Animator {
 
     shape.setName(name);
     this.shapes.add(shape);
-    this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
-    this.events.put(name, new ArrayList<>());
+    //this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
+    //this.events.put(name, new ArrayList<>());
   }
 
   /**
@@ -74,6 +74,13 @@ public class AnimatorModel implements Animator {
     if (!(this.shapes.removeIf(s -> s.getName().equalsIgnoreCase(name)))) {
       throw new NoSuchElementException("No shape in this list has that name.");
     }
+  }
+
+  @Override
+  public void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
+                        int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
+                        int red2, int green2, int blue2) {
+
   }
 
   /**

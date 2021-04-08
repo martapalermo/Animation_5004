@@ -10,9 +10,10 @@ public abstract class AbstractShape implements Shape {
   protected Time appearance;
   protected Dimension dimension;
   protected Color colorValues;
+  protected boolean initialized;
 
   /**
-   * AbstractShape Constructor.
+   * AbstractShape Constructor for when initial values are known.
    * @param x x-value of the shape for Point reference, double
    * @param y y-value of the shape for Point reference, double
    * @param appearTime appearTime of the shape for Time appearance, int
@@ -66,6 +67,16 @@ public abstract class AbstractShape implements Shape {
       throw new IllegalArgumentException("Invalid value for green: must be between 0 and 255");
     }
     this.colorValues = new Color(red,green,blue);
+
+    this.initialized = false;
+  }
+
+  /**
+   * AbstractShape constructor for when only the name is known.
+   * @param name shape name, a String
+   */
+  public AbstractShape(String name) {
+    this.name = name;
   }
 
   /**
@@ -222,5 +233,22 @@ public abstract class AbstractShape implements Shape {
       throw new IllegalArgumentException("Name cannot be null or empty.");
     }
     this.name = name;
+  }
+
+  /**
+   * Set the shape's initialization status.
+   */
+  @Override
+  public void setInitialized() {
+    this.initialized = true;
+  }
+
+  /**
+   * Get initialization status of the shape.
+   * @return true if the shape is initialized, false otherwise
+   */
+  @Override
+  public boolean isInitialized() {
+    return this.initialized;
   }
 }
