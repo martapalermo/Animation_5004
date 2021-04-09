@@ -58,10 +58,10 @@ class Move extends AbstractEvent {
    * @param shape shape to be transformed
    */
   @Override
-  public void setValues(Shape shape) {
+  public void setValues(Shape shape, int tick) {
     int currentX, currentY;
 
-    currentX = this.originalX + ()
+    //currentX = this.originalX + ();
     shape.setPos(this.x, this.y);
   }
 }

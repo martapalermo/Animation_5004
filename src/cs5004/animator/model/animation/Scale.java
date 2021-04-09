@@ -59,7 +59,7 @@ public class Scale extends AbstractEvent {
    * @param shape shape to be transformed
    */
   @Override
-  public void setValues(Shape shape) {
+  public void setValues(Shape shape, int tick) {
     shape.setDimension(this.width, this.height);
   }
 }

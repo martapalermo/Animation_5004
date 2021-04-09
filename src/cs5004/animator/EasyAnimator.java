@@ -1,6 +1,9 @@
 package cs5004.animator;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -9,7 +12,7 @@ import javax.swing.*;
 
 public final class EasyAnimator {
 
-  public static void parseCommands(String[] args) throws IllegalArgumentException {
+  public static String[] parseCommands(String[] args) throws IllegalArgumentException {
 //    String[] argSplit = Arrays.toString(args).split("-");
 //    List<String> argList = Arrays.asList(argSplit);
 //    System.out.println(Arrays.toString(args).substring(1, args.length - 1));
@@ -30,37 +33,103 @@ public final class EasyAnimator {
       if (token.charAt(0) == '-') {
         String command = scan.next();
         if (token.equalsIgnoreCase("-in")) {
-
-          // Try/catch for invalid file
           if (!command.endsWith(".txt")) {
             JOptionPane.showMessageDialog(null, "Invalid input file.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
           }
           input[0] = command;
-          FileReader
-        }
 
-        else if (token.equalsIgnoreCase("-view")) {
+        } else if (token.equalsIgnoreCase("-view")) {
           if (!command.equalsIgnoreCase("text") && !command.equalsIgnoreCase
                   ("visual") && !command.equalsIgnoreCase("svg")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
           }
+          input[1] = command;
+
+        } else if (token.equalsIgnoreCase("-out")) {
+          input[2] = command;
+
+        } else if (token.equalsIgnoreCase("-speed")) {
+          int speed = 0;
+          try {
+            speed = Integer.parseInt(command, 10);
+          } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(null, "Speed must be a positive"
+                    + "nonzero int.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+          }
+          if (speed < 1) {
+            JOptionPane.showMessageDialog(null, "Speed must be a positive"
+                    + "nonzero int.", "Error", JOptionPane.ERROR_MESSAGE);
+            System.exit(1);
+          }
+          input[3] = command;
         }
       }
+      else {
+        JOptionPane.showMessageDialog(null, String.format("Invalid command line "
+                + "input: %s", token), "Error", JOptionPane.ERROR_MESSAGE);
+        System.exit(1);
+      }
+    }
+    scan.close();
+
+    // Set default values for speed/out (if necessary) and check to make sure in/view are not
+    // empty
+    if (input[0] == null) {
+      JOptionPane.showMessageDialog(null, "Must pass in a file to read "
+              + "from.");
+      System.exit(1);
     }
 
-//    if (!argList.contains("-in")) {
-//      throw new IllegalArgumentException("Must provide an input file.");
+    if (input[1] == null) {
+      JOptionPane.showMessageDialog(null, "Must pass in a view type (svg, "
+              + "text, visual) to display the animation.", "Error", JOptionPane.ERROR_MESSAGE);
+      System.exit(1);
+    }
+
+    // Confirm svg view has an svg file to write to
+    // Is this necessary???
+//    if (input[1].equalsIgnoreCase("svg") && !input[2].endsWith("svg")) {
+//      JOptionPane.showMessageDialog(null, "svg view must have an svg out"
+//              + "file to write to.", "Error", JOptionPane.ERROR_MESSAGE);
+//      System.exit(1);
 //    }
-//
-//    if (!argList.contains("-view")) {
-//      throw new IllegalArgumentException("Must provide a view.");
-//    }
+
+    // Be sure to check for "System.out" when writing; it needs OutputStreamWriter not FileWriter
+    if (input[2] == null) {
+      input[2] = "System.out";
+    }
+
+    if (input[3] == null) {
+      input[3] = "1";
+    }
+
+    return input;
   }
 
   public static void main(String[] args) {
-    parseCommands(args);
+    String[] input = parseCommands(args);
+
+    // Input file
+    try {
+      Readable inFile = new FileReader(input[0]);
+    } catch (FileNotFoundException e) {
+      JOptionPane.showMessageDialog(null, "Invalid input file.",
+              "Error", JOptionPane.ERROR_MESSAGE);
+      System.exit(1);
+    }
+
+    // View type
+    String view = input[1];
+
+    // Output file
+    String outFile = input[2];
+
+    // Speed
+    int speed = Integer.parseInt(input[3]);
   }
 }

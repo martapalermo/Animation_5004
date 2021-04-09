@@ -52,7 +52,7 @@ public class Static extends AbstractEvent {
    * @param shape shape to be transformed
    */
   @Override
-  public void setValues(Shape shape) {
+  public void setValues(Shape shape, int tick) {
     shape.setPos(this.x, this.y);
     shape.setDimension(this.width, this.height);
     shape.setColor(this.red, this.green, this.blue);
