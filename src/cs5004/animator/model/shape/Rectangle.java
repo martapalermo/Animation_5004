@@ -28,13 +28,16 @@ public class Rectangle extends AbstractShape {
     super(x, y, appearTime, disappearTime, width, height, red, green, blue);
   }
 
-  /**
-   * Rectangle constructor for when only the name is known.
-   * @param name shape name, a String
-   */
-  public Rectangle(String name) {
-    super(name);
+  public Rectangle() {
   }
+
+//  /**
+//   * Rectangle constructor for when only the name is known.
+//   * @param name shape name, a String
+//   */
+//  public Rectangle(String name) {
+//    super(name);
+//  }
 
   /**
    * toString method with all features of the rectangle shape.

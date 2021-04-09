@@ -10,6 +10,11 @@ import java.util.Scanner;
 
 import javax.swing.*;
 
+import cs5004.animator.model.animation.Animator;
+import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.util.AnimationReader;
+import cs5004.animator.view.IView;
+
 public final class EasyAnimator {
 
   public static String[] parseCommands(String[] args) throws IllegalArgumentException {
@@ -93,6 +98,7 @@ public final class EasyAnimator {
 
     // Confirm svg view has an svg file to write to
     // Is this necessary???
+
 //    if (input[1].equalsIgnoreCase("svg") && !input[2].endsWith("svg")) {
 //      JOptionPane.showMessageDialog(null, "svg view must have an svg out"
 //              + "file to write to.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -111,12 +117,29 @@ public final class EasyAnimator {
     return input;
   }
 
+  public static IView factoryOfViews(String view, Animator model) throws IllegalArgumentException {
+    if (view.equalsIgnoreCase("visual")) {
+      // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
+    }
+
+    else if (view.equalsIgnoreCase("text")) {
+      // return new TextView class w/ ReadonlyAnimator model (@clark's tic tac toe)
+    }
+
+    else if (view.equalsIgnoreCase("svg")) {
+      // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
+    }
+
+    throw new IllegalArgumentException("Invalid view type.");
+  }
+
   public static void main(String[] args) {
     String[] input = parseCommands(args);
 
     // Input file
+    Readable inFile = null;
     try {
-      Readable inFile = new FileReader(input[0]);
+      inFile = new FileReader(input[0]);
     } catch (FileNotFoundException e) {
       JOptionPane.showMessageDialog(null, "Invalid input file.",
               "Error", JOptionPane.ERROR_MESSAGE);
@@ -124,12 +147,15 @@ public final class EasyAnimator {
     }
 
     // View type
-    String view = input[1];
+    String viewType = input[1];
 
     // Output file
     String outFile = input[2];
 
     // Speed
     int speed = Integer.parseInt(input[3]);
+
+    Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
+    IView view = factoryOfViews(viewType, model);
   }
 }

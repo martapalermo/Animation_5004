@@ -60,6 +60,20 @@ public class Scale extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape, int tick) {
-    shape.setDimension(this.width, this.height);
+    int currentWidth, currentHeight;
+
+    if (tick < this.stop) {
+      currentWidth = (((this.originalWidth) * (this.stop - tick)) + ((this.width) *
+              (tick - this.start))) / (this.stop - this.start);
+      currentHeight = (((this.originalHeight) * (this.stop - tick)) + ((this.height) *
+              (tick - this.start))) / (this.stop - this.start);
+    }
+
+    else {
+      currentWidth = this.width;
+      currentHeight = this.height;
+    }
+
+    shape.setDimension(currentWidth, currentHeight);
   }
 }

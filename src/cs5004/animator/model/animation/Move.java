@@ -61,7 +61,18 @@ class Move extends AbstractEvent {
   public void setValues(Shape shape, int tick) {
     int currentX, currentY;
 
-    //currentX = this.originalX + ();
-    shape.setPos(this.x, this.y);
+    if (tick < this.stop) {
+      currentX = (((this.originalX) * (this.stop - tick)) + ((this.x) * (tick - this.start))) /
+              (this.stop - this.start);
+      currentY = (((this.originalY) * (this.stop - tick)) + ((this.y) * (tick - this.start))) /
+              (this.stop - this.start);
+    }
+
+    else {
+      currentX = this.x;
+      currentY = this.y;
+    }
+
+    shape.setPos(currentX, currentY);
   }
 }

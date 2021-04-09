@@ -34,11 +34,9 @@ public class Oval extends AbstractShape {
   }
 
   /**
-   * Oval constructor for when only the name is known.
-   * @param name shape name, string
+   * Oval empty constructor.
    */
-  public Oval(String name) {
-    super(name);
+  public Oval() {
   }
 
   /**

@@ -470,7 +470,7 @@ public class AnimatorModelTest {
   @Test
   public void testMultipleMoveSameShape() {
     this.m.move("r",150, 170, 200,200,35,45);
-    this.m.move("r", 155, 120, 150, 170, 45, 55);
+    this.m.move("r", 155, 120, 150, 170, 46, 55);
     assertEquals("Shapes:\n"
             + "Name: r\n"
             + "Type: rectangle\n"
@@ -483,7 +483,7 @@ public class AnimatorModelTest {
             + "Appears at t=6\n"
             + "Disappears at t=101\n\n"
             + "Shape r moves from (200.0,200.0) to (150.0,170.0) from t=35 to t=45\n"
-            + "Shape r moves from (150.0,170.0) to (155.0,120.0) from t=45 to t=55",
+            + "Shape r moves from (150.0,170.0) to (155.0,120.0) from t=46 to t=55",
         this.m.getAnimation());
   }
 
@@ -637,12 +637,11 @@ public class AnimatorModelTest {
   public void testGetAnimation() {
     this.model.addShape(this.r, "r");
     this.model.addShape(this.c, "c");
-    this.model.move("c", 500,400,500,100,20,70);
+    //this.model.move("c", 500,400,500,100,20,70);
     this.model.move("r", 300,300,200,200,10,50);
     this.model.changeColor("c", 0, 1,0,0,0,
         1,50,80);
-    this.model.scaleShape("r", 25,100,100,50,51,
-        70);
+    //this.model.scaleShape("r", 25,100,100,50,51, 70);
     this.model.move("r", 200,200,300,300,70,100);
 
     assertEquals("Shapes:\n"

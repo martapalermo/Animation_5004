@@ -72,11 +72,9 @@ public abstract class AbstractShape implements Shape {
   }
 
   /**
-   * AbstractShape constructor for when only the name is known.
-   * @param name shape name, a String
+   * AbstractShape empty constructor.
    */
-  public AbstractShape(String name) {
-    this.name = name;
+  public AbstractShape() {
   }
 
   /**
