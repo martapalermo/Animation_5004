@@ -421,7 +421,14 @@ public class AnimatorModel implements Animator {
     return null;
   }
 
+  // Might be a private method for the View?
   private boolean isInBounds(int x, int y, int width, int height) {
+    // Check if canvasX <= x <= canvasX + canvasWidth
+    // Check if canvasX <= x + width <= canvasX + canvasWidth
+    // Check if canvasY <= y <= canvasY + canvasHeight
+    // Check if canvasY <= y + height <= canvasY + canvasHeight
+
+    // If one of these is false, scrollbar is needed
     return true;
   }
 
@@ -538,7 +545,6 @@ public class AnimatorModel implements Animator {
         this.model.changeColor(name, r2, g2, b2, r1, g1, b1, t1, t2);
         this.model.scaleShape(name, w2, h2, h1, w1, t1, t2);
       }
-      // Incorporate tween formula
 
 
       return this;
