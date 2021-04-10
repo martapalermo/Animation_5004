@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added betweener calculations, AnimationBuilder, finished parsing">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added model to writeText">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" afterDir="false" />
     </list>
@@ -52,7 +52,7 @@
       <recent name="$PROJECT_DIR$/src/cs5004/animator/util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest.testGetAnimation">
+  <component name="RunManager" selected="Application.WriteTextView">
     <configuration name="EasyAnimator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -131,11 +131,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WriteTextView" />
         <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
         <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
         <item itemvalue="Application.EasyAnimator" />
-        <item itemvalue="Application.WriteTextView" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +153,7 @@
       <workItem from="1617641055435" duration="631000" />
       <workItem from="1617806384846" duration="14677000" />
       <workItem from="1617846660727" duration="14949000" />
-      <workItem from="1618065748106" duration="1891000" />
+      <workItem from="1618065748106" duration="3331000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -463,7 +463,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618007233086</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="added model to writeText">
+      <created>1618069245475</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1618069245477</updated>
+    </task>
+    <task id="LOCAL-00046" summary="added model to writeText">
+      <created>1618069489765</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1618069489766</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +496,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="refactored Time and Dimension" />
     <MESSAGE value="format edits" />
     <MESSAGE value="edits to abstractshapetest" />
     <MESSAGE value="Deleted ReadonlyShape" />
@@ -507,6 +520,7 @@
     <MESSAGE value="updating AnimatorModel" />
     <MESSAGE value="finished parsing command line parsing" />
     <MESSAGE value="added betweener calculations, AnimationBuilder, finished parsing" />
-    <option name="LAST_COMMIT_MESSAGE" value="added betweener calculations, AnimationBuilder, finished parsing" />
+    <MESSAGE value="added model to writeText" />
+    <option name="LAST_COMMIT_MESSAGE" value="added model to writeText" />
   </component>
 </project>
