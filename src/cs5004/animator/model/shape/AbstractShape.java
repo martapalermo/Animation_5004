@@ -75,6 +75,11 @@ public abstract class AbstractShape implements Shape {
    * AbstractShape empty constructor.
    */
   public AbstractShape() {
+    this.appearance = new Time();
+    this.dimension = new Dimension();
+    this.colorValues = new Color();
+    this.reference = new Point();
+    this.initialized = false;
   }
 
   /**
@@ -167,7 +172,7 @@ public abstract class AbstractShape implements Shape {
    *      || green < 0 || green > 255
    */
   @Override
-  public void setColor(int red, int blue, int green) throws IllegalArgumentException {
+  public void setColor(int red, int green, int blue) throws IllegalArgumentException {
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");
     }
@@ -201,7 +206,7 @@ public abstract class AbstractShape implements Shape {
    */
   @Override
   public void setAppearTime(int time) throws IllegalArgumentException {
-    this.appearance.setDisappearTime(time);
+    this.appearance.setAppearTime(time);
   }
 
   /**

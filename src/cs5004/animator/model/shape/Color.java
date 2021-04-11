@@ -20,6 +20,9 @@ public class Color {
     this.blue = blue;
   }
 
+  public Color() {
+  }
+
   /**
    * Get the value of the shape's red pigment.
    * @return red pigment, int

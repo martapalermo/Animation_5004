@@ -18,6 +18,9 @@ public class Dimension {
     this.height = height;
   }
 
+  public Dimension() {
+  }
+
   /**
    * Get the shape's width.
    * @return width, int

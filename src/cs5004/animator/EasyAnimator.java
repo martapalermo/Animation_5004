@@ -1,5 +1,6 @@
 package cs5004.animator;
 
+import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Scanner;
@@ -10,6 +11,7 @@ import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.IView;
+import cs5004.animator.view.WriteTextView;
 
 public final class EasyAnimator {
 
@@ -120,13 +122,17 @@ public final class EasyAnimator {
 
     else if (view.equalsIgnoreCase("text")) {
       // return new TextView class w/ ReadonlyAnimator model (@clark's tic tac toe)
+      return new WriteTextView(model);
     }
 
     else if (view.equalsIgnoreCase("svg")) {
       // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
     }
 
-    throw new IllegalArgumentException("Invalid view type.");
+    else {
+      throw new IllegalArgumentException("Invalid view type.");
+    }
+    return null;
   }
 
   public static void main(String[] args) {
@@ -137,7 +143,7 @@ public final class EasyAnimator {
     try {
       inFile = new FileReader(input[0]);
     } catch (FileNotFoundException e) {
-      JOptionPane.showMessageDialog(null, "Invalid input file.",
+      JOptionPane.showMessageDialog(null, "Invalid input file",
               "Error", JOptionPane.ERROR_MESSAGE);
       System.exit(1);
     }
@@ -153,5 +159,6 @@ public final class EasyAnimator {
 
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
     IView view = factoryOfViews(viewType, model);
+    view.go(outFile);
   }
 }

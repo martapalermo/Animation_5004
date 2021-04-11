@@ -117,4 +117,8 @@ public interface Animator extends ReadonlyAnimator {
    */
   public void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
                               height1, int red1, int green1, int blue1);
+
+  public void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int red1,
+                          int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
+                          int red2, int green2, int blue2);
 }

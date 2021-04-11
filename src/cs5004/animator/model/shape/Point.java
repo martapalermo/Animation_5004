@@ -17,6 +17,9 @@ class Point {
     this.y = y;
   }
 
+  public Point() {
+  }
+
   /**
    * Getter method for x value of coordinate.
    * @return returns the x value, int

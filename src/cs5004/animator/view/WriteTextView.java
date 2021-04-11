@@ -1,26 +1,30 @@
 package cs5004.animator.view;
 
 import cs5004.animator.model.animation.ReadonlyAnimator;
+import cs5004.animator.model.shape.Shape;
 import cs5004.animator.util.AnimationBuilder;
 
+import java.io.Closeable;
 import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.util.List;
 
 // class that will write a text file output
-public class WriteTextView {
+public class WriteTextView implements IView {
   private String path;
   private String textToWrite;
   private String fileName;
   private boolean appendToFile = false;
-  private static ReadonlyAnimator model;
+  private ReadonlyAnimator model;
   // boolean is set to default value false -> means you don't want to append
   // but you want to erase everything in the file
 
-  public WriteTextView(ReadonlyAnimator model, String textToWrite, String fileName) {
-    WriteTextView.model = model;
-    this.textToWrite = textToWrite;
-    this.fileName = fileName;
+  public WriteTextView(ReadonlyAnimator model){//, String textToWrite, String fileName) {
+    this.model = model;
+//    this.textToWrite = textToWrite;
+//    this.fileName = fileName;
   }
 
   /**
@@ -47,12 +51,10 @@ public class WriteTextView {
 
   /**
    * Helper converter method from readOnlyAnimator model to string.
-   * @param model takes in the model, readonlyAnimator
    * @return string text description
    */
-  private static String convertString(ReadonlyAnimator model) {
-    String text = model.getAnimation();
-    return text;
+  private String convertString() {
+    return this.model.getAnimation();
   }
 
 //  /**
@@ -83,10 +85,10 @@ public class WriteTextView {
    * @param fileName file Name where we want to write to // create new file, String
    * @throws IOException
    */
-  public static void writeToFile(String text, String fileName) throws IOException {
+  public static void writeToFile(String text, String fileName) {
     try {
-      FileWriter newWriter = new FileWriter(fileName);
-      newWriter.write(text);
+      Writer newWriter = new FileWriter(fileName);
+      newWriter.append(text);
       newWriter.close();
       System.out.println("Successfully wrote to file."); // should append to file
     } catch (IOException e) {
@@ -96,12 +98,21 @@ public class WriteTextView {
 
   }
 
-  public static void main(String[] args) throws IOException {
-  //  writeToFile("Hello", "testing1.txt"); // WORKS!!
-  //  writeToFile("this is the second line, testing", "testing1.txt");
-    String text = convertString(model);
-    writeToFile(text, "testing23.txt");
+  @Override
+  public void getCurrentDisplay(List<Shape> shapesList) {
+
   }
+
+  public void go(String outfile) {
+    String text = convertString();
+    writeToFile(text, outfile);
+  }
+
+//  public static void main(String[] args) {
+//  //  writeToFile("Hello", "testing1.txt"); // WORKS!!
+//  //  writeToFile("this is the second line, testing", "testing1.txt");
+
+//  }
 
 
 }

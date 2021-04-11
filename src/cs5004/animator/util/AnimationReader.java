@@ -1,5 +1,6 @@
 package cs5004.animator.util;
 
+import java.util.Arrays;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -104,6 +105,7 @@ public class AnimationReader {
     for (int i = 0; i < 16; i++) {
       vals[i] = getInt(s, "Motion", fieldNames[i]);
     }
+    //System.out.println(Arrays.toString(vals));
     builder.addMotion(name,
             vals[0], vals[1], vals[2 ], vals[3 ], vals[4 ], vals[5 ], vals[6 ], vals[7 ],
             vals[8], vals[9], vals[10], vals[11], vals[12], vals[13], vals[14], vals[15]);

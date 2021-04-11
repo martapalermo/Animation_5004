@@ -29,4 +29,9 @@ public class GraphicsView extends JFrame implements IView {
     this.panel.updateModel(model);
     this.repaint();
   }
+
+  @Override
+  public void go(String outFile) {
+
+  }
 }

@@ -19,6 +19,9 @@ public class Time {
     this.disappearTime = disappearTime;
   }
 
+  public Time() {
+  }
+
   /**
    * Get the shape's appear time.
    * @return appear time, an int
