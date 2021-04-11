@@ -1,14 +1,10 @@
 package cs5004.animator;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
