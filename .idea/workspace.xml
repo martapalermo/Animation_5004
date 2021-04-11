@@ -3,33 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="edits to WriteTextView - still needs work I think">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Animator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Animator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/AbstractShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/AbstractShape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Color.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Dimension.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Time.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/util/AnimationReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/util/AnimationReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WriteTextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WriteTextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Animator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WriteTextView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +53,7 @@
       <recent name="$PROJECT_DIR$/src/cs5004/animator/util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator">
+  <component name="RunManager" selected="Application.GraphicsView">
     <configuration name="EasyAnimator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -87,6 +61,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs5004.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GraphicsView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.GraphicsView" />
+      <module name="Animation_5004" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.view.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,13 +94,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,30 +126,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testMultipleMoveSameShape" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testMultipleMoveSameShape" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.EasyAnimator" />
       <item itemvalue="Application.WriteTextView" />
       <item itemvalue="JUnit.AnimatorModelTest" />
-      <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
       <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
+      <item itemvalue="Application.GraphicsView" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GraphicsView" />
         <item itemvalue="Application.EasyAnimator" />
         <item itemvalue="Application.WriteTextView" />
         <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
         <item itemvalue="JUnit.AnimatorModelTest" />
-        <item itemvalue="JUnit.AnimatorModelTest.testMultipleMoveSameShape" />
       </list>
     </recent_temporary>
   </component>
@@ -179,6 +158,7 @@
       <workItem from="1617806384846" duration="14677000" />
       <workItem from="1617846660727" duration="14949000" />
       <workItem from="1618065748106" duration="4778000" />
+      <workItem from="1618167971852" duration="2093000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
