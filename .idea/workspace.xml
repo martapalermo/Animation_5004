@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="finished svg for scale and color change" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="finished svg for scale and color change">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -126,9 +128,9 @@
     <list>
       <item itemvalue="Application.EasyAnimator" />
       <item itemvalue="Application.WriteTextView" />
+      <item itemvalue="Application.GraphicsView" />
       <item itemvalue="JUnit.AnimatorModelTest" />
       <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
-      <item itemvalue="Application.GraphicsView" />
     </list>
     <recent_temporary>
       <list>
