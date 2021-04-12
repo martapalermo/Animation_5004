@@ -59,26 +59,49 @@ class Move extends AbstractEvent {
    */
   @Override
   public String getSVG() {
-    String svg = "";
-    if (this.getShapeName().equals("rectangle")) {
-      svg = "<!-- starting at time=" + this.getStart() + "s, move the rectangle ";
+    String hor = "";
+    String ver = "";
+    int duration = Math.abs(this.stop - this.start);
 
-      if (this.originalX != this.x && this.originalY == this.y) { // horizontal movement
-        return svg + "horizontally from x=" + this.originalX + " to x=" + this.x
-            + "IN X SECONDS -->\n";
-      } // TODO: after this.x needs to be edited!!!
-      else if (this.originalY != this.y && this.originalX == this.y) { // vertical movement
-        return svg + "vertically from y=" + this.originalY + " to y=" + this.y
-            + "IN X SECONDS -->\n";
+    if (this.getShapeName().equals("rectangle")) {
+      String svg = "<rect id=\"" + this.getShapeName() + "\" x=\"" + this.originalX + "\" y=\""
+          + this.originalY + "\" width=\"" + this.shape.getWidth() + "\" height=\""
+          + this.shape.getHeight() + "\" fill=\"rgb(" + this.shape.getRed() + ","
+          + this.shape.getGreen() + "," + this.shape.getBlue() + ")\" visibility=\"visible\">\n";
+
+      // horizontal movement
+      if (this.originalX != this.x && this.originalY == this.y) {
+        hor += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+          + duration + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
+          + "\" fill=\"freeze\" />\n";
+        return svg + hor + "</rect>\n";
       }
+      // vertical movement
+      else if (this.originalY != this.y && this.originalX == this.y) {
+        ver += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+            + duration + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
+            + "\" fill=\"freeze\" />\n";
+        return svg + ver + "</rect>\n";
+      } // if both vertical horizontal movement happen together
+      return svg + hor + ver;
     }
     else if (this.getShapeName().equals("ellipse")) {
-      svg = "<!-- starting at time=" + this.getStart() + "s, move the ellipse's center from ("
-              + this.originalX + "," + this.originalY + ") to (" + this.shape.getX() + ","
-              + this.shape.getY() + ")" + " IN X SECONDS -->\n";
-      return svg;
+      String ellipseSvg = "<ellipse id" + this.getShapeName() + "\" cx=\"" + this.originalX + "\" cy=\""
+          + this.originalY + "\" rx=\"" + this.shape.getWidth() / 2 + "\" ry=\""
+          + this.shape.getHeight() / 2 + "\" fill=\"rgb(" + this.shape.getRed() + ","
+          + this.shape.getGreen() + "," + this.shape.getBlue() + ")\" visibility=\"visible\">\n"
+
+          + "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+          + duration + "ms\" attributeName=\"cx\" from=\"" + this.originalX + "\" to=\"" + this.x
+          + "\" fill=\"remove\" />\n"
+
+          + "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+          + duration + "ms\" attributeName=\"cy\" from=\"" + this.originalY + "\" to=\"" + this.y
+          + "\" fill=\"remove\" />\n";
+      return ellipseSvg + "</ellipse>\n";
       }
-    return null;
+
+    return "</svg>\n";
   }
 
   /**

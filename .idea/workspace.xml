@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added Graphics view Frame + panel">
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Oval.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Rectangle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Shape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsMain.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +57,7 @@
       <recent name="$PROJECT_DIR$/src/cs5004/animator/util" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator">
+  <component name="RunManager" selected="Application.GraphicsView">
     <configuration name="EasyAnimator" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -143,8 +139,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.EasyAnimator" />
         <item itemvalue="Application.GraphicsView" />
+        <item itemvalue="Application.EasyAnimator" />
         <item itemvalue="Application.WriteTextView" />
         <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
         <item itemvalue="JUnit.AnimatorModelTest" />
@@ -166,7 +162,7 @@
       <workItem from="1617806384846" duration="14677000" />
       <workItem from="1617846660727" duration="14949000" />
       <workItem from="1618065748106" duration="4778000" />
-      <workItem from="1618167971852" duration="7954000" />
+      <workItem from="1618167971852" duration="13769000" />
     </task>
     <task id="LOCAL-00001" summary="added oval toString">
       <created>1617155450194</created>
@@ -504,7 +500,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618170655881</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!">
+      <created>1618238066321</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1618238066321</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -523,7 +526,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Deleted ReadonlyShape" />
     <MESSAGE value="Changed package to cs5004.animator.model" />
     <MESSAGE value="finished all java doc in non-test classes" />
     <MESSAGE value="edited AnimationModel first test" />
@@ -548,6 +550,7 @@
     <MESSAGE value="added model to writeText" />
     <MESSAGE value="edits to WriteTextView - still needs work I think" />
     <MESSAGE value="added Graphics view Frame + panel" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Graphics view Frame + panel" />
+    <MESSAGE value="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!" />
   </component>
 </project>
