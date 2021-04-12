@@ -60,10 +60,23 @@ public class Scale extends AbstractEvent {
    */
   @Override
   public String getSVG() {
-    String svg;
-    svg = "";
+    int duration = Math.abs(this.stop - this.start);
+    String w = "";
+    String h = "";
+    if (this.originalWidth != this.width && this.originalHeight == this.height) {
+      w += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+        + duration + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
+        + this.width + "\"" + " fill=\"remove\" />\n";
 
-    return svg;
+      return w + "</svg>\n";
+    }
+    else if (this.originalHeight != this.height && this.originalWidth == this.width) {
+      h += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+          + duration + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
+          + this.height + "\"" + " fill=\"remove\" />\n";
+      return h + "/svg>\n";
+    }
+    return w + h + "</svg>\n";
   }
 
   /**

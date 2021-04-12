@@ -61,15 +61,11 @@ public class Oval extends AbstractShape {
    */
   @Override
   public String getSVG() {
-    String svg; // we may need something that translated the RGB values
-    // into a color so this is a stand-in!
-    svg = "<!--A " + this.getColor() + "ellipse named " + this.getName() + " with center at ("
-        + this.getX() + "," + this.getY() + "), x-radius " + this.xRadius + "and y-radius "
-        + this.yRadius + "-->\n"
-        + "<ellipse id=" + this.getName() + " cx=" + this.getX()
-        + " cy=" + this.getY() + "rx=" + this.xRadius + " ry=" + this.yRadius + " fill=rgb("
-        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")"
-        + "visibility=visible >\n";
+    String svg;
+    svg = "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\"" + this.getY()
+        + "\" rx=\"" + this.xRadius + "\" ry=\"" + this.yRadius + "\" fill=\"rgb("
+        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\""
+        + "visibility=\"visible\" >\n";
     return svg;
   }
 
