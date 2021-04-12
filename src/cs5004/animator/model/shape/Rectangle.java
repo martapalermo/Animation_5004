@@ -22,10 +22,10 @@ public class Rectangle extends AbstractShape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public Rectangle(int x, int y, int appearTime, int disappearTime, int width,
+  public Rectangle(ShapeType type, int x, int y, int appearTime, int disappearTime, int width,
                    int height, int red, int green, int blue)
       throws IllegalArgumentException {
-    super(x, y, appearTime, disappearTime, width, height, red, green, blue);
+    super(ShapeType.RECTANGLE, x, y, appearTime, disappearTime, width, height, red, green, blue);
   }
 
   public Rectangle() {
@@ -68,13 +68,18 @@ public class Rectangle extends AbstractShape {
     return svg;
   }
 
+  @Override
+  public String getType() {
+    return "rectangle";
+  }
+
   /**
    * Copies the shape.
    * @return copy of the shape
    */
   @Override
   public Shape copy() {
-    Shape copy = new Rectangle(this.getX(), this.getY(), this.getAppearTime(),
+    Shape copy = new Rectangle(ShapeType.RECTANGLE, this.getX(), this.getY(), this.getAppearTime(),
             this.getDisappearTime(), this.getWidth(), this.getHeight(), this.getRed(),
             this.getGreen(), this.getBlue());
     copy.setName(this.name);

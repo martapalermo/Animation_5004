@@ -28,49 +28,12 @@ public abstract class WrittenView implements IView {
   }
 
   /**
-   * Writing a text file constructor one.
-   * This constructor OVERWRITES the file.
-   * Sets a value for the path field, the name and location of the file.
-   * This will get handed over when creating a new object from TextView class.
-   * @param file_path file path, String
+   * Helper converter method from readOnlyAnimator model to string.
+   * @return string text description
    */
-  public WrittenView(String file_path) {
-    this.path = file_path;
+  private String convertString() {
+    return this.model.getAnimation();
   }
-
-  /**
-   * Writing a text file second constructor.
-   * This constructor APPENDS to the file.    *
-   * @param file_path file path, String
-   * @param appendValue value that gets appended, boolean
-   */
-  public WrittenView(String file_path, boolean appendValue) {
-    this.path = file_path;
-    this.appendToFile = appendValue;
-  }
-
-
-
-//  /**
-//   * Method that writes string to text file from model ReadonlyAnimator.
-//   * @param text text that we want to write to file, String
-//   *                 textLine -- will probably be the model string (model.toString())
-//   * @param fileName file Name where we want to write to // create new file, String
-//   * @throws IOException
-//   */
-//  public static void writeToFile(ReadonlyAnimator model, String text, String fileName)
-//      throws IOException {
-//    text = convertString(model);
-//    try {
-//      FileWriter newWriter = new FileWriter(fileName);
-//      newWriter.write(text);
-//      newWriter.close();
-//      System.out.println("Successfully wrote to file."); // should append to file
-//    } catch (IOException e) {
-//      System.out.println("An error occurred while writing to file.");
-//      e.printStackTrace();
-//    }
-//  }
 
   /**
    * Method that writes string to text file.
@@ -91,13 +54,16 @@ public abstract class WrittenView implements IView {
     }
 
   }
+  public void go(String outfile) {
+    String text = convertString();
+    writeToFile(text, outfile);
+  }
+
 
   @Override
   public void getCurrentDisplay(List<Shape> shapesList) {
 
   }
-
-
 
 //  public static void main(String[] args) {
 //  //  writeToFile("Hello", "testing1.txt"); // WORKS!!

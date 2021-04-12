@@ -27,7 +27,7 @@ public abstract class AbstractShape implements Shape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public AbstractShape(int x, int y, int appearTime, int disappearTime, int width,
+  public AbstractShape(ShapeType type, int x, int y, int appearTime, int disappearTime, int width,
                        int height, int red, int green, int blue)
       throws IllegalArgumentException {
     // Need to figure out coordinate boundaries

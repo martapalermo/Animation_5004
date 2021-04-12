@@ -124,6 +124,8 @@ public interface Shape {
    */
   String getSVG();
 
+
+
   /**
    * Get initialization status of the shape.
    * @return true if the shape is initialized, false otherwise
@@ -135,9 +137,7 @@ public interface Shape {
    */
   void setInitialized();
 
-  /**
-   * Get the SVG format of the shape's type.
-   * @return formatted String
-   */
+  String getType();
+
   String getSVGType();
 }

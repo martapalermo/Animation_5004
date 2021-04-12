@@ -1,5 +1,6 @@
 package cs5004.animator.view;
 
+
 import cs5004.animator.model.shape.Shape;
 
 import javax.swing.*;
@@ -18,7 +19,7 @@ public class GraphicsPanel extends JPanel {
     //setLocation(0,0);
     setBounds(0, 0, 600, 400);
     setVisible(true);
-    // setBorder(new LineBorder()); ?
+
   }
 
   public void updateModel(List<Shape> newModel) {
@@ -36,15 +37,26 @@ public class GraphicsPanel extends JPanel {
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
-    Graphics2D var = (Graphics2D) g;
+    Graphics2D g2 = (Graphics2D) g;
 
     for (Shape shape: model) {
-      shape.getName();
-      var.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
-      var.drawOval(shape.getX() - offsetX, shape.getY() -offsetY, shape.getWidth(),
-          shape.getHeight());
-      var.fillOval(shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
-          shape.getHeight());
+     if(shape.getType() == "oval") {
+       g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
+
+       g2.drawOval(shape.getX() - offsetX, shape.getY() -offsetY, shape.getWidth(),
+           shape.getHeight());
+       g2.fillOval(shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
+           shape.getHeight());
+      }
+     else {
+        g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
+        g2.drawRect(
+            shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
+            shape.getHeight());
+        g2.fillRect(
+            shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
+            shape.getHeight());
+     }
     }
 
   }

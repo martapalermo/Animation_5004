@@ -24,10 +24,10 @@ public class Oval extends AbstractShape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public Oval(
-      int x, int y, int appearTime, int disappearTime, int width, int height,
+  public Oval(ShapeType type, int x, int y, int appearTime, int disappearTime, int width, int height,
       int red, int green, int blue) throws IllegalArgumentException {
-    super(x, y, appearTime, disappearTime, width, height, red, green, blue);
+    super(ShapeType.OVAL, x, y, appearTime, disappearTime, width, height, red, green, blue);
+    //super(x, y, appearTime, disappearTime, width, height, red, green, blue);
 
     this.xRadius = this.getWidth() / 2;
     this.yRadius = this.getHeight() / 2;
@@ -71,13 +71,18 @@ public class Oval extends AbstractShape {
     return svg;
   }
 
+  @Override
+  public String getType() {
+    return "oval";
+  }
+
   /**
    * Copies the shape.
    * @return copy of the shape
    */
   @Override
   public Shape copy() {
-    Shape copy = new Oval(this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
+    Shape copy = new Oval(ShapeType.OVAL, this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
         this.getWidth(), this.getHeight(), this.getRed(), this.getGreen(), this.getBlue());
     copy.setName(this.name);
     return copy;

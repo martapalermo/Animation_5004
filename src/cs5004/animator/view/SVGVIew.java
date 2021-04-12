@@ -7,13 +7,6 @@ public class SVGVIew extends WrittenView {
     super(model);
   }
 
-  public SVGVIew(String file_path) {
-    super(file_path);
-  }
-
-  public SVGVIew(String file_path, boolean appendValue) {
-    super(file_path, appendValue);
-  }
     /**
      * Helper converter method from readOnlyAnimator model to string.
      * @return string text description

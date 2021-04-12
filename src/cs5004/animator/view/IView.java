@@ -13,5 +13,6 @@ public interface IView {
    * Display this view.
    */
   void getCurrentDisplay(List<Shape> shapesList);
+
   void go(String outFile);
 }

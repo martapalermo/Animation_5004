@@ -7,14 +7,6 @@ public class TextView extends WrittenView {
     super(model);
   }
 
-  public TextView(String file_path) {
-    super(file_path);
-  }
-
-  public TextView(String file_path, boolean appendValue) {
-    super(file_path, appendValue);
-  }
-
   /**
    * Helper converter method from readOnlyAnimator model to string.
    * @return string text description
