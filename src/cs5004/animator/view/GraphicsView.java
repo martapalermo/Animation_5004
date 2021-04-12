@@ -8,6 +8,7 @@ import cs5004.animator.model.shape.Shape;
 import cs5004.animator.model.shape.ShapeType;
 
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
@@ -15,12 +16,9 @@ import java.util.List;
 
 public class GraphicsView extends JFrame implements IView {
 
-  private ReadonlyAnimator model1;
   private List<Shape> model;
   private GraphicsPanel panel;
 
-//List<Shape> model
-  // ReadonlyAnimator model
   public GraphicsView(List<Shape> model) {
     super("Animation Window");
     this.model = model;
@@ -37,6 +35,9 @@ public class GraphicsView extends JFrame implements IView {
         0, 600);
 
     this.panel = new GraphicsPanel(model); //panel that scroll pane displays
+    BorderLayout bl = new BorderLayout(0,0);
+    setLayout(bl);
+
 
     this.panel.setVisible(true);
     this.add(this.panel);
@@ -71,9 +72,12 @@ public class GraphicsView extends JFrame implements IView {
     verBar.addAdjustmentListener(new ALVertical());
 
     setLayout(new BorderLayout());
-    this.getContentPane().add(horBar, BorderLayout.SOUTH);
-    this.getContentPane().add(verBar, BorderLayout.EAST);
+    getContentPane().add(horBar, BorderLayout.PAGE_END);
+    getContentPane().add(verBar, BorderLayout.LINE_END);
+
+    getContentPane().add(this.panel, BorderLayout.CENTER);
     this.setVisible(true);
+    setResizable(true);
 
   }
 
@@ -110,8 +114,6 @@ public class GraphicsView extends JFrame implements IView {
 
           }
         }
-
-
   }
 
   /**
@@ -127,7 +129,6 @@ public class GraphicsView extends JFrame implements IView {
 
   @Override
   public void go(String outFile) {
-
   }
 
 }

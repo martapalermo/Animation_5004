@@ -65,8 +65,6 @@ public class WriteTextView implements IView {
 
   }
 
-
-
 //  public static void main(String[] args) {
 //  //  writeToFile("Hello", "testing1.txt"); // WORKS!!
 //  //  writeToFile("this is the second line, testing", "testing1.txt");

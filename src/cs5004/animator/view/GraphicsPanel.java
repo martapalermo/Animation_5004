@@ -1,6 +1,6 @@
 package cs5004.animator.view;
 
-import cs5004.animator.model.shape.Oval;
+
 import cs5004.animator.model.shape.Shape;
 
 import javax.swing.*;
@@ -19,7 +19,7 @@ public class GraphicsPanel extends JPanel {
     //setLocation(0,0);
     setBounds(0, 0, 600, 400);
     setVisible(true);
-    // setBorder(new LineBorder()); ?
+
   }
 
   public void updateModel(List<Shape> newModel) {
