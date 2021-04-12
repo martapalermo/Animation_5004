@@ -1,25 +1,82 @@
 package cs5004.animator.view;
 
+import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.shape.Oval;
 import cs5004.animator.model.shape.Shape;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 import java.util.List;
 
-public class GraphicsView implements IView {
+public class GraphicsView extends JFrame implements IView {
 
   private List<Shape> model;
-  private JComponent panel = null;
+  private GraphicsPanel panel;
 
-  // List<Shape> model
-  GraphicsView() {
-    panel = new JPanel(new BorderLayout(2,2));
-    panel.setBorder(new EmptyBorder(2,2,2,2));
 
-    JPanel p = new JPanel();
-    panel.add(new JScrollPane(p, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-        JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS));
+  GraphicsView(List<Shape> model) {
+    super("Animation Window");
+    setLocation(0,0); // top left corner
+    setSize(600, 400);
+    setLayout(null);
+    setVisible(true);
+
+
+    this.model = model;
+
+    JScrollBar horBar = new JScrollBar(JScrollBar.HORIZONTAL, 300, 100,
+        0,600);
+    JScrollBar verBar = new JScrollBar(JScrollBar.VERTICAL, 300, 100,
+        0, 600);
+
+    this.panel = new GraphicsPanel(model); //panel that scroll pane displays
+
+    this.panel.setVisible(true);
+    this.add(this.panel);
+
+    class ALHorizontal implements AdjustmentListener {
+
+      /**
+       * Invoked when the value of the adjustable has changed.
+       *
+       * @param e the event to be processed
+       */
+      @Override
+      public void adjustmentValueChanged(AdjustmentEvent e) {
+        /// offset for X
+        // subtract e from get X
+        panel.setOffsetX(e.getValue());
+      }
+
+    }
+
+    class ALVertical implements AdjustmentListener {
+
+      /**
+       * Invoked when the value of the adjustable has changed.
+       *
+       * @param e the event to be processed
+       */
+      @Override
+      public void adjustmentValueChanged(AdjustmentEvent e) {
+        // offset for Y
+        //subtract e from get Y
+        panel.setOffsetY(e.getValue());
+      }
+
+    }
+
+    horBar.addAdjustmentListener(new ALHorizontal());
+    verBar.addAdjustmentListener(new ALVertical());
+
+    setLayout(new BorderLayout());
+    this.getContentPane().add(horBar, BorderLayout.SOUTH);
+    this.getContentPane().add(verBar, BorderLayout.EAST);
+    this.setVisible(true);
+
   }
 
   public JComponent getPanel() {
@@ -27,30 +84,50 @@ public class GraphicsView implements IView {
   }
 
   public static void main(String[] args) {
-    Runnable r = new Runnable() {
-      @Override
-      public void run() {
-        try {
-          UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-        } catch (Exception useDefault) {
+    AnimatorModel obj = new AnimatorModel();
 
-        } // should this be passing List<Shape> model
-        GraphicsView gv = new GraphicsView();
+    obj.addShape(new Oval(50, 50, 3, 30, 40,40, 150,
+        250,0), "oval" );
 
-        JFrame frame = new JFrame(gv.getClass().getSimpleName());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationByPlatform(true);
-        frame.setContentPane(gv.getPanel());
-        frame.pack();
+    obj.move("oval", 70, 70, 50, 50, 5, 25);
+
+   // Runnable r = new Runnable() {
+//      @Override
+//      public void run() {
+//        try {
+//          UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
+//        } catch (Exception useDefault) {
+
+        //} // should this be passing List<Shape> model
+        GraphicsView gv = new GraphicsView(obj.getCurrentShapes(3));
+        gv.getCurrentDisplay(obj.getCurrentShapes(5));
+
+        int count = 0;
+        while (count < 30) {
+          count++;
+          gv.getCurrentDisplay(obj.getCurrentShapes(count));
+          System.out.println(obj.getCurrentShapes(count));
+          try {
+            Thread.sleep(100);
+          } catch (Exception e) {
+
+          }
+        }
+
+//        JFrame frame = new JFrame(gv.getClass().getSimpleName());
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.setLocationByPlatform(true);
+//        frame.setContentPane(gv.getPanel());
+//        frame.pack();
         // Dimension d = frame.getSize();
         // frame.setSize(new Dimension(d.width, 400));
-        frame.setSize(600,400);
-        frame.setMinimumSize(frame.getSize());
-
-        frame.setVisible(true);
-        }
-    };
-    SwingUtilities.invokeLater(r);
+//        frame.setSize(600,400);
+//        frame.setMinimumSize(frame.getSize());
+//
+//        frame.setVisible(true);
+//        }
+//    };
+//    SwingUtilities.invokeLater(r);
   }
 
   /**
@@ -60,7 +137,8 @@ public class GraphicsView implements IView {
    */
   @Override
   public void getCurrentDisplay(List<Shape> shapesList) {
-
+    this.panel.updateModel(model);
+    this.repaint();
   }
 
   @Override
