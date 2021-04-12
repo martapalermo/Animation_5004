@@ -28,28 +28,6 @@ public class WriteTextView implements IView {
   }
 
   /**
-   * Writing a text file constructor one.
-   * This constructor OVERWRITES the file.
-   * Sets a value for the path field, the name and location of the file.
-   * This will get handed over when creating a new object from TextView class.
-   * @param file_path file path, String
-   */
-  public WriteTextView(String file_path) {
-    this.path = file_path;
-  }
-
-  /**
-   * Writing a text file second constructor.
-   * This constructor APPENDS to the file.    *
-   * @param file_path file path, String
-   * @param appendValue value that gets appended, boolean
-   */
-  public WriteTextView(String file_path, boolean appendValue) {
-    this.path = file_path;
-    this.appendToFile = appendValue;
-  }
-
-  /**
    * Helper converter method from readOnlyAnimator model to string.
    * @return string text description
    */
@@ -76,16 +54,18 @@ public class WriteTextView implements IView {
     }
 
   }
+  public void go(String outfile) {
+    String text = convertString();
+    writeToFile(text, outfile);
+  }
+
 
   @Override
   public void getCurrentDisplay(List<Shape> shapesList) {
 
   }
 
-  public void go(String outfile) {
-    String text = convertString();
-    writeToFile(text, outfile);
-  }
+
 
 //  public static void main(String[] args) {
 //  //  writeToFile("Hello", "testing1.txt"); // WORKS!!

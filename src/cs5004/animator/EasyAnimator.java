@@ -3,12 +3,14 @@ package cs5004.animator;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.shape.Shape;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
@@ -119,7 +121,7 @@ public final class EasyAnimator {
   public static IView factoryOfViews(String view, Animator model) throws IllegalArgumentException {
     if (view.equalsIgnoreCase("visual")) {
       // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      //return new GraphicsView(model);
+      return new GraphicsView(model.getCurrentShapes(0));
     }
 
     else if (view.equalsIgnoreCase("text")) {

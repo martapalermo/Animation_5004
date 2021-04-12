@@ -8,7 +8,6 @@ import cs5004.animator.model.shape.Shape;
 import cs5004.animator.model.shape.ShapeType;
 
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
@@ -31,9 +30,6 @@ public class GraphicsView extends JFrame implements IView {
     setSize(600, 400);
     setLayout(null);
     setVisible(true);
-
-
-
 
     JScrollBar horBar = new JScrollBar(JScrollBar.HORIZONTAL, 300, 100,
         0,600);
