@@ -62,9 +62,11 @@ public class Oval extends AbstractShape {
   @Override
   public String getSVG() {
     String svg;
+
+    // FIX radii (kate)
     svg = "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\"" + this.getY()
-        + "\" rx=\"" + this.xRadius + "\" ry=\"" + this.yRadius + "\" fill=\"rgb("
-        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\""
+        + "\" rx=\"" + this.getWidth() / 2 + "\" ry=\"" + this.getHeight() / 2 + "\" fill=\"rgb("
+        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\" "
         + "visibility=\"visible\" >\n";
     return svg;
   }
@@ -81,4 +83,8 @@ public class Oval extends AbstractShape {
     return copy;
   }
 
+  @Override
+  public String getSVGType() {
+    return "</ellipse>\n";
+  }
 }

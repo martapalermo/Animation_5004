@@ -12,16 +12,16 @@ import java.io.Writer;
 import java.util.List;
 
 // class that will write a text file output
-public class WriteTextView implements IView {
+public abstract class WrittenView implements IView {
   private String path;
   private String textToWrite;
   private String fileName;
   private boolean appendToFile = false;
-  private ReadonlyAnimator model;
+  protected ReadonlyAnimator model;
   // boolean is set to default value false -> means you don't want to append
   // but you want to erase everything in the file
 
-  public WriteTextView(ReadonlyAnimator model){//, String textToWrite, String fileName) {
+  public WrittenView(ReadonlyAnimator model){//, String textToWrite, String fileName) {
     this.model = model;
 //    this.textToWrite = textToWrite;
 //    this.fileName = fileName;
@@ -34,7 +34,7 @@ public class WriteTextView implements IView {
    * This will get handed over when creating a new object from TextView class.
    * @param file_path file path, String
    */
-  public WriteTextView(String file_path) {
+  public WrittenView(String file_path) {
     this.path = file_path;
   }
 
@@ -44,18 +44,12 @@ public class WriteTextView implements IView {
    * @param file_path file path, String
    * @param appendValue value that gets appended, boolean
    */
-  public WriteTextView(String file_path, boolean appendValue) {
+  public WrittenView(String file_path, boolean appendValue) {
     this.path = file_path;
     this.appendToFile = appendValue;
   }
 
-  /**
-   * Helper converter method from readOnlyAnimator model to string.
-   * @return string text description
-   */
-  private String convertString() {
-    return this.model.getAnimation();
-  }
+
 
 //  /**
 //   * Method that writes string to text file from model ReadonlyAnimator.
@@ -103,10 +97,7 @@ public class WriteTextView implements IView {
 
   }
 
-  public void go(String outfile) {
-    String text = convertString();
-    writeToFile(text, outfile);
-  }
+
 
 //  public static void main(String[] args) {
 //  //  writeToFile("Hello", "testing1.txt"); // WORKS!!

@@ -63,7 +63,7 @@ public class Rectangle extends AbstractShape {
     String svg;
     svg = "<rect id=\"" + this.getName() + "\" x=\"" + this.getX() + "\" y=\"" + this.getY()
         + "\" width=\"" + this.getWidth() + "\" height=\"" + this.getHeight() + "\" fill=\"rgb("
-        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\""
+        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\" "
         + "visibility=\"visible\" >\n";
     return svg;
   }
@@ -81,4 +81,8 @@ public class Rectangle extends AbstractShape {
     return copy;
   }
 
+  @Override
+  public String getSVGType() {
+    return "</rect>\n";
+  }
 }

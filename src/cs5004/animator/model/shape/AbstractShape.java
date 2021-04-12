@@ -33,7 +33,7 @@ public abstract class AbstractShape implements Shape {
     // Need to figure out coordinate boundaries
     this.reference = new Point(x, y);
 
-    if (appearTime < 1) {
+    if (appearTime < 0) {
       throw new IllegalArgumentException("The appearance time must be at or after 0.");
     }
     this.appearance = new Time(appearTime, disappearTime);

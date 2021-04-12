@@ -11,7 +11,8 @@ import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.IView;
-import cs5004.animator.view.WriteTextView;
+import cs5004.animator.view.SVGVIew;
+import cs5004.animator.view.TextView;
 
 public final class EasyAnimator {
 
@@ -122,11 +123,12 @@ public final class EasyAnimator {
 
     else if (view.equalsIgnoreCase("text")) {
       // return new TextView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new WriteTextView(model);
+      return new TextView(model);
     }
 
     else if (view.equalsIgnoreCase("svg")) {
       // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
+      return new SVGVIew(model);
     }
 
     else {

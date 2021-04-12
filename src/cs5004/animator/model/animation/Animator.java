@@ -98,7 +98,7 @@ public interface Animator extends ReadonlyAnimator {
    * @param green2 The final green color-value of the shape
    * @param blue2 The final blue color-value of the shape
    */
-  public void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
+  void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
                         int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
                         int red2, int green2, int blue2);
 
@@ -115,10 +115,19 @@ public interface Animator extends ReadonlyAnimator {
    * @param green1 The initial green color-value of the shape
    * @param blue1 The initial blue color-value of the shape
    */
-  public void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
+  void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
                               height1, int red1, int green1, int blue1);
 
-  public void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int red1,
+  void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int red1,
                           int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
                           int red2, int green2, int blue2);
+
+  /**
+   * ADD DESCRIPTION
+   * @param x
+   * @param y
+   * @param width
+   * @param height
+   */
+  void setBounds(int x, int y, int width, int height);
 }

@@ -1,5 +1,6 @@
 package cs5004.animator.model.animation;
 
+import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
 
 /**
@@ -63,35 +64,45 @@ class Move extends AbstractEvent {
     String ver = "";
     int duration = Math.abs(this.stop - this.start);
 
-    if (this.getShapeName().equals("rectangle")) {
+    // FIX THIS (kate)
+    if (this.shape instanceof Rectangle) {
       // horizontal movement
       if (this.originalX != this.x && this.originalY == this.y) {
-        hor += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-          + duration + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
+        hor += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+          + duration * 1000 + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
           + "\" fill=\"freeze\" />\n";
-        return hor + "</rect>\n";
+        return hor + "\n";
       }
       // vertical movement
       else if (this.originalY != this.y && this.originalX == this.y) {
-        ver += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-            + duration + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
+        ver += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+            + duration * 1000 + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
             + "\" fill=\"freeze\" />\n";
-        return ver + "</rect>\n";
+        return ver + "\n";
       } // if both vertical horizontal movement happen together
-      return hor + ver;
-    }
-    else if (this.getShapeName().equals("ellipse")) {
-      String eSvg = "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-          + duration + "ms\" attributeName=\"cx\" from=\"" + this.originalX + "\" to=\"" + this.x
-          + "\" fill=\"remove\" />\n"
 
-          + "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-          + duration + "ms\" attributeName=\"cy\" from=\"" + this.originalY + "\" to=\"" + this.y
-          + "\" fill=\"remove\" />\n";
-      return eSvg + "</ellipse>\n";
+      else {
+        hor += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+                + duration * 1000 + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
+                + "\" fill=\"freeze\" />\n";
+
+        ver += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+                + duration * 1000 + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
+                + "\" fill=\"freeze\" />\n";
+        return hor + ver;
       }
 
-    return "</svg>\n";
+    }
+    else {
+      String eSvg = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+          + duration * 1000 + "ms\" attributeName=\"cx\" from=\"" + this.originalX + "\" to=\"" + this.x
+          + "\" fill=\"freeze\" />\n"
+
+          + "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+          + duration * 1000 + "ms\" attributeName=\"cy\" from=\"" + this.originalY + "\" to=\"" + this.y
+          + "\" fill=\"freeze\" />\n";
+      return eSvg + "\n";
+    }
   }
 
   /**

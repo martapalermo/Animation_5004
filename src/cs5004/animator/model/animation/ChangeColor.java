@@ -60,12 +60,12 @@ class ChangeColor extends AbstractEvent {
   public String getSVG() {
     int duration = Math.abs(this.stop - this.start);
 
-    String svg = "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-        + duration + "ms\" attributeName=\"rgb\" from=\"(" + this.originalRed + ","
-        + this.originalGreen + "," + this.originalBlue + ")\" to=\"(" + this.red + ","
-        + this.green + "," + this.blue + ")\"" + " fill=\"remove\" />\n";
+    String svg = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+        + duration * 1000 + "ms\" attributeName=\"fill\" from=\"rgb(" + this.originalRed + ","
+        + this.originalGreen + "," + this.originalBlue + ")\" to=\"rgb(" + this.red + ","
+        + this.green + "," + this.blue + ")\"" + " fill=\"freeze\" />\n";
 
-    return svg + "</svg>\n";
+    return svg + "\n";
   }
 
   /**
@@ -89,15 +89,21 @@ class ChangeColor extends AbstractEvent {
     //System.out.println(this.originalGreen);
     //System.out.println(this.green);
     //System.out.println(this.start);
-    currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
-            (this.stop - this.start);
-    currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green) *
-            (tick - this.start))) / (this.stop - this.start);
-    currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
-            (tick - this.start))) / (this.stop - this.start);
+    if (tick < this.stop) {
+      currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
+              (this.stop - this.start);
+      currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green) *
+              (tick - this.start))) / (this.stop - this.start);
+      currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
+              (tick - this.start))) / (this.stop - this.start);
+    }
 
-    //System.out.println(tick);
-    //System.out.println(currentBlue);
+    else {
+      currentRed = this.red;
+      currentGreen = this.green;
+      currentBlue = this.blue;
+    }
+
     shape.setColor(currentRed, currentGreen, currentBlue);
   }
 }

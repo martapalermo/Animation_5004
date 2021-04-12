@@ -134,4 +134,10 @@ public interface Shape {
    * Set the shape's initialization status.
    */
   void setInitialized();
+
+  /**
+   * Get the SVG format of the shape's type.
+   * @return formatted String
+   */
+  String getSVGType();
 }

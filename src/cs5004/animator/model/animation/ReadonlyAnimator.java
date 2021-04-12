@@ -21,4 +21,10 @@ public interface ReadonlyAnimator {
    * @return animation description, a String
    */
   String getAnimation();
+
+  /**
+   * An SVG representation of the animation
+   * @return SVG String
+   */
+  String getSVGAnimation();
 }

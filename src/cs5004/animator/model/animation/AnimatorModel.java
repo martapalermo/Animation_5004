@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 import cs5004.animator.model.shape.Oval;
@@ -366,6 +367,33 @@ public class AnimatorModel implements Animator {
     return "Shapes:\n" + this.shapeInformation() + this.eventInformation();
   }
 
+  @Override
+  public String getSVGAnimation() {
+    String header = "<svg width=\"" + this.canvas[2] + "\" height=\"" + this.canvas[3] + "\" "
+            + "version=\"1.1\" viewBox=\"" + this.canvas[0] + " " + this.canvas[1] + " "
+            + this.canvas[2] + " " + this.canvas[3] + "\"\n\txmlns=\"http://www.w3.org/2000/svg\""
+            + ">\n";
+
+    StringBuilder text = new StringBuilder();
+    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+      text.append(getSVGText(entry.getKey(), entry.getValue()));
+    }
+    return header + text +"\n</svg>";
+  }
+
+  private String getSVGText(String shapeName, List<Event> events) {
+    Shape shape = this.getShape(shapeName);
+    StringBuilder text = new StringBuilder(shape.getSVG());
+
+    for (Event event : events) {
+      if (event.getSVG() != null) {
+        text.append(event.getSVG());
+      }
+    }
+    text.append(shape.getSVGType());
+    return text.toString();
+  }
+
   // THROW EXCEPTIONS
 
   // CHECK ORIGINAL VALUES AGAINST CURRENT VALUES
@@ -479,6 +507,22 @@ public class AnimatorModel implements Animator {
     return null;
   }
 
+  /**
+   * Helper method to get the shape based on its name
+   *
+   * @param name shape name, a String
+   * @return shape with matching name, if any
+   * @throws IllegalArgumentException if no shape has this name
+   */
+  private Shape getShape(String name) {
+    for (Shape shape : this.shapes) {
+      if (shape.getName().equalsIgnoreCase(name)) {
+        return shape;
+      }
+    }
+    throw new IllegalArgumentException("No shape has this name.");
+  }
+
   // Might be a private method for the View?
   private boolean isInBounds(int x, int y, int width, int height) {
     // Check if canvasX <= x <= canvasX + canvasWidth
@@ -490,7 +534,7 @@ public class AnimatorModel implements Animator {
     return true;
   }
 
-  protected void setBounds(int x, int y, int width, int height) {
+  public void setBounds(int x, int y, int width, int height) {
     this.canvas = new int[]{x, y, width, height};
   }
 
@@ -523,6 +567,7 @@ public class AnimatorModel implements Animator {
      */
     @Override
     public AnimationBuilder setBounds(int x, int y, int width, int height) {
+      this.model.setBounds(x,y,width, height);
       return this;
     }
 

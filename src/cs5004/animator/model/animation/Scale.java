@@ -64,19 +64,29 @@ public class Scale extends AbstractEvent {
     String w = "";
     String h = "";
     if (this.originalWidth != this.width && this.originalHeight == this.height) {
-      w += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-        + duration + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
-        + this.width + "\"" + " fill=\"remove\" />\n";
+      w += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+        + duration * 1000 + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
+        + this.width + "\"" + " fill=\"freeze\" />\n";
 
-      return w + "</svg>\n";
+      return w + "\n";
     }
     else if (this.originalHeight != this.height && this.originalWidth == this.width) {
-      h += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
-          + duration + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
-          + this.height + "\"" + " fill=\"remove\" />\n";
-      return h + "/svg>\n";
+      h += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+          + duration * 1000 + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
+          + this.height + "\"" + " fill=\"freeze\" />\n";
+      return h + "\n";
     }
-    return w + h + "</svg>\n";
+
+    else {
+      w += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+              + duration * 1000 + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
+              + this.width + "\"" + " fill=\"freeze\" />\n";
+
+      h += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
+              + duration * 1000 + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
+              + this.height + "\"" + " fill=\"freeze\" />\n";
+      return w + h + "\n";
+    }
   }
 
   /**
