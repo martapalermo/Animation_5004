@@ -32,6 +32,12 @@ public interface Event {
   String getEvent();
 
   /**
+   * Get the SVG description of an event.
+   * @return SVG description, a String
+   */
+  String getSVG();
+
+  /**
    * Sets the given shape's new values based on the event that occurred.
    * @param shape shape to be transformed
    * @param tick current time, an int

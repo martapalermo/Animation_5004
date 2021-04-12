@@ -53,6 +53,35 @@ class Move extends AbstractEvent {
   }
 
   /**
+   * Get the SVG description of an event.
+   *
+   * @return SVG description, a String
+   */
+  @Override
+  public String getSVG() {
+    String svg = "";
+    if (this.getShapeName().equals("rectangle")) {
+      svg = "<!-- starting at time=" + this.getStart() + "s, move the rectangle ";
+
+      if (this.originalX != this.x && this.originalY == this.y) { // horizontal movement
+        return svg + "horizontally from x=" + this.originalX + " to x=" + this.x
+            + "IN X SECONDS -->\n";
+      } // TODO: after this.x needs to be edited!!!
+      else if (this.originalY != this.y && this.originalX == this.y) { // vertical movement
+        return svg + "vertically from y=" + this.originalY + " to y=" + this.y
+            + "IN X SECONDS -->\n";
+      }
+    }
+    else if (this.getShapeName().equals("ellipse")) {
+      svg = "<!-- starting at time=" + this.getStart() + "s, move the ellipse's center from ("
+              + this.originalX + "," + this.originalY + ") to (" + this.shape.getX() + ","
+              + this.shape.getY() + ")" + " IN X SECONDS -->\n";
+      return svg;
+      }
+    return null;
+  }
+
+  /**
    * Sets the given shape's new values based on the event that occurred; calculate the in between
    * factor to multiply values by.
    * @param shape shape to be transformed

@@ -119,6 +119,12 @@ public interface Shape {
   Shape copy();
 
   /**
+   * Get the SVG description of an event.
+   * @return SVG description, a String
+   */
+  String getSVG();
+
+  /**
    * Get initialization status of the shape.
    * @return true if the shape is initialized, false otherwise
    */

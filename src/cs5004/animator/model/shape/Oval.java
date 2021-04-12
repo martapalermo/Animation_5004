@@ -53,6 +53,26 @@ public class Oval extends AbstractShape {
         + "Disappears at t=" + getDisappearTime() + "\n";
   }
 
+
+  /**
+   * Get the SVG description of an event.
+   *
+   * @return SVG description, a String
+   */
+  @Override
+  public String getSVG() {
+    String svg; // we may need something that translated the RGB values
+    // into a color so this is a stand-in!
+    svg = "<!--A " + this.getColor() + "ellipse named " + this.getName() + " with center at ("
+        + this.getX() + "," + this.getY() + "), x-radius " + this.xRadius + "and y-radius "
+        + this.yRadius + "-->\n"
+        + "<ellipse id=" + this.getName() + " cx=" + this.getX()
+        + " cy=" + this.getY() + "rx=" + this.xRadius + " ry=" + this.yRadius + " fill=rgb("
+        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")"
+        + "visibility=visible >\n";
+    return svg;
+  }
+
   /**
    * Copies the shape.
    * @return copy of the shape
@@ -64,4 +84,5 @@ public class Oval extends AbstractShape {
     copy.setName(this.name);
     return copy;
   }
+
 }
