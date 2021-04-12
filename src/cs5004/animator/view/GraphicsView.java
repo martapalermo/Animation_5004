@@ -46,11 +46,8 @@ public class GraphicsView extends JFrame implements IView {
        */
       @Override
       public void adjustmentValueChanged(AdjustmentEvent e) {
-        /// offset for X
-        // subtract e from get X
         panel.setOffsetX(e.getValue());
       }
-
     }
 
     class ALVertical implements AdjustmentListener {
@@ -62,8 +59,6 @@ public class GraphicsView extends JFrame implements IView {
        */
       @Override
       public void adjustmentValueChanged(AdjustmentEvent e) {
-        // offset for Y
-        //subtract e from get Y
         panel.setOffsetY(e.getValue());
       }
     }
@@ -78,9 +73,6 @@ public class GraphicsView extends JFrame implements IView {
 
   }
 
-  public JComponent getPanel() {
-    return panel;
-  }
 
   public static void main(String[] args) {
     AnimatorModel obj = new AnimatorModel();
@@ -90,14 +82,9 @@ public class GraphicsView extends JFrame implements IView {
 
     obj.move("oval", 70, 70, 50, 50, 5, 25);
 
-   // Runnable r = new Runnable() {
-//      @Override
-//      public void run() {
-//        try {
-//          UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
-//        } catch (Exception useDefault) {
 
-        //} // should this be passing List<Shape> model
+
+
     GraphicsView gv = new GraphicsView(obj.getCurrentShapes(3));
     gv.getCurrentDisplay(obj.getCurrentShapes(5));
 
@@ -113,20 +100,7 @@ public class GraphicsView extends JFrame implements IView {
           }
         }
 
-//        JFrame frame = new JFrame(gv.getClass().getSimpleName());
-//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        frame.setLocationByPlatform(true);
-//        frame.setContentPane(gv.getPanel());
-//        frame.pack();
-        // Dimension d = frame.getSize();
-        // frame.setSize(new Dimension(d.width, 400));
-//        frame.setSize(600,400);
-//        frame.setMinimumSize(frame.getSize());
-//
-//        frame.setVisible(true);
-//        }
-//    };
-//    SwingUtilities.invokeLater(r);
+
   }
 
   /**

@@ -161,4 +161,5 @@ public final class EasyAnimator {
     IView view = factoryOfViews(viewType, model);
     view.go(outFile);
   }
+
 }
