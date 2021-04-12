@@ -52,6 +52,20 @@ class ChangeColor extends AbstractEvent {
   }
 
   /**
+   * Get the SVG description of an event.
+   *
+   * @return SVG description, a String
+   */
+  @Override
+  public String getSVG() {
+    int duration = Math.abs(this.stop - this.start);
+    String svg = "";
+
+
+    return svg;
+  }
+
+  /**
    * Get the event type.
    * @return event name, a String
    */

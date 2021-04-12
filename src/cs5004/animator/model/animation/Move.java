@@ -64,41 +64,31 @@ class Move extends AbstractEvent {
     int duration = Math.abs(this.stop - this.start);
 
     if (this.getShapeName().equals("rectangle")) {
-      String svg = "<rect id=\"" + this.getShapeName() + "\" x=\"" + this.originalX + "\" y=\""
-          + this.originalY + "\" width=\"" + this.shape.getWidth() + "\" height=\""
-          + this.shape.getHeight() + "\" fill=\"rgb(" + this.shape.getRed() + ","
-          + this.shape.getGreen() + "," + this.shape.getBlue() + ")\" visibility=\"visible\">\n";
-
       // horizontal movement
       if (this.originalX != this.x && this.originalY == this.y) {
         hor += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
           + duration + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
           + "\" fill=\"freeze\" />\n";
-        return svg + hor + "</rect>\n";
+        return hor + "</rect>\n";
       }
       // vertical movement
       else if (this.originalY != this.y && this.originalX == this.y) {
         ver += "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
             + duration + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
             + "\" fill=\"freeze\" />\n";
-        return svg + ver + "</rect>\n";
+        return ver + "</rect>\n";
       } // if both vertical horizontal movement happen together
-      return svg + hor + ver;
+      return hor + ver;
     }
     else if (this.getShapeName().equals("ellipse")) {
-      String ellipseSvg = "<ellipse id" + this.getShapeName() + "\" cx=\"" + this.originalX + "\" cy=\""
-          + this.originalY + "\" rx=\"" + this.shape.getWidth() / 2 + "\" ry=\""
-          + this.shape.getHeight() / 2 + "\" fill=\"rgb(" + this.shape.getRed() + ","
-          + this.shape.getGreen() + "," + this.shape.getBlue() + ")\" visibility=\"visible\">\n"
-
-          + "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
+      String eSvg = "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
           + duration + "ms\" attributeName=\"cx\" from=\"" + this.originalX + "\" to=\"" + this.x
           + "\" fill=\"remove\" />\n"
 
           + "<animate attributeType=\"xml\" begin=\"" + this.getStart() + "\" dur=\""
           + duration + "ms\" attributeName=\"cy\" from=\"" + this.originalY + "\" to=\"" + this.y
           + "\" fill=\"remove\" />\n";
-      return ellipseSvg + "</ellipse>\n";
+      return eSvg + "</ellipse>\n";
       }
 
     return "</svg>\n";
