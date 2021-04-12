@@ -29,10 +29,11 @@ public class GraphicsView extends JFrame implements IView {
     setLayout(null);
     setVisible(true);
 
-    JScrollBar horBar = new JScrollBar(JScrollBar.HORIZONTAL, 300, 100,
-        0,600);
-    JScrollBar verBar = new JScrollBar(JScrollBar.VERTICAL, 300, 100,
-        0, 600);
+    JScrollBar horBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 100,
+        -600,600);
+    JScrollBar verBar = new JScrollBar(JScrollBar.VERTICAL, 0, 100,
+        -600,600);
+
 
     this.panel = new GraphicsPanel(model); //panel that scroll pane displays
     BorderLayout bl = new BorderLayout(0,0);
@@ -85,7 +86,7 @@ public class GraphicsView extends JFrame implements IView {
   public static void main(String[] args) {
     AnimatorModel obj = new AnimatorModel();
 
-    obj.addShape(new Oval(ShapeType.OVAL, 50, 50, 3, 30, 40,40, 150,
+    obj.addShape(new Oval(ShapeType.OVAL, 50, 50, 3, 1000, 40,40, 150,
         250,0), "oval" );
 
     obj.move("oval", 70, 70, 50, 50, 5, 25);
@@ -93,7 +94,7 @@ public class GraphicsView extends JFrame implements IView {
     obj.changeColor("oval", 254,0,0,150,250,
         0, 10,15);
 
-    obj.addShape(new Rectangle(ShapeType.RECTANGLE, 100,120,8,50,35,40,0,
+    obj.addShape(new Rectangle(ShapeType.RECTANGLE, 100,120,8,1000,35,40,0,
         0,255), "rect");
 
     obj.move("rect", 40, 199,100, 120,10,45);
@@ -104,7 +105,7 @@ public class GraphicsView extends JFrame implements IView {
     gv.getCurrentDisplay(obj.getCurrentShapes(5));
 
     int count = 0;
-    while (count < 30) {
+    while (count < 6000) {
       count++;
       gv.getCurrentDisplay(obj.getCurrentShapes(count));
       System.out.println(obj.getCurrentShapes(count));
