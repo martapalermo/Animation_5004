@@ -38,7 +38,7 @@ public abstract class AbstractShape implements Shape {
     }
     this.appearance = new Time(appearTime, disappearTime);
 
-    if (disappearTime <= appearTime) {
+    if (disappearTime < appearTime) {
       throw new IllegalArgumentException("The disappearance time must be "
           + "after the appearance time.");
     }

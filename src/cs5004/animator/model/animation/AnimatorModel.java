@@ -297,37 +297,39 @@ public class AnimatorModel implements Animator {
           red2, int green2, int blue2) {
 
     for (Shape shape : this.shapes) {
-      Shape currentShape = this.getShape(name, start);
+      if (shape.getName().equalsIgnoreCase(name)) {
+        Shape currentShape = this.getShape(name, start);
 
-      // Shape being transformed hasn't appeared yet
-//      if (currentShape == null) {
-//        if (shape.getX() != x1 || shape.getY() != y1 || shape.getWidth() != width1 ||
-//                shape.getHeight() != height1 || shape.getRed() != red1 || shape.getGreen()
-//                != green1|| shape.getBlue() != blue1) {
-//          throw new IllegalArgumentException("Shape's original values are invalid.");
-//        }
-      //System.out.println(currentShape.getGreen());
-      if (currentShape != null) {
-        if (currentShape.getX() != x1 || currentShape.getY() != y1 || currentShape.getWidth()
-                != width1 || currentShape.getHeight() != height1 || currentShape.getRed() != red1
-                || currentShape.getGreen() != green1 || currentShape.getBlue() != blue1) {
-          //System.out.println(currentShape.getGreen() != green1);
-          throw new IllegalArgumentException("Shape's original values are invalid.");
+        // Shape being transformed hasn't appeared yet
+        //      if (currentShape == null) {
+        //        if (shape.getX() != x1 || shape.getY() != y1 || shape.getWidth() != width1 ||
+        //                shape.getHeight() != height1 || shape.getRed() != red1 || shape.getGreen()
+        //                != green1|| shape.getBlue() != blue1) {
+        //          throw new IllegalArgumentException("Shape's original values are invalid.");
+        //        }
+        //System.out.println(currentShape.getGreen());
+        if (currentShape != null) {
+          if (currentShape.getX() != x1 || currentShape.getY() != y1 || currentShape.getWidth()
+                  != width1 || currentShape.getHeight() != height1 || currentShape.getRed() != red1
+                  || currentShape.getGreen() != green1 || currentShape.getBlue() != blue1) {
+            //System.out.println(currentShape.getGreen() != green1);
+            throw new IllegalArgumentException("Shape's original values are invalid.");
+          }
         }
+
+        // Check to see if shape is already static in this window
+//        if (this.events.containsKey(name)
+//                && this.isTransforming(name, "static", start, stop)) {
+//          throw new IllegalArgumentException("This shape already has values in this window.");
+//        }
+
+        Event staticEvent = new Static(shape, start, stop, x1, y1, width1, height1, red1, green1,
+                blue1);
+
+        this.events.get(name).add(staticEvent);
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
+        return;
       }
-
-      // Check to see if shape is already static in this window
-      if (this.events.containsKey(name)
-              && this.isTransforming(name, "static", start, stop)) {
-        throw new IllegalArgumentException("This shape already has values in this window.");
-      }
-
-      Event staticEvent = new Static(shape, start, stop, x1, y1, width1, height1, red1, green1,
-              blue1);
-
-      this.events.get(name).add(staticEvent);
-      this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
-      return;
     }
     throw new IllegalArgumentException("No shape has this name.");
   }

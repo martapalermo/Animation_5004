@@ -23,10 +23,12 @@ abstract class AbstractEvent implements Event {
     this.shape = shape;
     this.shapeName = shape.getName();
 
-    if (stop <= start) {
+    if (stop < start) {
       throw new IllegalArgumentException("Stop time cannot be less than the start time.");
     }
 
+    //System.out.println(start);
+    //System.out.println(shape.getAppearTime());
     if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
       throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
               + "window.");
