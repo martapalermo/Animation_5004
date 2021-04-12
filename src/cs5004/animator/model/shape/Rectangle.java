@@ -54,6 +54,25 @@ public class Rectangle extends AbstractShape {
   }
 
   /**
+   * Get the SVG description of an event.
+   *
+   * @return SVG description, a String
+   */
+  @Override
+  public String getSVG() {
+    String svg; // we may need something that translated the RGB values
+    // into a color so this is a stand-in!
+    svg = "<!--A " + this.getColor() + "rectangle named " + this.getName()
+        + " with lower left corner at (" + this.getX() + "," + this.getY() + "), width "
+        + this.getWidth() + "and height " + this.getHeight() + "-->\n"
+        + "<rect id=" + this.getName() + " x=" + this.getX() + " y=" + this.getY()
+        + "width=" + this.getWidth() + " height=" + this.getHeight() + " fill=rgb("
+        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")"
+        + "visibility=visible >\n";
+    return svg;
+  }
+
+  /**
    * Copies the shape.
    * @return copy of the shape
    */
@@ -65,4 +84,5 @@ public class Rectangle extends AbstractShape {
     copy.setName(this.name);
     return copy;
   }
+
 }

@@ -54,6 +54,19 @@ public class Scale extends AbstractEvent {
   }
 
   /**
+   * Get the SVG description of an event.
+   *
+   * @return SVG description, a String
+   */
+  @Override
+  public String getSVG() {
+    String svg;
+    svg = "";
+
+    return svg;
+  }
+
+  /**
    * Sets the given shape's new values based on the event that occurred; calculate the in between
    * factor to multiply values by.
    * @param shape shape to be transformed

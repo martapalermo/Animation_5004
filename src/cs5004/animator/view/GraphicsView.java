@@ -9,8 +9,10 @@ import java.util.List;
 
 public class GraphicsView implements IView {
 
+  private List<Shape> model;
   private JComponent panel = null;
 
+  // List<Shape> model
   GraphicsView() {
     panel = new JPanel(new BorderLayout(2,2));
     panel.setBorder(new EmptyBorder(2,2,2,2));
@@ -32,7 +34,7 @@ public class GraphicsView implements IView {
           UIManager.setLookAndFeel(UIManager.getCrossPlatformLookAndFeelClassName());
         } catch (Exception useDefault) {
 
-        }
+        } // should this be passing List<Shape> model
         GraphicsView gv = new GraphicsView();
 
         JFrame frame = new JFrame(gv.getClass().getSimpleName());
