@@ -66,7 +66,6 @@ public class GraphicsView extends JFrame implements IView {
         //subtract e from get Y
         panel.setOffsetY(e.getValue());
       }
-
     }
 
     horBar.addAdjustmentListener(new ALHorizontal());
@@ -99,14 +98,14 @@ public class GraphicsView extends JFrame implements IView {
 //        } catch (Exception useDefault) {
 
         //} // should this be passing List<Shape> model
-        GraphicsView gv = new GraphicsView(obj.getCurrentShapes(3));
-        gv.getCurrentDisplay(obj.getCurrentShapes(5));
+    GraphicsView gv = new GraphicsView(obj.getCurrentShapes(3));
+    gv.getCurrentDisplay(obj.getCurrentShapes(5));
 
-        int count = 0;
-        while (count < 30) {
-          count++;
-          gv.getCurrentDisplay(obj.getCurrentShapes(count));
-          System.out.println(obj.getCurrentShapes(count));
+    int count = 0;
+    while (count < 30) {
+      count++;
+      gv.getCurrentDisplay(obj.getCurrentShapes(count));
+      System.out.println(obj.getCurrentShapes(count));
           try {
             Thread.sleep(100);
           } catch (Exception e) {
@@ -133,10 +132,10 @@ public class GraphicsView extends JFrame implements IView {
   /**
    * Display this view.
    *
-   * @param shapesList
+   * @param model
    */
   @Override
-  public void getCurrentDisplay(List<Shape> shapesList) {
+  public void getCurrentDisplay(List<Shape> model) {
     this.panel.updateModel(model);
     this.repaint();
   }
