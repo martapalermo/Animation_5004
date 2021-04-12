@@ -86,18 +86,22 @@ class ChangeColor extends AbstractEvent {
   public void setValues(Shape shape, int tick) {
     int currentRed, currentGreen, currentBlue;
 
-    //System.out.println(this.originalGreen);
-    //System.out.println(this.green);
-    //System.out.println(this.start);
-    currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
-            (this.stop - this.start);
-    currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green) *
-            (tick - this.start))) / (this.stop - this.start);
-    currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
-            (tick - this.start))) / (this.stop - this.start);
+    if (tick < this.stop) {
+      currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
+          (this.stop - this.start);
+      currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green) *
+          (tick - this.start))) / (this.stop - this.start);
+      currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
+          (tick - this.start))) / (this.stop - this.start);
+    }
 
-    //System.out.println(tick);
-    //System.out.println(currentBlue);
+    else {
+      currentRed = this.red;
+      currentGreen = this.green;
+      currentBlue = this.blue;
+    }
+
     shape.setColor(currentRed, currentGreen, currentBlue);
+
   }
 }

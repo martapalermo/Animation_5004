@@ -22,7 +22,7 @@ public enum ShapeType {
    * Helper method to get shape type.
    * @return type of shape, String
    */
-  String getType() {
+  public String getType() {
    return this.type;
   }
 
@@ -30,7 +30,7 @@ public enum ShapeType {
    * Helper method to set new shape type.
    * @param newType new shape type
    */
-  void setType(String newType) {
+  public void setType(String newType) {
     this.type = newType;
   }
 

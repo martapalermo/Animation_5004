@@ -1,8 +1,11 @@
 package cs5004.animator.view;
 
 import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Oval;
+import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
+import cs5004.animator.model.shape.ShapeType;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -13,19 +16,24 @@ import java.util.List;
 
 public class GraphicsView extends JFrame implements IView {
 
+  private ReadonlyAnimator model1;
   private List<Shape> model;
   private GraphicsPanel panel;
 
-
-  GraphicsView(List<Shape> model) {
+//List<Shape> model
+  // ReadonlyAnimator model
+  public GraphicsView(List<Shape> model) {
     super("Animation Window");
+    this.model = model;
+
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(0,0); // top left corner
     setSize(600, 400);
     setLayout(null);
     setVisible(true);
 
 
-    this.model = model;
+
 
     JScrollBar horBar = new JScrollBar(JScrollBar.HORIZONTAL, 300, 100,
         0,600);
@@ -77,11 +85,18 @@ public class GraphicsView extends JFrame implements IView {
   public static void main(String[] args) {
     AnimatorModel obj = new AnimatorModel();
 
-    obj.addShape(new Oval(50, 50, 3, 30, 40,40, 150,
+    obj.addShape(new Oval(ShapeType.OVAL, 50, 50, 3, 30, 40,40, 150,
         250,0), "oval" );
 
     obj.move("oval", 70, 70, 50, 50, 5, 25);
+    obj.scaleShape("oval",20,20,40, 40,10, 15);
+    obj.changeColor("oval", 254,0,0,150,250,
+        0, 10,15);
 
+    obj.addShape(new Rectangle(ShapeType.RECTANGLE, 100,120,8,50,35,40,0,
+        0,255), "rect");
+
+    obj.move("rect", 40, 199,100, 120,10,45);
 
 
 
@@ -119,34 +134,4 @@ public class GraphicsView extends JFrame implements IView {
 
   }
 
-
-//
-//  private final GraphicsPanel panel;
-//  private JLabel display;
-//  private JScrollBar scrollBar;
-//
-//  public GraphicsView(List<Shape> model) {
-//    super("Animation");
-//    setSize(500, 400); // window size
-//    setVisible(true); // visibility is always set true
-//    setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//    setLayout(null);
-//    this.panel = new GraphicsPanel(model);
-//    this.add(this.panel);
-//    this.panel.setVisible(true);
-//  }
-
-//  /**
-//   * Display's this view.
-//   */
-//  @Override
-//  public void getCurrentDisplay(List<Shape> model) {
-//    this.panel.updateModel(model);
-//    this.repaint();
-//  }
-//
-//  @Override
-//  public void go(String outFile) {
-//
-//  }
 }
