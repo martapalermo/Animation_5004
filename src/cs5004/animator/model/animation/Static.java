@@ -27,8 +27,8 @@ public class Static extends AbstractEvent {
    *      transformation event.
    */
   public Static(Shape shape, int start, int stop, int x, int y, int width, int height, int red,
-                int green, int blue) throws IllegalArgumentException {
-    super(shape, start, stop);
+                int green, int blue, int xOffset, int yOffset, int speed) throws IllegalArgumentException {
+    super(shape, start, stop, xOffset, yOffset, speed);
     this.x = x;
     this.y = y;
     this.width = width;

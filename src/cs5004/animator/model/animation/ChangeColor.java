@@ -29,8 +29,9 @@ class ChangeColor extends AbstractEvent {
    * @param originalBlue original blue pigment, int
    */
   public ChangeColor(Shape shape, int start, int stop, int red, int green, int blue,
-                     int originalRed, int originalGreen, int originalBlue) {
-    super(shape, start, stop);
+                     int originalRed, int originalGreen, int originalBlue, int xOffset,
+                     int yOffset, int speed) {
+    super(shape, start, stop, xOffset, yOffset, speed);
     this.red = red;
     this.blue = blue;
     this.green = green;
@@ -58,14 +59,11 @@ class ChangeColor extends AbstractEvent {
    */
   @Override
   public String getSVG() {
-    int duration = Math.abs(this.stop - this.start);
-
-    String svg = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-        + duration * 1000 + "ms\" attributeName=\"fill\" from=\"rgb(" + this.originalRed + ","
-        + this.originalGreen + "," + this.originalBlue + ")\" to=\"rgb(" + this.red + ","
-        + this.green + "," + this.blue + ")\"" + " fill=\"freeze\" />\n";
-
-    return svg + "\n";
+   return "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
+           + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"fill\" " + "from=\"rgb("
+           + this.originalRed + "," + this.originalGreen + "," + this.originalBlue + ")\" to=\""
+           + "rgb(" + this.red + "," + this.green + "," + this.blue + ")\"" + " fill=\"freeze\" "
+           + "/>\n";
   }
 
   /**

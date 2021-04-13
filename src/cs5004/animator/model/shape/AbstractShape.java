@@ -11,6 +11,7 @@ public abstract class AbstractShape implements Shape {
   protected Dimension dimension;
   protected Color colorValues;
   protected boolean initialized;
+  protected ShapeType type;
 
   /**
    * AbstractShape Constructor for when initial values are known.
@@ -30,32 +31,25 @@ public abstract class AbstractShape implements Shape {
   public AbstractShape(ShapeType type, int x, int y, int appearTime, int disappearTime, int width,
                        int height, int red, int green, int blue)
       throws IllegalArgumentException {
-    // Need to figure out coordinate boundaries
+
     this.reference = new Point(x, y);
 
     if (appearTime < 0) {
       throw new IllegalArgumentException("The appearance time must be at or after 0.");
     }
-    this.appearance = new Time(appearTime, disappearTime);
-
     if (disappearTime < appearTime) {
       throw new IllegalArgumentException("The disappearance time must be "
           + "after the appearance time.");
     }
     this.appearance = new Time(appearTime, disappearTime);
 
-    // could these two be refactored? <if width <=0 || height <= 0 { throw argument....
     if (width <= 0) {
       throw new IllegalArgumentException("Width must be greater than 0.");
     }
-    this.dimension = new Dimension(width, height);
-    //this.width = width;
-
     if (height <= 0) {
       throw new IllegalArgumentException("Height must be greater than 0.");
     }
     this.dimension = new Dimension(width, height);
-    //this.height = height;
 
     if (red < 0 || red > 255) {
       throw new IllegalArgumentException("Invalid value for red: must be between 0 and 255");

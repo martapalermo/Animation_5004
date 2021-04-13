@@ -162,9 +162,12 @@ public final class EasyAnimator {
     // Speed
     int speed = Integer.parseInt(input[3]);
 
+    AnimatorModel.setSpeed(speed);
+
+    // Can speed be passed into AnimationBuilderImpl() as a parameter, instead of being a static
+    // method of AnimatorModel?
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
     IView view = factoryOfViews(viewType, model);
     view.go(outFile);
   }
-
 }

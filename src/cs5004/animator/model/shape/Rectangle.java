@@ -26,9 +26,11 @@ public class Rectangle extends AbstractShape {
                    int height, int red, int green, int blue)
       throws IllegalArgumentException {
     super(ShapeType.RECTANGLE, x, y, appearTime, disappearTime, width, height, red, green, blue);
+    this.type = ShapeType.RECTANGLE;
   }
 
   public Rectangle() {
+    this.type = ShapeType.RECTANGLE;
   }
 
 //  /**
@@ -59,18 +61,16 @@ public class Rectangle extends AbstractShape {
    * @return SVG description, a String
    */
   @Override
-  public String getSVG() {
-    String svg;
-    svg = "<rect id=\"" + this.getName() + "\" x=\"" + this.getX() + "\" y=\"" + this.getY()
-        + "\" width=\"" + this.getWidth() + "\" height=\"" + this.getHeight() + "\" fill=\"rgb("
-        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\" "
-        + "visibility=\"visible\" >\n";
-    return svg;
+  public String getSVG(int xOffset, int yOffset) {
+    return "<rect id=\"" + this.getName() + "\" x=\"" + this.getX() + "\" y=\""
+            + this.getY() + "\" width=\"" + this.getWidth() + "\" height=\""
+            + this.getHeight() + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + ","
+            + this.getBlue() + ")\" " + "visibility=\"visible\" >\n";
   }
 
   @Override
   public String getType() {
-    return "rectangle";
+    return this.type.getType();
   }
 
   /**
@@ -89,5 +89,15 @@ public class Rectangle extends AbstractShape {
   @Override
   public String getSVGType() {
     return "</rect>\n";
+  }
+
+  @Override
+  public String[] getScaleSVG() {
+    return new String[]{"width", "height"};
+  }
+
+  @Override
+  public String[] getMoveSVG() {
+    return new String[]{"x", "y"};
   }
 }

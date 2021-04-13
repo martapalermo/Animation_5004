@@ -19,6 +19,7 @@ public class AnimatorModel implements Animator {
   private final List<Shape> shapes;
   private final HashMap<String, List<Event>> events;
   private int[] canvas;
+  private static int speed;
 
   /**
    * Animator Model constructor. The constructor doesn't take any parameters. It instantiates two
@@ -155,7 +156,8 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
-        Event move = new Move(shape, start, stop, x, y, originalX, originalY);
+        Event move = new Move(shape, start, stop, x, y, originalX, originalY, this.canvas[0],
+                this.canvas[1], this.speed);
 
         this.events.get(name).add(move);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -224,7 +226,7 @@ public class AnimatorModel implements Animator {
         }
 
         Event changeColor = new ChangeColor(shape, start, stop, red, green, blue, originalRed,
-                originalGreen, originalBlue);
+                originalGreen, originalBlue, this.canvas[0], this.canvas[1], this.speed);
 
         this.events.get(name).add(changeColor);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -282,7 +284,8 @@ public class AnimatorModel implements Animator {
           throw new IllegalArgumentException("This shape is already scaling.");
         }
 
-        Event scale = new Scale(shape, start, stop, width, originalWidth, height, originalHeight);
+        Event scale = new Scale(shape, start, stop, width, originalWidth, height, originalHeight,
+                this.canvas[0], this.canvas[1], this.speed);
 
         this.events.get(name).add(scale);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -325,7 +328,7 @@ public class AnimatorModel implements Animator {
 //        }
 
         Event staticEvent = new Static(shape, start, stop, x1, y1, width1, height1, red1, green1,
-                blue1);
+                blue1, this.canvas[0], this.canvas[1], this.speed);
 
         this.events.get(name).add(staticEvent);
         this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
@@ -346,7 +349,7 @@ public class AnimatorModel implements Animator {
 
     List<Shape> currentShapes = new ArrayList<>();
     for (Shape shape : this.shapes) {
-      if (shape.getAppearTime() <= tick && shape.getDisappearTime() >= tick) {
+      if (shape.getAppearTime() <= tick && shape.getDisappearTime() > tick) {
         Shape copy = shape.copy();
         if (this.events.containsKey(shape.getName())) {
           this.transformShape(copy, tick);
@@ -383,7 +386,7 @@ public class AnimatorModel implements Animator {
 
   private String getSVGText(String shapeName, List<Event> events) {
     Shape shape = this.getShape(shapeName);
-    StringBuilder text = new StringBuilder(shape.getSVG());
+    StringBuilder text = new StringBuilder(shape.getSVG(this.canvas[0], this.canvas[1]));
 
     for (Event event : events) {
       if (event.getSVG() != null) {
@@ -534,15 +537,21 @@ public class AnimatorModel implements Animator {
     return true;
   }
 
+  @Override
   public void setBounds(int x, int y, int width, int height) {
     this.canvas = new int[]{x, y, width, height};
   }
 
+  @Override
   public int[] getCanvas() {
     return this.canvas;
   }
 
-  public static class AnimationBuilderImpl implements AnimationBuilder<Animator> {
+  public static void setSpeed(int speed) {
+    AnimatorModel.speed = speed;
+  }
+
+  public static final class AnimationBuilderImpl implements AnimationBuilder<Animator> {
     private Animator model = new AnimatorModel();
 
     /**

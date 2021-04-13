@@ -17,7 +17,7 @@ public class SVGVIew extends WrittenView {
 
     @Override
     public void go(String outfile) {
-      String text = this.convertString();
+      String text = this.convertString().toString();
       writeToFile(text, outfile);
     }
 }

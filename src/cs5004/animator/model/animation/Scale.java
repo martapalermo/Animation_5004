@@ -24,8 +24,8 @@ public class Scale extends AbstractEvent {
    * @param originalHeight original height of the shape before transformation, int
    */
   public Scale(Shape shape, int start, int stop, int width, int originalWidth, int
-          height, int originalHeight) {
-    super(shape, start, stop);
+          height, int originalHeight, int xOffset, int yOffset, int speed) {
+    super(shape, start, stop, xOffset, yOffset, speed);
     this.width = width;
     this.height = height;
     this.originalWidth = originalWidth;
@@ -60,32 +60,27 @@ public class Scale extends AbstractEvent {
    */
   @Override
   public String getSVG() {
-    int duration = Math.abs(this.stop - this.start);
-    String w = "";
-    String h = "";
-    if (this.originalWidth != this.width && this.originalHeight == this.height) {
-      w += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-        + duration * 1000 + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
-        + this.width + "\"" + " fill=\"freeze\" />\n";
+    String[] scaleTypes = this.shape.getScaleSVG();
 
-      return w + "\n";
+    String w = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
+            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + scaleTypes[0] +"\" from=\""
+            + this.originalWidth + "\" to=\"" + this.width + "\"" + " fill=\"freeze\" />\n";
+
+    String h = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
+            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + scaleTypes[1] + "\" "
+            + "from=\"" + this.originalHeight + "\" to=\"" + this.height + "\"" + " fill=\"freeze"
+            + "\" />\n";
+
+    if (this.originalWidth != this.width && this.originalHeight == this.height) {
+      return w;
     }
+
     else if (this.originalHeight != this.height && this.originalWidth == this.width) {
-      h += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-          + duration * 1000 + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
-          + this.height + "\"" + " fill=\"freeze\" />\n";
-      return h + "\n";
+      return h;
     }
 
     else {
-      w += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-              + duration * 1000 + "ms\" attributeName=\"width\" from=\"" + this.originalWidth + "\" to=\""
-              + this.width + "\"" + " fill=\"freeze\" />\n";
-
-      h += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-              + duration * 1000 + "ms\" attributeName=\"height\" from=\"" + this.originalHeight + "\" to=\""
-              + this.height + "\"" + " fill=\"freeze\" />\n";
-      return w + h + "\n";
+      return w + h;
     }
   }
 

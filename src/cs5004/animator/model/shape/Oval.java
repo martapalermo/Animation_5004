@@ -31,12 +31,21 @@ public class Oval extends AbstractShape {
 
     this.xRadius = this.getWidth() / 2;
     this.yRadius = this.getHeight() / 2;
+    this.type = ShapeType.OVAL;
   }
 
   /**
    * Oval empty constructor.
    */
   public Oval() {
+    this.type = ShapeType.OVAL;
+  }
+
+  @Override
+  public void setDimension(int width, int height) throws IllegalArgumentException {
+    super.setDimension(width, height);
+    this.xRadius = width / 2;
+    this.yRadius = height / 2;
   }
 
   /**
@@ -60,20 +69,16 @@ public class Oval extends AbstractShape {
    * @return SVG description, a String
    */
   @Override
-  public String getSVG() {
-    String svg;
-
-    // FIX radii (kate)
-    svg = "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\"" + this.getY()
-        + "\" rx=\"" + this.getWidth() / 2 + "\" ry=\"" + this.getHeight() / 2 + "\" fill=\"rgb("
-        + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\" "
-        + "visibility=\"visible\" >\n";
-    return svg;
+  public String getSVG(int xOffset, int yOffset) {
+    return "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\""
+            + this.getY() + "\" rx=\"" + this.xRadius + "\" ry=\"" + this.yRadius
+            + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + "," + this.getBlue()
+            + ")\" " + "visibility=\"visible\" >\n";
   }
 
   @Override
   public String getType() {
-    return "oval";
+    return this.type.getType();
   }
 
   /**
@@ -91,5 +96,15 @@ public class Oval extends AbstractShape {
   @Override
   public String getSVGType() {
     return "</ellipse>\n";
+  }
+
+  @Override
+  public String[] getScaleSVG() {
+    return new String[]{"rx", "ry"};
+  }
+
+  @Override
+  public String[] getMoveSVG() {
+    return new String[]{"cx", "cy"};
   }
 }

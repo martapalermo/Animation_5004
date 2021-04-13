@@ -24,9 +24,9 @@ class Move extends AbstractEvent {
    * @param originalX starting x value for shape, int
    * @param originalY starting y value for shape, int
    */
-  public Move(Shape shape, int start, int stop, int x, int y,
-              int originalX, int originalY) {
-    super(shape, start, stop);
+  public Move(Shape shape, int start, int stop, int x, int y, int originalX, int originalY, int
+          xOffset, int yOffset, int speed) {
+    super(shape, start, stop, xOffset, yOffset, speed);
     this.x = x;
     this.y = y;
     this.originalX = originalX;
@@ -60,48 +60,27 @@ class Move extends AbstractEvent {
    */
   @Override
   public String getSVG() {
-    String hor = "";
-    String ver = "";
-    int duration = Math.abs(this.stop - this.start);
+    String[] moveTypes = this.shape.getMoveSVG();
 
-    // FIX THIS (kate)
-    if (this.shape instanceof Rectangle) {
-      // horizontal movement
-      if (this.originalX != this.x && this.originalY == this.y) {
-        hor += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-          + duration * 1000 + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
-          + "\" fill=\"freeze\" />\n";
-        return hor + "\n";
-      }
-      // vertical movement
-      else if (this.originalY != this.y && this.originalX == this.y) {
-        ver += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-            + duration * 1000 + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
-            + "\" fill=\"freeze\" />\n";
-        return ver + "\n";
-      } // if both vertical horizontal movement happen together
+    String hor = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
+            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + moveTypes[0] + "\" "
+            + "from=\"" + this.originalX + "\" to=\"" + this.x + "\" fill=\""
+            + "freeze\" />\n";
 
-      else {
-        hor += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-                + duration * 1000 + "ms\" attributeName=\"x\" from=\"" + this.originalX + "\" to=\"" + this.x
-                + "\" fill=\"freeze\" />\n";
+    String ver = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
+            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + moveTypes[1] + "\" from=\""
+            + this.originalY + "\" to=\"" + this.y + "\" fill=\"freeze\" />\n";
 
-        ver += "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-                + duration * 1000 + "ms\" attributeName=\"y\" from=\"" + this.originalY + "\" to=\"" + this.y
-                + "\" fill=\"freeze\" />\n";
-        return hor + ver;
-      }
-
+    if (this.originalX != this.x && this.originalY == this.y) {
+      return hor;
     }
-    else {
-      String eSvg = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-          + duration * 1000 + "ms\" attributeName=\"cx\" from=\"" + this.originalX + "\" to=\"" + this.x
-          + "\" fill=\"freeze\" />\n"
 
-          + "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * 1000 + "ms\" dur=\""
-          + duration * 1000 + "ms\" attributeName=\"cy\" from=\"" + this.originalY + "\" to=\"" + this.y
-          + "\" fill=\"freeze\" />\n";
-      return eSvg + "\n";
+    else if (this.originalY != this.y && this.originalX == this.y) {
+      return ver;
+    }
+
+    else {
+      return hor + ver;
     }
   }
 
