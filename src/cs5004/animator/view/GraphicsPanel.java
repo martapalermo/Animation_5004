@@ -8,22 +8,22 @@ import java.awt.*;
 import java.util.List;
 
 public class GraphicsPanel extends JPanel {
-  private List<Shape> model;
+  private List<Shape> listOfShapes;
   private int offsetX = 0;
   private int offsetY = 0;
 
-  public GraphicsPanel(List<Shape> model) {
+  public GraphicsPanel() {
     super(true);
-    this.model = model;
+    this.listOfShapes = null;
     setBackground(Color.WHITE);
-    //setLocation(0,0);
     setBounds(0, 0, 600, 400);
     setVisible(true);
 
   }
 
-  public void updateModel(List<Shape> newModel) {
-    this.model = newModel;
+  public void updateModel(List<Shape> newListOfShapes) {
+    this.listOfShapes = newListOfShapes;
+    this.repaint();
   }
 
   public void setOffsetX(int x) {
@@ -39,26 +39,24 @@ public class GraphicsPanel extends JPanel {
     super.paintComponent(g);
     Graphics2D g2 = (Graphics2D) g;
 
-    for (Shape shape: model) {
-     if(shape.getType() == "oval") {
-       g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
+    if (listOfShapes != null) {
+      for (Shape shape : listOfShapes) {
+        if (shape.getType() == "oval") {
+          g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
 
-       g2.drawOval(shape.getX() - offsetX, shape.getY() -offsetY, shape.getWidth(),
-           shape.getHeight());
-       g2.fillOval(shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
-           shape.getHeight());
+          g2.drawOval(
+              shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
+          g2.fillOval(
+              shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
+        } else {
+          g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
+          g2.drawRect(
+              shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
+          g2.fillRect(
+              shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
+        }
       }
-     else {
-        g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
-        g2.drawRect(
-            shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
-            shape.getHeight());
-        g2.fillRect(
-            shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(),
-            shape.getHeight());
-     }
     }
-
   }
 
 
