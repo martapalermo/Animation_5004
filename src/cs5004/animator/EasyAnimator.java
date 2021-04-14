@@ -142,7 +142,7 @@ public final class EasyAnimator {
   public static IView factoryOfViews(String[] input, Animator model) throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new GraphicsView(model.getCurrentShapes(0));
+      return new GraphicsView(model);
     }
 
     else if (input[1].equalsIgnoreCase("text")) {

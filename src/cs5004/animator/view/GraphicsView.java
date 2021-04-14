@@ -1,6 +1,7 @@
 package cs5004.animator.view;
 
 import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
 import javax.swing.*;
@@ -12,11 +13,11 @@ import java.util.List;
 
 public class GraphicsView extends JFrame implements IView {
 
-  private AnimatorModel model;
+  private ReadonlyAnimator model;
   private GraphicsPanel panel;
   private int[] canvas;
 
-  public GraphicsView(AnimatorModel model) {
+  public GraphicsView(ReadonlyAnimator model) {
     super("Animation Window");
     this.model = model;
     this.canvas = this.model.getCanvas();
