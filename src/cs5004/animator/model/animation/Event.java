@@ -1,5 +1,7 @@
 package cs5004.animator.model.animation;
 
+import java.util.HashMap;
+
 import cs5004.animator.model.shape.Shape;
 
 /**
@@ -43,4 +45,8 @@ public interface Event {
    * @param tick current time, an int
    */
   void setValues(Shape shape, int tick);
+
+  Event copy();
+
+  HashMap<String, int[]> getValues();
 }

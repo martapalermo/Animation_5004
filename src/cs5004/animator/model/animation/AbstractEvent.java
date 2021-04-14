@@ -1,5 +1,7 @@
 package cs5004.animator.model.animation;
 
+import java.util.HashMap;
+
 import cs5004.animator.model.shape.Shape;
 
 /**
@@ -11,10 +13,8 @@ abstract class AbstractEvent implements Event {
   protected int start;
   protected int stop;
   protected int duration;
-  protected int xOffset;
-  protected int yOffset;
-  protected int speed;
-  protected int timeConverter;
+  protected int timeConverter = 100;
+  protected HashMap<String, int []> values;
 
   /**
    * AbstractEvent Constructor.
@@ -24,7 +24,7 @@ abstract class AbstractEvent implements Event {
    * @throws IllegalArgumentException thrown if the stop time is < start time of the
    *      transformation event.
    */
-  public AbstractEvent(Shape shape, int start, int stop, int xOffset, int yOffset, int speed)
+  public AbstractEvent(Shape shape, int start, int stop)
           throws IllegalArgumentException {
     this.shape = shape;
     this.shapeName = shape.getName();
@@ -42,10 +42,7 @@ abstract class AbstractEvent implements Event {
 
     this.start = start;
     this.stop = stop;
-    this.xOffset = xOffset;
-    this.yOffset = yOffset;
-    this.speed = speed;
-    this.timeConverter = 100 / this.speed;
+    this.values = new HashMap<>();
     this.duration = Math.abs(this.stop - this.start) * this.timeConverter;
   }
 
@@ -92,5 +89,10 @@ abstract class AbstractEvent implements Event {
   @Override
   public String getShapeName() {
     return this.shapeName;
+  }
+
+  @Override
+  public HashMap<String, int[]> getValues() {
+    return this.values;
   }
 }

@@ -24,13 +24,13 @@ class Move extends AbstractEvent {
    * @param originalX starting x value for shape, int
    * @param originalY starting y value for shape, int
    */
-  public Move(Shape shape, int start, int stop, int x, int y, int originalX, int originalY, int
-          xOffset, int yOffset, int speed) {
-    super(shape, start, stop, xOffset, yOffset, speed);
+  public Move(Shape shape, int start, int stop, int x, int y, int originalX, int originalY) {
+    super(shape, start, stop);
     this.x = x;
     this.y = y;
     this.originalX = originalX;
     this.originalY = originalY;
+    this.addValues();
   }
 
   /**
@@ -106,5 +106,24 @@ class Move extends AbstractEvent {
     }
 
     shape.setPos(currentX, currentY);
+  }
+
+  @Override
+  public Event copy() {
+    Event copy = new Move(this.shape.copy(), this.start, this.stop, this.x, this.y, this.originalX,
+            this.originalY);
+    return copy;
+  }
+
+  private void addValues() {
+    String[] moveTypes = this.shape.getMoveSVG();
+
+    if (this.x != this.originalX) {
+      this.values.put(moveTypes[0], new int[]{this.originalX, this.x});
+    }
+
+    if (this.y != this.originalY) {
+      this.values.put(moveTypes[1], new int[]{this.originalY, this.y});
+    }
   }
 }

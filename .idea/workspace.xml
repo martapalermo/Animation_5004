@@ -1,20 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="debug">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_21,_1_01_PM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_5_21__1_01_PM__Default_Changelist_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/AbstractShape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/AbstractShapeTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/Animator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/AnimatorModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/ChangeColor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/Color.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/Oval.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/Rectangle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/Shape.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21,_11_06_AM_[Default_Changelist]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_6_21__11_06_AM__Default_Changelist_.xml" beforeDir="false" />
+    <list default="true" id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="fixed svg">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/Animation_5004_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animation_5004.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Animation_5004.jar.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/toh8.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hanoi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/hanoi.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
@@ -23,30 +16,35 @@
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Event.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Event.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Move.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ReadonlyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ReadonlyAnimator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Scale.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Static.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Static.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/AbstractShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/AbstractShape.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Oval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Oval.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Rectangle.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Shape.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Shape.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WriteTextView.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/smalldemo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/smalldemo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smalldemo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/smalldemo.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AbstractEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Animator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Animator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Event.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ReadonlyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ReadonlyAnimator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Static.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Static.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/AbstractShape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGVIew.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGVIew.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,9 +74,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
-  </component>
   <component name="ProjectId" id="1qVBHX49iHTvI3PkL9O2fctjGP0" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -101,6 +96,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -110,7 +108,7 @@
       <recent name="cs5004.animator.model.animation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator HanoiSVG">
+  <component name="RunManager" selected="Application.EasyAnimator toh8SVG">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -125,10 +123,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EasyAnimator HanoiSVG" type="Application" factoryName="Application">
+    <configuration name="EasyAnimator toh8SVG" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
-      <option name="PROGRAM_PARAMETERS" value="-in hanoi.txt -view svg -speed 3 -out hanoi.svg" />
+      <option name="PROGRAM_PARAMETERS" value="-in toh-8.txt -view svg -speed 3 -out system.out" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs5004.animator.*" />
@@ -165,13 +163,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -197,7 +197,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.EasyAnimator BigBangText" />
-      <item itemvalue="Application.EasyAnimator HanoiSVG" />
+      <item itemvalue="Application.EasyAnimator toh8SVG" />
       <item itemvalue="Application.WriteTextView" />
       <item itemvalue="Application.GraphicsView" />
       <item itemvalue="JUnit.AnimatorModelTest" />
@@ -228,14 +228,8 @@
       <workItem from="1617846660727" duration="14949000" />
       <workItem from="1618065748106" duration="4778000" />
       <workItem from="1618167971852" duration="33161000" />
-      <workItem from="1618338936978" duration="6320000" />
-    </task>
-    <task id="LOCAL-00012" summary="refactored Time and Dimension">
-      <created>1617465082985</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1617465082985</updated>
+      <workItem from="1618338936978" duration="28140000" />
+      <workItem from="1618431270586" duration="3034000" />
     </task>
     <task id="LOCAL-00013" summary="refactored Time and Dimension">
       <created>1617466098735</created>
@@ -573,7 +567,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618264173837</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="fixed svg">
+      <created>1618347274881</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1618347274881</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +594,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="minor debug with ChangeColor string" />
     <MESSAGE value="created res directory" />
     <MESSAGE value="switched RGB double to int" />
     <MESSAGE value="added error checking for original values of events" />
@@ -618,6 +618,7 @@
     <MESSAGE value="updated currentDisplay" />
     <MESSAGE value="added enum ShapeType class and fixed paintComponent" />
     <MESSAGE value="fixing graphics window resizing" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing graphics window resizing" />
+    <MESSAGE value="fixed svg" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed svg" />
   </component>
 </project>

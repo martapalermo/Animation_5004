@@ -29,15 +29,15 @@ class ChangeColor extends AbstractEvent {
    * @param originalBlue original blue pigment, int
    */
   public ChangeColor(Shape shape, int start, int stop, int red, int green, int blue,
-                     int originalRed, int originalGreen, int originalBlue, int xOffset,
-                     int yOffset, int speed) {
-    super(shape, start, stop, xOffset, yOffset, speed);
+                     int originalRed, int originalGreen, int originalBlue) {
+    super(shape, start, stop);
     this.red = red;
     this.blue = blue;
     this.green = green;
     this.originalRed = originalRed;
     this.originalBlue = originalBlue;
     this.originalGreen = originalGreen;
+    this.addValues();
   }
 
   /**
@@ -103,5 +103,17 @@ class ChangeColor extends AbstractEvent {
     }
 
     shape.setColor(currentRed, currentGreen, currentBlue);
+  }
+
+  @Override
+  public Event copy() {
+    Event copy = new ChangeColor(this.shape.copy(), this.start, this.stop, this.red, this.green,
+            this.blue, this.originalRed, this.originalGreen, this.originalBlue);
+    return copy;
+  }
+
+  private void addValues() {
+    this.values.put("fill", new int[]{this.originalRed, this.originalGreen, this.originalBlue,
+            this.red, this.green, this.blue});
   }
 }

@@ -24,12 +24,13 @@ public class Scale extends AbstractEvent {
    * @param originalHeight original height of the shape before transformation, int
    */
   public Scale(Shape shape, int start, int stop, int width, int originalWidth, int
-          height, int originalHeight, int xOffset, int yOffset, int speed) {
-    super(shape, start, stop, xOffset, yOffset, speed);
+          height, int originalHeight) {
+    super(shape, start, stop);
     this.width = width;
     this.height = height;
     this.originalWidth = originalWidth;
     this.originalHeight = originalHeight ;
+    this.addValues();
   }
 
   /**
@@ -106,5 +107,24 @@ public class Scale extends AbstractEvent {
     }
 
     shape.setDimension(currentWidth, currentHeight);
+  }
+
+  @Override
+  public Event copy() {
+    Event copy = new Scale(this.shape.copy(), this.start, this.stop, this.width,
+            this.originalWidth, this.height, this.originalHeight);
+    return copy;
+  }
+
+  private void addValues() {
+    String[] scaleTypes = this.shape.getScaleSVG();
+
+    if (this.width != this.originalWidth) {
+      this.values.put(scaleTypes[0], new int[]{this.originalWidth, this.width});
+    }
+
+    if (this.height != this.originalHeight) {
+      this.values.put(scaleTypes[1], new int[]{this.originalHeight, this.height});
+    }
   }
 }

@@ -4,8 +4,10 @@ import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 import cs5004.animator.util.AnimationBuilder;
 
+import java.io.BufferedWriter;
 import java.io.Closeable;
 import java.io.FileWriter;
+import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.io.IOException;
 import java.io.Writer;
@@ -23,16 +25,6 @@ public abstract class WrittenView implements IView {
 
   public WrittenView(ReadonlyAnimator model){//, String textToWrite, String fileName) {
     this.model = model;
-//    this.textToWrite = textToWrite;
-//    this.fileName = fileName;
-  }
-
-  /**
-   * Helper converter method from readOnlyAnimator model to string.
-   * @return string text description
-   */
-  private String convertString() {
-    return this.model.getAnimation();
   }
 
   /**
@@ -40,23 +32,25 @@ public abstract class WrittenView implements IView {
    * @param text text that we want to write to file, String
    *                 textLine -- will probably be the model string (model.toString())
    * @param fileName file Name where we want to write to // create new file, String
-   * @throws IOException
+   * @throws IOException if there is an error writing to the file
    */
-  public static void writeToFile(String text, String fileName) {
+  public void writeToFile(String text, String fileName) throws IOException {
     try {
-      Writer newWriter = new FileWriter(fileName);
+      Writer newWriter;
+      if (fileName.equalsIgnoreCase("System.out")) {
+        newWriter = new OutputStreamWriter(System.out);
+      }
+      else {
+        newWriter = new FileWriter(fileName);
+      }
+
       newWriter.append(text);
       newWriter.close();
-      System.out.println("Successfully wrote to file."); // should append to file
+      System.out.println("Successfully wrote to file.");
+
     } catch (IOException e) {
       System.out.println("An error occurred while writing to file.");
-      e.printStackTrace();
     }
-
-  }
-  public void go(String outfile) {
-    String text = convertString();
-    writeToFile(text, outfile);
   }
 
 

@@ -131,7 +131,6 @@ public interface Animator extends ReadonlyAnimator {
    */
   void setBounds(int x, int y, int width, int height);
 
-  int[] getCanvas();
 
   //static void setSpeed(int speed);
 }

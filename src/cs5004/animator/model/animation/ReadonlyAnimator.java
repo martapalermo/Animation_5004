@@ -1,5 +1,6 @@
 package cs5004.animator.model.animation;
 
+import java.util.HashMap;
 import java.util.List;
 
 import cs5004.animator.model.shape.Shape;
@@ -27,4 +28,10 @@ public interface ReadonlyAnimator {
    * @return SVG String
    */
   String getSVGAnimation();
+
+  int[] getCanvas();
+
+  List<Shape> copyShapesList();
+
+  HashMap<String, List<Event>> copyEventsList();
 }

@@ -27,8 +27,8 @@ public class Static extends AbstractEvent {
    *      transformation event.
    */
   public Static(Shape shape, int start, int stop, int x, int y, int width, int height, int red,
-                int green, int blue, int xOffset, int yOffset, int speed) throws IllegalArgumentException {
-    super(shape, start, stop, xOffset, yOffset, speed);
+                int green, int blue) throws IllegalArgumentException {
+    super(shape, start, stop);
     this.x = x;
     this.y = y;
     this.width = width;
@@ -66,5 +66,12 @@ public class Static extends AbstractEvent {
     shape.setPos(this.x, this.y);
     shape.setDimension(this.width, this.height);
     shape.setColor(this.red, this.green, this.blue);
+  }
+
+  @Override
+  public Event copy() {
+    Event copy = new Static(this.shape.copy(), this.start, this.stop, this.x, this.y, this.width,
+            this.height, this.red, this.green, this.blue);
+    return copy;
   }
 }

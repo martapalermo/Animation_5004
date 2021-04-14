@@ -3,6 +3,10 @@ package cs5004.animator;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
 import java.util.List;
 import java.util.Scanner;
 
@@ -119,20 +123,36 @@ public final class EasyAnimator {
     return input;
   }
 
-  public static IView factoryOfViews(String view, Animator model) throws IllegalArgumentException {
-    if (view.equalsIgnoreCase("visual")) {
+  public static Writer getWriter(String fileName) {
+    try {
+      Writer newWriter;
+      if (fileName.equalsIgnoreCase("System.out")) {
+        newWriter = new OutputStreamWriter(System.out);
+      }
+      else {
+        newWriter = new FileWriter(fileName);
+      }
+      return newWriter;
+
+    } catch (IOException e) {
+      throw new IllegalStateException("Failed to append");
+    }
+  }
+
+  public static IView factoryOfViews(String[] input, Animator model) throws IllegalArgumentException {
+    if (input[1].equalsIgnoreCase("visual")) {
       // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
       return new GraphicsView(model.getCurrentShapes(0));
     }
 
-    else if (view.equalsIgnoreCase("text")) {
+    else if (input[1].equalsIgnoreCase("text")) {
       // return new TextView class w/ ReadonlyAnimator model (@clark's tic tac toe)
       return new TextView(model);
     }
 
-    else if (view.equalsIgnoreCase("svg")) {
+    else if (input[1].equalsIgnoreCase("svg")) {
       // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new SVGVIew(model);
+      return new SVGVIew(model, Integer.parseInt(input[3]));
     }
 
     else {
@@ -162,12 +182,8 @@ public final class EasyAnimator {
     // Speed
     int speed = Integer.parseInt(input[3]);
 
-    AnimatorModel.setSpeed(speed);
-
-    // Can speed be passed into AnimationBuilderImpl() as a parameter, instead of being a static
-    // method of AnimatorModel?
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
-    IView view = factoryOfViews(viewType, model);
+    IView view = factoryOfViews(input, model);
     view.go(outFile);
   }
 }

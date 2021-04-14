@@ -69,7 +69,7 @@ public class Oval extends AbstractShape {
    * @return SVG description, a String
    */
   @Override
-  public String getSVG(int xOffset, int yOffset) {
+  public String getSVG() {
     return "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\""
             + this.getY() + "\" rx=\"" + this.xRadius + "\" ry=\"" + this.yRadius
             + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + "," + this.getBlue()

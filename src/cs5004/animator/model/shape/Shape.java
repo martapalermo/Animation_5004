@@ -122,7 +122,7 @@ public interface Shape {
    * Get the SVG description of an event.
    * @return SVG description, a String
    */
-  String getSVG(int xOffset, int yOffset);
+  String getSVG();
 
 
   /**

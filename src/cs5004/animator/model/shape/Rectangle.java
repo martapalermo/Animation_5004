@@ -61,7 +61,7 @@ public class Rectangle extends AbstractShape {
    * @return SVG description, a String
    */
   @Override
-  public String getSVG(int xOffset, int yOffset) {
+  public String getSVG() {
     return "<rect id=\"" + this.getName() + "\" x=\"" + this.getX() + "\" y=\""
             + this.getY() + "\" width=\"" + this.getWidth() + "\" height=\""
             + this.getHeight() + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + ","
