@@ -1,24 +1,21 @@
 package cs5004.animator;
 
-import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.io.Writer;
-import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
-import cs5004.animator.model.shape.Shape;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
-import cs5004.animator.view.SVGVIew;
+import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
 
 public final class EasyAnimator {
@@ -142,7 +139,7 @@ public final class EasyAnimator {
   public static IView factoryOfViews(String[] input, Animator model) throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new GraphicsView(model);
+      return new GraphicsView((AnimatorModel) model, Integer.parseInt(input[3]));
     }
 
     else if (input[1].equalsIgnoreCase("text")) {
@@ -152,7 +149,7 @@ public final class EasyAnimator {
 
     else if (input[1].equalsIgnoreCase("svg")) {
       // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new SVGVIew(model, Integer.parseInt(input[3]));
+      return new SVGView(model, Integer.parseInt(input[3]));
     }
 
     else {

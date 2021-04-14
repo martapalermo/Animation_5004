@@ -9,13 +9,13 @@ import cs5004.animator.model.animation.Event;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-public class SVGVIew extends WrittenView {
+public class SVGView extends WrittenView {
   private List<Shape> shapes;
   private HashMap<String, List<Event>> events;
   private int[] canvas;
   private final int timeConverter;
 
-  public SVGVIew(ReadonlyAnimator model, int speed) {
+  public SVGView(ReadonlyAnimator model, int speed) {
     super(model);
 
     this.shapes = this.model.copyShapesList();
