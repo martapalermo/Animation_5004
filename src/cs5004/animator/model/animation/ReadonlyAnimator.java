@@ -27,4 +27,7 @@ public interface ReadonlyAnimator {
    * @return SVG String
    */
   String getSVGAnimation();
+
+  int[] getCanvas();
+
 }

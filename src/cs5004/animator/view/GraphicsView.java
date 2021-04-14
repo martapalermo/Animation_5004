@@ -1,11 +1,7 @@
 package cs5004.animator.view;
 
 import cs5004.animator.model.animation.AnimatorModel;
-import cs5004.animator.model.animation.ReadonlyAnimator;
-import cs5004.animator.model.shape.Oval;
-import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
-import cs5004.animator.model.shape.ShapeType;
 
 import javax.swing.*;
 
@@ -18,15 +14,19 @@ public class GraphicsView extends JFrame implements IView {
 
   private AnimatorModel model;
   private GraphicsPanel panel;
-
+  private int[] canvas;
 
   public GraphicsView(AnimatorModel model) {
     super("Animation Window");
     this.model = model;
+    this.canvas = this.model.getCanvas();
+
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    setLocation(0,0); // top left corner
-    setSize(600, 400);
+    //setLocation(0,0);// top left corner
+    setLocation(canvas[0], canvas[1]);
+    //setSize(600, 400);
+    setSize(canvas[2], canvas[3]);
     setLayout(null);
     setVisible(true);
 
