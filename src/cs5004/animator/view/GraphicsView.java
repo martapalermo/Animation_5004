@@ -11,7 +11,7 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.List;
 
-public class GraphicsView extends JFrame implements VisualView {
+public class GraphicsView extends JFrame implements IView {
 
   private ReadonlyAnimator model;
   private GraphicsPanel panel;

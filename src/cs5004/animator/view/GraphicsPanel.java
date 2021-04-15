@@ -7,11 +7,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.List;
 
+/**
+ * This is our Graphics Panel class and it extends JPanel.
+ */
 public class GraphicsPanel extends JPanel {
   private List<Shape> listOfShapes;
   private int offsetX = 0;
   private int offsetY = 0;
 
+  /**
+   * Graphics panel constructor, doesn't take any parameters, but initializes panel bounds,
+   * background and visibility boolean.
+   */
   public GraphicsPanel() {
     super(true);
     this.listOfShapes = null;
@@ -21,6 +28,11 @@ public class GraphicsPanel extends JPanel {
 
   }
 
+  /**
+   * Helper method that takes in a new list of shapes and updates the current list of shapes.
+   * Method prompts the graphics element to repaint everytime.
+   * @param newListOfShapes
+   */
   public void updateModel(List<Shape> newListOfShapes) {
     this.listOfShapes = newListOfShapes;
     this.repaint();
