@@ -93,6 +93,9 @@ public class GraphicsView extends JFrame implements VisualView {
     this.panel.updateModel(listOfShapes);
   }
 
+  /**
+   * Helper method facilitating start of animation.
+   */
   @Override
   public void go() {
     int count = 0;
