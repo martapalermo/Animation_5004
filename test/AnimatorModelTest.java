@@ -1,4 +1,3 @@
-import cs5004.animator.model.shape.ShapeType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -25,9 +24,9 @@ public class AnimatorModelTest {
   public void setUp() {
     this.model = new AnimatorModel();
 
-    this.r = new Rectangle(ShapeType.RECTANGLE, 200, 200, 1, 100, 50, 100,
+    this.r = new Rectangle(200, 200, 1, 100, 50, 100,
         1,0,0);
-    this.c = new Oval(ShapeType.OVAL, 500,100, 6, 101, 60, 30, 0,
+    this.c = new Oval(500,100, 6, 101, 60, 30, 0,
         0,1);
 
     this.m = new AnimatorModel();
@@ -530,11 +529,11 @@ public class AnimatorModelTest {
   @Test
   public void testRemoveShape() {
     assertEquals("Shapes:\n", model.getAnimation());
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 0,0, 2, 20, 5, 1,
+    this.model.addShape(new Rectangle(0,0, 2, 20, 5, 1,
         255,0,0), "bottom");
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 1,1, 4, 20, 3,
+    this.model.addShape(new Rectangle(1,1, 4, 20, 3,
         1, 0, 255,0), "middle");
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 2,2,8, 20, 1,1,
+    this.model.addShape(new Rectangle(2,2,8, 20, 1,1,
         0, 0,255), "top");
     assertEquals("Shapes:\n"
         + "Name: bottom\n"
@@ -590,13 +589,13 @@ public class AnimatorModelTest {
 
   @Test(expected = IllegalArgumentException.class)
   public void testAddShapeEmptyName() throws IllegalArgumentException {
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 5,9,5, 20, 1, 8,
+    this.model.addShape(new Rectangle(5,9,5, 20, 1, 8,
         150, 255, 150), "");
   }
 
   @Test(expected = IllegalArgumentException.class)
   public void testAddShapeNullName() throws IllegalArgumentException {
-    this.model.addShape(new Oval(ShapeType.OVAL, 5,5,10, 200, 4, 10,
+    this.model.addShape(new Oval(5,5,10, 200, 4, 10,
         150, 20, 150), null);
   }
 
@@ -608,11 +607,11 @@ public class AnimatorModelTest {
   @Test()
   public void testAddShape() {
     assertEquals("Shapes:\n", model.getAnimation());
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 0,0, 2, 20, 5, 1,
+    this.model.addShape(new Rectangle(0,0, 2, 20, 5, 1,
         255,0,0), "bottom");
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 1,1, 4, 20, 3,
+    this.model.addShape(new Rectangle(1,1, 4, 20, 3,
         1, 0, 255,0), "middle");
-    this.model.addShape(new Rectangle(ShapeType.RECTANGLE, 2,2,8, 20, 1,1,
+    this.model.addShape(new Rectangle(2,2,8, 20, 1,1,
         0, 0,255), "top");
 
     assertEquals("Shapes:\n"

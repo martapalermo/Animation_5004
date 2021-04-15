@@ -77,9 +77,23 @@ public class AnimatorModel implements Animator {
     }
   }
 
+  /**
+   * Initialize a shape's starting values.
+   * @param name shape's name, a String
+   * @param start The start time of this transformation
+   * @param stop The end time of this transformation
+   * @param x1 The initial x-position of the shape
+   * @param y1 The initial y-position of the shape
+   * @param width1 The initial width of the shape
+   * @param height1 The initial height of the shape
+   * @param red1 The initial red color-value of the shape
+   * @param green1 The initial green color-value of the shape
+   * @param blue1 The initial blue color-value of the shape
+   * @throws IllegalArgumentException if the shape doesn't exist
+   */
   @Override
   public void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
-          height1, int red1, int green1, int blue1) {
+          height1, int red1, int green1, int blue1) throws IllegalArgumentException {
     for (Shape shape : this.shapes) {
       if (shape.getName().equalsIgnoreCase(name)) {
         if (!shape.isInitialized()) {
@@ -90,13 +104,16 @@ public class AnimatorModel implements Animator {
           shape.setColor(red1, green1, blue1);
           shape.setInitialized();
         }
+        this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
 
         if (stop > shape.getDisappearTime()) {
           shape.setDisappearTime(stop);
         }
+
+        return;
       }
     }
-    this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
+    throw new IllegalArgumentException("No shape has this name.");
   }
 
   /**
@@ -180,23 +197,12 @@ public class AnimatorModel implements Animator {
         // Current characteristics of the shape about to be transformed
         Shape currentShape = this.getShape(name, start);
 
-        // Shape being transformed hasn't appeared yet
-//        if (currentShape == null) {
-//          if (shape.getRed() != originalRed || shape.getGreen() != originalGreen || shape.getBlue()
-//                  != originalBlue) {
-//            throw new IllegalArgumentException("Shape's original values are invalid.");
-//          }
-        //System.out.println(name);
-//        System.out.println(originalRed);
-//        System.out.println(currentShape.getRed());
         if (currentShape != null) {
           if (currentShape.getRed() != originalRed || currentShape.getGreen() != originalGreen
                   || currentShape.getBlue() != originalBlue) {
             throw new IllegalArgumentException("Shape's original values are invalid.");
           }
         }
-
-
 
         // Check to see if shape is already changing color in this window
         if (this.events.containsKey(name) && this.isTransforming(name, "change color",
@@ -244,12 +250,6 @@ public class AnimatorModel implements Animator {
         // Current characteristics of the shape about to be transformed
         Shape currentShape = this.getShape(name, start);
 
-        // Shape being transformed hasn't appeared yet
-//        if (currentShape == null) {
-//          if (shape.getWidth() != originalWidth || shape.getHeight() != originalHeight) {
-//            throw new IllegalArgumentException("Shape's original values are invalid.");
-//          }
-        //System.out.println(name);
         if (currentShape != null) {
           if (currentShape.getWidth() != originalWidth || currentShape.getHeight()
                   != originalHeight) {
@@ -305,28 +305,13 @@ public class AnimatorModel implements Animator {
       if (shape.getName().equalsIgnoreCase(name)) {
         Shape currentShape = this.getShape(name, start);
 
-        // Shape being transformed hasn't appeared yet
-        //      if (currentShape == null) {
-        //        if (shape.getX() != x1 || shape.getY() != y1 || shape.getWidth() != width1 ||
-        //                shape.getHeight() != height1 || shape.getRed() != red1 || shape.getGreen()
-        //                != green1|| shape.getBlue() != blue1) {
-        //          throw new IllegalArgumentException("Shape's original values are invalid.");
-        //        }
-        //System.out.println(currentShape.getGreen());
         if (currentShape != null) {
           if (currentShape.getX() != x1 || currentShape.getY() != y1 || currentShape.getWidth()
                   != width1 || currentShape.getHeight() != height1 || currentShape.getRed() != red1
                   || currentShape.getGreen() != green1 || currentShape.getBlue() != blue1) {
-            //System.out.println(currentShape.getGreen() != green1);
             throw new IllegalArgumentException("Shape's original values are invalid.");
           }
         }
-
-        // Check to see if shape is already static in this window
-//        if (this.events.containsKey(name)
-//                && this.isTransforming(name, "static", start, stop)) {
-//          throw new IllegalArgumentException("This shape already has values in this window.");
-//        }
 
         Event staticEvent = new Static(shape, start, stop, x1, y1, width1, height1, red1, green1,
                 blue1);
@@ -371,20 +356,10 @@ public class AnimatorModel implements Animator {
     return "Shapes:\n" + this.shapeInformation() + this.eventInformation();
   }
 
-  @Override
-  public String getSVGAnimation() {
-    String header = "<svg width=\"" + this.canvas[2] + "\" height=\"" + this.canvas[3] + "\" "
-            + "version=\"1.1\" viewBox=\"" + this.canvas[0] + " " + this.canvas[1] + " "
-            + this.canvas[2] + " " + this.canvas[3] + "\"\n\txmlns=\"http://www.w3.org/2000/svg\""
-            + ">\n";
-
-    StringBuilder text = new StringBuilder();
-    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
-      text.append(getSVGText(entry.getKey(), entry.getValue()));
-    }
-    return header + text +"\n</svg>";
-  }
-
+  /**
+   * Copy HashMap of {@link Event}s in the model.
+   * @return copy of event data, a LinkedHashMap
+   */
   @Override
   public LinkedHashMap<String, List<Event>> copyEventsList() {
     LinkedHashMap<String, List<Event>> copy = new LinkedHashMap<>();
@@ -401,6 +376,10 @@ public class AnimatorModel implements Animator {
     return copy;
   }
 
+  /**
+   * Copy list of {@link Shape}s in the model.
+   * @return copy of shapes, a List
+   */
   @Override
   public List<Shape> copyShapesList() {
     List<Shape> copy = new ArrayList<>();
@@ -412,34 +391,26 @@ public class AnimatorModel implements Animator {
     return copy;
   }
 
-  private String getSVGText(String shapeName, List<Event> events) {
-    Shape shape = this.getShape(shapeName);
-    StringBuilder text = new StringBuilder(shape.getSVG());
-
-    for (Event event : events) {
-      if (event.getSVG() != null) {
-        text.append(event.getSVG());
-      }
-    }
-    //Event lastEvent = events.get(events.size() - 1);
-    text.append(shape.getSVGType());
-    return text.toString();
+  /**
+   * Set the dimensions of the canvas.
+   * @param x upper left corner x value, an int
+   * @param y upper left corner y value, an int
+   * @param width canvas width, an int
+   * @param height canvas height, an int
+   */
+  @Override
+  public void setBounds(int x, int y, int width, int height) {
+    this.canvas = new int[]{x, y, width, height};
   }
-//
-//  private String loopSVG(Shape startingShape, Shape endingShape) {
-//    StringBuilder revertedStatus = new StringBuilder();
-//    if (startingShape.getX() != )
-//  }
 
-  // THROW EXCEPTIONS
-
-  // CHECK ORIGINAL VALUES AGAINST CURRENT VALUES
-//  private void staticEvent(String name, int x, int y, int width, int height, int red, int green,
-//                           int blue, int start, int stop) {
-//    for (Shape shape : this.shapes) {
-//
-//    }
-//  }
+  /**
+   * Get the dimensions of the canvas.
+   * @return canvas dimensions, an int array [upper left x, upper left y, width, height]
+   */
+  @Override
+  public int[] getCanvas() {
+    return this.canvas;
+  }
 
   /**
    * Private helper method that checks if the shape being passed is already doing something.
@@ -473,16 +444,8 @@ public class AnimatorModel implements Animator {
   private void transformShape(Shape shape, int tick) {
     for (Event event : this.events.get(shape.getName())) {
       if ((event.getStart() <= tick && event.getStop() >= tick) || event.getStart() <= tick) {
-        //System.out.println(tick);
         event.setValues(shape, tick);
       }
-
-      // Tick is outside start/stop time of the event but no other event of the same kind has
-      // happened
-//      else if (tick >= event.getStop()) {
-//        event.setValues(shape, tick);
-//        return;
-//      }
     }
   }
 
@@ -544,42 +507,6 @@ public class AnimatorModel implements Animator {
     return null;
   }
 
-  /**
-   * Helper method to get the shape based on its name
-   *
-   * @param name shape name, a String
-   * @return shape with matching name, if any
-   * @throws IllegalArgumentException if no shape has this name
-   */
-  private Shape getShape(String name) {
-    for (Shape shape : this.shapes) {
-      if (shape.getName().equalsIgnoreCase(name)) {
-        return shape;
-      }
-    }
-    throw new IllegalArgumentException("No shape has this name.");
-  }
-
-  // Might be a private method for the View?
-  private boolean isInBounds(int x, int y, int width, int height) {
-    // Check if canvasX <= x <= canvasX + canvasWidth
-    // Check if canvasX <= x + width <= canvasX + canvasWidth
-    // Check if canvasY <= y <= canvasY + canvasHeight
-    // Check if canvasY <= y + height <= canvasY + canvasHeight
-
-    // If one of these is false, scrollbar is needed
-    return true;
-  }
-
-  @Override
-  public void setBounds(int x, int y, int width, int height) {
-    this.canvas = new int[]{x, y, width, height};
-  }
-
-  @Override
-  public int[] getCanvas() {
-    return this.canvas;
-  }
 
 
   public static final class AnimationBuilderImpl implements AnimationBuilder<Animator> {

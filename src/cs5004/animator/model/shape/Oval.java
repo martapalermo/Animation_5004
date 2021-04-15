@@ -3,7 +3,6 @@ package cs5004.animator.model.shape;
 /**
  * This is the Oval class. It represents an oval shape. This class extends AbstractShape.
  */
-// for the oval, there are 2 radii: long axis will be height/2 and short axis will be width/2
 public class Oval extends AbstractShape {
   private int xRadius;
   private int yRadius;
@@ -24,10 +23,9 @@ public class Oval extends AbstractShape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public Oval(ShapeType type, int x, int y, int appearTime, int disappearTime, int width, int height,
+  public Oval(int x, int y, int appearTime, int disappearTime, int width, int height,
       int red, int green, int blue) throws IllegalArgumentException {
-    super(ShapeType.OVAL, x, y, appearTime, disappearTime, width, height, red, green, blue);
-    //super(x, y, appearTime, disappearTime, width, height, red, green, blue);
+    super(x, y, appearTime, disappearTime, width, height, red, green, blue);
 
     this.xRadius = this.getWidth() / 2;
     this.yRadius = this.getHeight() / 2;
@@ -49,21 +47,6 @@ public class Oval extends AbstractShape {
   }
 
   /**
-   * toString method with all features of the oval shape.
-   * @return toString for oval shape
-   */
-  @Override
-  public String toString() {
-    return "Name: " + this.getName() + "\n"
-        + "Type: oval\n" + "Center: (" + this.getX() + ","
-        + this.getY() + "), " + "X radius: " + this.xRadius + ", " + "Y radius: " + yRadius + ", "
-        + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\n"
-        + "Appears at t=" + getAppearTime() + "\n"
-        + "Disappears at t=" + getDisappearTime() + "\n";
-  }
-
-
-  /**
    * Get the SVG description of an event.
    *
    * @return SVG description, a String
@@ -76,9 +59,14 @@ public class Oval extends AbstractShape {
             + ")\" " + "visibility=\"visible\" >\n";
   }
 
+
+  /**
+   * Get the shape type.
+   * @return shape's type, a String
+   */
   @Override
   public String getType() {
-    return this.type.getType();
+    return this.type.toString();
   }
 
   /**
@@ -87,24 +75,50 @@ public class Oval extends AbstractShape {
    */
   @Override
   public Shape copy() {
-    Shape copy = new Oval(ShapeType.OVAL, this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
+    Shape copy = new Oval(this.getX(), this.getY(), this.getAppearTime(), this.getDisappearTime(),
         this.getWidth(), this.getHeight(), this.getRed(), this.getGreen(), this.getBlue());
     copy.setName(this.name);
     return copy;
   }
 
+  /**
+   * Get the SVG formatting for the end of the shape's SVG declaration.
+   * @return SVG shape type, a String
+   */
   @Override
   public String getSVGType() {
     return "</ellipse>\n";
   }
 
+  /**
+   * Get scale attributes for shape's SVG documentation
+   * @return names of scale SVG attributes, a String array
+   */
   @Override
   public String[] getScaleSVG() {
     return new String[]{"rx", "ry"};
   }
 
+  /**
+   * Get move attributes for shape's SVG documentation
+   * @return names of move SVG attributes, a String array
+   */
   @Override
   public String[] getMoveSVG() {
     return new String[]{"cx", "cy"};
+  }
+
+  /**
+   * toString method with all features of the oval shape.
+   * @return toString for oval shape
+   */
+  @Override
+  public String toString() {
+    return "Name: " + this.getName() + "\n"
+            + "Type: " + this.type.toString() + "\n" + "Center: (" + this.getX() + ","
+            + this.getY() + "), " + "X radius: " + this.xRadius + ", " + "Y radius: " + yRadius
+            + ", " + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue()
+            + ")\n" + "Appears at t=" + getAppearTime() + "\n" + "Disappears at t="
+            + getDisappearTime() + "\n";
   }
 }

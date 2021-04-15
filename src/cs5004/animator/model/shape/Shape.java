@@ -136,11 +136,27 @@ public interface Shape {
    */
   void setInitialized();
 
+  /**
+   * Get the shape type.
+   * @return shape's type, a String
+   */
   String getType();
 
+  /**
+   * Get the SVG formatting for the end of the shape's SVG declaration.
+   * @return SVG shape type, a String
+   */
   String getSVGType();
 
+  /**
+   * Get scale attributes for shape's SVG documentation
+   * @return names of scale SVG attributes, a String array
+   */
   String[] getScaleSVG();
 
+  /**
+   * Get move attributes for shape's SVG documentation
+   * @return names of move SVG attributes, a String array
+   */
   String[] getMoveSVG();
 }

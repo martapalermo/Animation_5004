@@ -1,20 +1,12 @@
 package cs5004.animator.view;
 
-import cs5004.animator.model.shape.Shape;
-
-import java.util.List;
-
 /**
- * The interface for our view class.
+ * The interface for our view classes.
  */
 public interface IView {
 
   /**
-   * Display this view.
+   * Helper method facilitating start of animation.
    */
-  void getCurrentDisplay(List<Shape> shapesList);
-
   void go();
-
-
 }

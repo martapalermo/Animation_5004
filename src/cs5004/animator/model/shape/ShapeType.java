@@ -5,33 +5,17 @@ package cs5004.animator.model.shape;
  * that can be created in the animation.
  */
 public enum ShapeType {
-  OVAL("oval"),
-  RECTANGLE("rectangle");
+  OVAL,
+  RECTANGLE;
 
-  private String type;
+  @Override
+  public String toString() {
+    if (this == OVAL) {
+      return "oval";
+    }
 
-  /**
-   * Shape Type constructor with a single parameter for type.
-   * @param type type of shape, String
-   */
-  ShapeType(String type) {
-    this.type = type;
+    else {
+      return "rectangle";
+    }
   }
-
-  /**
-   * Helper method to get shape type.
-   * @return type of shape, String
-   */
-  public String getType() {
-   return this.type;
-  }
-
-  /**
-   * Helper method to set new shape type.
-   * @param newType new shape type
-   */
-  public void setType(String newType) {
-    this.type = newType;
-  }
-
 }

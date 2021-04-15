@@ -3,7 +3,6 @@ package cs5004.animator.model.animation;
 import java.util.NoSuchElementException;
 
 import cs5004.animator.model.shape.Shape;
-import cs5004.animator.util.AnimationBuilder;
 
 /**
  * Represents a collection of {@link Shape}s and their transformations.
@@ -56,7 +55,8 @@ public interface Animator extends ReadonlyAnimator {
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    *      appear/disappear window, if the stop time is less than or equal to the start time or if
    *      the shape is already changing colors in this window, or if the red, blue, or green values
-   *      are out of range (0-255), or if no shape in the list has the given name, or if the original values are incorrect.
+   *      are out of range (0-255), or if no shape in the list has the given name, or if the
+   *      original values are incorrect.
    */
   void changeColor(String name, int red, int green, int blue, int originalRed, int
           originalGreen, int originalBlue, int start, int stop) throws IllegalArgumentException;
@@ -74,7 +74,7 @@ public interface Animator extends ReadonlyAnimator {
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    *      appear/disappear window, or if the shape's width and/or height is already scaling in this
    *      window, or if width and/or height <= 0, or if no shape in the list has the given name,
-   *      or if the original values are incorrect.
+   *      or if the original values are incorrect
    */
   void scaleShape(String name, int width, int height, int originalHeight, int
           originalWidth, int start, int stop) throws IllegalArgumentException;
@@ -118,9 +118,11 @@ public interface Animator extends ReadonlyAnimator {
    * @param red1 The initial red color-value of the shape
    * @param green1 The initial green color-value of the shape
    * @param blue1 The initial blue color-value of the shape
+   * @throws IllegalArgumentException if the shape doesn't exist
    */
   void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
-                              height1, int red1, int green1, int blue1);
+                       height1, int red1, int green1, int blue1)
+                       throws IllegalArgumentException;
 
   /**
    * Set the dimensions of the canvas.

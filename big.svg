@@ -1,5 +1,5 @@
 <svg width="1205" height="1204" version="1.1" viewBox="-203 -202 1205 1204"
-	xmlns="http://www.w3.org/2000/svg">
+	xmlns="http://www.w3.org/2000/svg" overflow="auto">
 <ellipse id="P1" cx="396" cy="396" rx="4" ry="4" fill="rgb(240,122,106)" visibility="visible" >
 		<animate attributeType="xml" begin="66ms" dur="6435ms" attributeName="cx" from="396" to="219" fill="freeze" />
 		<animate attributeType="xml" begin="66ms" dur="6435ms" attributeName="cy" from="396" to="902" fill="freeze" />

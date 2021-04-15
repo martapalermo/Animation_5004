@@ -1,4 +1,3 @@
-import cs5004.animator.model.shape.ShapeType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -22,16 +21,16 @@ public class AbstractShapeTest {
 
   @Before
   public void setUp() {
-    this.oval = new Oval(ShapeType.OVAL, 0,0,5,10,4,
-        8, 0, 0,128); // navy blue oval
-    this.o = new Oval(ShapeType.OVAL,0,0,5,10,4,
-        8, 0, 0,128);
+    this.oval = new Oval(0,0,5,10,4, 8, 0, 0,
+            128); // navy blue oval
+    this.o = new Oval(0,0,5,10,4, 8, 0, 0,
+            128);
     o.setName("oval Larry");
 
-    this.rectangle = new Rectangle(ShapeType.RECTANGLE, 4,3,1,25,5,5,
-        255,99,71); // tomato red rectangle
-    this.r = new Rectangle(ShapeType.RECTANGLE,4,3,1,25,5,5,
-        255,99,71);
+    this.rectangle = new Rectangle(4,3,1,25,5,5,
+            255,99,71); // tomato red rectangle
+    this.r = new Rectangle(4,3,1,25,5,5, 255,
+            99,71);
     r.setName("rectangle Frank");
   }
 

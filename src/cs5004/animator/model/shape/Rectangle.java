@@ -22,10 +22,10 @@ public class Rectangle extends AbstractShape {
    *      after disappearance time, if width or height are <= 0, if red, green and/or blue values
    *      are greater than 255 or less than 0.
    */
-  public Rectangle(ShapeType type, int x, int y, int appearTime, int disappearTime, int width,
+  public Rectangle(int x, int y, int appearTime, int disappearTime, int width,
                    int height, int red, int green, int blue)
       throws IllegalArgumentException {
-    super(ShapeType.RECTANGLE, x, y, appearTime, disappearTime, width, height, red, green, blue);
+    super(x, y, appearTime, disappearTime, width, height, red, green, blue);
     this.type = ShapeType.RECTANGLE;
   }
 
@@ -33,27 +33,8 @@ public class Rectangle extends AbstractShape {
     this.type = ShapeType.RECTANGLE;
   }
 
-//  /**
-//   * Rectangle constructor for when only the name is known.
-//   * @param name shape name, a String
-//   */
-//  public Rectangle(String name) {
-//    super(name);
-//  }
 
-  /**
-   * toString method with all features of the rectangle shape.
-   * @return toString for rectangle shape
-   */
-  @Override
-  public String toString() {
-    return "Name: " + this.getName() + "\n"
-        + "Type: rectangle\n" + "Min corner: (" + this.getX() + ","
-        + this.getY() + "), " + "Width: " + getWidth() + ", " + "Height: " + getHeight() + ", "
-        + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\n"
-        + "Appears at t=" + getAppearTime() + "\n"
-        + "Disappears at t=" + getDisappearTime() + "\n";
-  }
+
 
   /**
    * Get the SVG description of an event.
@@ -68,9 +49,13 @@ public class Rectangle extends AbstractShape {
             + this.getBlue() + ")\" " + "visibility=\"visible\" >\n";
   }
 
+  /**
+   * Get the shape type.
+   * @return shape's type, a String
+   */
   @Override
   public String getType() {
-    return this.type.getType();
+    return this.type.toString();
   }
 
   /**
@@ -79,25 +64,51 @@ public class Rectangle extends AbstractShape {
    */
   @Override
   public Shape copy() {
-    Shape copy = new Rectangle(ShapeType.RECTANGLE, this.getX(), this.getY(), this.getAppearTime(),
+    Shape copy = new Rectangle(this.getX(), this.getY(), this.getAppearTime(),
             this.getDisappearTime(), this.getWidth(), this.getHeight(), this.getRed(),
             this.getGreen(), this.getBlue());
     copy.setName(this.name);
     return copy;
   }
 
+  /**
+   * Get the SVG formatting for the end of the shape's SVG declaration.
+   * @return SVG shape type, a String
+   */
   @Override
   public String getSVGType() {
     return "</rect>\n";
   }
 
+  /**
+   * Get scale attributes for shape's SVG documentation
+   * @return names of scale SVG attributes, a String array
+   */
   @Override
   public String[] getScaleSVG() {
     return new String[]{"width", "height"};
   }
 
+  /**
+   * Get move attributes for shape's SVG documentation
+   * @return names of move SVG attributes, a String array
+   */
   @Override
   public String[] getMoveSVG() {
     return new String[]{"x", "y"};
+  }
+
+  /**
+   * toString method with all features of the rectangle shape.
+   * @return toString for rectangle shape
+   */
+  @Override
+  public String toString() {
+    return "Name: " + this.getName() + "\n"
+            + "Type: " + this.type.toString() + "\n" + "Min corner: (" + this.getX() + ","
+            + this.getY() + "), " + "Width: " + getWidth() + ", " + "Height: " + getHeight() + ", "
+            + "Color: (" + this.getRed() + "," + this.getGreen() + "," + this.getBlue() + ")\n"
+            + "Appears at t=" + getAppearTime() + "\n"
+            + "Disappears at t=" + getDisappearTime() + "\n";
   }
 }
