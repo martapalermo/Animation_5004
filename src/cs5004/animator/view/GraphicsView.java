@@ -10,6 +10,9 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.List;
 
+/**
+ * This is the Graphics view class, it extends JFrame and implements our View interface, IView.
+ */
 public class GraphicsView extends JFrame implements IView {
 
   private ReadonlyAnimator model;
@@ -17,6 +20,11 @@ public class GraphicsView extends JFrame implements IView {
   private int[] canvas;
   private final int timeConverter;
 
+  /**
+   * Graphics View constructor. Takes in two parameters model and speed.
+   * @param model readonly animation model, ReadonlyAnimator interface
+   * @param speed speed of animation, int
+   */
   public GraphicsView(ReadonlyAnimator model, int speed) {
     super("Animation Window");
     this.model = model;
@@ -44,6 +52,9 @@ public class GraphicsView extends JFrame implements IView {
     this.panel.setVisible(true);
     this.add(this.panel);
 
+    /**
+     * Adjustment Listener class for the horizontal scroll bar.
+     */
     class ALHorizontal implements AdjustmentListener {
 
       /**
@@ -57,6 +68,9 @@ public class GraphicsView extends JFrame implements IView {
       }
     }
 
+    /**
+     * Adjustment Listener class for the vertical scroll bar.
+     */
     class ALVertical implements AdjustmentListener {
 
       /**
@@ -93,6 +107,9 @@ public class GraphicsView extends JFrame implements IView {
     this.panel.updateModel(listOfShapes);
   }
 
+  /**
+   * Helper method facilitating start of animation.
+   */
   @Override
   public void go() {
     int count = 0;

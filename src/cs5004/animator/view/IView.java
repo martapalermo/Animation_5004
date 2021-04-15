@@ -15,7 +15,7 @@ public interface IView {
   void getCurrentDisplay(List<Shape> shapesList);
 
   /**
-   * Helper method facilitating animation
+   * Helper method facilitating start of animation.
    */
   void go();
 

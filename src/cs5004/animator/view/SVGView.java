@@ -100,6 +100,9 @@ public class SVGView extends WrittenView {
     return header + text +"\n</svg>";
   }
 
+  /**
+   * Helper method facilitating start of animation.
+   */
     @Override
     public void go() {
       String text = this.createFullSVG();

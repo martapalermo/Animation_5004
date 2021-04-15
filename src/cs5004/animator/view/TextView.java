@@ -15,6 +15,9 @@ public class TextView extends WrittenView {
     return this.model.getAnimation();
   }
 
+  /**
+   * Helper method facilitating start of animation.
+   */
   @Override
   public void go() {
     String text = this.convertString();
