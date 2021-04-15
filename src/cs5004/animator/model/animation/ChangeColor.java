@@ -56,15 +56,17 @@ class ChangeColor extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape, int tick) {
-    int currentRed, currentGreen, currentBlue;
+    int currentRed;
+    int currentGreen;
+    int currentBlue;
 
     if (tick < this.stop) {
-      currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
-              (this.stop - this.start);
-      currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green) *
-              (tick - this.start))) / (this.stop - this.start);
-      currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
-              (tick - this.start))) / (this.stop - this.start);
+      currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red)
+          * (tick - this.start))) / (this.stop - this.start);
+      currentGreen = (((this.originalGreen) * (this.stop - tick)) + ((this.green)
+          * (tick - this.start))) / (this.stop - this.start);
+      currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue)
+          * (tick - this.start))) / (this.stop - this.start);
 
       shape.setColor(currentRed, currentGreen, currentBlue);
     }
@@ -101,7 +103,7 @@ class ChangeColor extends AbstractEvent {
    * Add the event values to the HashMap to be used to create the SVG in the view.
    */
   private void addValues() {
-    this.values.put("fill", new int[]{this.originalRed, this.originalGreen, this.originalBlue,
-            this.red, this.green, this.blue});
+    this.values.put("fill", new int[] {this.originalRed, this.originalGreen, this.originalBlue,
+        this.red, this.green, this.blue});
   }
 }

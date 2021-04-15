@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="javadoc in views!">
-      <change afterPath="$PROJECT_DIR$/viewHW7.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="adding javadoc in animatormodel">
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,28 +187,7 @@
       <workItem from="1618167971852" duration="33161000" />
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
-      <workItem from="1618521704747" duration="1857000" />
-    </task>
-    <task id="LOCAL-00022" summary="edited AnimationModel first test">
-      <created>1617490837816</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1617490837816</updated>
-    </task>
-    <task id="LOCAL-00023" summary="added Animator Model Tests">
-      <created>1617500247828</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1617500247828</updated>
-    </task>
-    <task id="LOCAL-00024" summary="added more Animator Model Tests">
-      <created>1617502202927</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1617502202927</updated>
+      <workItem from="1618521704747" duration="2212000" />
     </task>
     <task id="LOCAL-00025" summary="debugging/cleaning up for java style">
       <created>1617570495647</created>
@@ -534,7 +511,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618523039895</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="adding javadoc in easyanimator">
+      <created>1618523798193</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1618523798193</updated>
+    </task>
+    <task id="LOCAL-00072" summary="adding javadoc in easyanimator">
+      <created>1618523923083</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1618523923083</updated>
+    </task>
+    <task id="LOCAL-00073" summary="adding javadoc in animatormodel">
+      <created>1618523988281</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1618523988281</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,8 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="made res folder" />
-    <MESSAGE value="added elements to iview - NOT SURE - NEED EDITS" />
     <MESSAGE value="made changes to IView, added frame and panel" />
     <MESSAGE value="finished doubles/int + added shapetype enum" />
     <MESSAGE value="added AnimationBuilderImpl class!" />
@@ -579,6 +575,8 @@
     <MESSAGE value="cleaning the model" />
     <MESSAGE value="cleaned up view" />
     <MESSAGE value="javadoc in views!" />
-    <option name="LAST_COMMIT_MESSAGE" value="javadoc in views!" />
+    <MESSAGE value="adding javadoc in easyanimator" />
+    <MESSAGE value="adding javadoc in animatormodel" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding javadoc in animatormodel" />
   </component>
 </project>
