@@ -366,8 +366,9 @@ public class AnimatorModel implements Animator {
 
     for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       List<Event> eventsCopy = new ArrayList<>();
+
       for (Event event : entry.getValue()) {
-          eventsCopy.add(event.copy());
+        eventsCopy.add(event.copy());
       }
 
       copy.put(entry.getKey(), eventsCopy);
