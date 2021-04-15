@@ -1,6 +1,11 @@
 package cs5004.animator.util;
 
+/**
+ * AnimationBuilder Interface.
+ * @param <Animator>
+ */
 public interface AnimationBuilder<Animator> {
+
   /**
    * Constructs a final document.
    * @return the newly constructed document

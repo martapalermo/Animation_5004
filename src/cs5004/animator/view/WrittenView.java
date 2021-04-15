@@ -11,6 +11,12 @@ public abstract class WrittenView implements IView {
   protected ReadonlyAnimator model;
   protected Appendable writer;
 
+  /**
+   * Constructor for the abstract written view, takes two parameters the readonly animator model,
+   * with instructions on what animation contains, and an appendable writer element.
+   * @param model animation model, readonly animator
+   * @param writer writer, appendable
+   */
   public WrittenView(ReadonlyAnimator model, Appendable writer) {
     this.model = model;
     this.writer = writer;
