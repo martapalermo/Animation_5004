@@ -18,8 +18,17 @@ import cs5004.animator.view.IView;
 import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
 
+/**
+ * Easy Animator class - barebones controller that facilitates animation outputs.
+ */
 public final class EasyAnimator {
 
+  /**
+   *
+   * @param args
+   * @return
+   * @throws IllegalArgumentException
+   */
   public static String[] parseCommands(String[] args) throws IllegalArgumentException {
     StringBuilder strArgs = new StringBuilder();
 
@@ -49,7 +58,7 @@ public final class EasyAnimator {
 
         } else if (token.equalsIgnoreCase("-view")) {
           if (!command.equalsIgnoreCase("text") && !command.equalsIgnoreCase
-                  ("visual") && !command.equalsIgnoreCase("svg")) {
+              ("visual") && !command.equalsIgnoreCase("svg")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
@@ -109,6 +118,11 @@ public final class EasyAnimator {
     return input;
   }
 
+  /**
+   *
+   * @param fileName
+   * @return
+   */
   public static Writer getWriter(String fileName) {
     try {
       Writer newWriter;
@@ -125,7 +139,16 @@ public final class EasyAnimator {
     }
   }
 
-  public static IView factoryOfViews(String[] input, Animator model, Writer writer) throws IllegalArgumentException {
+  /**
+   *
+   * @param input
+   * @param model
+   * @param writer
+   * @return
+   * @throws IllegalArgumentException
+   */
+  public static IView factoryOfViews(String[] input, Animator model, Writer writer)
+      throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       return new GraphicsView(model, Integer.parseInt(input[3]));
     }
@@ -143,6 +166,10 @@ public final class EasyAnimator {
     }
   }
 
+  /**
+   *
+   * @param args
+   */
   public static void main(String[] args) {
     String[] input = parseCommands(args);
 
