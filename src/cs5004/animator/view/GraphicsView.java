@@ -1,6 +1,5 @@
 package cs5004.animator.view;
 
-import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
@@ -11,7 +10,7 @@ import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.List;
 
-public class GraphicsView extends JFrame implements IView {
+public class GraphicsView extends JFrame implements VisualView {
 
   private ReadonlyAnimator model;
   private GraphicsPanel panel;
