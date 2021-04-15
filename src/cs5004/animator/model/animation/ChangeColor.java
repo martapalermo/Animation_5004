@@ -41,32 +41,6 @@ class ChangeColor extends AbstractEvent {
   }
 
   /**
-   * toString method outlining the change of color event.
-   * @return toString with original color pigments, new color pigments
-   *        and the start and stop ticks for the movement time
-   */
-  @Override
-  public String toString() {
-    return "Shape " + this.getShapeName() + " changes color from (" + originalRed + ","
-        + originalGreen + "," + originalBlue + ") to (" + this.red + "," + this.green + ","
-        + this.blue + ") from t=" + this.getStart() + " to t=" + this.getStop();
-  }
-
-  /**
-   * Get the SVG description of an event.
-   *
-   * @return SVG description, a String
-   */
-  @Override
-  public String getSVG() {
-   return "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
-           + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"fill\" " + "from=\"rgb("
-           + this.originalRed + "," + this.originalGreen + "," + this.originalBlue + ")\" to=\""
-           + "rgb(" + this.red + "," + this.green + "," + this.blue + ")\"" + " fill=\"freeze\" "
-           + "/>\n";
-  }
-
-  /**
    * Get the event type.
    * @return event name, a String
    */
@@ -84,9 +58,6 @@ class ChangeColor extends AbstractEvent {
   public void setValues(Shape shape, int tick) {
     int currentRed, currentGreen, currentBlue;
 
-    //System.out.println(this.originalGreen);
-    //System.out.println(this.green);
-    //System.out.println(this.start);
     if (tick < this.stop) {
       currentRed = (((this.originalRed) * (this.stop - tick)) + ((this.red) * (tick - this.start))) /
               (this.stop - this.start);
@@ -94,17 +65,19 @@ class ChangeColor extends AbstractEvent {
               (tick - this.start))) / (this.stop - this.start);
       currentBlue = (((this.originalBlue) * (this.stop - tick)) + ((this.blue) *
               (tick - this.start))) / (this.stop - this.start);
+
+      shape.setColor(currentRed, currentGreen, currentBlue);
     }
 
     else {
-      currentRed = this.red;
-      currentGreen = this.green;
-      currentBlue = this.blue;
+      shape.setColor(this.red, this.green, this.blue);
     }
-
-    shape.setColor(currentRed, currentGreen, currentBlue);
   }
 
+  /**
+   * Copy the Event.
+   * @return copied Event
+   */
   @Override
   public Event copy() {
     Event copy = new ChangeColor(this.shape.copy(), this.start, this.stop, this.red, this.green,
@@ -112,6 +85,21 @@ class ChangeColor extends AbstractEvent {
     return copy;
   }
 
+  /**
+   * toString method outlining the change of color event.
+   * @return toString with original color pigments, new color pigments
+   *        and the start and stop ticks for the movement time
+   */
+  @Override
+  public String toString() {
+    return "Shape " + this.getShapeName() + " changes color from (" + originalRed + ","
+            + originalGreen + "," + originalBlue + ") to (" + this.red + "," + this.green + ","
+            + this.blue + ") from t=" + this.getStart() + " to t=" + this.getStop();
+  }
+
+  /**
+   * Add the event values to the HashMap to be used to create the SVG in the view.
+   */
   private void addValues() {
     this.values.put("fill", new int[]{this.originalRed, this.originalGreen, this.originalBlue,
             this.red, this.green, this.blue});

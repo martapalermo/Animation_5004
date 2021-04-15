@@ -14,7 +14,7 @@ public interface IView {
    */
   void getCurrentDisplay(List<Shape> shapesList);
 
-  void go(String outFile);
+  void go();
 
 
 }

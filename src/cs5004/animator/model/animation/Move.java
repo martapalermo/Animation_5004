@@ -1,6 +1,5 @@
 package cs5004.animator.model.animation;
 
-import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
 
 /**
@@ -34,54 +33,12 @@ class Move extends AbstractEvent {
   }
 
   /**
-   * toString method outlining the move event.
-   * @return toString with original coordinates, new coordinates and the start and stop ticks for
-   *        the movement time
-   */
-  @Override
-  public String toString() {
-    return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY + ") to ("
-        + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop();
-  }
-
-  /**
    * Get the event type.
    * @return event name, a String
    */
   @Override
   public String getEvent() {
     return "move";
-  }
-
-  /**
-   * Get the SVG description of an event.
-   *
-   * @return SVG description, a String
-   */
-  @Override
-  public String getSVG() {
-    String[] moveTypes = this.shape.getMoveSVG();
-
-    String hor = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
-            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + moveTypes[0] + "\" "
-            + "from=\"" + this.originalX + "\" to=\"" + this.x + "\" fill=\""
-            + "freeze\" />\n";
-
-    String ver = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
-            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + moveTypes[1] + "\" from=\""
-            + this.originalY + "\" to=\"" + this.y + "\" fill=\"freeze\" />\n";
-
-    if (this.originalX != this.x && this.originalY == this.y) {
-      return hor;
-    }
-
-    else if (this.originalY != this.y && this.originalX == this.y) {
-      return ver;
-    }
-
-    else {
-      return hor + ver;
-    }
   }
 
   /**
@@ -98,16 +55,18 @@ class Move extends AbstractEvent {
               (this.stop - this.start);
       currentY = (((this.originalY) * (this.stop - tick)) + ((this.y) * (tick - this.start))) /
               (this.stop - this.start);
+      shape.setPos(currentX, currentY);
     }
 
     else {
-      currentX = this.x;
-      currentY = this.y;
+      shape.setPos(this.x, this.y);
     }
-
-    shape.setPos(currentX, currentY);
   }
 
+  /**
+   * Copy the Event.
+   * @return copied Event
+   */
   @Override
   public Event copy() {
     Event copy = new Move(this.shape.copy(), this.start, this.stop, this.x, this.y, this.originalX,
@@ -115,6 +74,20 @@ class Move extends AbstractEvent {
     return copy;
   }
 
+  /**
+   * toString method outlining the move event.
+   * @return toString with original coordinates, new coordinates and the start and stop ticks for
+   *        the movement time
+   */
+  @Override
+  public String toString() {
+    return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY + ") to ("
+            + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop();
+  }
+
+  /**
+   * Add the event values to the HashMap to be used to create the SVG in the view.
+   */
   private void addValues() {
     String[] moveTypes = this.shape.getMoveSVG();
 

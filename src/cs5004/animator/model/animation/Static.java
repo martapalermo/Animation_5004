@@ -48,16 +48,6 @@ public class Static extends AbstractEvent {
   }
 
   /**
-   * Get the SVG description of an event.
-   *
-   * @return SVG description, a String
-   */
-  @Override
-  public String getSVG() {
-    return null;
-  }
-
-  /**
    * Sets the given shape's new values based on the event that occurred.
    * @param shape shape to be transformed
    */
@@ -68,6 +58,10 @@ public class Static extends AbstractEvent {
     shape.setColor(this.red, this.green, this.blue);
   }
 
+  /**
+   * Copy the Event.
+   * @return copied Event
+   */
   @Override
   public Event copy() {
     Event copy = new Static(this.shape.copy(), this.start, this.stop, this.x, this.y, this.width,

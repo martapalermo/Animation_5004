@@ -2,7 +2,6 @@ package cs5004.animator.model.animation;
 
 import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,17 +31,13 @@ public class AnimatorModel implements Animator {
     this.canvas = new int[4];
   }
 
-//  private AnimatorModel(AnimationBuilder builder) {
-////    this.shapes = builder.shapesList;
-////    this.events = builder.eventsList;
-//  }
-
   /**
    * Add a shape to the list.
    *
    * @param shape the {@link Shape} to be added to the list
    * @param name  a unique, non-empty, non-null name for the shape within the list, a String
-   * @throws IllegalArgumentException if the shape is null
+   * @throws IllegalArgumentException if the name is null, empty, or not unique, or if the shape
+   *      is null
    */
   @Override
   public void addShape(Shape shape, String name) throws IllegalArgumentException {
@@ -101,17 +96,7 @@ public class AnimatorModel implements Animator {
         }
       }
     }
-    this.shapes.sort((s1, s2) -> Math.max(s2.getAppearTime(), s1.getAppearTime()));
-  }
-
-  @Override
-  public void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
-                        int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
-                        int red2, int green2, int blue2) {
-
-
-
-
+    this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
   }
 
   /**
@@ -127,7 +112,8 @@ public class AnimatorModel implements Animator {
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    *                                  appear/disappear window, if the stop time is less than or
    *                                  equal to the start time, or if the shape is already moving in
-   *                                  this window, or if no shape if the list has the given name
+   *                                  this window, or if no shape if the list has the given name,
+   *                                  or if the original values are incorrect.
    */
   @Override
   public void move(String name, int x, int y, int originalX, int originalY, int start,
@@ -138,12 +124,6 @@ public class AnimatorModel implements Animator {
         // Current characteristics of the shape about to be transformed
         Shape currentShape = this.getShape(name, start);
 
-        // Shape being transformed hasn't appeared yet
-//        if (currentShape == null) {
-//
-//          if (shape.getX() != originalX || shape.getY() != originalY) {
-//            throw new IllegalArgumentException("Shape's original values are invalid.");
-//          }
         if (currentShape != null) {
           if (currentShape.getX() != originalX || currentShape.getY() != originalY) {
             throw new IllegalArgumentException("Shape's original values are invalid.");
@@ -151,15 +131,15 @@ public class AnimatorModel implements Animator {
         }
 
         // Check to see if shape is already moving in this window
-        if (this.events.containsKey(name) && this.isTransforming(name, "move",
-                start, stop)) {
+        if (this.events.containsKey(name) && this.isTransforming(name, "move", start,
+                stop)) {
           throw new IllegalArgumentException("This shape is already moving.");
         }
 
         Event move = new Move(shape, start, stop, x, y, originalX, originalY);
 
         this.events.get(name).add(move);
-        this.events.get(name).sort((e1, e2) -> Math.max(e2.getStart(), e1.getStart()));
+        this.events.get(name).sort(Comparator.comparingInt(Event::getStart));
         return;
       }
     }
@@ -183,7 +163,7 @@ public class AnimatorModel implements Animator {
    *                                  equal to the start time or if the shape is already changing
    *                                  colors in this window, or if the red, blue, or green values
    *                                  are out of range (0-255), or if no shape in the list has the
-   *                                  given name
+   *                                  given name, or if the original values are incorrect
    */
   @Override
   public void changeColor(String name, int red, int green, int blue, int originalRed,
@@ -293,6 +273,29 @@ public class AnimatorModel implements Animator {
     throw new IllegalArgumentException("No shape has this name.");
   }
 
+  /**
+   * Create a Static {@link Event} for the given shape to store its data when it's not
+   * transforming.
+   *
+   * @param name The name of the shape
+   * @param start The start time of this transformation
+   * @param x1 The initial x-position of the shape
+   * @param y1 The initial y-position of the shape
+   * @param width1 The initial width of the shape
+   * @param height1 The initial height of the shape
+   * @param red1 The initial red color-value of the shape
+   * @param green1 The initial green color-value of the shape
+   * @param blue1 The initial blue color-value of the shape
+   * @param stop The end time of this transformation
+   * @param x2 The final x-position of the shape
+   * @param y2 The final y-position of the shape
+   * @param width2 The final width of the shape
+   * @param height2 The final height of the shape
+   * @param red2 The final red color-value of the shape
+   * @param green2 The final green color-value of the shape
+   * @param blue2 The final blue color-value of the shape
+   * @throws IllegalArgumentException if any of the starting values don't match their final values
+   */
   @Override
   public void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int
           red1, int green1, int blue1, int stop, int x2, int y2, int width2, int height2, int
@@ -383,8 +386,8 @@ public class AnimatorModel implements Animator {
   }
 
   @Override
-  public HashMap<String, List<Event>> copyEventsList() {
-    HashMap<String, List<Event>> copy = new HashMap<>();
+  public LinkedHashMap<String, List<Event>> copyEventsList() {
+    LinkedHashMap<String, List<Event>> copy = new LinkedHashMap<>();
 
     for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       List<Event> eventsCopy = new ArrayList<>();

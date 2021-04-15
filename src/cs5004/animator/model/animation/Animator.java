@@ -56,7 +56,7 @@ public interface Animator extends ReadonlyAnimator {
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    *      appear/disappear window, if the stop time is less than or equal to the start time or if
    *      the shape is already changing colors in this window, or if the red, blue, or green values
-   *      are out of range (0-255), or if no shape in the list has the given name
+   *      are out of range (0-255), or if no shape in the list has the given name, or if the original values are incorrect.
    */
   void changeColor(String name, int red, int green, int blue, int originalRed, int
           originalGreen, int originalBlue, int start, int stop) throws IllegalArgumentException;
@@ -73,13 +73,16 @@ public interface Animator extends ReadonlyAnimator {
    * @param stop scaling stop time, an int
    * @throws IllegalArgumentException if the start or stop times are out of bounds of the shape's
    *      appear/disappear window, or if the shape's width and/or height is already scaling in this
-   *      window, or if width and/or height <= 0, or if no shape in the list has the given name
+   *      window, or if width and/or height <= 0, or if no shape in the list has the given name,
+   *      or if the original values are incorrect.
    */
   void scaleShape(String name, int width, int height, int originalHeight, int
           originalWidth, int start, int stop) throws IllegalArgumentException;
 
   /**
-   * Transforms the shape with the given name.
+   * Create a Static {@link Event} for the given shape to store its data when it's not
+   * transforming.
+   *
    * @param name The name of the shape
    * @param start The start time of this transformation
    * @param x1 The initial x-position of the shape
@@ -97,10 +100,11 @@ public interface Animator extends ReadonlyAnimator {
    * @param red2 The final red color-value of the shape
    * @param green2 The final green color-value of the shape
    * @param blue2 The final blue color-value of the shape
+   * @throws IllegalArgumentException if any of the starting values don't match their final values
    */
-  void transform(String name, int start, int x1, int y1, int width1, int height1, int red1,
-                        int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
-                        int red2, int green2, int blue2);
+  void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int red1,
+                   int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
+                   int red2, int green2, int blue2) throws IllegalArgumentException;
 
   /**
    * Initialize a shape's starting values.
@@ -118,19 +122,12 @@ public interface Animator extends ReadonlyAnimator {
   void initializeShape(String name, int start, int stop, int x1, int y1, int width1, int
                               height1, int red1, int green1, int blue1);
 
-  void staticEvent(String name, int start, int x1, int y1, int width1, int height1, int red1,
-                          int green1, int blue1, int stop, int x2, int y2, int width2, int height2,
-                          int red2, int green2, int blue2);
-
   /**
-   * ADD DESCRIPTION
-   * @param x
-   * @param y
-   * @param width
-   * @param height
+   * Set the dimensions of the canvas.
+   * @param x upper left corner x value, an int
+   * @param y upper left corner y value, an int
+   * @param width canvas width, an int
+   * @param height canvas height, an int
    */
   void setBounds(int x, int y, int width, int height);
-
-
-  //static void setSpeed(int speed);
 }

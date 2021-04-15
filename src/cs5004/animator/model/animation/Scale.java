@@ -6,7 +6,7 @@ import cs5004.animator.model.shape.Shape;
  * This is the Scale class. It represents the scaling event/transformation that a shape can undergo.
  * This class extends AbstractEvent.
  */
-public class Scale extends AbstractEvent {
+class Scale extends AbstractEvent {
   private final int originalWidth;
   private final int originalHeight;
   private final int height;
@@ -34,55 +34,12 @@ public class Scale extends AbstractEvent {
   }
 
   /**
-   * toString method outlining the scaling event.
-   * @return toString with original dimensions (width,height), new dimensions and
-   *        the start and stop ticks for the movement time.
-   */
-  @Override
-  public String toString() {
-    return "Shape " + this.getShapeName() + " scales from Width: " + originalWidth + ", Height: "
-        + originalHeight + " to Width: " + this.width + ", Height: " + this.height + " from t="
-        + this.getStart() + " to t=" + this.getStop();
-  }
-
-  /**
    * Get the event type.
    * @return event name, a String
    */
   @Override
   public String getEvent() {
     return "scale";
-  }
-
-  /**
-   * Get the SVG description of an event.
-   *
-   * @return SVG description, a String
-   */
-  @Override
-  public String getSVG() {
-    String[] scaleTypes = this.shape.getScaleSVG();
-
-    String w = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
-            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + scaleTypes[0] +"\" from=\""
-            + this.originalWidth + "\" to=\"" + this.width + "\"" + " fill=\"freeze\" />\n";
-
-    String h = "\t<animate attributeType=\"xml\" begin=\"" + this.getStart() * this.timeConverter
-            + "ms\" dur=\"" + this.duration + "ms\" attributeName=\"" + scaleTypes[1] + "\" "
-            + "from=\"" + this.originalHeight + "\" to=\"" + this.height + "\"" + " fill=\"freeze"
-            + "\" />\n";
-
-    if (this.originalWidth != this.width && this.originalHeight == this.height) {
-      return w;
-    }
-
-    else if (this.originalHeight != this.height && this.originalWidth == this.width) {
-      return h;
-    }
-
-    else {
-      return w + h;
-    }
   }
 
   /**
@@ -109,6 +66,10 @@ public class Scale extends AbstractEvent {
     shape.setDimension(currentWidth, currentHeight);
   }
 
+  /**
+   * Copy the Event.
+   * @return copied Event
+   */
   @Override
   public Event copy() {
     Event copy = new Scale(this.shape.copy(), this.start, this.stop, this.width,
@@ -116,6 +77,21 @@ public class Scale extends AbstractEvent {
     return copy;
   }
 
+  /**
+   * toString method outlining the scaling event.
+   * @return toString with original dimensions (width,height), new dimensions and
+   *        the start and stop ticks for the movement time.
+   */
+  @Override
+  public String toString() {
+    return "Shape " + this.getShapeName() + " scales from Width: " + originalWidth + ", Height: "
+            + originalHeight + " to Width: " + this.width + ", Height: " + this.height + " from t="
+            + this.getStart() + " to t=" + this.getStop();
+  }
+
+  /**
+   * Add the event values to the HashMap to be used to create the SVG in the view.
+   */
   private void addValues() {
     String[] scaleTypes = this.shape.getScaleSVG();
 

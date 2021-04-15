@@ -12,8 +12,6 @@ abstract class AbstractEvent implements Event {
   protected Shape shape;
   protected int start;
   protected int stop;
-  protected int duration;
-  protected int timeConverter = 100;
   protected HashMap<String, int []> values;
 
   /**
@@ -33,8 +31,6 @@ abstract class AbstractEvent implements Event {
       throw new IllegalArgumentException("Stop time cannot be less than the start time.");
     }
 
-    //System.out.println(start);
-    //System.out.println(shape.getAppearTime()
     if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
       throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
               + "window.");
@@ -43,26 +39,7 @@ abstract class AbstractEvent implements Event {
     this.start = start;
     this.stop = stop;
     this.values = new HashMap<>();
-    this.duration = Math.abs(this.stop - this.start) * this.timeConverter;
   }
-
-  // Static event constructor
-//  public AbstractEvent(Shape shape, int start, int stop) {
-//    this.shape = shape;
-//    this.shapeName = shape.getName();
-//
-//    if (stop < start) {
-//      throw new IllegalArgumentException("Stop time cannot be less than the start time.");
-//    }
-//
-//    if (start < shape.getAppearTime() || stop > shape.getDisappearTime()) {
-//      throw new IllegalArgumentException("Start/stop time is out of the shape's appear "
-//              + "window.");
-//    }
-//
-//    this.start = start;
-//    this.stop = stop;
-//  }
 
   /**
    * Get the start tick.
@@ -91,6 +68,12 @@ abstract class AbstractEvent implements Event {
     return this.shapeName;
   }
 
+
+  /**
+   * Get the values of the Event taking place; key is the attribute changing and value is
+   * an array of the old/new values.
+   * @return values, a HashMap
+   */
   @Override
   public HashMap<String, int[]> getValues() {
     return this.values;

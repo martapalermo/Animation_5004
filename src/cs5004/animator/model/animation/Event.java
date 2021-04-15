@@ -34,19 +34,22 @@ public interface Event {
   String getEvent();
 
   /**
-   * Get the SVG description of an event.
-   * @return SVG description, a String
-   */
-  String getSVG();
-
-  /**
    * Sets the given shape's new values based on the event that occurred.
    * @param shape shape to be transformed
    * @param tick current time, an int
    */
   void setValues(Shape shape, int tick);
 
+  /**
+   * Copy the Event.
+   * @return copied Event
+   */
   Event copy();
 
+  /**
+   * Get the values of the Event taking place; key is the attribute changing and value is
+   * an array of the old/new values.
+   * @return values, a HashMap
+   */
   HashMap<String, int[]> getValues();
 }

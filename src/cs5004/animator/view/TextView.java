@@ -5,8 +5,8 @@ import java.io.IOException;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 
 public class TextView extends WrittenView {
-  public TextView(ReadonlyAnimator model) {
-    super(model);
+  public TextView(ReadonlyAnimator model, Appendable writer) {
+    super(model, writer);
   }
 
   /**
@@ -18,12 +18,14 @@ public class TextView extends WrittenView {
   }
 
   @Override
-  public void go(String outfile) {
+  public void go() {
     String text = this.convertString();
-    try {
-      writeToFile(text, outfile);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+//    try {
+//      writeToFile(text, outfile);
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+
+    this.writeToFile(text);
   }
 }

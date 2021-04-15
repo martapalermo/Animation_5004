@@ -95,13 +95,13 @@ public class GraphicsView extends JFrame implements IView {
   }
 
   @Override
-  public void go(String outFile) {
+  public void go() {
     int count = 0;
     while (count < 1000000) {
       count++;
       getCurrentDisplay(model.getCurrentShapes(count));
       try {
-        Thread.sleep(100);
+        Thread.sleep(100 / 3);
       } catch (Exception e) {
 
       }

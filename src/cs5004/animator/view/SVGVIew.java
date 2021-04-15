@@ -2,6 +2,7 @@ package cs5004.animator.view;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,12 +12,12 @@ import cs5004.animator.model.shape.Shape;
 
 public class SVGVIew extends WrittenView {
   private List<Shape> shapes;
-  private HashMap<String, List<Event>> events;
+  private LinkedHashMap<String, List<Event>> events;
   private int[] canvas;
   private final int timeConverter;
 
-  public SVGVIew(ReadonlyAnimator model, int speed) {
-    super(model);
+  public SVGVIew(ReadonlyAnimator model, Appendable writer, int speed) {
+    super(model, writer);
 
     this.shapes = this.model.copyShapesList();
     this.events = this.model.copyEventsList();
@@ -100,12 +101,13 @@ public class SVGVIew extends WrittenView {
   }
 
     @Override
-    public void go(String outfile) {
+    public void go() {
       String text = this.createFullSVG();
-      try {
-        this.writeToFile(text, outfile);
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
+//      try {
+//        this.writeToFile(text, outfile);
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
+      this.writeToFile(text);
     }
 }

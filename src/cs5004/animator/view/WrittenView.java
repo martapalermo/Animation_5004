@@ -15,41 +15,43 @@ import java.util.List;
 
 // class that will write a text file output
 public abstract class WrittenView implements IView {
-  private String path;
-  private String textToWrite;
-  private String fileName;
-  private boolean appendToFile = false;
   protected ReadonlyAnimator model;
+  protected Appendable writer;
   // boolean is set to default value false -> means you don't want to append
   // but you want to erase everything in the file
 
-  public WrittenView(ReadonlyAnimator model){//, String textToWrite, String fileName) {
+  public WrittenView(ReadonlyAnimator model, Appendable writer) {
     this.model = model;
+    this.writer = writer;
   }
 
   /**
    * Method that writes string to text file.
    * @param text text that we want to write to file, String
    *                 textLine -- will probably be the model string (model.toString())
-   * @param fileName file Name where we want to write to // create new file, String
    * @throws IOException if there is an error writing to the file
    */
-  public void writeToFile(String text, String fileName) throws IOException {
+  public void writeToFile(String text) {
+//    try {
+//      Writer newWriter;
+//      if (fileName.equalsIgnoreCase("System.out")) {
+//        newWriter = new OutputStreamWriter(System.out);
+//      }
+//      else {
+//        newWriter = new FileWriter(fileName);
+//      }
+//
+//      newWriter.append(text);
+//      newWriter.close();
+//      System.out.println("Successfully wrote to file.");
+//
+//    } catch (IOException e) {
+//      System.out.println("An error occurred while writing to file.");
+//    }
     try {
-      Writer newWriter;
-      if (fileName.equalsIgnoreCase("System.out")) {
-        newWriter = new OutputStreamWriter(System.out);
-      }
-      else {
-        newWriter = new FileWriter(fileName);
-      }
-
-      newWriter.append(text);
-      newWriter.close();
-      System.out.println("Successfully wrote to file.");
-
+      this.writer.append(text);
     } catch (IOException e) {
-      System.out.println("An error occurred while writing to file.");
+      throw new IllegalArgumentException("Unable to append to the file.");
     }
   }
 
