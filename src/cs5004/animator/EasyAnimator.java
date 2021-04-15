@@ -18,7 +18,7 @@ import cs5004.animator.model.shape.Shape;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
-import cs5004.animator.view.SVGVIew;
+import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
 
 public final class EasyAnimator {
@@ -142,7 +142,7 @@ public final class EasyAnimator {
   public static IView factoryOfViews(String[] input, Animator model, Writer writer) throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       // return new GraphicView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new GraphicsView(model);
+      return new GraphicsView(model, Integer.parseInt(input[3]));
     }
 
     else if (input[1].equalsIgnoreCase("text")) {
@@ -152,7 +152,7 @@ public final class EasyAnimator {
 
     else if (input[1].equalsIgnoreCase("svg")) {
       // return new SVGView class w/ ReadonlyAnimator model (@clark's tic tac toe)
-      return new SVGVIew(model, writer, Integer.parseInt(input[3]));
+      return new SVGView(model, writer, Integer.parseInt(input[3]));
     }
 
     else {

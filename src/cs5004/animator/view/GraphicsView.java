@@ -16,17 +16,17 @@ public class GraphicsView extends JFrame implements IView {
   private ReadonlyAnimator model;
   private GraphicsPanel panel;
   private int[] canvas;
+  private final int timeConverter;
 
-  public GraphicsView(ReadonlyAnimator model) {
+  public GraphicsView(ReadonlyAnimator model, int speed) {
     super("Animation Window");
     this.model = model;
     this.canvas = this.model.getCanvas();
+    this.timeConverter = 100 / speed;
 
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    //setLocation(0,0);// top left corner
     setLocation(canvas[0], canvas[1]);
-    //setSize(600, 400);
     setSize(canvas[2], canvas[3]);
     setLayout(null);
     setVisible(true);
@@ -101,7 +101,7 @@ public class GraphicsView extends JFrame implements IView {
       count++;
       getCurrentDisplay(model.getCurrentShapes(count));
       try {
-        Thread.sleep(100 / 3);
+        Thread.sleep(timeConverter);
       } catch (Exception e) {
 
       }
