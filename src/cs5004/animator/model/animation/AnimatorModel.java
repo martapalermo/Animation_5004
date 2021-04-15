@@ -507,8 +507,10 @@ public class AnimatorModel implements Animator {
     return null;
   }
 
-
-
+  /**
+   * Static AnimationBuilder Implementation class,
+   * implements the given animation builder interface.
+   */
   public static final class AnimationBuilderImpl implements AnimationBuilder<Animator> {
     private Animator model = new AnimatorModel();
 
@@ -613,13 +615,9 @@ public class AnimatorModel implements Animator {
       }
 
       if (x1 == x2 && y1 == y2 && w1 == w2 && h1 == h2 && r1 == r2 && g1 == g2 && b1 == b2) {
-//        this.model.move(name, x2, y2, x1, y1, t1, t2);
-//        this.model.changeColor(name, r2, g2, b2, r1, g1, b1, t1, t2);
-//        this.model.scaleShape(name, w2, h2, h1, w1, t1, t2);
         this.model.staticEvent(name, t1, x1, y1, w1, h1, r1, g1, b1, t2, x2, y2, w2, h2, r2, g2,
                 b2);
       }
-
 
       return this;
     }
