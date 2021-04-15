@@ -20,7 +20,11 @@ public class Color {
     this.blue = blue;
   }
 
+  /**
+   * Empty color constructor for uninitialized shapes.
+   */
   public Color() {
+    // empty constructor for testing
   }
 
   /**

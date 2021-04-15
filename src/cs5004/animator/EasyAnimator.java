@@ -187,7 +187,7 @@ public final class EasyAnimator {
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
 
     IView view = factoryOfViews(input, model, writer);
-    view.go();
+    view.runView();
 
     try {
       writer.close();

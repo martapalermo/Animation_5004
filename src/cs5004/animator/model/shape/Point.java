@@ -17,7 +17,12 @@ class Point {
     this.y = y;
   }
 
+
+  /**
+   * Empty Point constructor for uninitialized shapes.
+   */
   public Point() {
+    // empty constructor for testing
   }
 
   /**

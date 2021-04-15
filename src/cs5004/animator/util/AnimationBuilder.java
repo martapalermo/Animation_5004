@@ -2,7 +2,7 @@ package cs5004.animator.util;
 
 /**
  * AnimationBuilder Interface.
- * @param <Animator>
+ * @param <Animator> takes an Animator as parameter.
  */
 public interface AnimationBuilder<Animator> {
 

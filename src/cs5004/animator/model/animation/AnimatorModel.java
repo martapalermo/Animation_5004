@@ -379,7 +379,7 @@ public class AnimatorModel implements Animator {
 
   /**
    * Copy list of {@link Shape}s in the model.
-   * @return copy of shapes, a List
+   * @return copy of List of {@link Shape}s
    */
   @Override
   public List<Shape> copyShapesList() {

@@ -3,9 +3,10 @@ package cs5004.animator.view;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JScrollBar;
 
-import java.awt.*;
+import java.awt.BorderLayout;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.List;
@@ -101,7 +102,7 @@ public class GraphicsView extends JFrame implements VisualView {
   /**
    * Display this view.
    *
-   * @param listOfShapes
+   * @param listOfShapes List of {@link Shape}s
    */
   @Override
   public void getCurrentDisplay(List<Shape> listOfShapes) {
@@ -112,7 +113,7 @@ public class GraphicsView extends JFrame implements VisualView {
    * Helper method facilitating start of animation.
    */
   @Override
-  public void go() {
+  public void runView() {
     int count = 0;
     while (count < 1000000) {
       count++;

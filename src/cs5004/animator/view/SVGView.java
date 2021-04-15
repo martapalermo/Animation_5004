@@ -105,7 +105,7 @@ public class SVGView extends WrittenView {
   }
 
   /**
-   * Create the animate strings for every event that occurred for the given shape
+   * Create the animate strings for every event that occurred for the given shape.
    * @param shapeName shape name, a String
    * @param events shape's events, List<{@link Event}>
    * @return animate String for the shape
@@ -151,14 +151,14 @@ public class SVGView extends WrittenView {
       text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
     }
 
-    return header + text +"\n</svg>";
+    return header + text + "\n</svg>";
   }
 
   /**
    * Helper method facilitating start of animation.
    */
   @Override
-  public void go() {
+  public void runView() {
     this.writeToFile(this.createFullSVG());
   }
 }
