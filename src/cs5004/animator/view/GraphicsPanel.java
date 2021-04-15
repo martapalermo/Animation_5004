@@ -1,6 +1,5 @@
 package cs5004.animator.view;
 
-
 import cs5004.animator.model.shape.Shape;
 
 import javax.swing.*;
@@ -38,14 +37,26 @@ public class GraphicsPanel extends JPanel {
     this.repaint();
   }
 
+  /**
+   * Setter method for the X offset value.
+   * @param x
+   */
   public void setOffsetX(int x) {
       this.offsetX = x;
   }
 
+  /**
+   * Setter method for the Y offset value.
+   * @param y
+   */
   public void setOffsetY(int y) {
     this.offsetY = y;
   }
 
+  /**
+   * Method that creates the graphical component that showed up in the visual window.
+   * @param g take a Graphics parameter
+   */
   @Override
   public void paintComponent(Graphics g) {
     super.paintComponent(g);

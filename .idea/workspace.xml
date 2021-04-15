@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up view">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,15 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -174,7 +177,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="69f1e94a-ade2-43a4-a667-ed533cb933a3" name="Default Changelist" comment="" />
+      <changelist id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up view" />
       <created>1617154790338</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -189,6 +192,14 @@
       <workItem from="1618167971852" duration="33161000" />
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
+      <workItem from="1618521704747" duration="1222000" />
+    </task>
+    <task id="LOCAL-00020" summary="Changed package to cs5004.animator.model">
+      <created>1617480253175</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1617480253175</updated>
     </task>
     <task id="LOCAL-00021" summary="finished all java doc in non-test classes">
       <created>1617490230578</created>
@@ -520,20 +531,13 @@
       <updated>1618521240701</updated>
     </task>
     <task id="LOCAL-00068" summary="cleaned up view">
-      <created>1618521587729</created>
+      <created>1618522170706</created>
       <option name="number" value="00068" />
       <option name="presentableId" value="LOCAL-00068" />
       <option name="project" value="LOCAL" />
-      <updated>1618521587729</updated>
+      <updated>1618522170706</updated>
     </task>
-    <task id="LOCAL-00069" summary="cleaned up view">
-      <created>1618521652838</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1618521652838</updated>
-    </task>
-    <option name="localTasksCounter" value="70" />
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

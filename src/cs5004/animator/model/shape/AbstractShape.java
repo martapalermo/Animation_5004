@@ -32,7 +32,6 @@ public abstract class AbstractShape implements Shape {
                        int height, int red, int green, int blue)
       throws IllegalArgumentException {
 
-    this.type = type;
     this.reference = new Point(x, y);
 
     if (appearTime < 0) {
