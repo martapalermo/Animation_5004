@@ -103,11 +103,6 @@ public class SVGView extends WrittenView {
     @Override
     public void go() {
       String text = this.createFullSVG();
-//      try {
-//        this.writeToFile(text, outfile);
-//      } catch (IOException e) {
-//        e.printStackTrace();
-//      }
       this.writeToFile(text);
     }
 }

@@ -1,6 +1,5 @@
 package cs5004.animator.view;
 
-import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
