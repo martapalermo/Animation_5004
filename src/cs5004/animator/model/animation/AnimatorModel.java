@@ -494,7 +494,7 @@ public class AnimatorModel implements Animator {
    * @param name shape name that is transforming, a String
    * @param tick the tick one unit before the start of the transformation
    * @return shape that is being transformed with current attributes, null if the shape hasn't
-   * appeared yet
+   *        appeared yet.
    */
   private Shape getShape(String name, int tick) {
     List<Shape> currentShapes = this.getCurrentShapes(tick);
