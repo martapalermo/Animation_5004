@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added javadoc to EasyAnimator">
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added notes on viewTest">
+      <change afterPath="$PROJECT_DIR$/testSVG.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +78,7 @@
       <recent name="cs5004.animator.model.animation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator BigBangText">
+  <component name="RunManager" selected="JUnit.AnimatorViewTest.testGetSVG">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -109,15 +120,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WriteTextView" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cs5004.animator.view.WriteTextView" />
-      <module name="Animation_5004" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="cs5004.animator.view.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -131,11 +140,30 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorModelTest.testGetAnimation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorModelTest" />
-      <option name="METHOD_NAME" value="testGetAnimation" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimatorViewTest.testGetSVG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="METHOD_NAME" value="testGetSVG" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimatorViewTest.testToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="METHOD_NAME" value="testToFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -144,17 +172,19 @@
     <list>
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator toh8SVG" />
-      <item itemvalue="Application.WriteTextView" />
       <item itemvalue="Application.GraphicsView" />
       <item itemvalue="JUnit.AnimatorModelTest" />
-      <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
+      <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+      <item itemvalue="JUnit.AnimatorViewTest" />
+      <item itemvalue="JUnit.AnimatorViewTest.testToFile" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+        <item itemvalue="JUnit.AnimatorViewTest.testToFile" />
+        <item itemvalue="JUnit.AnimatorViewTest" />
         <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="Application.GraphicsView" />
-        <item itemvalue="Application.WriteTextView" />
-        <item itemvalue="JUnit.AnimatorModelTest.testGetAnimation" />
       </list>
     </recent_temporary>
   </component>
@@ -177,13 +207,6 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
-    </task>
-    <task id="LOCAL-00034" summary="made changes to IView, added frame and panel">
-      <created>1617824922751</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1617824922753</updated>
     </task>
     <task id="LOCAL-00035" summary="finished doubles/int + added shapetype enum">
       <created>1617854727835</created>
@@ -521,7 +544,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618547715601</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="added notes on viewTest">
+      <created>1618601290582</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1618601290583</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -541,7 +571,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added betweener calculations, AnimationBuilder, finished parsing" />
     <MESSAGE value="added model to writeText" />
     <MESSAGE value="edits to WriteTextView - still needs work I think" />
     <MESSAGE value="added Graphics view Frame + panel" />
@@ -566,6 +595,7 @@
     <MESSAGE value="changed the int[] canvas in graphics" />
     <MESSAGE value="had to add illegal state exception in runView in GraphicsView" />
     <MESSAGE value="added javadoc to EasyAnimator" />
-    <option name="LAST_COMMIT_MESSAGE" value="added javadoc to EasyAnimator" />
+    <MESSAGE value="added notes on viewTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="added notes on viewTest" />
   </component>
 </project>

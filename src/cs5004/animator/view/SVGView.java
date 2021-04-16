@@ -1,5 +1,7 @@
 package cs5004.animator.view;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -100,8 +102,9 @@ public class SVGView extends WrittenView {
   private String createHeaderString() {
     return "<svg width=\"" + this.canvas[2] + "\" height=\"" + this.canvas[3] + "\" "
             + "version=\"1.1\" viewBox=\"" + this.canvas[0] + " " + this.canvas[1] + " "
-            + this.canvas[2] + " " + this.canvas[3] + "\"\n\txmlns=\"http://www.w3.org/2000/svg\""
-            + " overflow=\"auto\">\n";
+            + this.canvas[2] + " " + this.canvas[3]
+        + "\"\n\txmlns=\"http://www.w3.org/2000/svg\">\n";
+
   }
 
   /**
@@ -139,19 +142,42 @@ public class SVGView extends WrittenView {
   }
 
   /**
-   * Construct the full SVG document with the header, shape descriptions, and animate descriptions.
+   * Construct the full SVG document with the header, shape descriptions,
+   * and animate descriptions.
    * @return SVG String
    */
   private String createFullSVG() {
     String header = this.createHeaderString();
+    try {
+      this.writer.append(header);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    //StringBuilder text = new StringBuilder();
 
-    StringBuilder text = new StringBuilder();
-
-    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+    /*for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
     }
-
-    return header + text + "\n</svg>";
+    return header + text + "\n</svg>";*/
+    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+      try {
+        this.writer.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    try {
+      this.writer.append("\n</svg>");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    try {
+      FileWriter var = (FileWriter) this.writer;
+      var.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return this.writer.toString();
   }
 
   /**
@@ -159,6 +185,6 @@ public class SVGView extends WrittenView {
    */
   @Override
   public void runView() {
-    this.writeToFile(this.createFullSVG());
+    this.createFullSVG();
   }
 }
