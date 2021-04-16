@@ -14,9 +14,11 @@ import cs5004.animator.model.shape.Shape;
 /**
  * This class outputs an SVG view of the animation.
  */
-public class SVGView extends WrittenView {
+public class SVGView implements IView {
   private final List<Shape> shapes;
   private final LinkedHashMap<String, List<Event>> events;
+  private ReadonlyAnimator model;
+  private Appendable writer;
   private int[] canvas;
   private int timeConverter;
 
@@ -27,7 +29,16 @@ public class SVGView extends WrittenView {
    * @param speed animation speed, an int
    */
   public SVGView(ReadonlyAnimator model, Appendable writer, int speed) {
-    super(model, writer);
+    if (model == null) {
+      throw new IllegalStateException("Model cannot be null.");
+    }
+    this.model = model;
+
+    if (writer == null) {
+      throw new IllegalStateException("Writer cannot be null.");
+    }
+    this.writer = writer;
+
 
     this.shapes = this.model.copyShapesList();
     this.events = this.model.copyEventsList();

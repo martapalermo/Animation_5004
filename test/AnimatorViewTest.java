@@ -5,8 +5,10 @@ import cs5004.animator.model.shape.Oval;
 import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
 
+import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
 import cs5004.animator.view.SVGView;
+import cs5004.animator.view.TextView;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -48,33 +50,48 @@ public class AnimatorViewTest {
     this.model.changeColor("C", 0, 255, 0, 0, 170,
         85, 70, 80);
     this.model.setBounds(0, 0, 500, 500);
-    String [] args = {"svg"};
-   // this.view = new SVGView(this.model, this.writer, 3);
-   // this.view.runView();
+//    String [] args = {"svg"};
+//    this.view = new SVGView(this.model, this.writer, 3);
+//    this.view.runView();
   }
 
-  @Test
-  public void testGetSVG() {
-    //assertEquals("", this.model.getAnimation());
-    assertEquals("", this.writer.toString());
-  }
+//  @Test
+//  public void testGetSVG() {
+//    //assertEquals("", this.model.getAnimation());
+//    assertEquals("", this.writer());
+//  }
 
   @Test
-  public void testToFile() {
+  public void testSVGToFile() {
     try {
       IView svgView = new SVGView(this.model, new FileWriter("testSVG.svg"), 4 );
       svgView.runView();
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
 
-   // assertEquals("", this.writer.toString());
+  @Test
+  public void testTextToFile() {
+    try {
+      IView textView = new TextView(this.model, new FileWriter("testText.txt"));
+      textView.runView();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+//  @Test
+//  public void testGraphicVisual() {
+//    IView graphics = new GraphicsView(this.model, 4);
+//
+//    assertEquals("", );
   }
 
   //getShapes at tick for graphics visual
 
 
-}
+//}
 
 
 // divide test in 3:
