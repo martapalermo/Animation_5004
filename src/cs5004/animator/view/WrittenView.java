@@ -16,9 +16,17 @@ public abstract class WrittenView implements IView {
    * with instructions on what animation contains, and an appendable writer element.
    * @param model animation model, readonly animator
    * @param writer writer, appendable
+   * @throws IllegalArgumentException if model or writer is null
    */
   public WrittenView(ReadonlyAnimator model, Appendable writer) {
+    if (model == null) {
+      throw new IllegalStateException("Model cannot be null.");
+    }
     this.model = model;
+
+    if (writer == null) {
+      throw new IllegalStateException("Writer cannot be null.");
+    }
     this.writer = writer;
   }
 
@@ -28,11 +36,11 @@ public abstract class WrittenView implements IView {
    *        textLine -- will probably be the model string (model.toString())
    * @throws IOException if there is an error writing to the file
    */
-  public void writeToFile(String text) {
+  protected void writeToFile(String text) {
     try {
       this.writer.append(text);
     } catch (IOException e) {
-      throw new IllegalArgumentException("Unable to append to the file.");
+      throw new IllegalStateException("Unable to append to the file.");
     }
   }
 }

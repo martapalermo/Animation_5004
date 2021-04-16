@@ -2,53 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added javadoc to EasyAnimator">
-      <change afterPath="$PROJECT_DIR$/HW7.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/VisualView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big_bang_out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/big_bang_out.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel$AnimationBuilderImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/AnimatorModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/ChangeColor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Move.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Move.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Scale.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Scale.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Static.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/animation/Static.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Color.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Dimension.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Oval.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Oval.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Point.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Rectangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Time.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/model/shape/Time.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/util/AnimationReader.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/util/AnimationReader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/ReadFile.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/WrittenView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/AnimatorModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/ChangeColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Scale.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Static.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/animation/Static.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Dimension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Oval.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Rectangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Shape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/model/shape/Time.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,20 +179,6 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
-    </task>
-    <task id="LOCAL-00034" summary="made changes to IView, added frame and panel">
-      <created>1617824922751</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1617824922753</updated>
-    </task>
-    <task id="LOCAL-00035" summary="finished doubles/int + added shapetype enum">
-      <created>1617854727835</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1617854727835</updated>
     </task>
     <task id="LOCAL-00036" summary="finished doubles/int + added shapetype enum">
       <created>1617888820092</created>
@@ -567,7 +509,21 @@
       <option name="project" value="LOCAL" />
       <updated>1618547715601</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="added javadoc to EasyAnimator">
+      <created>1618581781496</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1618581781496</updated>
+    </task>
+    <task id="LOCAL-00084" summary="added javadoc to EasyAnimator">
+      <created>1618581843505</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1618581843505</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
