@@ -9,6 +9,7 @@ import javax.swing.JScrollBar;
 import java.awt.BorderLayout;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -120,7 +121,7 @@ public class GraphicsView extends JFrame implements VisualView {
       try {
         Thread.sleep(timeConverter);
       } catch (Exception e) {
-
+        throw new IllegalStateException("Issue with speed/timing.");
       }
     }
   }

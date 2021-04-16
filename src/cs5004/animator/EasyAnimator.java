@@ -192,7 +192,7 @@ public final class EasyAnimator {
     try {
       writer.close();
     } catch (IOException e) {
-      throw new IllegalStateException("Unable to close the writer.");
+      throw new IllegalStateException();
     }
   }
 }
