@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added javadoc to EasyAnimator" />
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added javadoc to EasyAnimator">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -539,6 +541,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="added betweener calculations, AnimationBuilder, finished parsing" />
     <MESSAGE value="added model to writeText" />
     <MESSAGE value="edits to WriteTextView - still needs work I think" />
     <MESSAGE value="added Graphics view Frame + panel" />
@@ -563,7 +566,6 @@
     <MESSAGE value="changed the int[] canvas in graphics" />
     <MESSAGE value="had to add illegal state exception in runView in GraphicsView" />
     <MESSAGE value="added javadoc to EasyAnimator" />
-    <MESSAGE value="view null checks" />
-    <option name="LAST_COMMIT_MESSAGE" value="view null checks" />
+    <option name="LAST_COMMIT_MESSAGE" value="added javadoc to EasyAnimator" />
   </component>
 </project>
