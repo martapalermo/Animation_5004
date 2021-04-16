@@ -21,7 +21,7 @@ public class TextView extends WrittenView {
    * Helper method facilitating start of animation.
    */
   @Override
-  public void go() {
+  public void runView() {
     this.writeToFile(this.model.getAnimation());
   }
 }

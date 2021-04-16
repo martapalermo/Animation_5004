@@ -19,7 +19,11 @@ public class Time {
     this.disappearTime = disappearTime;
   }
 
+  /**
+   * Empty Time constructor for uninitialized shapes.
+   */
   public Time() {
+    // empty constructor for testing
   }
 
   /**

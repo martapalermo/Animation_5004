@@ -3,8 +3,8 @@ package cs5004.animator.model.animation;
 import cs5004.animator.model.shape.Shape;
 
 /**
- * This is the Scale class. It represents the scaling event/transformation that a shape can undergo.
- * This class extends AbstractEvent.
+ * This is the Scale class. It represents the scaling event/transformation
+ * that a shape can undergo. This class extends AbstractEvent.
  */
 class Scale extends AbstractEvent {
   private final int originalWidth;
@@ -49,13 +49,14 @@ class Scale extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape, int tick) {
-    int currentWidth, currentHeight;
+    int currentWidth;
+    int currentHeight;
 
     if (tick < this.stop) {
-      currentWidth = (((this.originalWidth) * (this.stop - tick)) + ((this.width) *
-              (tick - this.start))) / (this.stop - this.start);
-      currentHeight = (((this.originalHeight) * (this.stop - tick)) + ((this.height) *
-              (tick - this.start))) / (this.stop - this.start);
+      currentWidth = (((this.originalWidth) * (this.stop - tick)) + ((this.width)
+          * (tick - this.start))) / (this.stop - this.start);
+      currentHeight = (((this.originalHeight) * (this.stop - tick)) + ((this.height)
+          * (tick - this.start))) / (this.stop - this.start);
     }
 
     else {

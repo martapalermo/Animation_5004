@@ -2,8 +2,11 @@ package cs5004.animator.view;
 
 import cs5004.animator.model.shape.Shape;
 
-import javax.swing.*;
-import java.awt.*;
+import javax.swing.JPanel;
+
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Color;
 import java.util.List;
 
 /**
@@ -30,7 +33,7 @@ public class GraphicsPanel extends JPanel {
   /**
    * Helper method that takes in a new list of shapes and updates the current list of shapes.
    * Method prompts the graphics element to repaint everytime.
-   * @param newListOfShapes
+   * @param newListOfShapes List of {@link Shape}s
    */
   public void updateModel(List<Shape> newListOfShapes) {
     this.listOfShapes = newListOfShapes;
@@ -39,15 +42,15 @@ public class GraphicsPanel extends JPanel {
 
   /**
    * Setter method for the X offset value.
-   * @param x
+   * @param x x value, int
    */
   public void setOffsetX(int x) {
-      this.offsetX = x;
+    this.offsetX = x;
   }
 
   /**
    * Setter method for the Y offset value.
-   * @param y
+   * @param y y value, int
    */
   public void setOffsetY(int y) {
     this.offsetY = y;
@@ -64,7 +67,7 @@ public class GraphicsPanel extends JPanel {
 
     if (listOfShapes != null) {
       for (Shape shape : listOfShapes) {
-        if (shape.getType() == "oval") {
+        if (shape.getType().equals("oval")) {
           g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
 
           g2.drawOval(

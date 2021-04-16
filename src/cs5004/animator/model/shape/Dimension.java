@@ -18,7 +18,11 @@ public class Dimension {
     this.height = height;
   }
 
+  /**
+   * Empty Dimensions constructor for uninitialized shapes.
+   */
   public Dimension() {
+    // empty constructor for testing
   }
 
   /**

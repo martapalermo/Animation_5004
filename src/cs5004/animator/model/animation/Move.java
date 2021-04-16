@@ -48,13 +48,14 @@ class Move extends AbstractEvent {
    */
   @Override
   public void setValues(Shape shape, int tick) {
-    int currentX, currentY;
+    int currentX;
+    int currentY;
 
     if (tick < this.stop) {
-      currentX = (((this.originalX) * (this.stop - tick)) + ((this.x) * (tick - this.start))) /
-              (this.stop - this.start);
-      currentY = (((this.originalY) * (this.stop - tick)) + ((this.y) * (tick - this.start))) /
-              (this.stop - this.start);
+      currentX = (((this.originalX) * (this.stop - tick)) + ((this.x)
+          * (tick - this.start))) / (this.stop - this.start);
+      currentY = (((this.originalY) * (this.stop - tick)) + ((this.y)
+          * (tick - this.start))) / (this.stop - this.start);
       shape.setPos(currentX, currentY);
     }
 
@@ -81,8 +82,9 @@ class Move extends AbstractEvent {
    */
   @Override
   public String toString() {
-    return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY + ") to ("
-            + this.x + "," + this.y + ") from t=" + this.getStart() + " to t=" + this.getStop();
+    return "Shape " + this.getShapeName() + " moves from (" + originalX + "," + originalY
+        + ") to (" + this.x + "," + this.y + ") from t=" + this.getStart() + " to t="
+        + this.getStop();
   }
 
   /**

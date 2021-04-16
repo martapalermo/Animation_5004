@@ -2,6 +2,10 @@ package cs5004.animator.model.animation;
 
 import cs5004.animator.model.shape.Shape;
 
+/**
+ * This is the Static class. It represents the non-event of a shape in an animation.
+ * This class extends AbstractEvent.
+ */
 public class Static extends AbstractEvent {
   private int x;
   private int y;
@@ -12,7 +16,7 @@ public class Static extends AbstractEvent {
   private int blue;
 
   /**
-   * Static event constructor
+   * Static event constructor.
    * @param shape shape being transformed, a {@link Shape}
    * @param start start of the transformation, int
    * @param stop end of the transformation, int

@@ -81,7 +81,7 @@ public class Rectangle extends AbstractShape {
   }
 
   /**
-   * Get scale attributes for shape's SVG documentation
+   * Get scale attributes for shape's SVG documentation.
    * @return names of scale SVG attributes, a String array
    */
   @Override
@@ -90,7 +90,7 @@ public class Rectangle extends AbstractShape {
   }
 
   /**
-   * Get move attributes for shape's SVG documentation
+   * Get move attributes for shape's SVG documentation.
    * @return names of move SVG attributes, a String array
    */
   @Override

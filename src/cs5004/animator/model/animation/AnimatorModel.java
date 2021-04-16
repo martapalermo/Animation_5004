@@ -366,8 +366,9 @@ public class AnimatorModel implements Animator {
 
     for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       List<Event> eventsCopy = new ArrayList<>();
+
       for (Event event : entry.getValue()) {
-          eventsCopy.add(event.copy());
+        eventsCopy.add(event.copy());
       }
 
       copy.put(entry.getKey(), eventsCopy);
@@ -378,7 +379,7 @@ public class AnimatorModel implements Animator {
 
   /**
    * Copy list of {@link Shape}s in the model.
-   * @return copy of shapes, a List
+   * @return copy of List of {@link Shape}s
    */
   @Override
   public List<Shape> copyShapesList() {
@@ -493,7 +494,7 @@ public class AnimatorModel implements Animator {
    * @param name shape name that is transforming, a String
    * @param tick the tick one unit before the start of the transformation
    * @return shape that is being transformed with current attributes, null if the shape hasn't
-   * appeared yet
+   *        appeared yet.
    */
   private Shape getShape(String name, int tick) {
     List<Shape> currentShapes = this.getCurrentShapes(tick);
