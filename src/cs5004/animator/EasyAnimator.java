@@ -24,12 +24,11 @@ import cs5004.animator.view.TextView;
 public final class EasyAnimator {
 
   /**
-   *
-   * @param args
-   * @return
-   * @throws IllegalArgumentException
+   * Parse the input commands.
+   * @param args input args, String array
+   * @return validated input commands, String array
    */
-  public static String[] parseCommands(String[] args) throws IllegalArgumentException {
+  public static String[] parseCommands(String[] args) {
     StringBuilder strArgs = new StringBuilder();
 
     // Convert String array of command line input into a String to iterate through
@@ -58,7 +57,7 @@ public final class EasyAnimator {
 
         } else if (token.equalsIgnoreCase("-view")) {
           if (!command.equalsIgnoreCase("text") && !command.equalsIgnoreCase
-              ("visual") && !command.equalsIgnoreCase("svg")) {
+                  ("visual") && !command.equalsIgnoreCase("svg")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
@@ -119,9 +118,9 @@ public final class EasyAnimator {
   }
 
   /**
-   *
-   * @param fileName
-   * @return
+   * Create the Writer for views that require it.
+   * @param fileName outfile name, a string
+   * @return writer, a Writer
    */
   public static Writer getWriter(String fileName) {
     try {
@@ -140,15 +139,15 @@ public final class EasyAnimator {
   }
 
   /**
-   *
-   * @param input
-   * @param model
-   * @param writer
-   * @return
-   * @throws IllegalArgumentException
+   * Create a new view to display the animation.
+   * @param input input commands, String array
+   * @param model model populated with data, Animator
+   * @param writer writer for views that need it
+   * @return view, IView
+   * @throws IllegalArgumentException if the view type is invalid
    */
   public static IView factoryOfViews(String[] input, Animator model, Writer writer)
-      throws IllegalArgumentException {
+          throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       return new GraphicsView(model, Integer.parseInt(input[3]));
     }
@@ -166,10 +165,6 @@ public final class EasyAnimator {
     }
   }
 
-  /**
-   *
-   * @param args
-   */
   public static void main(String[] args) {
     String[] input = parseCommands(args);
 
@@ -192,7 +187,7 @@ public final class EasyAnimator {
     try {
       writer.close();
     } catch (IOException e) {
-      throw new IllegalStateException();
+      throw new IllegalStateException("Unable to close the writer.");
     }
   }
 }
