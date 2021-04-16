@@ -1,5 +1,7 @@
 package cs5004.animator.view;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -12,9 +14,11 @@ import cs5004.animator.model.shape.Shape;
 /**
  * This class outputs an SVG view of the animation.
  */
-public class SVGView extends WrittenView {
+public class SVGView implements IView {
   private final List<Shape> shapes;
   private final LinkedHashMap<String, List<Event>> events;
+  private ReadonlyAnimator model;
+  private Appendable writer;
   private int[] canvas;
   private int timeConverter;
 
@@ -25,7 +29,16 @@ public class SVGView extends WrittenView {
    * @param speed animation speed, an int
    */
   public SVGView(ReadonlyAnimator model, Appendable writer, int speed) {
-    super(model, writer);
+    if (model == null) {
+      throw new IllegalStateException("Model cannot be null.");
+    }
+    this.model = model;
+
+    if (writer == null) {
+      throw new IllegalStateException("Writer cannot be null.");
+    }
+    this.writer = writer;
+
 
     this.shapes = this.model.copyShapesList();
     this.events = this.model.copyEventsList();
@@ -44,7 +57,7 @@ public class SVGView extends WrittenView {
    * @param fill fill status, a String
    * @return constructed animate String
    */
-  private String createAnimateString(int oldValue, int newValue, int start, int stop, String
+  public String createAnimateString(int oldValue, int newValue, int start, int stop, String
           attribute, String fill) {
     int duration = (stop - start) * this.timeConverter;
     int startConverted = start * this.timeConverter;
@@ -100,8 +113,9 @@ public class SVGView extends WrittenView {
   private String createHeaderString() {
     return "<svg width=\"" + this.canvas[2] + "\" height=\"" + this.canvas[3] + "\" "
             + "version=\"1.1\" viewBox=\"" + this.canvas[0] + " " + this.canvas[1] + " "
-            + this.canvas[2] + " " + this.canvas[3] + "\"\n\txmlns=\"http://www.w3.org/2000/svg\""
-            + " overflow=\"auto\">\n";
+            + this.canvas[2] + " " + this.canvas[3]
+        + "\"\n\txmlns=\"http://www.w3.org/2000/svg\">\n";
+
   }
 
   /**
@@ -139,19 +153,42 @@ public class SVGView extends WrittenView {
   }
 
   /**
-   * Construct the full SVG document with the header, shape descriptions, and animate descriptions.
+   * Construct the full SVG document with the header, shape descriptions,
+   * and animate descriptions.
    * @return SVG String
    */
   private String createFullSVG() {
     String header = this.createHeaderString();
+    try {
+      this.writer.append(header);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    //StringBuilder text = new StringBuilder();
 
-    StringBuilder text = new StringBuilder();
-
-    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+    /*for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
     }
-
-    return header + text + "\n</svg>";
+    return header + text + "\n</svg>";*/
+    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+      try {
+        this.writer.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+    }
+    try {
+      this.writer.append("\n</svg>");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    try {
+      FileWriter var = (FileWriter) this.writer;
+      var.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return this.writer.toString();
   }
 
   /**
@@ -159,6 +196,11 @@ public class SVGView extends WrittenView {
    */
   @Override
   public void runView() {
-    this.writeToFile(this.createFullSVG());
+    this.createFullSVG();
+  }
+
+  @Override
+  public String getTextualString() {
+    return this.createFullSVG();
   }
 }

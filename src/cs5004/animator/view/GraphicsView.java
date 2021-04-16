@@ -131,4 +131,9 @@ public class GraphicsView extends JFrame implements VisualView {
     }
   }
 
+  @Override
+  public String getTextualString() {
+    return null;
+  }
+
 }
