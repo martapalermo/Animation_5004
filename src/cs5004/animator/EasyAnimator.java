@@ -18,6 +18,9 @@ import cs5004.animator.view.IView;
 import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
 
+/**
+ * Easy Animator class - barebones controller that facilitates animation outputs.
+ */
 public final class EasyAnimator {
 
   /**
@@ -179,7 +182,7 @@ public final class EasyAnimator {
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
 
     IView view = factoryOfViews(input, model, writer);
-    view.go();
+    view.runView();
 
     try {
       writer.close();
