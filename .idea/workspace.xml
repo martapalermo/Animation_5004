@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="had to add illegal state exception in runView in GraphicsView">
+      <change afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/textSample.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/smalldemo.txt" beforeDir="false" afterPath="$PROJECT_DIR$/smalldemo.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -71,7 +78,7 @@
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
-      <option name="PROGRAM_PARAMETERS" value="-in big-bang-big-crunch.txt -view visual -speed 3 -out big_bang_out.txt" />
+      <option name="PROGRAM_PARAMETERS" value="-in smalldemo.txt -view text -speed 3 -out textSample.txt" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs5004.animator.*" />
@@ -187,14 +194,7 @@
       <workItem from="1618167971852" duration="33161000" />
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
-      <workItem from="1618521704747" duration="6404000" />
-    </task>
-    <task id="LOCAL-00034" summary="made changes to IView, added frame and panel">
-      <created>1617824922751</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1617824922753</updated>
+      <workItem from="1618521704747" duration="8613000" />
     </task>
     <task id="LOCAL-00035" summary="finished doubles/int + added shapetype enum">
       <created>1617854727835</created>
@@ -532,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618547715601</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="had to add illegal state exception in runView in GraphicsView">
+      <created>1618581534050</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1618581534050</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
