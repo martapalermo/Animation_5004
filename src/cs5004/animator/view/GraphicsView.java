@@ -19,7 +19,6 @@ public class GraphicsView extends JFrame implements VisualView {
 
   private ReadonlyAnimator model;
   private GraphicsPanel panel;
-  private int[] canvas;
   private final int timeConverter;
 
   /**
@@ -30,7 +29,7 @@ public class GraphicsView extends JFrame implements VisualView {
   public GraphicsView(ReadonlyAnimator model, int speed) {
     super("Animation Window");
     this.model = model;
-    this.canvas = this.model.getCanvas();
+    int[] canvas = this.model.getCanvas();
     this.timeConverter = 100 / speed;
 
 
