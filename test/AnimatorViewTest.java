@@ -50,16 +50,29 @@ public class AnimatorViewTest {
     this.model.changeColor("C", 0, 255, 0, 0, 170,
         85, 70, 80);
     this.model.setBounds(0, 0, 500, 500);
+
 //    String [] args = {"svg"};
 //    this.view = new SVGView(this.model, this.writer, 3);
 //    this.view.runView();
   }
 
-//  @Test
-//  public void testGetSVG() {
-//    //assertEquals("", this.model.getAnimation());
-//    assertEquals("", this.writer());
-//  }
+
+  //TODO: KATE!! If you can try and get the toString
+  // tests working that would be awesome! I can't seem to make it happen
+  // Roger said we don't need tooooo many tests so I think if we can get like 5 - 6 we should be gucci!
+  // you're the best thank you!
+
+ //TODO: ALSO!!! please see if you can figure out the bug for the SCALE SHAPE
+ // Also if you need me to make a new model let me know Im happy to code that!
+
+
+
+  @Test
+  public void testGetSVG() {
+    //assertEquals("", this.model.getAnimation());
+    IView svgView = new SVGView(this.model, this.writer, 5);
+    assertEquals("", svgView.getTextualString());
+  }
 
   @Test
   public void testSVGToFile() {

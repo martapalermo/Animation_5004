@@ -30,6 +30,12 @@ public class TextView implements IView {
     this.writer = writer;
   }
 
+  /**
+   * Method that writes string to text file.
+   * @param text text that we want to write to file, String
+   *        textLine -- will probably be the model string (model.toString())
+   * @throws IOException if there is an error writing to the file
+   */
   private void writeToFile(String text) {
     try {
       this.writer.append(text);
@@ -46,5 +52,10 @@ public class TextView implements IView {
   @Override
   public void runView() {
     this.writeToFile(this.model.getAnimation());
+  }
+
+  @Override
+  public String getTextualString() {
+    return this.model.getAnimation();
   }
 }

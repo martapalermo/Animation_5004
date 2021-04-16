@@ -57,7 +57,7 @@ public class SVGView implements IView {
    * @param fill fill status, a String
    * @return constructed animate String
    */
-  private String createAnimateString(int oldValue, int newValue, int start, int stop, String
+  public String createAnimateString(int oldValue, int newValue, int start, int stop, String
           attribute, String fill) {
     int duration = (stop - start) * this.timeConverter;
     int startConverted = start * this.timeConverter;
@@ -197,5 +197,10 @@ public class SVGView implements IView {
   @Override
   public void runView() {
     this.createFullSVG();
+  }
+
+  @Override
+  public String getTextualString() {
+    return this.createFullSVG();
   }
 }
