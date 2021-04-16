@@ -20,7 +20,12 @@ import cs5004.animator.view.TextView;
 
 public final class EasyAnimator {
 
-  public static String[] parseCommands(String[] args) throws IllegalArgumentException {
+  /**
+   * Parse the input commands.
+   * @param args input args, String array
+   * @return validated input commands, String array
+   */
+  public static String[] parseCommands(String[] args) {
     StringBuilder strArgs = new StringBuilder();
 
     // Convert String array of command line input into a String to iterate through
@@ -109,6 +114,11 @@ public final class EasyAnimator {
     return input;
   }
 
+  /**
+   * Create the Writer for views that require it.
+   * @param fileName outfile name, a string
+   * @return writer, a Writer
+   */
   public static Writer getWriter(String fileName) {
     try {
       Writer newWriter;
@@ -125,7 +135,16 @@ public final class EasyAnimator {
     }
   }
 
-  public static IView factoryOfViews(String[] input, Animator model, Writer writer) throws IllegalArgumentException {
+  /**
+   * Create a new view to display the animation.
+   * @param input input commands, String array
+   * @param model model populated with data, Animator
+   * @param writer writer for views that need it
+   * @return view, IView
+   * @throws IllegalArgumentException if the view type is invalid
+   */
+  public static IView factoryOfViews(String[] input, Animator model, Writer writer)
+          throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       return new GraphicsView(model, Integer.parseInt(input[3]));
     }
