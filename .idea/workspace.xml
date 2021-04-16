@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="changed the int[] canvas in graphics">
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="had to add illegal state exception in runView in GraphicsView">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,28 +187,7 @@
       <workItem from="1618167971852" duration="33161000" />
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
-      <workItem from="1618521704747" duration="4469000" />
-    </task>
-    <task id="LOCAL-00030" summary="added error checking for original values of events">
-      <created>1617670025851</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1617670025852</updated>
-    </task>
-    <task id="LOCAL-00031" summary="minor debugging">
-      <created>1617673452594</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1617673452594</updated>
-    </task>
-    <task id="LOCAL-00032" summary="made res folder">
-      <created>1617673804210</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1617673804210</updated>
+      <workItem from="1618521704747" duration="5793000" />
     </task>
     <task id="LOCAL-00033" summary="added elements to iview - NOT SURE - NEED EDITS">
       <created>1617808516695</created>
@@ -532,7 +511,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618542207062</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="had to add illegal state exception in runView in GraphicsView">
+      <created>1618542544139</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1618542544140</updated>
+    </task>
+    <task id="LOCAL-00080" summary="had to add illegal state exception in runView in GraphicsView">
+      <created>1618542553501</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1618542553501</updated>
+    </task>
+    <task id="LOCAL-00081" summary="had to add illegal state exception in runView in GraphicsView">
+      <created>1618543124584</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1618543124584</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -552,7 +552,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="updating AnimatorModel" />
     <MESSAGE value="finished parsing command line parsing" />
     <MESSAGE value="added betweener calculations, AnimationBuilder, finished parsing" />
     <MESSAGE value="added model to writeText" />
@@ -577,6 +576,7 @@
     <MESSAGE value="adding javadoc in scale and static" />
     <MESSAGE value="added java doc and formatted from handin comments" />
     <MESSAGE value="changed the int[] canvas in graphics" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the int[] canvas in graphics" />
+    <MESSAGE value="had to add illegal state exception in runView in GraphicsView" />
+    <option name="LAST_COMMIT_MESSAGE" value="had to add illegal state exception in runView in GraphicsView" />
   </component>
 </project>
