@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up model tests">
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="updated view tests for strings">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HW7.zip" beforeDir="false" afterPath="$PROJECT_DIR$/HW7.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,14 +196,7 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
-      <workItem from="1618679404710" duration="1305000" />
-    </task>
-    <task id="LOCAL-00039" summary="added a fileWriter">
-      <created>1617900382052</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1617900382053</updated>
+      <workItem from="1618679404710" duration="2169000" />
     </task>
     <task id="LOCAL-00040" summary="added a fileWriter">
       <created>1617906074393</created>
@@ -542,7 +534,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618670740051</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="updated view tests for strings">
+      <created>1618680901519</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1618680901521</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +561,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!" />
     <MESSAGE value="finished svg move" />
     <MESSAGE value="finished svg for scale and color change" />
     <MESSAGE value="made edits to GraphicViws" />
@@ -587,6 +585,7 @@
     <MESSAGE value="added two tests in View and this is post Roger edits!" />
     <MESSAGE value="got rid of written abstract &#10;refactored tests and svg + text classes" />
     <MESSAGE value="cleaned up model tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up model tests" />
+    <MESSAGE value="updated view tests for strings" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated view tests for strings" />
   </component>
 </project>
