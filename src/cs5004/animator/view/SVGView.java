@@ -31,7 +31,7 @@ public class SVGView extends WrittenView {
     super(model, writer);
 
     this.shapes = this.model.copyShapesList();
-    this.events = this.model.copyEventsList();
+    this.events = this.model.copyEvents();
     this.canvas = this.model.getCanvas();
 
     if (speed < 1) {
@@ -86,6 +86,22 @@ public class SVGView extends WrittenView {
   }
 
   /**
+   * Hide the shape until it appears.
+   * @param appearanceTime appearance time, an int
+   * @param disappearanceTime disappearance time, an int
+   * @return constructed visibility String
+   */
+  private String hideShapeUntilAppearance(int appearanceTime, int disappearanceTime) {
+    int appearance = appearanceTime * this.timeConverter;
+    int disappearance = disappearanceTime * this.timeConverter;
+
+    return "\t\t<set attributeName=\"visibility\" to=\"hidden\" begin=\"" + 0 + "ms\" dur=\""
+            + appearance + "ms\" fill=\"freeze\" />\n \t\t<set attributeName=\"visibility\" to=\""
+            + "visible\" begin =\"" + appearance + "ms\" dur=\"" + disappearance
+            + "ms\" fill=\"freeze\" />\n";
+  }
+
+  /**
    * Get the shape with the given name.
    * @param shapeName shape name, a String
    * @return Shape
@@ -121,6 +137,11 @@ public class SVGView extends WrittenView {
   private String createIndividualSVG(String shapeName, List<Event> events) {
     Shape currentShape = this.getShape(shapeName);
     StringBuilder text = new StringBuilder(currentShape.getSVG());
+
+    if (currentShape.getAppearTime() > 1) {
+      text.append(this.hideShapeUntilAppearance(currentShape.getAppearTime(),
+              currentShape.getDisappearTime()));
+    }
 
     // Iterate through every event that occurred
     for (Event event : events) {

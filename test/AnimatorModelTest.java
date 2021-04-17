@@ -1,10 +1,13 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
 
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
+import cs5004.animator.model.animation.Event;
 import cs5004.animator.model.shape.Oval;
 import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
@@ -199,6 +202,14 @@ public class AnimatorModelTest {
             + "Disappears at t=101\n\n"
             + "Shape c scales from Width: 60, Height: 30 to Width: 10, Height: 15 from t=40"
             + " to t=60", m.getAnimation());
+  }
+
+  @Test
+  public void testAddStaticEvent() {
+    this.m.staticEvent("c",6, 500,100, 60, 30, 0, 0,
+            1, 20,500,100,60,30,0,0,1);
+    assertEquals("{r=[], c=[Shape: c remains at 500, 100 and has a width of 60 and a "
+            + "height of 30 with color (0, 0, 1)]}", this.m.copyEvents().toString());
   }
 
   @Test(expected = IllegalArgumentException.class)
@@ -441,6 +452,47 @@ public class AnimatorModelTest {
                     + "Disappears at t=101\n\n" + "Shape r moves from (200,200) "
                     + "to (150,170) from t=35 to t=45",
                     this.m.getAnimation());
+  }
+
+  @Test
+  public void testCopyShapes() {
+    this.model.addShape(new Rectangle(1,1, 4, 20, 3,
+            1, 0, 255,0), "middle");
+    this.model.addShape(new Rectangle(2,2,8, 20, 1,1,
+            0, 0,255), "top");
+    assertEquals("[Name: middle\n"
+            + "Type: rectangle\n"
+            + "Min corner: (1,1), Width: 3, Height: 1, Color: (0,255,0)\n"
+            + "Appears at t=4\n"
+            + "Disappears at t=20\n"
+            + ", Name: top\n"
+            + "Type: rectangle\n"
+            + "Min corner: (2,2), Width: 1, Height: 1, Color: (0,0,255)\n"
+            + "Appears at t=8\n"
+            + "Disappears at t=20\n]", this.model.copyShapesList().toString());
+  }
+
+  @Test
+  public void testCopyEvents() {
+    this.model.addShape(this.r, "r");
+    this.model.addShape(this.c, "c");
+    this.model.move("c", 500,400,500,100,20,70);
+    this.model.move("r", 300,300,200,200,10,50);
+    this.model.changeColor("c", 0, 1,0,0,0,
+            1,50,80);
+    this.model.scaleShape("r", 25,100,100,50,51, 70);
+    this.model.move("r", 200,200,300,300,70,100);
+
+    StringBuilder events = new StringBuilder();
+
+    for (Map.Entry<String, List<Event>> entry : this.model.copyEvents().entrySet()) {
+      events.append(entry.toString()).append("\n");
+    }
+    assertEquals("r=[Shape r moves from (200,200) to (300,300) from t=10 to t=50, Shape "
+            + "r scales from Width: 50, Height: 100 to Width: 25, Height: 100 from t=51 to t=70, "
+            + "Shape r moves from (300,300) to (200,200) from t=70 to t=100]\n" + "c=[Shape c "
+            + "moves from (500,100) to (500,400) from t=20 to t=70, Shape c changes color from "
+            + "(0,0,1) to (0,1,0) from t=50 to t=80]\n", events.toString());
   }
 
   @Test(expected = NoSuchElementException.class)

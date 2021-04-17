@@ -56,9 +56,8 @@ public class Oval extends AbstractShape {
     return "<ellipse id=\"" + this.getName() + "\" cx=\"" + this.getX() + "\" cy=\""
             + this.getY() + "\" rx=\"" + this.xRadius + "\" ry=\"" + this.yRadius
             + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + "," + this.getBlue()
-            + ")\" " + "visibility=\"visible\" >\n";
+            + ")\" " + " >\n";
   }
-
 
   /**
    * Get the shape type.

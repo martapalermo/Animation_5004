@@ -104,7 +104,6 @@ public class AnimatorModel implements Animator {
           shape.setColor(red1, green1, blue1);
           shape.setInitialized();
         }
-        this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
 
         if (stop > shape.getDisappearTime()) {
           shape.setDisappearTime(stop);
@@ -361,7 +360,7 @@ public class AnimatorModel implements Animator {
    * @return copy of event data, a LinkedHashMap
    */
   @Override
-  public LinkedHashMap<String, List<Event>> copyEventsList() {
+  public LinkedHashMap<String, List<Event>> copyEvents() {
     LinkedHashMap<String, List<Event>> copy = new LinkedHashMap<>();
 
     for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
@@ -458,6 +457,7 @@ public class AnimatorModel implements Animator {
   private String shapeInformation() {
     String information = "";
 
+    this.shapes.sort(Comparator.comparingInt(Shape::getAppearTime));
     for (Shape shape : this.shapes) {
       information += shape.toString() + "\n";
     }

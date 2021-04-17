@@ -76,6 +76,7 @@ public class GraphicsPanel extends JPanel {
               shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
         } else {
           g2.setColor(new Color(shape.getRed(), shape.getGreen(), shape.getBlue()));
+          System.out.println(shape.getY());
           g2.drawRect(
               shape.getX() - offsetX, shape.getY() - offsetY, shape.getWidth(), shape.getHeight());
           g2.fillRect(
@@ -84,6 +85,4 @@ public class GraphicsPanel extends JPanel {
       }
     }
   }
-
-
 }

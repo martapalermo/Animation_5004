@@ -33,9 +33,6 @@ public class Rectangle extends AbstractShape {
     this.type = ShapeType.RECTANGLE;
   }
 
-
-
-
   /**
    * Get the SVG description of an event.
    *
@@ -46,7 +43,7 @@ public class Rectangle extends AbstractShape {
     return "<rect id=\"" + this.getName() + "\" x=\"" + this.getX() + "\" y=\""
             + this.getY() + "\" width=\"" + this.getWidth() + "\" height=\""
             + this.getHeight() + "\" fill=\"rgb(" + this.getRed() + "," + this.getGreen() + ","
-            + this.getBlue() + ")\" " + "visibility=\"visible\" >\n";
+            + this.getBlue() + ")\" " +  ">\n";
   }
 
   /**

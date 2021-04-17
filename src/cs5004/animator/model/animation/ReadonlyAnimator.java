@@ -39,5 +39,5 @@ public interface ReadonlyAnimator {
    * Copy HashMap of {@link Event}s in the model.
    * @return copy of event data, a LinkedHashMap
    */
-  LinkedHashMap<String, List<Event>> copyEventsList();
+  LinkedHashMap<String, List<Event>> copyEvents();
 }

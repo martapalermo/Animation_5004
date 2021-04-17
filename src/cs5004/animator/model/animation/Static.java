@@ -72,4 +72,11 @@ public class Static extends AbstractEvent {
             this.height, this.red, this.green, this.blue);
     return copy;
   }
+
+  @Override
+  public String toString() {
+    return "Shape: " + this.shapeName + " remains at " + this.x + ", " + this.y
+            + " and has a width of " + this.width + " and a height of " + this.height
+            + " with color (" + this.red + ", " + this.green + ", " + this.blue + ")";
+  }
 }
