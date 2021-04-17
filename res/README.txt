@@ -40,4 +40,16 @@ VIEW:
   
 - Classes:
    - GraphicsPanel: Extends JPanel; Updates the visual view at each tick
-   - Graph
+   - GraphicsView: Extends JFrame and Implements VisualView; Implements java swing window to start visual representation of the animation.
+   - SVGView: Extends WrittenView abstract class; Writes a .svg file which contains the animation information given from the model.
+   - TextView: Extends WrittenView abstract class; Writes a .txt file with a description of the animation. 
+   - WrittenView: Implements IView
+      - writeToFile: Constructor takes a ReadonlyAnimator model and an Appendable writer object. 
+      - Class writes a file (can be .svg or .txt) to an output destination.
+   - EasyAnimator: final class - (temporary "controller" - like) 
+      - parseCommands: method takes String array of arguments and parses input commands accordingly. 
+      - getWriter: method creates appropriate Writer objects for the views that require it, takes an outfile name.
+      - factoryOfViews: method creates the three types of views that will display the animation accordingly.
+      - main: Static main method; runs the animations and prompts the program to create the outsource file or open a java swing window for the animation to      
+        play.
+     
