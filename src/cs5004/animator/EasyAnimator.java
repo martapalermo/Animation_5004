@@ -165,6 +165,10 @@ public final class EasyAnimator {
     }
   }
 
+  /**
+   * Static main method that runs the animations.
+   * @param args takes an input of array of strings.
+   */
   public static void main(String[] args) {
     String[] input = parseCommands(args);
 

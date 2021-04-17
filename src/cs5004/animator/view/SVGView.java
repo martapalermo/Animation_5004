@@ -169,5 +169,5 @@ public class SVGView extends WrittenView {
   @Override
   public void runView() {
     this.writeToFile(this.createFullSVG());
- }
+  }
 }
