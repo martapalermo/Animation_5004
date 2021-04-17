@@ -2,30 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up model tests">
-      <change afterPath="$PROJECT_DIR$/emptymodel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big.svg" beforeDir="false" afterPath="$PROJECT_DIR$/big.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hanoi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/hanoi.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testSVG.svg" beforeDir="false" afterPath="$PROJECT_DIR$/testSVG.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +70,7 @@
       <recent name="cs5004.animator.model.animation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator hanoiSVG">
+  <component name="RunManager" selected="JUnit.AnimatorViewTest">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -119,64 +99,61 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testInvalidViewType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testInvalidViewType" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AnimatorViewTest.testGetSVG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="METHOD_NAME" value="testGetSVG" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testSVGNullWriter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest.testGetText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testSVGNullWriter" />
+      <option name="METHOD_NAME" value="testGetText" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testSVGZeroSpeed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest.testSVGToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testSVGZeroSpeed" />
+      <option name="METHOD_NAME" value="testSVGToFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testTextNullModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest.testTextToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testTextNullModel" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimatorViewTest.testTextNullWriter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testTextNullWriter" />
+      <option name="METHOD_NAME" value="testTextToFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,19 +162,19 @@
     <list>
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator hanoiSVG" />
-      <item itemvalue="JUnit.AnimatorViewTest.testSVGNullWriter" />
-      <item itemvalue="JUnit.AnimatorViewTest.testTextNullModel" />
-      <item itemvalue="JUnit.AnimatorViewTest.testTextNullWriter" />
-      <item itemvalue="JUnit.AnimatorViewTest.testSVGZeroSpeed" />
-      <item itemvalue="JUnit.AnimatorViewTest.testInvalidViewType" />
+      <item itemvalue="JUnit.AnimatorViewTest" />
+      <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
+      <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+      <item itemvalue="JUnit.AnimatorViewTest.testGetText" />
+      <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AnimatorViewTest.testInvalidViewType" />
-        <item itemvalue="JUnit.AnimatorViewTest.testSVGZeroSpeed" />
-        <item itemvalue="JUnit.AnimatorViewTest.testTextNullWriter" />
-        <item itemvalue="JUnit.AnimatorViewTest.testTextNullModel" />
-        <item itemvalue="JUnit.AnimatorViewTest.testSVGNullWriter" />
+        <item itemvalue="JUnit.AnimatorViewTest" />
+        <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
+        <item itemvalue="JUnit.AnimatorViewTest.testGetText" />
+        <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+        <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       </list>
     </recent_temporary>
   </component>
@@ -220,6 +197,7 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
+      <workItem from="1618679404710" duration="1305000" />
     </task>
     <task id="LOCAL-00039" summary="added a fileWriter">
       <created>1617900382052</created>
