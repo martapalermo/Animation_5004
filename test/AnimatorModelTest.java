@@ -162,10 +162,13 @@ public class AnimatorModelTest {
     this.m.scaleShape("c", 60, 8, 30,60,
         40, 60);
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-            + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n" + "Appears at t=1\n"
+            + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+            + "Appears at t=1\n"
             + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-            + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-            + "Disappears at t=101\n\n" + "Shape c scales from Width: 60, Height: 30 to Width: 60, Height: 8 from t=40"
+            + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=101\n\n" + "Shape c scales from Width: 60,"
+            + " Height: 30 to Width: 60, Height: 8 from t=40"
             + " to t=60", m.getAnimation());
   }
 
@@ -174,10 +177,14 @@ public class AnimatorModelTest {
     this.m.scaleShape("c", 70, 30, 30,60,
         40, 60);
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-            + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n" + "Appears at t=1\n"
+            + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+            + "Appears at t=1\n"
             + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-            + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-            + "Disappears at t=101\n\n" + "Shape c scales from Width: 60, Height: 30 to Width: 70, Height: 30 from t=40"
+            + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=101\n\n"
+            + "Shape c scales from Width: 60, Height: 30 to Width: 70, "
+            + "Height: 30 from t=40"
             + " to t=60", m.getAnimation());
   }
 
@@ -304,10 +311,13 @@ public class AnimatorModelTest {
         15, 100);
 
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n" + "Appears at t=1\n"
+                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+                    + "Appears at t=1\n"
                     + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                    + "Disappears at t=101\n\n" + "Shape c changes color from (0,0,1) to (255,0,0) from t=15 to t=100",
+                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+                    + "Appears at t=6\n"
+                    + "Disappears at t=101\n\n"
+                    + "Shape c changes color from (0,0,1) to (255,0,0) from t=15 to t=100",
                     m.getAnimation());
   }
 
@@ -363,9 +373,12 @@ public class AnimatorModelTest {
     this.m.move("c", 165, 150, 500, 100, 7, 30);
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
                     + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
-                    + "Appears at t=1\n" + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                    + "Disappears at t=101\n\n" + "Shape c moves from (500,100) to (165,150) from t=7 to t=30\n"
+                    + "Appears at t=1\n" + "Disappears at t=100\n\n"
+                    + "Name: c\n" + "Type: oval\n"
+                    + "Center: (500,100), X radius: 30, Y radius: "
+                    + "15, Color: (0,0,1)\n" + "Appears at t=6\n"
+                    + "Disappears at t=101\n\n"
+                    + "Shape c moves from (500,100) to (165,150) from t=7 to t=30\n"
                     + "Shape r moves from (200,200) to (155,120) from t=20 to t=34",
                 this.m.getAnimation());
   }
@@ -374,12 +387,16 @@ public class AnimatorModelTest {
   public void testMultipleMoveDiffShapeSameTime() {
     this.m.move("r", 155, 120, 200, 200, 20, 34);
     this.m.move("c", 165, 150, 500, 100, 20, 34);
-     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-                     + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
-                     + "Appears at t=1\n" + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                     + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                     + "Disappears at t=101\n\n" + "Shape r moves from (200,200) to (155,120) from t=20 to t=34\n"
-                     + "Shape c moves from (500,100) to (165,150) from t=20 to t=34", this.m.getAnimation());
+    assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
+            + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+            + "Appears at t=1\n" + "Disappears at t=100\n\n"
+            + "Name: c\n" + "Type: oval\n"
+            + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+            + "Appears at t=6\n"
+            + "Disappears at t=101\n\n" + "Shape r moves from (200,200) to"
+            + " (155,120) from t=20 to t=34\n"
+            + "Shape c moves from (500,100) to "
+            + "(165,150) from t=20 to t=34", this.m.getAnimation());
   }
 
   @Test
@@ -389,8 +406,9 @@ public class AnimatorModelTest {
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
                     + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
                     + "Appears at t=1\n" + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                    + "Disappears at t=101\n\n" + "Shape r changes color from (1,0,0) to (0,0,1) from t=20 to t=34\n"
+                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+                    + "Appears at t=6\n" + "Disappears at t=101\n\n"
+                    + "Shape r changes color from (1,0,0) to (0,0,1) from t=20 to t=34\n"
                     + "Shape r moves from (200,200) to (150,170) from t=35 to t=45",
                 this.m.getAnimation());
   }
@@ -400,10 +418,13 @@ public class AnimatorModelTest {
     this.m.move("r",150, 170, 200,200,35,45);
     this.m.move("r", 155, 120, 150, 170, 46, 55);
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n" + "Appears at t=1\n"
+                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+                    + "Appears at t=1\n"
                     + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                    + "Disappears at t=101\n\n" + "Shape r moves from (200,200) to (150,170) from t=35 to t=45\n"
+                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+                    + "Appears at t=6\n"
+                    + "Disappears at t=101\n\n" + "Shape r moves from (200,200) to "
+                    + "(150,170) from t=35 to t=45\n"
                     + "Shape r moves from (150,170) to (155,120) from t=46 to t=55",
                 this.m.getAnimation());
   }
@@ -412,10 +433,13 @@ public class AnimatorModelTest {
   public void testSingleMove() {
     this.m.move("r",150, 170, 200,200,35,45);
     assertEquals("Shapes:\n" + "Name: r\n" + "Type: rectangle\n"
-                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n" + "Appears at t=1\n"
+                    + "Min corner: (200,200), Width: 50, Height: 100, Color: (1,0,0)\n"
+                    + "Appears at t=1\n"
                     + "Disappears at t=100\n\n" + "Name: c\n" + "Type: oval\n"
-                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n" + "Appears at t=6\n"
-                    + "Disappears at t=101\n\n" + "Shape r moves from (200,200) to (150,170) from t=35 to t=45",
+                    + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
+                    + "Appears at t=6\n"
+                    + "Disappears at t=101\n\n" + "Shape r moves from (200,200) "
+                    +"to (150,170) from t=35 to t=45",
                     this.m.getAnimation());
   }
 
@@ -452,7 +476,8 @@ public class AnimatorModelTest {
     assertEquals("Shapes:\n" + "Name: bottom\n" + "Type: rectangle\n"
             + "Min corner: (0,0), Width: 5, Height: 1, Color: (255,0,0)\n"
             + "Appears at t=2\n" + "Disappears at t=20\n\n" + "Name: middle\n"
-            + "Type: rectangle\n" + "Min corner: (1,1), Width: 3, Height: 1, Color: (0,255,0)\n" + "Appears at t=4\n"
+            + "Type: rectangle\n" + "Min corner: (1,1), Width: 3, Height: 1, "
+            + "Color: (0,255,0)\n" + "Appears at t=4\n"
             + "Disappears at t=20\n\n" + "Name: top\n" + "Type: rectangle\n"
             + "Min corner: (2,2), Width: 1, Height: 1, Color: (0,0,255)\n" + "Appears at t=8\n"
             + "Disappears at t=20\n\n", model.getAnimation());
@@ -521,7 +546,7 @@ public class AnimatorModelTest {
             + "Min corner: (2,2), Width: 1, Height: 1, Color: (0,0,255)\n" + "Appears at t=8\n"
             + "Disappears at t=20\n\n", model.getAnimation());
 
-      }
+  }
 
   @Test
   public void testGetAnimation() {

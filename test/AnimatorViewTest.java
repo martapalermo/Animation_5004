@@ -10,17 +10,22 @@ import cs5004.animator.view.TextView;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.*;
+
+import java.io.Writer;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * Testing class for Animator View Types.
+ */
 public class AnimatorViewTest {
   private AnimatorModel model;
   private AnimatorModel m;
   private Appendable writer;
-  private Shape r;
-  private Shape c;
 
   @Before
   public void setUp() {
@@ -28,14 +33,13 @@ public class AnimatorViewTest {
     this.writer = new StringBuilder();
 
     this.model = new AnimatorModel(); // from small demo.txt
-
-    this.r = new Rectangle(200, 200, 1, 100, 50, 100,
+    Shape r = new Rectangle(200, 200, 1, 100, 50, 100,
             255, 0, 0);
-    this.c = new Oval(440, 70, 6, 100, 120, 60, 0,
+    Shape c = new Oval(440, 70, 6, 100, 120, 60, 0,
             0, 255);
 
-    this.model.addShape(this.r, "R");
-    this.model.addShape(this.c, "C");
+    this.model.addShape(r, "R");
+    this.model.addShape(c, "C");
 
     this.model.move("R", 300, 300, 200, 200, 10, 50);
     this.model.move("C", 440, 250, 440, 70, 20, 50);
