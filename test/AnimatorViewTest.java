@@ -61,7 +61,7 @@ public class AnimatorViewTest {
   public void testSVGToFile() {
     try {
       Writer writ = new FileWriter("testSVG.svg");
-      IView svgView = new SVGView(this.model, writ, 4 );
+      IView svgView = new SVGView(this.model, writ, 5 );
       svgView.runView();
       writ.close();
     } catch (IOException e) {

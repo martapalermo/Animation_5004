@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up model tests">
-      <change afterPath="$PROJECT_DIR$/emptymodel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cs5004/animator/view/WrittenView.java" afterDir="false" />
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="view tests">
+      <change afterPath="$PROJECT_DIR$/buildings.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/big.svg" beforeDir="false" afterPath="$PROJECT_DIR$/big.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hanoi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/hanoi.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/IView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/TextView.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Archive.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/util/AnimationReader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testSVG.svg" beforeDir="false" afterPath="$PROJECT_DIR$/testSVG.svg" afterDir="false" />
     </list>
@@ -90,11 +72,25 @@
       <recent name="cs5004.animator.model.animation" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator hanoiSVG">
+  <component name="RunManager" selected="JUnit.AnimatorViewTest.testGetSVG">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
       <option name="PROGRAM_PARAMETERS" value="-in smalldemo.txt -view svg -speed 3 -out demoOut1.svg" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cs5004.animator.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EasyAnimator buildingSVG" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
+      <module name="Animation_5004" />
+      <option name="PROGRAM_PARAMETERS" value="-in buildings.txt -view svg -speed 2 -out buildings.svg" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs5004.animator.*" />
@@ -132,6 +128,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AnimatorViewTest.testGetSVG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="METHOD_NAME" value="testGetSVG" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnimatorViewTest.testInvalidViewType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -142,11 +148,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testSVGNullWriter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest.testSVGToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testSVGNullWriter" />
+      <option name="METHOD_NAME" value="testSVGToFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -157,16 +163,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
       <option name="METHOD_NAME" value="testSVGZeroSpeed" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimatorViewTest.testTextNullModel" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testTextNullModel" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -185,19 +181,20 @@
     <list>
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator hanoiSVG" />
-      <item itemvalue="JUnit.AnimatorViewTest.testSVGNullWriter" />
-      <item itemvalue="JUnit.AnimatorViewTest.testTextNullModel" />
+      <item itemvalue="Application.EasyAnimator buildingSVG" />
       <item itemvalue="JUnit.AnimatorViewTest.testTextNullWriter" />
       <item itemvalue="JUnit.AnimatorViewTest.testSVGZeroSpeed" />
       <item itemvalue="JUnit.AnimatorViewTest.testInvalidViewType" />
+      <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
+      <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+        <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
         <item itemvalue="JUnit.AnimatorViewTest.testInvalidViewType" />
         <item itemvalue="JUnit.AnimatorViewTest.testSVGZeroSpeed" />
         <item itemvalue="JUnit.AnimatorViewTest.testTextNullWriter" />
-        <item itemvalue="JUnit.AnimatorViewTest.testTextNullModel" />
-        <item itemvalue="JUnit.AnimatorViewTest.testSVGNullWriter" />
       </list>
     </recent_temporary>
   </component>
@@ -220,27 +217,6 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
-    </task>
-    <task id="LOCAL-00039" summary="added a fileWriter">
-      <created>1617900382052</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1617900382053</updated>
-    </task>
-    <task id="LOCAL-00040" summary="added a fileWriter">
-      <created>1617906074393</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1617906074393</updated>
-    </task>
-    <task id="LOCAL-00041" summary="updating AnimatorModel">
-      <created>1617918011320</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1617918011320</updated>
     </task>
     <task id="LOCAL-00042" summary="finished parsing command line parsing">
       <created>1617982738321</created>
@@ -564,7 +540,28 @@
       <option name="project" value="LOCAL" />
       <updated>1618670740051</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="view tests">
+      <created>1618679000514</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1618679000515</updated>
+    </task>
+    <task id="LOCAL-00089" summary="view tests">
+      <created>1618679014912</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1618679014912</updated>
+    </task>
+    <task id="LOCAL-00090" summary="view tests">
+      <created>1618679280935</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1618679280935</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -584,7 +581,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!" />
     <MESSAGE value="finished svg move" />
     <MESSAGE value="finished svg for scale and color change" />
     <MESSAGE value="made edits to GraphicViws" />
@@ -609,6 +605,7 @@
     <MESSAGE value="added two tests in View and this is post Roger edits!" />
     <MESSAGE value="got rid of written abstract &#10;refactored tests and svg + text classes" />
     <MESSAGE value="cleaned up model tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned up model tests" />
+    <MESSAGE value="view tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="view tests" />
   </component>
 </project>
