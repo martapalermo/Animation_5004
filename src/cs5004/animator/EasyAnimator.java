@@ -56,8 +56,9 @@ public final class EasyAnimator {
           input[0] = command;
 
         } else if (token.equalsIgnoreCase("-view")) {
-          if (!command.equalsIgnoreCase("text") && !command.equalsIgnoreCase
-                  ("visual") && !command.equalsIgnoreCase("svg")) {
+          if (!command.equalsIgnoreCase("text")
+                  && !command.equalsIgnoreCase("visual")
+                  && !command.equalsIgnoreCase("svg")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
@@ -165,6 +166,10 @@ public final class EasyAnimator {
     }
   }
 
+  /**
+   * Static main method that runs the animations.
+   * @param args takes an input of array of strings.
+   */
   public static void main(String[] args) {
     String[] input = parseCommands(args);
 
