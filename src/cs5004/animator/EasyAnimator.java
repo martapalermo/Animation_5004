@@ -56,8 +56,9 @@ public final class EasyAnimator {
           input[0] = command;
 
         } else if (token.equalsIgnoreCase("-view")) {
-          if (!command.equalsIgnoreCase("text") && !command.equalsIgnoreCase
-                  ("visual") && !command.equalsIgnoreCase("svg")) {
+          if (!command.equalsIgnoreCase("text")
+                  && !command.equalsIgnoreCase("visual")
+                  && !command.equalsIgnoreCase("svg")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);

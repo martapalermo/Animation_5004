@@ -439,7 +439,7 @@ public class AnimatorModelTest {
                     + "Center: (500,100), X radius: 30, Y radius: 15, Color: (0,0,1)\n"
                     + "Appears at t=6\n"
                     + "Disappears at t=101\n\n" + "Shape r moves from (200,200) "
-                    +"to (150,170) from t=35 to t=45",
+                    + "to (150,170) from t=35 to t=45",
                     this.m.getAnimation());
   }
 
