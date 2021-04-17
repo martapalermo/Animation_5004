@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="reformatted from handin feedback">
-      <change afterPath="$PROJECT_DIR$/Hw7.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/FailingAppendable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +68,11 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="cs5004.animator.model.animation" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorViewTest.testGetSVG">
+  <component name="RunManager" selected="JUnit.AnimatorViewTest">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -99,13 +101,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -139,11 +143,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testSVGToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AnimatorViewTest.testSVGFailingAppendable" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testSVGToFile" />
+      <option name="METHOD_NAME" value="testSVGFailingAppendable" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -163,18 +167,18 @@
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator hanoiSVG" />
       <item itemvalue="JUnit.AnimatorViewTest" />
-      <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
       <item itemvalue="JUnit.AnimatorViewTest.testGetText" />
       <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
+      <item itemvalue="JUnit.AnimatorViewTest.testSVGFailingAppendable" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
         <item itemvalue="JUnit.AnimatorViewTest" />
+        <item itemvalue="JUnit.AnimatorViewTest.testSVGFailingAppendable" />
+        <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
         <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
         <item itemvalue="JUnit.AnimatorViewTest.testGetText" />
-        <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       </list>
     </recent_temporary>
   </component>

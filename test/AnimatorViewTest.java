@@ -271,4 +271,18 @@ public class AnimatorViewTest {
     String[] args = new String[]{"test.txt", "loopback", "out.txt", "3"};
     EasyAnimator.factoryOfViews(args, this.model, this.writer);
   }
+
+  @Test(expected = IllegalStateException.class)
+  public void testSVGFailingAppendable() {
+    Appendable writ = new FailingAppendable();
+    IView view = new SVGView(this.model, writ,4);
+    view.runView();
+  }
+
+  @Test(expected = IllegalStateException.class)
+  public void testTextFailingAppendable() {
+    Appendable writ = new FailingAppendable();
+    IView view = new TextView(this.model, writ);
+    view.runView();
+  }
 }
