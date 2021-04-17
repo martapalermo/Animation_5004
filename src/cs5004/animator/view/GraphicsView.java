@@ -25,7 +25,7 @@ public class GraphicsView extends JFrame implements VisualView {
    * Graphics View constructor. Takes in two parameters model and speed.
    * @param model readonly animation model, ReadonlyAnimator interface
    * @param speed speed of animation, int
-   * @throws IllegalArgumentException if the model is null
+   * @throws IllegalArgumentException if the model is null or empty, or the speed is < 1
    */
   public GraphicsView(ReadonlyAnimator model, int speed) {
     super("Animation Window");
@@ -34,8 +34,15 @@ public class GraphicsView extends JFrame implements VisualView {
       throw new IllegalArgumentException("Model cannot be null.");
     }
 
+    if (model.copyShapesList().size() == 0) {
+      throw new IllegalArgumentException("Model cannot be empty.");
+    }
     this.model = model;
     int[] canvas = this.model.getCanvas();
+
+    if (speed < 1) {
+      throw new IllegalArgumentException("Speed cannot be less than 1.");
+    }
     this.timeConverter = 100 / speed;
 
 
@@ -130,10 +137,4 @@ public class GraphicsView extends JFrame implements VisualView {
       }
     }
   }
-
-  @Override
-  public String getTextualString() {
-    return null;
-  }
-
 }

@@ -146,7 +146,7 @@ public final class EasyAnimator {
    * @return view, IView
    * @throws IllegalArgumentException if the view type is invalid
    */
-  public static IView factoryOfViews(String[] input, Animator model, Writer writer)
+  public static IView factoryOfViews(String[] input, Animator model, Appendable writer)
           throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
       return new GraphicsView(model, Integer.parseInt(input[3]));

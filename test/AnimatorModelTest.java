@@ -287,13 +287,6 @@ public class AnimatorModelTest {
         89, 10);
   }
 
-  // CONFUSED BY THIS TEST
-  @Test(expected = IllegalArgumentException.class)
-  public void testChangeColorSameStartStopTime() throws IllegalArgumentException {
-    this.m.changeColor("c", 255, 0,0,0,0,1,
-        15, 15);
-  }
-
   @Test(expected = IllegalArgumentException.class)
   public void testChangeColorAllOutOfRGBRange() throws IllegalArgumentException {
     this.m.changeColor("r", 256, 300, 650, 0,0,

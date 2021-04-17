@@ -10,8 +10,8 @@
 <ellipse id="C" cx="440" cy="70" rx="60" ry="30" fill="rgb(0,0,255)" visibility="visible" >
 		<animate attributeType="xml" begin="500ms" dur="750ms" attributeName="cy" from="70" to="250" fill="freeze" />
 		<animate attributeType="xml" begin="1250ms" dur="500ms" attributeName="cy" from="250" to="370" fill="freeze" />
-		<animate attributeType="xml" begin="1250ms" dur="500ms" attributeName="fill" from="rgb(0,0,255)" to="rgn(0,170,85)" fill="freeze" />
-		<animate attributeType="xml" begin="1750ms" dur="250ms" attributeName="fill" from="rgb(0,170,85)" to="rgn(0,255,0)" fill="freeze" />
+		<animate attributeType="xml" begin="1250ms" dur="500ms" attributeName="fill" from="rgb(0,0,255)" to="rgb(0,170,85)" fill="freeze" />
+		<animate attributeType="xml" begin="1750ms" dur="250ms" attributeName="fill" from="rgb(0,170,85)" to="rgb(0,255,0)" fill="freeze" />
 </ellipse>
 
 </svg>

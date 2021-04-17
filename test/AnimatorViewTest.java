@@ -1,11 +1,9 @@
-
 import cs5004.animator.EasyAnimator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.model.shape.Oval;
 import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
 
-import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
 import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
@@ -13,13 +11,13 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
+import java.util.Scanner;
 
 import static org.junit.Assert.assertEquals;
 
 public class AnimatorViewTest {
   private AnimatorModel model;
   private AnimatorModel m;
-  private IView view;
   private Appendable writer;
   private Shape r;
   private Shape c;
@@ -50,50 +48,122 @@ public class AnimatorViewTest {
     this.model.changeColor("C", 0, 255, 0, 0, 170,
         85, 70, 80);
     this.model.setBounds(0, 0, 500, 500);
-
-
-
-//    String [] args = {"svg"};
-//    this.view = new SVGView(this.model, this.writer, 3);
-//    this.view.runView();
   }
-
-
-  //TODO: KATE!! If you can try and get the toString
-  // tests working that would be awesome! I can't seem to make it happen
-  // Roger said we don't need tooooo many tests so I think if we can get like 5 - 6 we should be gucci!
-  // you're the best thank you!
-
- //TODO: ALSO!!! please see if you can figure out the bug for the SCALE SHAPE
- // Also if you need me to make a new model let me know Im happy to code that!
-
-
 
   @Test
   public void testGetSVG() {
-    //assertEquals("", this.model.getAnimation());
     IView svgView = new SVGView(this.model, this.writer, 5);
-    assertEquals("", svgView.getTextualString());
+    svgView.runView();
+    assertEquals("", this.writer.toString());
   }
 
   @Test
   public void testSVGToFile() {
     try {
-      IView svgView = new SVGView(this.model, new FileWriter("testSVG.svg"), 4 );
+      Writer writ = new FileWriter("testSVG.svg");
+      IView svgView = new SVGView(this.model, writ, 4 );
       svgView.runView();
+      writ.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+
+    StringBuilder string = new StringBuilder();
+    try {
+      FileReader reader = new FileReader("testSVG.svg");
+      Scanner scan = new Scanner(reader);
+
+      while (scan.hasNextLine()) {
+        string.append(scan.nextLine()).append("\n");
+      }
+
+      reader.close();
+      scan.close();
+      assertEquals("", string.toString());
     } catch (IOException e) {
       e.printStackTrace();
     }
   }
 
   @Test
+  public void testGetText() {
+    IView txtView = new TextView(this.model, this.writer);
+    txtView.runView();
+    assertEquals("", this.writer.toString());
+  }
+
+  @Test
   public void testTextToFile() {
     try {
-      IView textView = new TextView(this.model, new FileWriter("testText.txt"));
-      textView.runView();
+      Writer writ = new FileWriter("testText.txt");
+      IView txtView = new TextView(this.model, writ);
+      txtView.runView();
+      writ.close();
     } catch (IOException e) {
       e.printStackTrace();
     }
+
+    StringBuilder string = new StringBuilder();
+    try {
+      FileReader reader = new FileReader("testText.txt");
+      Scanner scan = new Scanner(reader);
+
+      while (scan.hasNextLine()) {
+        string.append(scan.nextLine()).append("\n");
+      }
+
+      reader.close();
+      scan.close();
+      assertEquals("", string.toString());
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSVGEmptyModel() {
+    new SVGView(this.m, this.writer, 3);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testTextEmptyModel() {
+    new TextView(this.m, this.writer);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSVGNullModel() {
+    new SVGView(null, this.writer, 2);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testTextNullModel() {
+    new TextView(null, this.writer);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSVGNullWriter() {
+    new SVGView(this.model, null, 3);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testTextNullWriter() {
+    new TextView(this.model, null);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSVGZeroSpeed() {
+    new SVGView(this.model, this.writer, 0);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testSVGNegativeSpeed() {
+    new SVGView(this.model, this.writer, -4);
+  }
+
+  @Test(expected = IllegalArgumentException.class)
+  public void testInvalidViewType() {
+    String[] args = new String[]{"test.txt", "loopback", "out.txt", "3"};
+    EasyAnimator.factoryOfViews(args, this.model, this.writer);
   }
 
 //  @Test

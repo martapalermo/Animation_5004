@@ -2,16 +2,10 @@ package cs5004.animator.view;
 
 import cs5004.animator.model.animation.ReadonlyAnimator;
 
-import java.io.FileWriter;
-import java.io.IOException;
-
 /**
  * This view outputs a text file of the animation.
  */
-public class TextView implements IView {
-  private ReadonlyAnimator model;
-  private Appendable writer;
-
+public class TextView extends WrittenView {
   /**
    * Constructor for the text view, takes two parameters the readonly animator model,
    * with instructions on what animation contains, and an appendable writer element.
@@ -19,31 +13,7 @@ public class TextView implements IView {
    * @param writer writer, appendable
    */
   public TextView(ReadonlyAnimator model, Appendable writer) {
-    if (model == null) {
-      throw new IllegalStateException("Model cannot be null.");
-    }
-    this.model = model;
-
-    if (writer == null) {
-      throw new IllegalStateException("Writer cannot be null.");
-    }
-    this.writer = writer;
-  }
-
-  /**
-   * Method that writes string to text file.
-   * @param text text that we want to write to file, String
-   *        textLine -- will probably be the model string (model.toString())
-   * @throws IOException if there is an error writing to the file
-   */
-  private void writeToFile(String text) {
-    try {
-      this.writer.append(text);
-      FileWriter var = (FileWriter) this.writer;
-      var.close();
-    } catch (IOException e) {
-      throw new IllegalStateException("Unable to append to the file.");
-    }
+    super(model, writer);
   }
 
   /**
@@ -52,10 +22,5 @@ public class TextView implements IView {
   @Override
   public void runView() {
     this.writeToFile(this.model.getAnimation());
-  }
-
-  @Override
-  public String getTextualString() {
-    return this.model.getAnimation();
   }
 }

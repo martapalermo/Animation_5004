@@ -1,7 +1,5 @@
 package cs5004.animator.view;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -14,11 +12,9 @@ import cs5004.animator.model.shape.Shape;
 /**
  * This class outputs an SVG view of the animation.
  */
-public class SVGView implements IView {
+public class SVGView extends WrittenView {
   private final List<Shape> shapes;
   private final LinkedHashMap<String, List<Event>> events;
-  private ReadonlyAnimator model;
-  private Appendable writer;
   private int[] canvas;
   private int timeConverter;
 
@@ -27,22 +23,20 @@ public class SVGView implements IView {
    * @param model model with the data, a ReadonlyAnimator version
    * @param writer a writer to append the SVG text to, an Appendable
    * @param speed animation speed, an int
+   * @throws IllegalArgumentException if the speed is < 1
    */
-  public SVGView(ReadonlyAnimator model, Appendable writer, int speed) {
-    if (model == null) {
-      throw new IllegalStateException("Model cannot be null.");
-    }
-    this.model = model;
+  public SVGView(ReadonlyAnimator model, Appendable writer, int speed) throws
+          IllegalArgumentException {
 
-    if (writer == null) {
-      throw new IllegalStateException("Writer cannot be null.");
-    }
-    this.writer = writer;
-
+    super(model, writer);
 
     this.shapes = this.model.copyShapesList();
     this.events = this.model.copyEventsList();
     this.canvas = this.model.getCanvas();
+
+    if (speed < 1) {
+      throw new IllegalArgumentException("Speed cannot be less than 1.");
+    }
     this.timeConverter = 100 / speed;
   }
 
@@ -87,7 +81,7 @@ public class SVGView implements IView {
 
     return "\t\t<animate attributeType=\"xml\" begin=\"" + startConverted + "ms\" dur=\""
             + duration + "ms\" attributeName=\"fill\" from=\"rgb(" + oldRed + "," + oldGreen + ","
-            + oldBlue + ")\" to=\"rgn(" + newRed + "," + newGreen + "," + newBlue + ")\" fill=\""
+            + oldBlue + ")\" to=\"rgb(" + newRed + "," + newGreen + "," + newBlue + ")\" fill=\""
             + fill + "\" />\n";
   }
 
@@ -166,39 +160,7 @@ public class SVGView implements IView {
       text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
     }
 
-    return header + text + "\n/svg>";
-//    try {
-//      this.writer.append(header);
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
-//    //StringBuilder text = new StringBuilder();
-//
-//    /*for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
-//      text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
-//    }
-//    return header + text + "\n</svg>";*/
-//    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
-//      try {
-//        this.writer.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
-//      } catch (IOException e) {
-//        e.printStackTrace();
-//      }
-//    }
-//    try {
-//      this.writer.append("\n</svg>");
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
-//    try {
-//      FileWriter var = (FileWriter) this.writer;
-//      var.close();
-//    } catch (IOException e) {
-//      e.printStackTrace();
-//    }
-//    return this.writer.toString();
-
-
+    return header + text + "\n</svg>";
   }
 
   /**
@@ -206,11 +168,6 @@ public class SVGView implements IView {
    */
   @Override
   public void runView() {
-    this.createFullSVG();
-  }
-
-  @Override
-  public String getTextualString() {
-    return this.createFullSVG();
-  }
+    this.writeToFile(this.createFullSVG());
+ }
 }
