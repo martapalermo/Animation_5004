@@ -159,36 +159,46 @@ public class SVGView implements IView {
    */
   private String createFullSVG() {
     String header = this.createHeaderString();
-    try {
-      this.writer.append(header);
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    //StringBuilder text = new StringBuilder();
 
-    /*for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+    StringBuilder text = new StringBuilder();
+
+    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
       text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
     }
-    return header + text + "\n</svg>";*/
-    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
-      try {
-        this.writer.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
-      } catch (IOException e) {
-        e.printStackTrace();
-      }
-    }
-    try {
-      this.writer.append("\n</svg>");
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    try {
-      FileWriter var = (FileWriter) this.writer;
-      var.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-    return this.writer.toString();
+
+    return header + text + "\n/svg>";
+//    try {
+//      this.writer.append(header);
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//    //StringBuilder text = new StringBuilder();
+//
+//    /*for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+//      text.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
+//    }
+//    return header + text + "\n</svg>";*/
+//    for (Map.Entry<String, List<Event>> entry : this.events.entrySet()) {
+//      try {
+//        this.writer.append(this.createIndividualSVG(entry.getKey(), entry.getValue()));
+//      } catch (IOException e) {
+//        e.printStackTrace();
+//      }
+//    }
+//    try {
+//      this.writer.append("\n</svg>");
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//    try {
+//      FileWriter var = (FileWriter) this.writer;
+//      var.close();
+//    } catch (IOException e) {
+//      e.printStackTrace();
+//    }
+//    return this.writer.toString();
+
+
   }
 
   /**

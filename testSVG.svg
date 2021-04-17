@@ -3,6 +3,7 @@
 <rect id="R" x="200" y="200" width="50" height="100" fill="rgb(255,0,0)" visibility="visible" >
 		<animate attributeType="xml" begin="250ms" dur="1000ms" attributeName="x" from="200" to="300" fill="freeze" />
 		<animate attributeType="xml" begin="250ms" dur="1000ms" attributeName="y" from="200" to="300" fill="freeze" />
+		<animate attributeType="xml" begin="1275ms" dur="475ms" attributeName="width" from="50" to="25" fill="freeze" />
 		<animate attributeType="xml" begin="1750ms" dur="750ms" attributeName="x" from="300" to="200" fill="freeze" />
 		<animate attributeType="xml" begin="1750ms" dur="750ms" attributeName="y" from="300" to="200" fill="freeze" />
 </rect>

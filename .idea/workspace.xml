@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="got rid of written abstract &#10;refactored tests and svg + text classes">
+    <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up model tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/SVGVIew.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorModelTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorViewTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/AnimatorModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorViewTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorViewTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testSVG.svg" beforeDir="false" afterPath="$PROJECT_DIR$/testSVG.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testText.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testText.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +74,7 @@
       <recent name="cs5004.animator.model.animation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AnimatorModelTest">
+  <component name="RunManager" selected="JUnit.AnimatorViewTest.testGetSVG">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -123,21 +125,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AnimatorViewTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnimatorViewTest.testGetSVG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
       <option name="METHOD_NAME" value="testGetSVG" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="AnimatorViewTest.testGraphicVisual" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testGraphicVisual" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -167,18 +168,18 @@
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator toh8SVG" />
       <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
-      <item itemvalue="JUnit.AnimatorViewTest.testGraphicVisual" />
       <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
       <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       <item itemvalue="JUnit.AnimatorModelTest" />
+      <item itemvalue="JUnit.AnimatorViewTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AnimatorModelTest" />
         <item itemvalue="JUnit.AnimatorViewTest.testGetSVG" />
+        <item itemvalue="JUnit.AnimatorModelTest" />
+        <item itemvalue="JUnit.AnimatorViewTest" />
         <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
         <item itemvalue="JUnit.AnimatorViewTest.testTextToFile" />
-        <item itemvalue="JUnit.AnimatorViewTest.testGraphicVisual" />
       </list>
     </recent_temporary>
   </component>
@@ -201,13 +202,6 @@
       <workItem from="1618338936978" duration="28140000" />
       <workItem from="1618431270586" duration="3034000" />
       <workItem from="1618521704747" duration="6404000" />
-    </task>
-    <task id="LOCAL-00037" summary="added AnimationBuilderImpl class!">
-      <created>1617889721737</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1617889721737</updated>
     </task>
     <task id="LOCAL-00038" summary="tweaked ShapeType enum class">
       <created>1617890686132</created>
@@ -545,7 +539,14 @@
       <option name="project" value="LOCAL" />
       <updated>1618615188104</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="cleaned up model tests">
+      <created>1618619055851</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1618619055851</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -565,7 +566,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="added Graphics view Frame + panel" />
     <MESSAGE value="added SVG attempts in move, oval, rect + iShape and iEvent -- needs editing!!" />
     <MESSAGE value="finished svg move" />
     <MESSAGE value="finished svg for scale and color change" />
@@ -590,6 +590,7 @@
     <MESSAGE value="added notes on viewTest" />
     <MESSAGE value="added two tests in View and this is post Roger edits!" />
     <MESSAGE value="got rid of written abstract &#10;refactored tests and svg + text classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="got rid of written abstract &#10;refactored tests and svg + text classes" />
+    <MESSAGE value="cleaned up model tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaned up model tests" />
   </component>
 </project>

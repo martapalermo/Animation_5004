@@ -20,7 +20,7 @@ public class AnimatorViewTest {
   private AnimatorModel model;
   private AnimatorModel m;
   private IView view;
-  private StringBuilder writer;
+  private Appendable writer;
   private Shape r;
   private Shape c;
 
@@ -44,12 +44,14 @@ public class AnimatorViewTest {
     this.model.move("C", 440, 370, 440, 250, 50, 70);
     this.model.changeColor("C", 0, 170, 85, 0,0,
         255, 50, 70);
-  // this.model.scaleShape("R", 25, 100, 50, 100,
-    //    51, 70);
+   this.model.scaleShape("R", 25, 100, 100, 50,
+        51, 70);
     this.model.move("R", 200, 200, 300, 300, 70, 100);
     this.model.changeColor("C", 0, 255, 0, 0, 170,
         85, 70, 80);
     this.model.setBounds(0, 0, 500, 500);
+
+
 
 //    String [] args = {"svg"};
 //    this.view = new SVGView(this.model, this.writer, 3);
