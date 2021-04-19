@@ -3,6 +3,8 @@ package cs5004.animator.view;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
 import java.util.List;
 
 import javax.swing.*;
@@ -13,7 +15,7 @@ import cs5004.animator.model.shape.Shape;
 public class InteractiveViewImpl extends JFrame implements InteractiveView, ActionListener {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
-  private int speed;
+  private final int timeConverter;
 
   JFrame frame = new JFrame();
   JButton start = new JButton("Start");
@@ -33,9 +35,71 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
       throw new IllegalArgumentException("Model cannot be empty.");
     }
 
-    this.panel = new GraphicsPanel();
     this.model = model;
-    this.speed = speed;
+    this.timeConverter = 100 / speed;
+    int [] canvas = this.model.getCanvas();
+
+    this.panel = new GraphicsPanel(); // panel with scroll panes!
+
+    this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    setLocation(canvas[0], canvas[1]);
+    setSize(canvas[2], canvas[3]);
+    setLayout(null);
+    setVisible(true);
+
+    JScrollBar horizontalBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 100,
+        -600,600);
+    JScrollBar verticalBar = new JScrollBar(JScrollBar.VERTICAL, 0, 100,
+        -600,600);
+
+    BorderLayout bl = new BorderLayout(0,0);
+    setLayout(bl);
+    this.panel.setVisible(true);
+    this.add(this.panel);
+
+    /**
+     * Adjustment Listener class for the horizontal scroll bar.
+     */
+    class ALHorizontal implements AdjustmentListener {
+
+      /**
+       * Invoked when the value of the adjustable has changed.
+       *
+       * @param e the event to be processed
+       */
+      @Override
+      public void adjustmentValueChanged(AdjustmentEvent e) {
+        panel.setOffsetX(e.getValue());
+      }
+    }
+
+    /**
+     * Adjustment Listener class for the vertical scroll bar.
+     */
+    class ALVertical implements AdjustmentListener {
+
+      /**
+       * Invoked when the value of the adjustable has changed.
+       *
+       * @param e the event to be processed
+       */
+      @Override
+      public void adjustmentValueChanged(AdjustmentEvent e) {
+        panel.setOffsetY(e.getValue());
+      }
+    }
+
+    horizontalBar.addAdjustmentListener(new ALHorizontal());
+    verticalBar.addAdjustmentListener(new ALVertical());
+
+    setLayout(new BorderLayout());
+    getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
+    getContentPane().add(verticalBar, BorderLayout.LINE_END);
+
+    getContentPane().add(this.panel, BorderLayout.CENTER);
+    this.setVisible(true);
+    setResizable(true);
+
 
     this.start.setBounds(10, 24, 40, 35);
     this.start.setFocusable(true);
@@ -78,7 +142,16 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
 
   @Override
   public void runView() {
-
+    int count = 0;
+    while (count < 1000000) {
+      count++;
+      getCurrentDisplay(model.getCurrentShapes(count));
+      try {
+        Thread.sleep(timeConverter);
+      } catch (Exception e) {
+        throw new IllegalStateException("Issue with speed/timing.");
+      }
+    }
   }
 
   @Override
