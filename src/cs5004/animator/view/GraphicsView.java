@@ -3,8 +3,7 @@ package cs5004.animator.view;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-import javax.swing.JFrame;
-import javax.swing.JScrollBar;
+import javax.swing.*;
 
 import java.awt.BorderLayout;
 import java.awt.event.AdjustmentEvent;
@@ -44,7 +43,6 @@ public class GraphicsView extends JFrame implements VisualView {
       throw new IllegalArgumentException("Speed cannot be less than 1.");
     }
     this.timeConverter = 100 / speed;
-
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(canvas[0], canvas[1]);

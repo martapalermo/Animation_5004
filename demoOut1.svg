@@ -1,13 +1,15 @@
 <svg width="360" height="360" version="1.1" viewBox="200 70 360 360"
 	xmlns="http://www.w3.org/2000/svg">
-<rect id="R" x="200" y="200" width="50" height="100" fill="rgb(255,0,0)" visibility="visible" >
+<rect id="R" x="200" y="200" width="50" height="100" fill="rgb(255,0,0)" >
 		<animate attributeType="xml" begin="1000ms" dur="4000ms" attributeName="x" from="200" to="300" fill="freeze" />
 		<animate attributeType="xml" begin="1000ms" dur="4000ms" attributeName="y" from="200" to="300" fill="freeze" />
 		<animate attributeType="xml" begin="5100ms" dur="1900ms" attributeName="width" from="50" to="25" fill="freeze" />
 		<animate attributeType="xml" begin="7000ms" dur="3000ms" attributeName="x" from="300" to="200" fill="freeze" />
 		<animate attributeType="xml" begin="7000ms" dur="3000ms" attributeName="y" from="300" to="200" fill="freeze" />
 </rect>
-<ellipse id="C" cx="440" cy="70" rx="60" ry="30" fill="rgb(0,0,255)" visibility="visible" >
+<ellipse id="C" cx="440" cy="70" rx="60" ry="30" fill="rgb(0,0,255)"  >
+		<set attributeName="visibility" to="hidden" begin="0ms" dur="600ms" fill="freeze" />
+ 		<set attributeName="visibility" to="visible" begin ="600ms" dur="10000ms" fill="freeze" />
 		<animate attributeType="xml" begin="2000ms" dur="3000ms" attributeName="cy" from="70" to="250" fill="freeze" />
 		<animate attributeType="xml" begin="5000ms" dur="2000ms" attributeName="cy" from="250" to="370" fill="freeze" />
 		<animate attributeType="xml" begin="5000ms" dur="2000ms" attributeName="fill" from="rgb(0,0,255)" to="rgb(0,170,85)" fill="freeze" />
