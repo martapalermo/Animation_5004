@@ -3,7 +3,7 @@ package cs5004.animator.view;
 import java.awt.event.ActionListener;
 import java.util.List;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
@@ -12,6 +12,16 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
   private int speed;
+
+  JFrame frame = new JFrame();
+  JPanel p = new JPanel();
+  JButton start = new JButton("Start");
+  JButton pause = new JButton("Pause");
+  JButton resume = new JButton("Resume");
+  JButton restart = new JButton("Restart");
+  JButton loop = new JButton("loop");
+  JButton speedUp = new JButton("Speed +");
+  JButton speedDown = new JButton("Speed -");
 
   public InteractiveViewImpl(ReadonlyAnimator model, int speed) {
     if (model == null) {
@@ -34,7 +44,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
   @Override
   public void getCurrentDisplay(List<Shape> shapesList) {
-
+    this.panel.updateModel(shapesList);
   }
 
   // Set buttons to their respective methods (actions)
