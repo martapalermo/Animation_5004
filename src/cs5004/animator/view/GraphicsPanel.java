@@ -27,7 +27,6 @@ public class GraphicsPanel extends JPanel {
     setBackground(Color.WHITE);
     setBounds(0, 0, 600, 400);
     setVisible(true);
-
   }
 
   /**
