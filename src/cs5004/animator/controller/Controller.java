@@ -17,6 +17,5 @@ public interface Controller {
 
   void slowDown();
 
-
   void startController();
 }

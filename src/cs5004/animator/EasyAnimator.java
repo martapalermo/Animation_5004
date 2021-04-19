@@ -10,6 +10,8 @@ import java.util.Scanner;
 
 import javax.swing.JOptionPane;
 
+import cs5004.animator.controller.Controller;
+import cs5004.animator.controller.ControllerImpl;
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
@@ -187,7 +189,8 @@ public final class EasyAnimator {
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
 
     IView view = factoryOfViews(input, model, writer);
-    view.runView();
+    Controller controller = new ControllerImpl(model, view);
+    controller.startController();
 
     try {
       writer.close();
