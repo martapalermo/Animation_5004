@@ -20,7 +20,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   JButton pause = new JButton("Pause");
   JButton resume = new JButton("Resume");
   JButton restart = new JButton("Restart");
-  JButton loop = new JButton("loop");
+  JCheckBox loop = new JCheckBox("loop");
   JButton speedUp = new JButton("Speed +");
   JButton speedDown = new JButton("Speed -");
 
@@ -94,9 +94,9 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     JPanel checkBoxPanel = new JPanel();
     //checkBoxPanel.setBorder(BorderFactory.createTitledBorder("Loop"));
     //checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.PAGE_AXIS));
-    JCheckBox loop = new JCheckBox("loop");
-    loop.setSelected(false);
-    loop.setActionCommand("Loop Checkbox");
+    //JCheckBox loop = new JCheckBox("loop");
+    this.loop.setSelected(false);
+    this.loop.setActionCommand("Loop Checkbox");
     checkBoxPanel.add(loop);
 
 
@@ -179,9 +179,11 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
   public void run(int count) {
     System.out.println(count);
-    while (count < 100) {
-      this.getCurrentDisplay(this.model.getCurrentShapes(count));
-    }
+//    while (count < 100) {
+//      this.getCurrentDisplay(this.model.getCurrentShapes(count));
+//      count++;
+//    }
+    this.getCurrentDisplay(this.model.getCurrentShapes(count));
   }
 
   // Set buttons to their respective methods (actions)
