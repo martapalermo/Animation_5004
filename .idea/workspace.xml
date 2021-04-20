@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="cleaned up GraphicsPanel print statement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/demoOut1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/demoOut1.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,17 +131,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>

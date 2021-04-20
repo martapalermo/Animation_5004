@@ -138,9 +138,4 @@ public class GraphicsView extends JFrame implements VisualView {
       }
     }
   }
-
-  @Override
-  public void setListeners(Controller controller) {
-
-  }
 }

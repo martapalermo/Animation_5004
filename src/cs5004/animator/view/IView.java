@@ -15,6 +15,4 @@ public interface IView {
    * Helper method facilitating start of animation.
    */
   void runView();
-
-  void setListeners(Controller controller);
 }

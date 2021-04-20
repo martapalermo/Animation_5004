@@ -28,9 +28,4 @@ public class TextView extends WrittenView {
   public void runView() {
     this.writeToFile(this.model.getAnimation());
   }
-
-  @Override
-  public void setListeners(Controller controller) {
-
-  }
 }

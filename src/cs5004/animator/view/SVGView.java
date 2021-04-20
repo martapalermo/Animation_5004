@@ -195,11 +195,4 @@ public class SVGView extends WrittenView {
   public void runView() {
     this.writeToFile(this.createFullSVG());
   }
-
-  @Override
-  public void setListeners(Controller controller) {
-
-  }
-
-
 }

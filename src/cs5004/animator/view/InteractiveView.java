@@ -2,9 +2,11 @@ package cs5004.animator.view;
 
 import java.awt.event.ActionListener;
 
+import cs5004.animator.controller.Controller;
+
 public interface InteractiveView extends VisualView {
 
-  // void makeVisible();
+  void setListeners(ActionListener actionListener);
 
   void start();
 
