@@ -97,6 +97,14 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
     getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
     getContentPane().add(verticalBar, BorderLayout.LINE_END);
 
+    getContentPane().add(start, BorderLayout.SOUTH);
+    getContentPane().add(pause, BorderLayout.SOUTH);
+    getContentPane().add(resume, BorderLayout.SOUTH);
+    getContentPane().add(restart, BorderLayout.SOUTH);
+    getContentPane().add(loop, BorderLayout.SOUTH);
+    getContentPane().add(speedUp, BorderLayout.SOUTH);
+    getContentPane().add(speedDown, BorderLayout.SOUTH);
+
     getContentPane().add(this.panel, BorderLayout.CENTER);
     this.setVisible(true);
     setResizable(true);
