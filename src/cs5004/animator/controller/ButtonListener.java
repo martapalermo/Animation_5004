@@ -17,6 +17,8 @@ public class ButtonListener implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-
+    if (this.buttonClickedActions.containsKey(e.getActionCommand())) {
+      this.buttonClickedActions.get(e.getActionCommand()).run();
+    }
   }
 }

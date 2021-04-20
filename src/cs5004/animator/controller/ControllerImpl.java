@@ -25,11 +25,4 @@ public class ControllerImpl implements Controller {
   public void startController() {
     this.view.runView();
   }
-
-  private void configureButtonListener() {
-    Map<String, Runnable> buttonClickedMap = new HashMap<>();
-    ButtonListener buttonListener = new ButtonListener();
-
-    //buttonClickedMap.put()
-  }
 }

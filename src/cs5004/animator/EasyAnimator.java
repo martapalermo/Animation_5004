@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import cs5004.animator.controller.Controller;
 import cs5004.animator.controller.ControllerImpl;
+import cs5004.animator.controller.InteractiveControllerImpl;
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
@@ -144,30 +145,32 @@ public final class EasyAnimator {
     }
   }
 
+  // TODO: 4/20/21 Is this the best way to make 2 different controllers?
+
   /**
-   * Create a new view to display the animation.
+   * Create a new controller based on the view type.
    * @param input input commands, String array
    * @param model model populated with data, Animator
    * @param writer writer for views that need it
-   * @return view, IView
+   * @return controller, Controller
    * @throws IllegalArgumentException if the view type is invalid
    */
-  public static IView factoryOfViews(String[] input, Animator model, Appendable writer)
+  public static Controller factoryOfViews(String[] input, Animator model, Appendable writer)
           throws IllegalArgumentException {
     if (input[1].equalsIgnoreCase("visual")) {
-      return new GraphicsView(model, Integer.parseInt(input[3]));
+      return new ControllerImpl(model, new GraphicsView(model, Integer.parseInt(input[3])));
     }
 
     else if (input[1].equalsIgnoreCase("text")) {
-      return new TextView(model, writer);
+      return new ControllerImpl(model, new TextView(model, writer));
     }
 
     else if (input[1].equalsIgnoreCase("svg")) {
-      return new SVGView(model, writer, Integer.parseInt(input[3]));
+      return new ControllerImpl(model, new SVGView(model, writer, Integer.parseInt(input[3])));
     }
 
     else if (input[1].equalsIgnoreCase("playback")) {
-      return new InteractiveViewImpl(model, Integer.parseInt(input[3]));
+      return new InteractiveControllerImpl(model, new InteractiveViewImpl(model, Integer.parseInt(input[3])), Integer.parseInt(input[3]));
     }
 
     else {
@@ -195,8 +198,7 @@ public final class EasyAnimator {
     Writer writer = getWriter(input[2]);
     Animator model = AnimationReader.parseFile(inFile, new AnimatorModel.AnimationBuilderImpl());
 
-    IView view = factoryOfViews(input, model, writer);
-    Controller controller = new ControllerImpl(model, view);
+    Controller controller = factoryOfViews(input, model, writer);
     controller.startController();
 
     try {

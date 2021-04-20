@@ -13,10 +13,10 @@ import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-public class InteractiveViewImpl extends JFrame implements InteractiveView, ActionListener {
+public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
-  private final int timeConverter;
+  private int speed;
 
   JFrame frame = new JFrame();
   JButton start = new JButton("Start");
@@ -37,8 +37,9 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
     }
 
     this.model = model;
-    this.timeConverter = 100 / speed;
     int [] canvas = this.model.getCanvas();
+
+    this.speed = 100 / speed;
 
     this.panel = new GraphicsPanel(); // panel with scroll panes!
 
@@ -55,7 +56,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
 
     BorderLayout bl = new BorderLayout(0,0);
     setLayout(bl);
-    this.panel.setVisible(true);
+    //this.panel.setVisible(true);
     this.add(this.panel);
 
     /**
@@ -93,60 +94,60 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
     horizontalBar.addAdjustmentListener(new ALHorizontal());
     verticalBar.addAdjustmentListener(new ALVertical());
 
+    JPanel buttonPanel = new JPanel();
+    this.start.setBounds(10, 24, 40, 35);
+    this.start.setFocusable(true);
+    this.start.setActionCommand("Start Button");
+
+    this.pause.setBounds(50, 24, 50, 35);
+    this.pause.setFocusable(true);
+    this.pause.setActionCommand("Pause Button");
+
+    this.resume.setBounds(100, 24, 60, 35);
+    this.resume.setFocusable(true);
+    this.resume.setActionCommand("Resume Button");
+
+    this.restart.setBounds(160, 24, 60, 35);
+    this.restart.setFocusable(true);
+    this.restart.setActionCommand("Restart Button");
+
+    this.loop.setBounds(220, 24, 40, 35);
+    this.loop.setFocusable(true);
+    this.loop.setActionCommand("Loop Button");
+
+    this.speedUp.setBounds(260, 10, 65, 35);
+    this.speedUp.setFocusable(true);
+    this.speedUp.setActionCommand("Speed Up");
+
+    this.speedDown.setBounds(260, 45, 65, 35);
+    this.speedDown.setFocusable(true);
+    this.speedDown.setActionCommand("Slow Down");
+
+//    frame.add(start);
+//    frame.add(pause);
+//    frame.add(resume);
+//    frame.add(restart);
+//    frame.add(loop);
+//    frame.add(speedUp);
+//    frame.add(speedDown);
+
     setLayout(new BorderLayout());
     getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
     getContentPane().add(verticalBar, BorderLayout.LINE_END);
 
-    getContentPane().add(start, BorderLayout.SOUTH);
-    getContentPane().add(pause, BorderLayout.SOUTH);
-    getContentPane().add(resume, BorderLayout.SOUTH);
-    getContentPane().add(restart, BorderLayout.SOUTH);
-    getContentPane().add(loop, BorderLayout.SOUTH);
-    getContentPane().add(speedUp, BorderLayout.SOUTH);
-    getContentPane().add(speedDown, BorderLayout.SOUTH);
+    buttonPanel.add(start, BorderLayout.SOUTH);
+    buttonPanel.add(pause, BorderLayout.SOUTH);
+    buttonPanel.add(resume, BorderLayout.SOUTH);
+    buttonPanel.add(restart, BorderLayout.SOUTH);
+    buttonPanel.add(loop, BorderLayout.SOUTH);
+    buttonPanel.add(speedUp, BorderLayout.SOUTH);
+    buttonPanel.add(speedDown, BorderLayout.SOUTH);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
+    //getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+    this.panel.add(buttonPanel);
     this.setVisible(true);
     setResizable(true);
-
-
-    this.start.setBounds(10, 24, 40, 35);
-    this.start.setFocusable(true);
-    this.start.addActionListener(this);
-
-    this.pause.setBounds(50, 24, 50, 35);
-    this.pause.setFocusable(true);
-    this.pause.addActionListener(this);
-
-    this.resume.setBounds(100, 24, 60, 35);
-    this.resume.setFocusable(true);
-    this.resume.addActionListener(this);
-
-    this.restart.setBounds(160, 24, 60, 35);
-    this.restart.setFocusable(true);
-    this.restart.addActionListener(this);
-
-    this.loop.setBounds(220, 24, 40, 35);
-    this.loop.setFocusable(true);
-    this.loop.addActionListener(this);
-
-    this.speedUp.setBounds(260, 10, 65, 35);
-    this.speedUp.setFocusable(true);
-    this.speedUp.addActionListener(this);
-
-    this.speedDown.setBounds(260, 45, 65, 35);
-    this.speedDown.setFocusable(true);
-    this.speedDown.addActionListener(this);
-
-    frame.add(start);
-    frame.add(pause);
-    frame.add(resume);
-    frame.add(restart);
-    frame.add(loop);
-    frame.add(speedUp);
-    frame.add(speedDown);
-
-    frame.add(panel);
   }
 
   @Override
@@ -156,7 +157,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
       count++;
       getCurrentDisplay(model.getCurrentShapes(count));
       try {
-        Thread.sleep(timeConverter);
+        Thread.sleep(this.speed);
       } catch (Exception e) {
         throw new IllegalStateException("Issue with speed/timing.");
       }
@@ -170,78 +171,11 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
 
   // Set buttons to their respective methods (actions)
   @Override
-  public void setListeners(Controller controller) {
+  public void setListeners(ActionListener actionListener) {
   }
 
   @Override
-  public void start() {
-
+  public void setSpeed(int speed) {
+    this.speed = speed;
   }
-
-  @Override
-  public void pause() {
-
-  }
-
-  @Override
-  public void resume() {
-
-  }
-
-  @Override
-  public void restart() {
-
-  }
-
-  @Override
-  public void loop() {
-
-  }
-
-  @Override
-  public void speedUp() {
-
-  }
-
-  @Override
-  public void slowDown() {
-
-  }
-
-  @Override
-  public void refresh() {
-
-  }
-
-  /**
-   * Invoked when an action occurs.
-   *
-   * @param e the event to be processed
-   */
-  @Override
-  public void actionPerformed(ActionEvent e) {
-    if (e.getSource() == start) {
-      // enter action for start
-      // could just runView here? or prompt the start of the animation
-    }
-    else if (e.getSource() == pause) {
-      // enter action for pause
-    }
-    else if (e.getSource() == resume) {
-      // enter action for resume
-    }
-    else if (e.getSource() == restart) {
-      // enter action for restart
-    }
-    else if (e.getSource() == loop) {
-      // enter action for loop
-    }
-    else if (e.getSource() == speedUp) {
-      // enter action for speed up
-    }
-    else if (e.getSource() == speedDown) {
-      // enter action for speed down
-    }
-  }
-
 }
