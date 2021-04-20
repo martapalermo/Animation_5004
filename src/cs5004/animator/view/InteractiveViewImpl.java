@@ -10,7 +10,7 @@ import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-public class InteractiveViewImpl extends JFrame implements InteractiveView, ItemListener {
+public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
   private int speed;
@@ -96,7 +96,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Item
     //checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.PAGE_AXIS));
     JCheckBox loop = new JCheckBox("loop");
     loop.setSelected(false);
-    loop.addItemListener(this);
+    loop.setActionCommand("Loop Checkbox");
     checkBoxPanel.add(loop);
 
 
@@ -185,17 +185,5 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Item
   @Override
   public void setSpeed(int speed) {
     this.speed = speed;
-  }
-
-  /**
-   * Invoked when an item has been selected or deselected by the user.
-   * The code written for this method performs the operations
-   * that need to occur when an item is selected (or deselected).
-   *
-   * @param e the event to be processed
-   */
-  @Override
-  public void itemStateChanged(ItemEvent e) {
-
   }
 }
