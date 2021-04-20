@@ -1,10 +1,7 @@
 package cs5004.animator.view;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.AdjustmentEvent;
-import java.awt.event.AdjustmentListener;
+import java.awt.event.*;
 import java.util.List;
 
 import javax.swing.*;
@@ -94,6 +91,15 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     horizontalBar.addAdjustmentListener(new ALHorizontal());
     verticalBar.addAdjustmentListener(new ALVertical());
 
+    JPanel checkBoxPanel = new JPanel();
+    //checkBoxPanel.setBorder(BorderFactory.createTitledBorder("Loop"));
+    //checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.PAGE_AXIS));
+    JCheckBox loop = new JCheckBox("loop");
+    loop.setSelected(false);
+    loop.setActionCommand("Loop Checkbox");
+    checkBoxPanel.add(loop);
+
+
     JPanel buttonPanel = new JPanel();
     this.start.setBounds(10, 24, 40, 35);
     this.start.setFocusable(true);
@@ -139,13 +145,15 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     buttonPanel.add(pause, BorderLayout.SOUTH);
     buttonPanel.add(resume, BorderLayout.SOUTH);
     buttonPanel.add(restart, BorderLayout.SOUTH);
-    buttonPanel.add(loop, BorderLayout.SOUTH);
+    checkBoxPanel.add(loop, BorderLayout.SOUTH);
+
     buttonPanel.add(speedUp, BorderLayout.SOUTH);
     buttonPanel.add(speedDown, BorderLayout.SOUTH);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
     //getContentPane().add(buttonPanel, BorderLayout.SOUTH);
     this.panel.add(buttonPanel);
+    this.panel.add(checkBoxPanel);
     this.setVisible(true);
     setResizable(true);
   }
