@@ -153,14 +153,14 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   @Override
   public void runView() {
     int count = 0;
-    while (count < 1000000) {
+    while (count < 100) {
       count++;
       getCurrentDisplay(model.getCurrentShapes(count));
-      try {
-        Thread.sleep(this.speed);
-      } catch (Exception e) {
-        throw new IllegalStateException("Issue with speed/timing.");
-      }
+//      try {
+//        Thread.sleep(this.speed);
+//      } catch (Exception e) {
+//        throw new IllegalStateException("Issue with speed/timing.");
+//      }
     }
   }
 
@@ -169,9 +169,23 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.panel.updateModel(shapesList);
   }
 
+  public void run(int count) {
+    System.out.println(count);
+    while (count < 100) {
+      this.getCurrentDisplay(this.model.getCurrentShapes(count));
+    }
+  }
+
   // Set buttons to their respective methods (actions)
   @Override
   public void setListeners(ActionListener actionListener) {
+    this.start.addActionListener(actionListener);
+    this.pause.addActionListener(actionListener);
+    this.resume.addActionListener(actionListener);
+    this.restart.addActionListener(actionListener);
+    this.loop.addActionListener(actionListener);
+    this.speedUp.addActionListener(actionListener);
+    this.speedDown.addActionListener(actionListener);
   }
 
   @Override

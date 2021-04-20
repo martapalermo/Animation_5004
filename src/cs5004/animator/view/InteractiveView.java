@@ -7,4 +7,6 @@ public interface InteractiveView extends VisualView {
   void setListeners(ActionListener actionListener);
 
   void setSpeed(int speed);
+
+  void run(int count);
 }
