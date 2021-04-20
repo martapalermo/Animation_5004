@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.swing.*;
 
+import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
@@ -161,8 +162,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView, Acti
 
   // Set buttons to their respective methods (actions)
   @Override
-  public void setListeners(ActionListener actionEvent) {
-
+  public void setListeners(Controller controller) {
   }
 
   @Override

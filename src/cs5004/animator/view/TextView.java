@@ -1,5 +1,10 @@
 package cs5004.animator.view;
 
+import java.awt.event.ActionListener;
+
+import javax.naming.OperationNotSupportedException;
+
+import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 
 /**
@@ -22,5 +27,10 @@ public class TextView extends WrittenView {
   @Override
   public void runView() {
     this.writeToFile(this.model.getAnimation());
+  }
+
+  @Override
+  public void setListeners(Controller controller) {
+
   }
 }

@@ -1,10 +1,14 @@
 package cs5004.animator.view;
 
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.OperationNotSupportedException;
+
+import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.Event;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
@@ -191,4 +195,11 @@ public class SVGView extends WrittenView {
   public void runView() {
     this.writeToFile(this.createFullSVG());
   }
+
+  @Override
+  public void setListeners(Controller controller) {
+
+  }
+
+
 }

@@ -17,6 +17,8 @@ import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.GraphicsView;
 import cs5004.animator.view.IView;
+import cs5004.animator.view.InteractiveView;
+import cs5004.animator.view.InteractiveViewImpl;
 import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
 
@@ -60,7 +62,8 @@ public final class EasyAnimator {
         } else if (token.equalsIgnoreCase("-view")) {
           if (!command.equalsIgnoreCase("text")
                   && !command.equalsIgnoreCase("visual")
-                  && !command.equalsIgnoreCase("svg")) {
+                  && !command.equalsIgnoreCase("svg")
+                  && !command.equalsIgnoreCase("playback")) {
             JOptionPane.showMessageDialog(null, "Invalid view type.",
                     "Error", JOptionPane.ERROR_MESSAGE);
             System.exit(1);
@@ -161,6 +164,10 @@ public final class EasyAnimator {
 
     else if (input[1].equalsIgnoreCase("svg")) {
       return new SVGView(model, writer, Integer.parseInt(input[3]));
+    }
+
+    else if (input[1].equalsIgnoreCase("playback")) {
+      return new InteractiveViewImpl(model, Integer.parseInt(input[3]));
     }
 
     else {

@@ -6,8 +6,6 @@ public interface InteractiveView extends VisualView {
 
   // void makeVisible();
 
-  void setListeners(ActionListener actionEvent);
-
   void start();
 
   void pause();
