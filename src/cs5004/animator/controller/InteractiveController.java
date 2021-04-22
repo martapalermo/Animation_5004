@@ -12,4 +12,6 @@ public interface InteractiveController extends Controller {
   public void speedUp();
 
   public void slowDown();
+
+  public StringBuilder getLog();
 }
