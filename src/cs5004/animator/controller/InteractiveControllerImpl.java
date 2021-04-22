@@ -18,12 +18,16 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
   private int tick;
   private ButtonListener buttonListener;
   private boolean looping;
+  private StringBuilder log;
   //private ActionListener timeListener();
   private final static int TIME_CONVERTER = 100;
 
-  public InteractiveControllerImpl(Animator model, InteractiveView view, int speed) {
+  public InteractiveControllerImpl(Animator model, InteractiveView view,
+                                   int speed) {
     this.model = model;
     this.view = view;
+    this.log = new StringBuilder();
+
 
     if (speed < 1) {
       throw new IllegalArgumentException("Speed cannot be less than 1.");
@@ -72,21 +76,25 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
   @Override
   public void start() {
     this.timer.start();
+    this.log = new StringBuilder("Clicked start button.");
   }
 
   @Override
   public void stop() {
     this.timer.stop();
+    this.log = new StringBuilder("Clicked stop button.");
   }
 
   @Override
   public void restart() {
     this.tick = 0;
+    this.log = new StringBuilder("Clicked restart button.");
   }
 
   @Override
   public void loop() {
     this.looping = !this.looping;
+    this.log = new StringBuilder("Clicked loop checkbox.");
   }
 
   @Override
@@ -94,6 +102,7 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     this.speed++;
     this.timer.setDelay(TIME_CONVERTER / this.speed);
     this.view.setSpeed(this.speed);
+    this.log = new StringBuilder("Clicked speed-up button.");
   }
 
   @Override
@@ -102,6 +111,12 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
       this.speed--;
       this.timer.setDelay(TIME_CONVERTER / this.speed);
       this.view.setSpeed(this.speed);
+      this.log = new StringBuilder("Clicked speed-down button.");
     }
+  }
+
+  @Override
+  public StringBuilder getLog() {
+    return this.log;
   }
 }

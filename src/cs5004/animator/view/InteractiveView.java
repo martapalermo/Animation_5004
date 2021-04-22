@@ -13,6 +13,4 @@ public interface InteractiveView extends VisualView {
   void run(int count);
 
   int getEndTime();
-
-  StringBuilder getLog();
 }

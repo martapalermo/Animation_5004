@@ -19,7 +19,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private int speed;
   private ButtonListener buttonListener;
   private int endTime;
-  private StringBuilder log;
 
   JFrame frame = new JFrame();
   JButton start = new JButton("Start");
@@ -234,11 +233,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   @Override
   public int getEndTime() {
     return this.endTime;
-  }
-
-  @Override
-  public StringBuilder getLog() {
-    return this.log;
   }
 
   private void setEndTime() {
