@@ -2,11 +2,14 @@ package cs5004.animator.view;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.swing.*;
 
-import cs5004.animator.controller.Controller;
+import cs5004.animator.controller.ButtonListener;
+import cs5004.animator.controller.InteractiveController;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
@@ -14,6 +17,8 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
   private int speed;
+  private ButtonListener buttonListener;
+  private int endTime;
 
   JFrame frame = new JFrame();
   JButton start = new JButton("Start");
@@ -24,7 +29,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   JButton speedUp = new JButton("Speed +");
   JButton speedDown = new JButton("Speed -");
 
-  public InteractiveViewImpl(ReadonlyAnimator model, int speed) {
+  public InteractiveViewImpl(ReadonlyAnimator model) {
     if (model == null) {
       throw new IllegalArgumentException("Model cannot be null.");
     }
@@ -36,9 +41,12 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.model = model;
     int [] canvas = this.model.getCanvas();
 
-    this.speed = 100 / speed;
+    this.speed = 0;
 
     this.panel = new GraphicsPanel(); // panel with scroll panes!
+    this.buttonListener = new ButtonListener();
+    this.endTime = 0;
+    this.setEndTime();
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(canvas[0], canvas[1]);
@@ -91,13 +99,14 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     horizontalBar.addAdjustmentListener(new ALHorizontal());
     verticalBar.addAdjustmentListener(new ALVertical());
 
-    JPanel checkBoxPanel = new JPanel();
+    //JPanel checkBoxPanel = new JPanel();
     //checkBoxPanel.setBorder(BorderFactory.createTitledBorder("Loop"));
     //checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.PAGE_AXIS));
     //JCheckBox loop = new JCheckBox("loop");
     this.loop.setSelected(false);
+    this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Checkbox");
-    checkBoxPanel.add(loop);
+    //checkBoxPanel.add(loop);
 
 
     JPanel buttonPanel = new JPanel();
@@ -145,15 +154,14 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     buttonPanel.add(pause, BorderLayout.SOUTH);
     buttonPanel.add(resume, BorderLayout.SOUTH);
     buttonPanel.add(restart, BorderLayout.SOUTH);
-    checkBoxPanel.add(loop, BorderLayout.SOUTH);
-
     buttonPanel.add(speedUp, BorderLayout.SOUTH);
     buttonPanel.add(speedDown, BorderLayout.SOUTH);
+    buttonPanel.add(loop, BorderLayout.SOUTH);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
     //getContentPane().add(buttonPanel, BorderLayout.SOUTH);
     this.panel.add(buttonPanel);
-    this.panel.add(checkBoxPanel);
+    //this.panel.add(checkBoxPanel);
     this.setVisible(true);
     setResizable(true);
   }
@@ -188,18 +196,50 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
   // Set buttons to their respective methods (actions)
   @Override
-  public void setListeners(ActionListener actionListener) {
-    this.start.addActionListener(actionListener);
-    this.pause.addActionListener(actionListener);
-    this.resume.addActionListener(actionListener);
-    this.restart.addActionListener(actionListener);
-    this.loop.addActionListener(actionListener);
-    this.speedUp.addActionListener(actionListener);
-    this.speedDown.addActionListener(actionListener);
+  public void setListeners(InteractiveController controller) {
+    Map<String, Runnable> buttonClickedMap = new HashMap<>();
+
+    // Test what happens if these buttons are pressed more than once in a row
+    this.start.addActionListener(c -> controller.start());
+    buttonClickedMap.put("Start Button", controller::start);
+
+    this.pause.addActionListener(c -> controller.stop());
+    buttonClickedMap.put("Pause Button", controller::stop);
+
+    this.resume.addActionListener(c -> controller.start());
+    buttonClickedMap.put("Resume Button", controller::start);
+
+    this.restart.addActionListener(c -> controller.restart());
+    buttonClickedMap.put("Restart Button", controller::restart);
+
+    // Should default be looping or not?
+    this.loop.addActionListener(c -> controller.loop());
+    buttonClickedMap.put("Loop Button", controller::loop);
+
+    this.speedUp.addActionListener(c -> controller.speedUp());
+    buttonClickedMap.put("Speed Up", controller::speedUp);
+
+    this.speedDown.addActionListener(c -> controller.slowDown());
+    buttonClickedMap.put("Slow Down", controller::slowDown);
+
+    this.buttonListener.setButtonClickedActionMap(buttonClickedMap);
   }
 
   @Override
   public void setSpeed(int speed) {
     this.speed = speed;
+  }
+
+  @Override
+  public int getEndTime() {
+    return this.endTime;
+  }
+
+  private void setEndTime() {
+    for (Shape shape : model.copyShapesList()) {
+      if (shape.getDisappearTime() > this.endTime) {
+        this.endTime = shape.getDisappearTime();
+      }
+    }
   }
 }

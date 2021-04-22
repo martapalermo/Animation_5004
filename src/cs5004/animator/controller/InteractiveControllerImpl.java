@@ -10,7 +10,7 @@ import javax.swing.Timer;
 import cs5004.animator.model.animation.Animator;
 import cs5004.animator.view.InteractiveView;
 
-public class InteractiveControllerImpl implements Controller, ActionListener {
+public class InteractiveControllerImpl implements InteractiveController, ActionListener {
   private Animator model;
   private InteractiveView view;
   private int speed;
@@ -29,7 +29,7 @@ public class InteractiveControllerImpl implements Controller, ActionListener {
       throw new IllegalArgumentException("Speed cannot be less than 1.");
     }
     this.speed = speed;
-    //this.view.setSpeed(this.speed);
+    this.view.setSpeed(this.speed);
 
     this.buttonListener = new ButtonListener();
     this.tick = 0;
@@ -54,62 +54,54 @@ public class InteractiveControllerImpl implements Controller, ActionListener {
 ////      }
 //    }
 
-    Map<String, Runnable> buttonClickedMap = new HashMap<>();
-
-    // Test what happens if these buttons are pressed more than once in a row
-//    buttonClickedMap.put("Start Button", () -> {while (this.tick < 100) {
-//                                                this.view.run(this.tick++);}});
-    buttonClickedMap.put("Start Button", () -> this.timer.start());
-    buttonClickedMap.put("Pause Button", () -> this.timer.stop());
-    buttonClickedMap.put("Resume Button", () -> this.timer.start());
-    buttonClickedMap.put("Restart Button", () -> this.tick = 0);
-
-    // Should default be looping or not?
-    buttonClickedMap.put("Loop Button", () -> this.looping = !this.looping);
-    buttonClickedMap.put("Speed Up", () -> {this.speed++;
-      this.timer.setDelay(TIME_CONVERTER / this.speed);
-      this.view.setSpeed(this.speed);});
-    buttonClickedMap.put("Slow Down", () -> {this.speed--;
-      this.timer.setDelay(TIME_CONVERTER / this.speed);
-      this.view.setSpeed(this.speed);});
-
-    this.buttonListener.setButtonClickedActionMap(buttonClickedMap);
-    this.view.setListeners(buttonListener);
-  }
-
-  private void displayView() {
-//    if (!this.timer.isRunning()) {
-//      this.timer.start();
-//    }
-
-    //System.out.println(this.tick);
-//    this.tick++;
-//    this.view.getCurrentDisplay(model.getCurrentShapes(this.tick));
-
-    //System.out.println(this.tick);
-//    while (this.tick < 100) {
-//      this.view.getCurrentDisplay(model.getCurrentShapes(this.tick));
-//      try {
-//        Thread.sleep(this.timer.getDelay());
-//      } catch (Exception e) {
-//        throw new IllegalStateException("Issue with speed/timing.");
-//      }
-//    }
-    while (this.tick < 100) {
-      this.view.run(this.tick);
-      this.tick++;
-    }
+    this.view.setListeners(this);
   }
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    if (this.tick < 101) {
+    if (this.tick < this.view.getEndTime()) {
       this.view.run(this.tick);
       this.tick++;
+    }
 
-      if (this.tick == 100 && this.looping) {
-        this.tick = 0;
-      }
+    else if (this.tick == this.view.getEndTime()  && this.looping) {
+      this.tick = 0;
+    }
+  }
+
+  @Override
+  public void start() {
+    this.timer.start();
+  }
+
+  @Override
+  public void stop() {
+    this.timer.stop();
+  }
+
+  @Override
+  public void restart() {
+    this.tick = 0;
+  }
+
+  @Override
+  public void loop() {
+    this.looping = !this.looping;
+  }
+
+  @Override
+  public void speedUp() {
+    this.speed++;
+    this.timer.setDelay(TIME_CONVERTER / this.speed);
+    this.view.setSpeed(this.speed);
+  }
+
+  @Override
+  public void slowDown() {
+    if (this.speed > 1) {
+      this.speed--;
+      this.timer.setDelay(TIME_CONVERTER / this.speed);
+      this.view.setSpeed(this.speed);
     }
   }
 }

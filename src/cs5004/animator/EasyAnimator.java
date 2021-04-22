@@ -170,8 +170,7 @@ public final class EasyAnimator {
     }
 
     else if (input[1].equalsIgnoreCase("playback")) {
-      return new InteractiveControllerImpl(model, new InteractiveViewImpl(model,
-          Integer.parseInt(input[3])), Integer.parseInt(input[3]));
+      return new InteractiveControllerImpl(model, new InteractiveViewImpl(model), Integer.parseInt(input[3]));
     }
 
     else {
