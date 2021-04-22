@@ -21,11 +21,13 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private int endTime;
 
   JFrame frame = new JFrame();
+
   JButton start = new JButton("Start");
   JButton pause = new JButton("Pause");
   JButton resume = new JButton("Resume");
   JButton restart = new JButton("Restart");
   JCheckBox loop = new JCheckBox("loop");
+  JTextArea textSp = new JTextArea(); // inside textArea -
   JButton speedUp = new JButton("Speed +");
   JButton speedDown = new JButton("Speed -");
 
@@ -110,33 +112,36 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
 
     JPanel buttonPanel = new JPanel();
-    this.start.setBounds(10, 24, 40, 35);
+
+   // this.start.setBounds(10, 24, 40, 35);
     this.start.setFocusable(true);
     this.start.setActionCommand("Start Button");
 
-    this.pause.setBounds(50, 24, 50, 35);
+   // this.pause.setBounds(50, 24, 50, 35);
     this.pause.setFocusable(true);
     this.pause.setActionCommand("Pause Button");
 
-    this.resume.setBounds(100, 24, 60, 35);
+    //this.resume.setBounds(100, 24, 60, 35);
     this.resume.setFocusable(true);
     this.resume.setActionCommand("Resume Button");
 
-    this.restart.setBounds(160, 24, 60, 35);
+    //this.restart.setBounds(160, 24, 60, 35);
     this.restart.setFocusable(true);
     this.restart.setActionCommand("Restart Button");
 
-    this.loop.setBounds(220, 24, 40, 35);
+    //this.loop.setBounds(220, 24, 40, 35);
     this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Button");
 
-    this.speedUp.setBounds(260, 10, 65, 35);
+    //this.speedUp.setBounds(260, 10, 65, 35);
     this.speedUp.setFocusable(true);
     this.speedUp.setActionCommand("Speed Up");
 
-    this.speedDown.setBounds(260, 45, 65, 35);
+    //this.speedDown.setBounds(260, 45, 65, 35);
     this.speedDown.setFocusable(true);
     this.speedDown.setActionCommand("Slow Down");
+
+    this.textSp.setText("speed here");
 
 //    frame.add(start);
 //    frame.add(pause);
@@ -150,16 +155,18 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
     getContentPane().add(verticalBar, BorderLayout.LINE_END);
 
+
     buttonPanel.add(start, BorderLayout.SOUTH);
     buttonPanel.add(pause, BorderLayout.SOUTH);
     buttonPanel.add(resume, BorderLayout.SOUTH);
     buttonPanel.add(restart, BorderLayout.SOUTH);
     buttonPanel.add(speedUp, BorderLayout.SOUTH);
     buttonPanel.add(speedDown, BorderLayout.SOUTH);
+    buttonPanel.add(textSp, BorderLayout.SOUTH);
     buttonPanel.add(loop, BorderLayout.SOUTH);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
-    //getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+    //add(buttonPanel, BorderLayout.SOUTH);
     this.panel.add(buttonPanel);
     //this.panel.add(checkBoxPanel);
     this.setVisible(true);
@@ -186,7 +193,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   }
 
   public void run(int count) {
-    System.out.println(count);
+    //System.out.println(count);
 //    while (count < 100) {
 //      this.getCurrentDisplay(this.model.getCurrentShapes(count));
 //      count++;
@@ -229,6 +236,11 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   public void setSpeed(int speed) {
     this.speed = speed;
   }
+
+//
+//  public String getString(int i) {
+//    return Integer.toString(i);
+//  }
 
   @Override
   public int getEndTime() {

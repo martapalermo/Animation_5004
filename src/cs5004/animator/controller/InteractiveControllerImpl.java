@@ -111,7 +111,7 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
       this.speed--;
       this.timer.setDelay(TIME_CONVERTER / this.speed);
       this.view.setSpeed(this.speed);
-      this.log.append("Clicked speed-down button.");
+      this.log.append("Clicked slow-down button.");
     }
   }
 
