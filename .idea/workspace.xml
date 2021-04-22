@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="added controllerTest class and getLog method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveControllerImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,17 +126,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
