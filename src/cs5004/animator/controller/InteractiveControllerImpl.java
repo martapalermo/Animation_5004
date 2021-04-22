@@ -19,7 +19,7 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
   private ButtonListener buttonListener;
   private boolean looping;
   //private ActionListener timeListener();
-  private final static int TIME_CONVERTER = 100;
+  private final static int TIME_CONVERTER = 500;
 
   public InteractiveControllerImpl(Animator model, InteractiveView view, int speed) {
     this.model = model;

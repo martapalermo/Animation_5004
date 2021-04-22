@@ -41,7 +41,7 @@ public class SVGView extends WrittenView {
     if (speed < 1) {
       throw new IllegalArgumentException("Speed cannot be less than 1.");
     }
-    this.timeConverter = 100 / speed;
+    this.timeConverter = 500 / speed;
   }
 
   /**
