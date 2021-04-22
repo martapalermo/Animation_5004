@@ -76,25 +76,25 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
   @Override
   public void start() {
     this.timer.start();
-    this.log = new StringBuilder("Clicked start button.");
+    this.log.append("Clicked start button.");
   }
 
   @Override
   public void stop() {
     this.timer.stop();
-    this.log = new StringBuilder("Clicked stop button.");
+    this.log.append("Clicked stop button.");
   }
 
   @Override
   public void restart() {
     this.tick = 0;
-    this.log = new StringBuilder("Clicked restart button.");
+    this.log.append("Clicked restart button.");
   }
 
   @Override
   public void loop() {
     this.looping = !this.looping;
-    this.log = new StringBuilder("Clicked loop checkbox.");
+    this.log.append("Clicked loop checkbox.");
   }
 
   @Override
@@ -102,7 +102,7 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     this.speed++;
     this.timer.setDelay(TIME_CONVERTER / this.speed);
     this.view.setSpeed(this.speed);
-    this.log = new StringBuilder("Clicked speed-up button.");
+    this.log.append("Clicked speed-up button.");
   }
 
   @Override
@@ -111,7 +111,7 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
       this.speed--;
       this.timer.setDelay(TIME_CONVERTER / this.speed);
       this.view.setSpeed(this.speed);
-      this.log = new StringBuilder("Clicked speed-down button.");
+      this.log.append("Clicked speed-down button.");
     }
   }
 
