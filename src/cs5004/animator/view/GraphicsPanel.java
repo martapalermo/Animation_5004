@@ -15,7 +15,7 @@ import java.util.List;
 public class GraphicsPanel extends JPanel {
   private List<Shape> listOfShapes;
   private int offsetX = 0;
-  private int offsetY = 0;
+  private int offsetY = -50;
 
   /**
    * Graphics panel constructor, doesn't take any parameters, but initializes panel bounds,

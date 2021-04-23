@@ -17,8 +17,6 @@ import cs5004.animator.model.animation.Animator;
 import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.util.AnimationReader;
 import cs5004.animator.view.GraphicsView;
-import cs5004.animator.view.IView;
-import cs5004.animator.view.InteractiveView;
 import cs5004.animator.view.InteractiveViewImpl;
 import cs5004.animator.view.SVGView;
 import cs5004.animator.view.TextView;
@@ -145,8 +143,6 @@ public final class EasyAnimator {
     }
   }
 
-  // TODO: 4/20/21 Is this the best way to make 2 different controllers?
-
   /**
    * Create a new controller based on the view type.
    * @param input input commands, String array
@@ -170,7 +166,8 @@ public final class EasyAnimator {
     }
 
     else if (input[1].equalsIgnoreCase("playback")) {
-      return new InteractiveControllerImpl(model, new InteractiveViewImpl(model), Integer.parseInt(input[3]));
+      return new InteractiveControllerImpl(
+          new InteractiveViewImpl(model), Integer.parseInt(input[3]));
     }
 
     else {

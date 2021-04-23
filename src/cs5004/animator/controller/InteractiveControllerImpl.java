@@ -2,29 +2,33 @@ package cs5004.animator.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.swing.Timer;
 
-import cs5004.animator.model.animation.Animator;
 import cs5004.animator.view.InteractiveView;
 
+/**
+ * Interactive Controller implementing class, implements Interactive controller interface
+ * and ActionListener interface.
+ * This controller is specific to our visual/interactive graphic view.
+ */
 public class InteractiveControllerImpl implements InteractiveController, ActionListener {
-  private Animator model;
+
   private InteractiveView view;
   private int speed;
-  private Timer timer;
+  private final Timer timer;
   private int tick;
-  private ButtonListener buttonListener;
   private boolean looping;
-  private StringBuilder log;
-  //private ActionListener timeListener();
-  private final static int TIME_CONVERTER = 600;
+  private final StringBuilder log;
+  private static int TIME_CONVERTER = 600;
 
-  public InteractiveControllerImpl(Animator model, InteractiveView view,
+  /**
+   * Constructor for our interactive controller implementing class.
+   * @param view InteractiveView view, interface
+   * @param speed speed of animation, int
+   */
+  public InteractiveControllerImpl(InteractiveView view,
                                    int speed) {
-    this.model = model;
     this.view = view;
     this.log = new StringBuilder();
 
@@ -35,32 +39,25 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     this.speed = speed;
     this.view.setSpeed(this.speed);
 
-    this.buttonListener = new ButtonListener();
     this.tick = 0;
     this.timer = new Timer(TIME_CONVERTER / this.speed, this);
     this.looping = false;
-    }
-    //this.timer.start();
+  }
 
+  /**
+   * Helper method that sets the action listeners
+   * and starts the interactive controller.
+   */
   @Override
   public void startController() {
-//    int count = 0;
-//    //this.timer.start();
-//    //timer.setDelay(100000);
-//    while (this.timer.isRunning() && this.tick < 100) {
-//      System.out.println(this.tick);
-//      this.view.getCurrentDisplay(model.getCurrentShapes(this.tick));
-//      //count++;
-////      try {
-////        Thread.sleep(this.speed);
-////      } catch (Exception e) {
-////        throw new IllegalStateException("Issue with speed/timing.");
-////      }
-//    }
-
     this.view.setListeners(this);
   }
 
+  /**
+   * Invoked when an action occurs.
+   *
+   * @param e the event to be processed
+   */
   @Override
   public void actionPerformed(ActionEvent e) {
     if (this.tick < this.view.getEndTime()) {
@@ -73,30 +70,45 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     }
   }
 
+  /**
+   * Method that assigns the specific action for start button.
+   */
   @Override
   public void start() {
     this.timer.start();
     this.log.append("Clicked start button.\n");
   }
 
+  /**
+   * Method that assigns the specific action for stop/pause button.
+   */
   @Override
   public void stop() {
     this.timer.stop();
     this.log.append("Clicked stop button.\n");
   }
 
+  /**
+   * Method that assigns the specific action for restart/resume button.
+   */
   @Override
   public void restart() {
     this.tick = 0;
     this.log.append("Clicked restart button.\n");
   }
 
+  /**
+   * Method that assigns the specific action for loop checkbox.
+   */
   @Override
   public void loop() {
     this.looping = !this.looping;
     this.log.append("Clicked loop checkbox.\n");
   }
 
+  /**
+   * Method that assigns the specific action for speed up button.
+   */
   @Override
   public void speedUp() {
     this.speed++;
@@ -105,6 +117,9 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     this.log.append("Clicked speed-up button.\n");
   }
 
+  /**
+   * Method that assigns the specific action for slow down button.
+   */
   @Override
   public void slowDown() {
     if (this.speed > 1) {
@@ -115,8 +130,12 @@ public class InteractiveControllerImpl implements InteractiveController, ActionL
     }
   }
 
+  /**
+   * Getter method for the button logs.
+   * @return returns the button click logged activity, String
+   */
   @Override
-  public StringBuilder getLog() {
-    return this.log;
+  public String getLog() {
+    return this.log.toString();
   }
 }

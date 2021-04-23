@@ -1,5 +1,6 @@
 package cs5004.animator.view;
 
+
 import java.awt.BorderLayout;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
@@ -12,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JScrollBar;
-import javax.swing.JPanel;
 
 import cs5004.animator.controller.ButtonListener;
 import cs5004.animator.controller.InteractiveController;
@@ -32,8 +32,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private int speed;
   private ButtonListener buttonListener;
   private int endTime;
-
-  //JFrame frame = new JFrame();
 
   JButton start = new JButton("Start");
   JButton pause = new JButton("Pause");
@@ -67,10 +65,11 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.endTime = 0;
     this.setEndTime();
 
+
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(canvas[0], canvas[1]);
     setSize(canvas[2] + 100, canvas[3] + 150);
-    setLayout(null);
+    this.setLayout(new BorderLayout(0,0));
     setVisible(true);
 
     JScrollBar horizontalBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 100,
@@ -79,9 +78,8 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
         -600,600);
 
     BorderLayout bl = new BorderLayout(0,0);
-    setLayout(bl);
-    //this.panel.setVisible(true);
-    //this.add(this.panel);
+    setLayout(bl);// for scroll bars
+    this.add(this.panel);
 
     /**
      * Adjustment Listener class for the horizontal scroll bar.
@@ -118,85 +116,51 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     horizontalBar.addAdjustmentListener(new ALHorizontal());
     verticalBar.addAdjustmentListener(new ALVertical());
 
-    //JPanel checkBoxPanel = new JPanel();
-    //checkBoxPanel.setBorder(BorderFactory.createTitledBorder("Loop"));
-    //checkBoxPanel.setLayout(new BoxLayout(checkBoxPanel, BoxLayout.PAGE_AXIS));
-    //JCheckBox loop = new JCheckBox("loop");
+
     this.loop.setSelected(false);
     this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Checkbox");
 
+    GraphicsPanel buttonPanel = new GraphicsPanel();
 
-
-    JPanel buttonPanel = new JPanel();
-    //buttonPanel.setSize(100, 50);
-
-    //this.start.setLocation(canvas[0], canvas[1]);
     this.start.setFocusable(true);
     this.start.setActionCommand("Start Button");
 
-   // this.pause.setBounds(50, 24, 50, 35);
     this.pause.setFocusable(true);
     this.pause.setActionCommand("Pause Button");
 
-    //this.resume.setBounds(100, 24, 60, 35);
     this.resume.setFocusable(true);
     this.resume.setActionCommand("Resume Button");
 
-    //this.restart.setBounds(160, 24, 60, 35);
     this.restart.setFocusable(true);
     this.restart.setActionCommand("Restart Button");
 
-    //this.loop.setBounds(220, 24, 40, 35);
     this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Button");
 
-    //this.speedUp.setBounds(260, 10, 65, 35);
     this.speedUp.setFocusable(true);
     this.speedUp.setActionCommand("Speed Up");
 
-    //this.speedDown.setBounds(260, 45, 65, 35);
     this.speedDown.setFocusable(true);
     this.speedDown.setActionCommand("Slow Down");
 
 
-
-//    frame.add(start);
-//    frame.add(pause);
-//    frame.add(resume);
-//    frame.add(restart);
-//    frame.add(loop);
-//    frame.add(speedUp);
-//    frame.add(speedDown);
-
-    //setLayout(new BorderLayout());
-    this.add(horizontalBar, BorderLayout.PAGE_END);
-    this.add(verticalBar, BorderLayout.LINE_END);
+    setLayout(new BorderLayout());
+    getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
+    getContentPane().add(verticalBar, BorderLayout.LINE_END);
+    getContentPane().add(buttonPanel);
 
 
+    buttonPanel.add(start);
+    buttonPanel.add(pause);
+    buttonPanel.add(resume);
+    buttonPanel.add(restart);
+    buttonPanel.add(speedUp);
+    buttonPanel.add(speedDown);
+    buttonPanel.add(loop);
 
-
-    buttonPanel.add(start, BorderLayout.SOUTH);
-    buttonPanel.add(pause, BorderLayout.SOUTH);
-    buttonPanel.add(resume, BorderLayout.SOUTH);
-    buttonPanel.add(restart, BorderLayout.SOUTH);
-    buttonPanel.add(speedUp, BorderLayout.SOUTH);
-    buttonPanel.add(speedDown, BorderLayout.SOUTH);
-    buttonPanel.add(loop, BorderLayout.SOUTH);
-    //buttonPanel.setLayout(new BorderLayout(buttonPanel, BorderLayout.SOUTH));
-//    buttonPanel.setLayout(new BorderLayout());
-//    getContentPane().add(buttonPanel, BorderLayout.SOUTH);
-    //getContentPane().add(this.panel, BorderLayout.CENTER);
-    //getContentPane().add(buttonPanel, BorderLayout.CENTER);
-    //this.panel.add(buttonPanel);
-    this.add(this.panel);
-    this.add(buttonPanel);
-
-
-    //getContentPane().add(buttonPanel, BorderLayout.LINE_END);
-    //add(buttonPanel, BorderLayout.SOUTH);
-    //getContentPane().add(buttonPanel, BorderLayout.PAGE_START);
-    //this.panel.add(checkBoxPanel);
+    getContentPane().add(this.panel, BorderLayout.CENTER);
+    this.panel.add(buttonPanel);
     this.setVisible(true);
     setResizable(true);
   }
@@ -210,11 +174,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     while (count < 100) {
       count++;
       getCurrentDisplay(model.getCurrentShapes(count));
-//      try {
-//        Thread.sleep(this.speed);
-//      } catch (Exception e) {
-//        throw new IllegalStateException("Issue with speed/timing.");
-//      }
     }
   }
 
@@ -234,11 +193,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
    * @param count int value
    */
   public void run(int count) {
-    //System.out.println(count);
-//    while (count < 100) {
-//      this.getCurrentDisplay(this.model.getCurrentShapes(count));
-//      count++;
-//    }
     this.getCurrentDisplay(this.model.getCurrentShapes(count));
   }
 
@@ -250,7 +204,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   public void setListeners(InteractiveController controller) {
     Map<String, Runnable> buttonClickedMap = new HashMap<>();
 
-    // Test what happens if these buttons are pressed more than once in a row
     this.start.addActionListener(c -> controller.start());
     buttonClickedMap.put("Start Button", controller::start);
 
