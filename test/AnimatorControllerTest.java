@@ -49,37 +49,49 @@ public class AnimatorControllerTest {
   @Test
   public void testGetLogStart() {
     this.controller.start();
-    assertEquals("Clicked start button.", controller.getLog().toString());
+    assertEquals("Clicked start button.\n", controller.getLog().toString());
   }
 
   @Test
   public void testGetLogStop() {
     this.controller.stop();
-    assertEquals("Clicked stop button.", controller.getLog().toString());
+    assertEquals("Clicked stop button.\n", controller.getLog().toString());
   }
 
   @Test
   public void testGetLogRestart() {
     this.controller.restart();
-    assertEquals("Clicked restart button.", controller.getLog().toString());
+    assertEquals("Clicked restart button.\n", controller.getLog().toString());
   }
 
   @Test
   public void testGetLogLoop() {
     this.controller.loop();
-    assertEquals("Clicked loop checkbox.", controller.getLog().toString());
+    assertEquals("Clicked loop checkbox.\n", controller.getLog().toString());
   }
 
   @Test
   public void testGetLogSpeedUp() {
     this.controller.speedUp();
-    assertEquals("Clicked speed-up button.", controller.getLog().toString());
+    assertEquals("Clicked speed-up button.\n", controller.getLog().toString());
   }
 
   @Test
   public void testGetLogSlowDown() {
     this.controller.slowDown();
-    assertEquals("Clicked slow-down button.", controller.getLog().toString());
+    assertEquals("Clicked slow-down button.\n", controller.getLog().toString());
+  }
+
+  @Test
+  public void testGetLogMultipleClicks() {
+    this.controller.loop();
+    this.controller.start();
+    this.controller.stop();
+    this.controller.restart();
+    this.controller.stop();
+    assertEquals("Clicked loop checkbox.\n"
+        + "Clicked start button.\n" + "Clicked stop button.\n" + "Clicked restart button.\n"
+        + "Clicked stop button.\n", controller.getLog().toString());
   }
 
   @Test

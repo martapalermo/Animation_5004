@@ -1,18 +1,31 @@
 package cs5004.animator.view;
 
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.BorderLayout;
+import java.awt.event.AdjustmentEvent;
+import java.awt.event.AdjustmentListener;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JScrollBar;
+import javax.swing.JPanel;
 
 import cs5004.animator.controller.ButtonListener;
 import cs5004.animator.controller.InteractiveController;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
+/**
+ * This is the InteractiveViewImpl view class, it extends JFrame and implements
+ * our InteractiveView interface.
+ * This interactiveView allows the controller to prompt the view to outputs
+ * a java swing window visual representation of the animation, with buttons that are linked
+ * to interactive controls the user can modify the animation with.
+ */
 public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private GraphicsPanel panel;
   private ReadonlyAnimator model;
@@ -20,17 +33,21 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private ButtonListener buttonListener;
   private int endTime;
 
-  JFrame frame = new JFrame();
+  //JFrame frame = new JFrame();
 
   JButton start = new JButton("Start");
   JButton pause = new JButton("Pause");
   JButton resume = new JButton("Resume");
   JButton restart = new JButton("Restart");
   JCheckBox loop = new JCheckBox("loop");
-  JTextArea textSp = new JTextArea(); // inside textArea -
   JButton speedUp = new JButton("Speed +");
   JButton speedDown = new JButton("Speed -");
 
+  /**
+   * InteractiveViewImpl constructor. Takes in a readonly animator model.
+   * @param model readonly animation model, ReadonlyAnimator interface
+   * @throws IllegalArgumentException if the model is null or empty.
+   */
   public InteractiveViewImpl(ReadonlyAnimator model) {
     if (model == null) {
       throw new IllegalArgumentException("Model cannot be null.");
@@ -52,7 +69,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(canvas[0], canvas[1]);
-    setSize(canvas[2], canvas[3]);
+    setSize(canvas[2] + 100, canvas[3] + 150);
     setLayout(null);
     setVisible(true);
 
@@ -108,7 +125,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.loop.setSelected(false);
     this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Checkbox");
-    //checkBoxPanel.add(loop);
+
 
 
     JPanel buttonPanel = new JPanel();
@@ -141,8 +158,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.speedDown.setFocusable(true);
     this.speedDown.setActionCommand("Slow Down");
 
-    this.textSp.setText("speed here");
-
 //    frame.add(start);
 //    frame.add(pause);
 //    frame.add(resume);
@@ -162,7 +177,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     buttonPanel.add(restart, BorderLayout.SOUTH);
     buttonPanel.add(speedUp, BorderLayout.SOUTH);
     buttonPanel.add(speedDown, BorderLayout.SOUTH);
-    buttonPanel.add(textSp, BorderLayout.SOUTH);
     buttonPanel.add(loop, BorderLayout.SOUTH);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
@@ -173,6 +187,9 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     setResizable(true);
   }
 
+  /**
+   * Helper method facilitating start of animation.
+   */
   @Override
   public void runView() {
     int count = 0;
@@ -187,11 +204,21 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     }
   }
 
+
+  /**
+   * Display this view.
+   *
+   * @param shapesList List of {@link Shape}s
+   */
   @Override
   public void getCurrentDisplay(List<Shape> shapesList) {
     this.panel.updateModel(shapesList);
   }
 
+  /**
+   * Helper method facilitating start of animation with given count.
+   * @param count int value
+   */
   public void run(int count) {
     //System.out.println(count);
 //    while (count < 100) {
@@ -201,7 +228,10 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.getCurrentDisplay(this.model.getCurrentShapes(count));
   }
 
-  // Set buttons to their respective methods (actions)
+  /**
+   * Helper method that sets buttons to their respective action- methods.
+   * @param controller interactiveController interface
+   */
   @Override
   public void setListeners(InteractiveController controller) {
     Map<String, Runnable> buttonClickedMap = new HashMap<>();
@@ -232,21 +262,27 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.buttonListener.setButtonClickedActionMap(buttonClickedMap);
   }
 
+  /**
+   * Setter method for speed.
+   * @param speed speed of animation, int
+   */
   @Override
   public void setSpeed(int speed) {
     this.speed = speed;
   }
 
-//
-//  public String getString(int i) {
-//    return Integer.toString(i);
-//  }
-
+  /**
+   * Getter method for endTime for animation.
+   * @return  endTime, int
+   */
   @Override
   public int getEndTime() {
     return this.endTime;
   }
 
+  /**
+   * Setter method for endTime.
+   */
   private void setEndTime() {
     for (Shape shape : model.copyShapesList()) {
       if (shape.getDisappearTime() > this.endTime) {
