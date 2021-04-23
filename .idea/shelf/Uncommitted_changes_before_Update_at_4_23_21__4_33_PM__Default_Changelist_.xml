@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]" date="1619210033088" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 4/23/21, 4:33 PM [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALVertical.class" />
+    <option name="AFTER_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALVertical.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/InteractiveViewImpl$1ALVertical.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Animation_5004/cs5004/animator/controller/ControllerImpl.class" />
+    <option name="AFTER_PATH" value="out/production/Animation_5004/cs5004/animator/controller/ControllerImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/ControllerImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALHorizontal.class" />
+    <option name="AFTER_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALHorizontal.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/InteractiveViewImpl$1ALHorizontal.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl.class" />
+    <option name="AFTER_PATH" value="out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/InteractiveViewImpl.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/artifacts/Animation_5004_jar/Animation_5004.jar" />
+    <option name="AFTER_PATH" value="Animation_5004.jar" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_4_23_21,_4_33_PM_[Default_Changelist]/Animation_5004.jar" />
+  </binary>
+</changelist>

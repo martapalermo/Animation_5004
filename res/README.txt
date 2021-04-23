@@ -37,7 +37,7 @@ VIEW:
 - Interfaces:
    - IView: Contains the method to start the animation for all view classes.
       - VisualView: Extends IView; Method to get shapes at current tick for the Visual view.
-  
+   - InteractiveView: Contains the methods for the InteractiveViewImpl class
 - Classes:
    - GraphicsPanel: Extends JPanel; Updates the visual view at each tick
    - GraphicsView: Extends JFrame and Implements VisualView; Implements java swing window to start visual representation of the animation.
@@ -52,4 +52,15 @@ VIEW:
       - factoryOfViews: method creates the three types of views that will display the animation accordingly.
       - main: Static main method; runs the animations and prompts the program to create the outsource file or open a java swing window for the animation to      
         play.
-     
+   - InteractiveViewImpl: Create buttons to allow for user interaction (play/pause/restart/increase speed/decrease speed); visual representation of the animation.
+   
+- Updates to the View During Part 3: InteractiveView/InteractiveViewImpl (see above)
+
+
+CONTROLLER:
+- Interfaces:
+   - Controller: Runs the Graphical, Text, and SVG Views
+      - InteractiveController: Extends Controller; runs the InteractiveView
+- Classes:
+   - ControllerImpl: Sets off the views listed above.
+   - InteractiveControllerImpl: Contains a Timer to allow the user to control the animation as it is running.

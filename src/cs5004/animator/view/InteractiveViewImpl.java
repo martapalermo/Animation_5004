@@ -216,7 +216,6 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.restart.addActionListener(c -> controller.restart());
     buttonClickedMap.put("Restart Button", controller::restart);
 
-    // Should default be looping or not?
     this.loop.addActionListener(c -> controller.loop());
     buttonClickedMap.put("Loop Button", controller::loop);
 

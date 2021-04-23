@@ -5,5 +5,8 @@ package cs5004.animator.controller;
  */
 public interface Controller {
 
+  /**
+   * Helper method calling the other helper method that starts running the views.
+   */
   void startController();
 }
