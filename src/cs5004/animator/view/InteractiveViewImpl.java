@@ -81,7 +81,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     BorderLayout bl = new BorderLayout(0,0);
     setLayout(bl);
     //this.panel.setVisible(true);
-    this.add(this.panel);
+    //this.add(this.panel);
 
     /**
      * Adjustment Listener class for the horizontal scroll bar.
@@ -129,8 +129,9 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 
 
     JPanel buttonPanel = new JPanel();
+    //buttonPanel.setSize(100, 50);
 
-   // this.start.setBounds(10, 24, 40, 35);
+    //this.start.setLocation(canvas[0], canvas[1]);
     this.start.setFocusable(true);
     this.start.setActionCommand("Start Button");
 
@@ -158,6 +159,8 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.speedDown.setFocusable(true);
     this.speedDown.setActionCommand("Slow Down");
 
+
+
 //    frame.add(start);
 //    frame.add(pause);
 //    frame.add(resume);
@@ -166,9 +169,11 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
 //    frame.add(speedUp);
 //    frame.add(speedDown);
 
-    setLayout(new BorderLayout());
-    getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
-    getContentPane().add(verticalBar, BorderLayout.LINE_END);
+    //setLayout(new BorderLayout());
+    this.add(horizontalBar, BorderLayout.PAGE_END);
+    this.add(verticalBar, BorderLayout.LINE_END);
+
+
 
 
     buttonPanel.add(start, BorderLayout.SOUTH);
@@ -178,10 +183,19 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     buttonPanel.add(speedUp, BorderLayout.SOUTH);
     buttonPanel.add(speedDown, BorderLayout.SOUTH);
     buttonPanel.add(loop, BorderLayout.SOUTH);
+    //buttonPanel.setLayout(new BorderLayout(buttonPanel, BorderLayout.SOUTH));
+//    buttonPanel.setLayout(new BorderLayout());
+//    getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+    //getContentPane().add(this.panel, BorderLayout.CENTER);
+    //getContentPane().add(buttonPanel, BorderLayout.CENTER);
+    //this.panel.add(buttonPanel);
+    this.add(this.panel);
+    this.add(buttonPanel);
 
-    getContentPane().add(this.panel, BorderLayout.CENTER);
+
+    //getContentPane().add(buttonPanel, BorderLayout.LINE_END);
     //add(buttonPanel, BorderLayout.SOUTH);
-    this.panel.add(buttonPanel);
+    //getContentPane().add(buttonPanel, BorderLayout.PAGE_START);
     //this.panel.add(checkBoxPanel);
     this.setVisible(true);
     setResizable(true);
