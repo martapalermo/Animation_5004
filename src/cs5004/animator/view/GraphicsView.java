@@ -5,7 +5,8 @@ import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
 import javax.naming.OperationNotSupportedException;
-import javax.swing.*;
+import javax.swing.JFrame;
+import javax.swing.JScrollBar;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
