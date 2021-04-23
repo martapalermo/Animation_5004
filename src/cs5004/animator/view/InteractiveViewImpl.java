@@ -1,6 +1,6 @@
 package cs5004.animator.view;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 
@@ -33,7 +33,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
   private ButtonListener buttonListener;
   private int endTime;
 
-  //JFrame frame = new JFrame();
+  JFrame frame = new JFrame();
 
   JButton start = new JButton("Start");
   JButton pause = new JButton("Pause");
@@ -67,10 +67,12 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.endTime = 0;
     this.setEndTime();
 
+
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setLocation(canvas[0], canvas[1]);
     setSize(canvas[2] + 100, canvas[3] + 150);
-    setLayout(null);
+    //setLayout(null);
+    this.setLayout(new BorderLayout(0,0));
     setVisible(true);
 
     JScrollBar horizontalBar = new JScrollBar(JScrollBar.HORIZONTAL, 0, 100,
@@ -79,7 +81,7 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
         -600,600);
 
     BorderLayout bl = new BorderLayout(0,0);
-    setLayout(bl);
+    setLayout(bl);// for scroll bars
     //this.panel.setVisible(true);
     this.add(this.panel);
 
@@ -126,17 +128,23 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.loop.setFocusable(true);
     this.loop.setActionCommand("Loop Checkbox");
 
+    GraphicsPanel buttonPanel = new GraphicsPanel();
+//    BorderLayout bl2 = new BorderLayout(0,0);
+//    buttonPanel.setLayout(bl2);
 
-
-    JPanel buttonPanel = new JPanel();
+//    JPanel buttonPanel = new JPanel();
+//    buttonPanel.setLayout(new GridLayout());
+//    buttonPanel.setVisible(true);
 
    // this.start.setBounds(10, 24, 40, 35);
     this.start.setFocusable(true);
     this.start.setActionCommand("Start Button");
 
+
    // this.pause.setBounds(50, 24, 50, 35);
     this.pause.setFocusable(true);
     this.pause.setActionCommand("Pause Button");
+
 
     //this.resume.setBounds(100, 24, 60, 35);
     this.resume.setFocusable(true);
@@ -158,26 +166,27 @@ public class InteractiveViewImpl extends JFrame implements InteractiveView {
     this.speedDown.setFocusable(true);
     this.speedDown.setActionCommand("Slow Down");
 
-//    frame.add(start);
-//    frame.add(pause);
-//    frame.add(resume);
-//    frame.add(restart);
-//    frame.add(loop);
-//    frame.add(speedUp);
-//    frame.add(speedDown);
+//    frame.add(start, BorderLayout.SOUTH);
+//    frame.add(pause, BorderLayout.SOUTH);
+//    frame.add(resume, BorderLayout.SOUTH);
+//    frame.add(restart, BorderLayout.SOUTH);
+//    frame.add(speedUp, BorderLayout.SOUTH);
+//    frame.add(speedDown, BorderLayout.SOUTH);
+//    frame.add(loop, BorderLayout.SOUTH);
 
     setLayout(new BorderLayout());
     getContentPane().add(horizontalBar, BorderLayout.PAGE_END);
     getContentPane().add(verticalBar, BorderLayout.LINE_END);
+    getContentPane().add(buttonPanel);
 
 
-    buttonPanel.add(start, BorderLayout.SOUTH);
-    buttonPanel.add(pause, BorderLayout.SOUTH);
-    buttonPanel.add(resume, BorderLayout.SOUTH);
-    buttonPanel.add(restart, BorderLayout.SOUTH);
-    buttonPanel.add(speedUp, BorderLayout.SOUTH);
-    buttonPanel.add(speedDown, BorderLayout.SOUTH);
-    buttonPanel.add(loop, BorderLayout.SOUTH);
+    buttonPanel.add(start);
+    buttonPanel.add(pause);
+    buttonPanel.add(resume);
+    buttonPanel.add(restart);
+    buttonPanel.add(speedUp);
+    buttonPanel.add(speedDown);
+    buttonPanel.add(loop);
 
     getContentPane().add(this.panel, BorderLayout.CENTER);
     //add(buttonPanel, BorderLayout.SOUTH);
