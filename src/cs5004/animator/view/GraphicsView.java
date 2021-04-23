@@ -1,15 +1,13 @@
 package cs5004.animator.view;
 
-import cs5004.animator.controller.Controller;
 import cs5004.animator.model.animation.ReadonlyAnimator;
 import cs5004.animator.model.shape.Shape;
 
-import javax.naming.OperationNotSupportedException;
 import javax.swing.JFrame;
 import javax.swing.JScrollBar;
 
 import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
+
 import java.awt.event.AdjustmentEvent;
 import java.awt.event.AdjustmentListener;
 import java.util.List;

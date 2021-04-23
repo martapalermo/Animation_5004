@@ -1,5 +1,8 @@
 package cs5004.animator.controller;
 
+/**
+ * Controller interface for the visual view specifically/ the interactive view.
+ */
 public interface InteractiveController extends Controller {
   public void start();
 
@@ -13,5 +16,5 @@ public interface InteractiveController extends Controller {
 
   public void slowDown();
 
-  public StringBuilder getLog();
+  public String getLog();
 }

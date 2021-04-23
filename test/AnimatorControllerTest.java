@@ -6,12 +6,20 @@ import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.model.shape.Oval;
 import cs5004.animator.model.shape.Rectangle;
 import cs5004.animator.model.shape.Shape;
-import cs5004.animator.view.*;
+import cs5004.animator.view.SVGView;
+import cs5004.animator.view.TextView;
+import cs5004.animator.view.InteractiveViewImpl;
+import cs5004.animator.view.IView;
+import cs5004.animator.view.InteractiveView;
 import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+/**
+ * This class contains the unit tests for the Animator Controller classes.
+ * We test both the interactive implementations and the non.
+ */
 public class AnimatorControllerTest {
   private AnimatorModel model;
   private InteractiveController controller;
@@ -43,43 +51,43 @@ public class AnimatorControllerTest {
     this.model.setBounds(0, 0, 500, 500);
 
     InteractiveView view = new InteractiveViewImpl(model);
-    this.controller = new InteractiveControllerImpl(model, view, 100);
+    this.controller = new InteractiveControllerImpl(view, 100);
   }
 
   @Test
   public void testGetLogStart() {
     this.controller.start();
-    assertEquals("Clicked start button.\n", controller.getLog().toString());
+    assertEquals("Clicked start button.\n", controller.getLog());
   }
 
   @Test
   public void testGetLogStop() {
     this.controller.stop();
-    assertEquals("Clicked stop button.\n", controller.getLog().toString());
+    assertEquals("Clicked stop button.\n", controller.getLog());
   }
 
   @Test
   public void testGetLogRestart() {
     this.controller.restart();
-    assertEquals("Clicked restart button.\n", controller.getLog().toString());
+    assertEquals("Clicked restart button.\n", controller.getLog());
   }
 
   @Test
   public void testGetLogLoop() {
     this.controller.loop();
-    assertEquals("Clicked loop checkbox.\n", controller.getLog().toString());
+    assertEquals("Clicked loop checkbox.\n", controller.getLog());
   }
 
   @Test
   public void testGetLogSpeedUp() {
     this.controller.speedUp();
-    assertEquals("Clicked speed-up button.\n", controller.getLog().toString());
+    assertEquals("Clicked speed-up button.\n", controller.getLog());
   }
 
   @Test
   public void testGetLogSlowDown() {
     this.controller.slowDown();
-    assertEquals("Clicked slow-down button.\n", controller.getLog().toString());
+    assertEquals("Clicked slow-down button.\n", controller.getLog());
   }
 
   @Test
@@ -91,13 +99,13 @@ public class AnimatorControllerTest {
     this.controller.stop();
     assertEquals("Clicked loop checkbox.\n"
         + "Clicked start button.\n" + "Clicked stop button.\n" + "Clicked restart button.\n"
-        + "Clicked stop button.\n", controller.getLog().toString());
+        + "Clicked stop button.\n", controller.getLog());
   }
 
   @Test
   public void testGetSVGController() {
     IView svgView = new SVGView(model, writer, 4);
-    ControllerImpl svg = new ControllerImpl(model,svgView);
+    ControllerImpl svg = new ControllerImpl(model, svgView);
     svg.startController();
     assertEquals(
         "<svg width=\"500\" height=\"500\" version=\"1.1\" viewBox=\"0 0 500 500\"\n"

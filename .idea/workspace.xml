@@ -2,10 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ae4d803-af43-4b18-9010-66b2cbcf9a8f" name="Default Changelist" comment="freaking button panel!!!!! &#10;made it white">
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALHorizontal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView$1ALVertical.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/GraphicsView.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hw8.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/Animation_5004_jar/Animation_5004.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/EasyAnimator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/controller/InteractiveController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/controller/InteractiveController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/controller/InteractiveControllerImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/controller/InteractiveControllerImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALHorizontal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALHorizontal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALVertical.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl$1ALVertical.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Animation_5004/cs5004/animator/view/InteractiveViewImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/Animation_5004/AnimatorControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/EasyAnimator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/ButtonListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/ButtonListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/ControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/ControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveControllerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/controller/InteractiveControllerImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/GraphicsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/InteractiveViewImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/SVGView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/cs5004/animator/view/TextView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/AnimatorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/test/AnimatorControllerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,9 +53,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1qVBHX49iHTvI3PkL9O2fctjGP0" />
   <component name="ProjectLevelVcsManager">
@@ -79,7 +95,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EasyAnimator hanoiSVG">
+  <component name="RunManager" selected="JUnit.AnimatorControllerTest">
     <configuration name="EasyAnimator BigBangText" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
@@ -97,7 +113,7 @@
     <configuration name="EasyAnimator Buildings" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="cs5004.animator.EasyAnimator" />
       <module name="Animation_5004" />
-      <option name="PROGRAM_PARAMETERS" value="-in buildings.txt -view visual -speed 2" />
+      <option name="PROGRAM_PARAMETERS" value="-in buildings.txt -view playback -speed 2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="cs5004.animator.*" />
@@ -166,6 +182,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AnimatorControllerTest.testGetSVGController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Animation_5004" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AnimatorControllerTest" />
+      <option name="METHOD_NAME" value="testGetSVGController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AnimatorControllerTest.testGetSVGInvalidSpeedController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Animation_5004" />
       <option name="PACKAGE_NAME" value="" />
@@ -185,34 +211,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AnimatorViewTest.testSVGToFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Animation_5004" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AnimatorViewTest" />
-      <option name="METHOD_NAME" value="testSVGToFile" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.EasyAnimator BigBangText" />
       <item itemvalue="Application.EasyAnimator TOH8 SVG" />
       <item itemvalue="Application.EasyAnimator Buildings" />
       <item itemvalue="Application.EasyAnimator hanoiSVG" />
       <item itemvalue="JUnit.AnimatorViewTest" />
-      <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       <item itemvalue="JUnit.AnimatorControllerTest" />
       <item itemvalue="JUnit.AnimatorControllerTest.testGetSVGInvalidSpeedController" />
       <item itemvalue="JUnit.AnimatorControllerTest.testGetLogMultipleClicks" />
+      <item itemvalue="JUnit.AnimatorControllerTest.testGetSVGController" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.AnimatorControllerTest" />
+        <item itemvalue="JUnit.AnimatorControllerTest.testGetSVGController" />
         <item itemvalue="JUnit.AnimatorControllerTest.testGetLogMultipleClicks" />
         <item itemvalue="JUnit.AnimatorControllerTest.testGetSVGInvalidSpeedController" />
         <item itemvalue="JUnit.AnimatorViewTest" />
-        <item itemvalue="JUnit.AnimatorViewTest.testSVGToFile" />
       </list>
     </recent_temporary>
   </component>
@@ -239,14 +255,7 @@
       <workItem from="1618863085186" duration="5772000" />
       <workItem from="1618938246087" duration="1958000" />
       <workItem from="1618948449976" duration="1122000" />
-      <workItem from="1619100127826" duration="24967000" />
-    </task>
-    <task id="LOCAL-00063" summary="cleaning the model">
-      <created>1618506512232</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1618506512233</updated>
+      <workItem from="1619100127826" duration="29807000" />
     </task>
     <task id="LOCAL-00064" summary="cleaning the model">
       <created>1618507921342</created>
@@ -584,7 +593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1619196740626</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="freaking button panel!!!!! &#10;made it white">
+      <created>1619196789411</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1619196789411</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

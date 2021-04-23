@@ -1,26 +1,30 @@
 package cs5004.animator.controller;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.naming.OperationNotSupportedException;
-
 import cs5004.animator.model.animation.Animator;
+import cs5004.animator.model.animation.AnimatorModel;
 import cs5004.animator.view.IView;
 
-// Should controller take in command input from EasyAnimator?
+/**
+ * Controller implementing class, specifically for SVG and Text views.
+ */
 public class ControllerImpl implements Controller {
-  private Animator model;
+
   private IView view;
 
+  /**
+   * Constructor for controllerImpl for text and SVG views.
+   * @param model model, Animator interface
+   * @param view view, IView interface
+   */
   public ControllerImpl(Animator model, IView view) {
-    this.model = model;
+    model = new AnimatorModel();
     this.view = view;
   }
 
-  // Different methods to start
+
+  /**
+   * Helper method calling the other helper method that starts running the views.
+   */
   @Override
   public void startController() {
     this.view.runView();
